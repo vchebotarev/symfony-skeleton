@@ -52,6 +52,7 @@
         "mobiledetect/mobiledetectlib":        "^2.8",
         "predis/predis":                       "^1.1",
         "snc/redis-bundle":                    "^2.0",
+        "twig/extensions":                     "^1.5",
 
         "hirak/prestissimo":         "^0.3.7",
         "fxp/composer-asset-plugin": "^1.3"
