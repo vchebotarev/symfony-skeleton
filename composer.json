@@ -32,6 +32,7 @@
         "symfony/swiftmailer-bundle":           "^2.3.10",
         "twig/twig":                            "^1.0||^2.0",
 
+        "browscap/browscap-php":               "^3.1",
         "doctrine/doctrine-migrations-bundle": "^1.2",
         "friendsofsymfony/jsrouting-bundle":   "^1.6",
         "friendsofsymfony/user-bundle":        "^2.0",
