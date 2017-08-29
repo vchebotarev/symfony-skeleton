@@ -18,6 +18,7 @@ class AppKernel extends Kernel
 
             new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
+            new Gregwar\CaptchaBundle\GregwarCaptchaBundle(),
 
             new AppBundle\AppBundle(),
         ];

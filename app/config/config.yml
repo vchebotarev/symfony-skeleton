@@ -66,6 +66,15 @@ doctrine_migrations:
     namespace:  App\Migration
     table_name: migration
 
+# Gregwar Captcha
+gregwar_captcha:
+    as_url:           true
+    reload:           true
+    font:             '%kernel.root_dir%/../vendor/gregwar/captcha/Font/captcha2.ttf'
+    quality:          90
+    max_front_lines:  2
+    max_behind_lines: 2
+
 # Swiftmailer Configuration
 swiftmailer:
     transport: '%mailer_transport%'
