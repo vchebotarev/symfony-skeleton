@@ -8,3 +8,11 @@ services:
             - '@doctrine'
         tags:
             - { name: validator.constraint_validator, alias: validator.exist }
+
+    app.symfony.validator.user_password:
+        class: App\Symfony\Validator\Constraints\UserPasswordValidator
+        arguments:
+            - '@security.token_storage'
+            - '@security.encoder_factory'
+        tags:
+            - { name: validator.constraint_validator, alias: validator.user_password }
