@@ -48,6 +48,7 @@ doctrine:
         user: '%database_user%'
         password: '%database_password%'
         charset: UTF8
+        wrapper_class: App\Doctrine\DBAL\ReopeningConnectionWrapper
         types:
             json_array: App\Doctrine\DBAL\Types\JsonArrayType
 
