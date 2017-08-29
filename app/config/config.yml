@@ -60,6 +60,12 @@ doctrine:
         naming_strategy: doctrine.orm.naming_strategy.underscore
         auto_mapping: true
 
+# Doctrine Migrations
+doctrine_migrations:
+    dir_name:   '%kernel.project_dir%/src/App/Migration'
+    namespace:  App\Migration
+    table_name: migration
+
 # Swiftmailer Configuration
 swiftmailer:
     transport: '%mailer_transport%'
