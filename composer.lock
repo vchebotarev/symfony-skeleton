@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "54c06194d330319aec0dc417583cb98d",
+    "content-hash": "8cc5e8eb8dc7c31d25a7ff4cb0feb894",
     "packages": [
         {
             "name": "beberlei/DoctrineExtensions",
@@ -223,6 +223,54 @@
                 "symfony3"
             ],
             "time": "2017-08-23T13:56:10+00:00"
+        },
+        {
+            "name": "chebur/sphinx-bundle",
+            "version": "0.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/vchebotarev/sphinx-bundle.git",
+                "reference": "b76ce3cc7b213a4b662bad2a2885bfa274ef11ff"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/vchebotarev/sphinx-bundle/zipball/b76ce3cc7b213a4b662bad2a2885bfa274ef11ff",
+                "reference": "b76ce3cc7b213a4b662bad2a2885bfa274ef11ff",
+                "shasum": ""
+            },
+            "require": {
+                "foolz/sphinxql-query-builder": "^1.1"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Chebur\\SphinxBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vladimir Chebotarev",
+                    "email": "v.yu.chebotarev@mail.ru",
+                    "homepage": "http://github.com/vchebotarev"
+                }
+            ],
+            "description": "Symfony 2 sphinx bundle with SphinxClient(sphinxapi), SphinxQL, commands, profiling",
+            "homepage": "https://github.com/vchebotarev",
+            "keywords": [
+                "Symfony2",
+                "bundle",
+                "sphinx",
+                "sphinxapi",
+                "sphinxclient",
+                "sphinxql",
+                "sphinxsearch",
+                "symfony"
+            ],
+            "time": "2017-07-28T08:20:29+00:00"
         },
         {
             "name": "composer/ca-bundle",
@@ -1358,6 +1406,57 @@
                 "rest"
             ],
             "time": "2016-10-17T18:31:11+00:00"
+        },
+        {
+            "name": "foolz/sphinxql-query-builder",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FoolCode/SphinxQL-Query-Builder.git",
+                "reference": "dd8fc0370fb30919447056563c8c66ea0ff74075"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FoolCode/SphinxQL-Query-Builder/zipball/dd8fc0370fb30919447056563c8c66ea0ff74075",
+                "reference": "dd8fc0370fb30919447056563c8c66ea0ff74075",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "replace": {
+                "foolz/sphinxql": "self.version"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.4.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Foolz\\SphinxQL\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "foolz",
+                    "email": "support@foolz.us"
+                }
+            ],
+            "description": "A PHP query builder for SphinxQL. Uses MySQLi to connect to the Sphinx server.",
+            "homepage": "http://www.foolz.us",
+            "keywords": [
+                "database",
+                "query builder",
+                "search",
+                "sphinx",
+                "sphinxql",
+                "sql"
+            ],
+            "time": "2016-12-15T13:51:59+00:00"
         },
         {
             "name": "friendsofsymfony/jsrouting-bundle",
