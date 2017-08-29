@@ -39,6 +39,7 @@
         "excelwebzone/recaptcha-bundle":       "^1.4",
         "friendsofsymfony/jsrouting-bundle":   "^1.6",
         "friendsofsymfony/user-bundle":        "^2.0",
+        "gedmo/doctrine-extensions":           "^2.4",
         "hwi/oauth-bundle":                    "^0.5.3",
         "gregwar/captcha-bundle":              "^2.0",
         "knplabs/knp-menu-bundle":             "^2.1",
