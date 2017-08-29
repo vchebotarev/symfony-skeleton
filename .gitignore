@@ -1,17 +1,16 @@
+
+# Symfony 3
 /.web-server-pid
 /app/config/parameters.yml
 /build/
 /phpunit.xml
+/bin/symfony_requirements
 /var/*
-!/var/cache
-/var/cache/*
 !var/cache/.gitkeep
-!/var/logs
-/var/logs/*
 !var/logs/.gitkeep
-!/var/sessions
-/var/sessions/*
 !var/sessions/.gitkeep
-!var/SymfonyRequirements.php
-/vendor/
 /web/bundles/
+
+# Composer
+/composer.phar
+/vendor/
