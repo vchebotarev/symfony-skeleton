@@ -16,3 +16,9 @@ services:
             - '@security.encoder_factory'
         tags:
             - { name: validator.constraint_validator, alias: validator.user_password }
+
+
+# Exception Controller
+    app.twig.controller.exception:
+        class: AppBundle\Controller\ExceptionController
+        parent: twig.controller.exception
