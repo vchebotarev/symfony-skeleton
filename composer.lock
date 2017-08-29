@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "5bfd290b49d2683134c185744864fd72",
+    "content-hash": "54c06194d330319aec0dc417583cb98d",
     "packages": [
         {
             "name": "beberlei/DoctrineExtensions",
@@ -180,6 +180,49 @@
                 "user agent"
             ],
             "time": "2017-03-28T13:29:55+00:00"
+        },
+        {
+            "name": "chebur/login-form-bundle",
+            "version": "0.0.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/vchebotarev/login-form-bundle.git",
+                "reference": "6cc4c5346825efe3ab5dd1362a70424ec8440ad6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/vchebotarev/login-form-bundle/zipball/6cc4c5346825efe3ab5dd1362a70424ec8440ad6",
+                "reference": "6cc4c5346825efe3ab5dd1362a70424ec8440ad6",
+                "shasum": ""
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Chebur\\LoginFormBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vladimir Chebotarev",
+                    "email": "v.yu.chebotarev@mail.ru",
+                    "homepage": "http://github.com/vchebotarev"
+                }
+            ],
+            "description": "Symfony 2-3 advanced login form bundle",
+            "homepage": "https://github.com/vchebotarev",
+            "keywords": [
+                "Symfony2",
+                "bundle",
+                "login form",
+                "security",
+                "symfony",
+                "symfony3"
+            ],
+            "time": "2017-08-23T13:56:10+00:00"
         },
         {
             "name": "composer/ca-bundle",
