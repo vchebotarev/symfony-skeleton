@@ -36,6 +36,7 @@
         "doctrine/doctrine-migrations-bundle": "^1.2",
         "friendsofsymfony/jsrouting-bundle":   "^1.6",
         "friendsofsymfony/user-bundle":        "^2.0",
+        "mobiledetect/mobiledetectlib":        "^2.8",
 
         "hirak/prestissimo":         "^0.3.7",
         "fxp/composer-asset-plugin": "^1.3"
