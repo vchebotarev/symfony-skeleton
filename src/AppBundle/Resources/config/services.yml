@@ -18,3 +18,11 @@ services:
             - '@app.email.check_url_detector'
         tags:
             - { name: twig.extension }
+
+
+# Token
+    app.token.generator:
+        class: App\Token\TokenGenerator
+
+    fos_user.util.token_generator:
+        alias: app.token.generator
