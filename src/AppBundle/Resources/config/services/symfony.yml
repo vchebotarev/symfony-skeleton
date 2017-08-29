@@ -1,0 +1,10 @@
+
+services:
+
+# Validators
+    app.symfony.validator.exist:
+        class: App\Symfony\Validator\Constraints\EntityExistsValidator
+        arguments:
+            - '@doctrine'
+        tags:
+            - { name: validator.constraint_validator, alias: validator.exist }

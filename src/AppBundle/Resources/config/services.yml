@@ -1,4 +1,5 @@
 
-parameters:
+imports:
+    - { resource: services/symfony.yml }
 
 services:
