@@ -38,6 +38,7 @@
         "chebur/sphinx-bundle":                "^0.0.5",
         "chebur/twig-php-functions-bundle":    "^0.0.2",
         "craue/formflow-bundle":               "~3.0@dev",
+        "doctrine/doctrine-fixtures-bundle":   "^2.3",
         "doctrine/doctrine-migrations-bundle": "^1.2",
         "excelwebzone/recaptcha-bundle":       "^1.4",
         "friendsofsymfony/jsrouting-bundle":   "^1.6",
