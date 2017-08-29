@@ -10,6 +10,7 @@
 !var/logs/.gitkeep
 !var/sessions/.gitkeep
 /web/bundles/
+.env
 
 # Composer
 /composer.phar
