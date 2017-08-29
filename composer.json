@@ -34,6 +34,7 @@
 
         "browscap/browscap-php":               "^3.1",
         "doctrine/doctrine-migrations-bundle": "^1.2",
+        "excelwebzone/recaptcha-bundle":       "^1.4",
         "friendsofsymfony/jsrouting-bundle":   "^1.6",
         "friendsofsymfony/user-bundle":        "^2.0",
         "gregwar/captcha-bundle":              "^2.0",

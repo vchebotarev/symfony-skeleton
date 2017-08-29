@@ -17,3 +17,7 @@ parameters:
 
     # A secret key that's used to generate certain security-related tokens
     secret: ThisTokenIsNotSoSecretChangeIt
+
+    # Recaptcha
+    recaptcha.public_key:  'ThisTokenIsNotSoSecretChangeIt'  #todo
+    recaptcha.private_key: 'ThisTokenIsNotSoSecretChangeIt'  #todo

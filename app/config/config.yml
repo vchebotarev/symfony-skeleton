@@ -75,6 +75,14 @@ gregwar_captcha:
     max_front_lines:  2
     max_behind_lines: 2
 
+# Recaptcha
+ewz_recaptcha:
+    public_key:  '%recaptcha.public_key%'
+    private_key: '%recaptcha.private_key%'
+    locale_key:  '%kernel.default_locale%'
+    enabled:     true
+    ajax:        false
+
 # Swiftmailer Configuration
 swiftmailer:
     transport: '%mailer_transport%'
