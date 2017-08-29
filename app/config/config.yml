@@ -83,6 +83,16 @@ ewz_recaptcha:
     enabled:     true
     ajax:        false
 
+# Redis
+snc_redis:
+    #todo sessions, doctrine, firewall
+    clients:
+        default:
+            type:    predis
+            alias:   default
+            dsn:     '%redis.dsn%'
+            logging: '%kernel.debug%'
+
 # Swiftmailer Configuration
 swiftmailer:
     transport: '%mailer_transport%'

@@ -21,3 +21,6 @@ parameters:
     # Recaptcha
     recaptcha.public_key:  'ThisTokenIsNotSoSecretChangeIt'  #todo
     recaptcha.private_key: 'ThisTokenIsNotSoSecretChangeIt'  #todo
+
+    # Redis
+    redis.dsn: 'redis://localhost'
