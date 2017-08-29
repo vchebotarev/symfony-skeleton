@@ -1,0 +1,12 @@
+
+app_public:
+    prefix:   /
+    resource: 'routing/public.yml'
+
+app_private:
+    prefix:   /pa
+    resource: 'routing/private.yml'
+
+app_admin:
+    prefix:   /admin
+    resource: 'routing/admin.yml'

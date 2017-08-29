@@ -1,0 +1,4 @@
+
+app_admin_default_index:
+    path:     /
+    defaults: { _controller: AppBundle:Admin/Default:index }
