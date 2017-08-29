@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "8cc5e8eb8dc7c31d25a7ff4cb0feb894",
+    "content-hash": "1cc34de485ab25012395ce6ebc760703",
     "packages": [
         {
             "name": "beberlei/DoctrineExtensions",
@@ -271,6 +271,49 @@
                 "symfony"
             ],
             "time": "2017-07-28T08:20:29+00:00"
+        },
+        {
+            "name": "chebur/twig-php-functions-bundle",
+            "version": "0.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/vchebotarev/twig-php-functions-bundle.git",
+                "reference": "ed6280e643fc050b4d758cce9ea322e2da8f8f1a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/vchebotarev/twig-php-functions-bundle/zipball/ed6280e643fc050b4d758cce9ea322e2da8f8f1a",
+                "reference": "ed6280e643fc050b4d758cce9ea322e2da8f8f1a",
+                "shasum": ""
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Chebur\\TwigPhpFunctionsBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vladimir Chebotarev",
+                    "email": "v.yu.chebotarev@mail.ru",
+                    "homepage": "http://github.com/vchebotarev"
+                }
+            ],
+            "description": "Symfony 2 bundle to execute native functions in twig templates",
+            "homepage": "https://github.com/vchebotarev",
+            "keywords": [
+                "Symfony2",
+                "bundle",
+                "functions",
+                "php",
+                "symfony",
+                "twig"
+            ],
+            "time": "2017-06-05T06:50:11+00:00"
         },
         {
             "name": "composer/ca-bundle",

@@ -36,6 +36,7 @@
         "browscap/browscap-php":               "^3.1",
         "chebur/login-form-bundle":            "^0.0.8",
         "chebur/sphinx-bundle":                "^0.0.5",
+        "chebur/twig-php-functions-bundle":    "^0.0.2",
         "craue/formflow-bundle":               "~3.0@dev",
         "doctrine/doctrine-migrations-bundle": "^1.2",
         "excelwebzone/recaptcha-bundle":       "^1.4",
