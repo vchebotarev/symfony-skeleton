@@ -3,3 +3,18 @@ imports:
     - { resource: services/symfony.yml }
 
 services:
+
+# Email
+    app.email.check_url_detector:
+        class: App\Email\EmailCheckUrlDetector
+
+    app.email.helper:
+        class: App\Email\EmailHelper
+
+    app.email.twig.extension:
+        class: AppBundle\Twig\Extension\EmailExtension
+        arguments:
+            - '@app.email.helper'
+            - '@app.email.check_url_detector'
+        tags:
+            - { name: twig.extension }
