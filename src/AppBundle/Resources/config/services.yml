@@ -43,6 +43,14 @@ services:
             - { name: kernel.event_subscriber }
 
 
+# User agent
+    app.user_agent.manager:
+        class: App\UserAgent\UserAgentManager
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '@request_stack'
+
+
 # User
     app.user.manager:
         lazy:  true
