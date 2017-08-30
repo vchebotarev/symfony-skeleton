@@ -18,6 +18,11 @@ services:
     app.auth.user_checker:
         class: App\Auth\UserChecker
 
+    app.auth.password_helper:
+        class: App\Auth\PasswordHelper
+        arguments:
+            - '@security.encoder_factory'
+
 
 # Email
     app.email.check_url_detector:
