@@ -28,6 +28,21 @@ services:
         alias: app.token.generator
 
 
+#Visitor
+    app.visitor.manager:
+        class: App\Visitor\VisitorManager
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '@request_stack'
+
+    app.visitor.listener:
+        class: App\Visitor\Event\VisitorSubscriber
+        arguments:
+            - '@app.visitor.manager'
+        tags:
+            - { name: kernel.event_subscriber }
+
+
 # User
     app.user.manager:
         lazy:  true
