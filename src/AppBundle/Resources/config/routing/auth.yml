@@ -1,0 +1,119 @@
+
+#Вход
+app_auth_security_login:
+    path:     /login
+    defaults: { _controller: AppBundle:Auth/Security:login }
+fos_user_security_login:
+    path:     /login
+    defaults: { _controller: AppBundle:Auth/Security:login }
+sonata_user_security_login:
+    path:     /login
+    defaults: { _controller: AppBundle:Auth/Security:login }
+
+app_auth_security_check:
+    path:     /login/check
+    defaults: { _controller: AppBundle:Auth/Security:check }
+fos_user_security_check:
+    path:     /login/check
+    defaults: { _controller: AppBundle:Auth/Security:check }
+sonata_user_security_check:
+    path:     /login/check
+    defaults: { _controller: AppBundle:Auth/Security:check }
+
+
+#Выход
+app_auth_logout:
+    path:     /logout
+    defaults: { _controller: AppBundle:Auth/Security:logout }
+fos_user_security_logout:
+    path:     /logout
+    defaults: { _controller: AppBundle:Auth/Security:logout }
+sonata_user_security_logout:
+    path:     /logout
+    defaults: { _controller: AppBundle:Auth/Security:logout }
+
+
+#Вход (Админка)
+app_auth_admin_security_login:
+    path:     /admin/login
+    defaults: { _controller: AppBundle:Auth/AdminSecurity:login }
+sonata_user_admin_security_login:
+    path:     /admin/login
+    defaults: { _controller: AppBundle:Auth/AdminSecurity:login }
+
+app_auth_admin_security_check:
+    path:     /admin/login/check
+    defaults: { _controller: AppBundle:Auth/AdminSecurity:check }
+sonata_user_admin_security_check:
+    path:     /admin/login/check
+    defaults: { _controller: AppBundle:Auth/AdminSecurity:check }
+
+
+#Выход (Админка)
+app_auth_admin_logout:
+    path:     /admin/logout
+    defaults: { _controller: AppBundle:Auth/AdminSecurity:logout }
+sonata_user_admin_security_logout:
+    path:     /admin/logout
+    defaults: { _controller: AppBundle:Auth/AdminSecurity:logout }
+
+
+#Регистрация
+app_auth_registration_register:
+    path:     /registration
+    defaults: { _controller: AppBundle:Auth/Registration:register }
+fos_user_registration_register:
+    path:     /registration
+    defaults: { _controller: AppBundle:Auth/Registration:register }
+sonata_user_registration_register:
+    path:     /registration
+    defaults: { _controller: AppBundle:Auth/Registration:register }
+
+app_auth_registration_confirm:
+    path:     /registration/{token}
+    defaults: { _controller: AppBundle:Auth/Registration:confirm }
+    requirements:
+        token: '^[a-f0-9]{32}$'
+fos_user_registration_confirm:
+    path:     /registration/{token}
+    defaults: { _controller: AppBundle:Auth/Registration:confirm }
+    requirements:
+        token: '^[a-f0-9]{32}$'
+sonata_user_registration_confirm:
+    path:     /registration/{token}
+    defaults: { _controller: AppBundle:Auth/Registration:confirm }
+    requirements:
+        token: '^[a-f0-9]{32}$'
+
+#Повторная отправка письма с подтверждением регистрации
+app_auth_registration_resend:
+    path:     /registration/resend
+    defaults: { _controller: AppBundle:Auth/Registration:resend }
+
+
+#Восстановление пароля
+app_auth_reset_request:
+    path:     /reset
+    defaults: { _controller: AppBundle:Auth/Reset:request }
+fos_user_resetting_request:
+    path:     /reset
+    defaults: { _controller: AppBundle:Auth/Reset:request }
+sonata_user_resetting_request:
+    path:     /reset
+    defaults: { _controller: AppBundle:Auth/Reset:request }
+
+app_auth_reset_reset:
+    path:     /reset/{token}
+    defaults: { _controller: AppBundle:Auth/Reset:reset }
+    requirements:
+        token: '^[a-f0-9]{32}$'
+fos_user_resetting_reset:
+    path:     /reset/{token}
+    defaults: { _controller: AppBundle:Auth/Reset:reset }
+    requirements:
+        token: '^[a-f0-9]{32}$'
+sonata_user_resetting_reset:
+    path:     /reset/{token}
+    defaults: { _controller: AppBundle:Auth/Reset:reset }
+    requirements:
+        token: '^[a-f0-9]{32}$'

@@ -1,7 +1,9 @@
 
 app_public:
-    prefix:   /
     resource: 'routing/public.yml'
+
+app_auth:
+    resource: 'routing/auth.yml'
 
 app_private:
     prefix:   /pa
