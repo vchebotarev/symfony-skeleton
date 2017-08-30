@@ -15,6 +15,9 @@ services:
         tags:
             - { name: kernel.event_subscriber }
 
+    app.auth.user_checker:
+        class: App\Auth\UserChecker
+
 
 # Email
     app.email.check_url_detector:
