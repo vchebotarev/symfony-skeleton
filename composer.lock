@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "45d15387b24a5dcc028b87f98a138338",
+    "content-hash": "6991b3200d1890dd542bd729c51d5dc8",
     "packages": [
         {
             "name": "beberlei/DoctrineExtensions",
@@ -111,6 +111,58 @@
                 "transliterator"
             ],
             "time": "2017-04-04T11:38:05+00:00"
+        },
+        {
+            "name": "bower-asset/bootstrap",
+            "version": "v4.0.0-beta1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twbs/bootstrap.git",
+                "reference": "35f80bb12e4e71fd777ee60ffa43711d8f84b1a6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/35f80bb12e4e71fd777ee60ffa43711d8f84b1a6",
+                "reference": "35f80bb12e4e71fd777ee60ffa43711d8f84b1a6",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/jquery": ">=1.9.1",
+                "bower-asset/popper.js": ">=1.11.0,<2.0.0"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "scss/bootstrap.scss",
+                    "dist/js/bootstrap.js"
+                ],
+                "bower-asset-ignore": [
+                    "/.*",
+                    "/_*",
+                    "about",
+                    "assets",
+                    "docs",
+                    "js/tests",
+                    "nuget",
+                    "CNAME",
+                    "composer.json",
+                    "Gruntfile.js"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "The most popular front-end framework for developing responsive, mobile first projects on the web.",
+            "keywords": [
+                "css",
+                "framework",
+                "front-end",
+                "js",
+                "mobile-first",
+                "responsive",
+                "sass",
+                "web"
+            ]
         },
         {
             "name": "bower-asset/fontawesome",
@@ -272,6 +324,37 @@
             ]
         },
         {
+            "name": "bower-asset/jquery",
+            "version": "3.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jquery/jquery-dist.git",
+                "reference": "77d2a51d0520d2ee44173afdf4e40a9201f5964e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jquery/jquery-dist/zipball/77d2a51d0520d2ee44173afdf4e40a9201f5964e",
+                "reference": "77d2a51d0520d2ee44173afdf4e40a9201f5964e",
+                "shasum": ""
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": "dist/jquery.js",
+                "bower-asset-ignore": [
+                    "package.json"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "keywords": [
+                "browser",
+                "javascript",
+                "jquery",
+                "library"
+            ]
+        },
+        {
             "name": "bower-asset/material-design-icons",
             "version": "3.0.1",
             "source": {
@@ -342,6 +425,44 @@
                 "OFL-1.1"
             ],
             "description": "An open source icon set in SVG, webfont and raster formats"
+        },
+        {
+            "name": "bower-asset/popper.js",
+            "version": "v1.12.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FezVrasta/popper.js.git",
+                "reference": "8a4f6e8936618ffcac1c1bd837ab4e5ab1de6726"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FezVrasta/popper.js/zipball/8a4f6e8936618ffcac1c1bd837ab4e5ab1de6726",
+                "reference": "8a4f6e8936618ffcac1c1bd837ab4e5ab1de6726",
+                "shasum": ""
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": "dist/umd/popper.js",
+                "bower-asset-ignore": [
+                    "**/.*",
+                    "node_modules",
+                    "bower_components",
+                    "tests"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "A kickass library to manage your poppers",
+            "keywords": [
+                "attached",
+                "component",
+                "drop",
+                "popover",
+                "popperjs",
+                "position",
+                "tooltip"
+            ]
         },
         {
             "name": "browscap/browscap-php",
@@ -5989,6 +6110,7 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "craue/formflow-bundle": 20,
+        "bower-asset/bootstrap": 10,
         "bower-asset/foundation-icon-fonts": 20
     },
     "prefer-stable": false,
