@@ -23,6 +23,19 @@ services:
         arguments:
             - '@security.encoder_factory'
 
+    app.auth.login_manager:
+        class: App\Auth\LoginManager
+        arguments:
+            - '@security.token_storage'
+            - '@security.user_checker'
+            - '@security.authentication.session_strategy'
+            - '@request_stack'
+            - '@event_dispatcher'
+            - '@app.user.manager'
+
+    fos_user.security.login_manager:
+        alias: app.auth.login_manager
+
 
 # Email
     app.email.check_url_detector:
