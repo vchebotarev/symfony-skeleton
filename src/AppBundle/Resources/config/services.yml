@@ -4,6 +4,18 @@ imports:
 
 services:
 
+#Auth
+    app.auth.log.subscriber:
+        class: App\Auth\Log\AuthLogEventSubscriber
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '@request_stack'
+            - '@app.visitor.manager'
+            - '@app.user_agent.manager'
+        tags:
+            - { name: kernel.event_subscriber }
+
+
 # Email
     app.email.check_url_detector:
         class: App\Email\EmailCheckUrlDetector
