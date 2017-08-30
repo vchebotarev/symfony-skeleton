@@ -11,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="user")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\UserRepository")
  */
-class User extends AbstractUser implements GenderedInterface
+class User extends AbstractUser implements GenderedInterface, \JsonSerializable
 {
     const ROLE_ADMIN = 'ROLE_ADMIN';
 
@@ -248,6 +248,19 @@ class User extends AbstractUser implements GenderedInterface
     public function __toString()
     {
         return $this->username;
+    }
+
+    /**
+     * @return array
+     */
+    public function jsonSerialize() : array
+    {
+        return [
+            'id'       => $this->getId(),
+            'username' => $this->getUsername(),
+            'email'    => $this->getEmail(),
+            'roles'    => $this->getRoles(),
+        ];
     }
 
 }

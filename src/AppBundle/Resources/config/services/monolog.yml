@@ -1,0 +1,17 @@
+
+services:
+    app.monolog.processor.web.mail:
+        class: App\Monolog\Processor\WebProcessor
+        tags:
+            - { name: monolog.processor, handler: swift }
+            - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }
+
+    app.monolog.processor.user:
+        class: App\Monolog\Processor\UserProcessor
+        arguments:
+            - '@app.user.manager'
+        tags:
+            - { name: monolog.processor, handler: swift }
+
+    app.monolog.formatter.html:
+        class: App\Monolog\Formatter\HtmlFormatter

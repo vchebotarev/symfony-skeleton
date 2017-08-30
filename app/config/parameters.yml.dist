@@ -24,3 +24,7 @@ parameters:
 
     # Redis
     redis.dsn: 'redis://localhost'
+
+    #Monolog error mailing
+    monolog.mail.from_email: 'error@example.com'
+    monolog.mail.to_email:   'error@example.com'

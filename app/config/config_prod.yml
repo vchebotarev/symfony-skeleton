@@ -10,13 +10,25 @@ imports:
 monolog:
     handlers:
         main:
-            type: fingers_crossed
-            action_level: error
-            handler: nested
+            type:         fingers_crossed
+            action_level: critical
+            handler:      grouped
+        grouped:
+            type:    group
+            members: [nested, deduplicated]
         nested:
             type: stream
             path: '%kernel.logs_dir%/%kernel.environment%.log'
-            level: debug
+        deduplicated:
+            type:    deduplication
+            handler: swift
+        swift:
+            type:         swift_mailer
+            from_email:   '%monolog.mail.from_email%'
+            to_email:     '%monolog.mail.to_email%'
+            subject:      'An Error Occurred!'
+            formatter:    app.monolog.formatter.html
+            content_type: text/html
         console:
-            type: console
+            type:                   console
             process_psr_3_messages: false

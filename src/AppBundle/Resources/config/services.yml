@@ -1,5 +1,6 @@
 
 imports:
+    - { resource: services/monolog.yml }
     - { resource: services/symfony.yml }
 
 services:
