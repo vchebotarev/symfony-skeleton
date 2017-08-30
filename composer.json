@@ -82,6 +82,16 @@
             "@symfony-scripts"
         ]
     },
+    "config": {
+        "vendor-dir":    "vendor",
+        "component-dir": "vendor/components",
+        "fxp-asset": {
+            "installer-paths": {
+                "npm-asset-library":   "web/vendor",
+                "bower-asset-library": "web/vendor"
+            }
+        }
+    },
     "extra": {
         "symfony-app-dir":        "app",
         "symfony-bin-dir":        "bin",

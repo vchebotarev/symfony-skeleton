@@ -15,6 +15,7 @@
 # Composer
 /composer.phar
 /vendor/
+/web/vendor/
 
 # PhpStorm
 /.idea/
