@@ -26,3 +26,16 @@ services:
 
     fos_user.util.token_generator:
         alias: app.token.generator
+
+
+# User
+    app.user.manager:
+        lazy:  true
+        class: App\User\UserManager
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '@security.token_storage'
+            - '@app.email.helper'
+
+    fos_user.user_manager:
+        alias: app.user.manager

@@ -2,10 +2,18 @@
 
 namespace App\Symfony\Controller;
 
+use AppBundle\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller as BaseController;
 
 abstract class AbstractController extends BaseController
 {
+    /**
+     * @return User|null
+     */
+    public function getUser()
+    {
+        return $this->get('app.user.manager')->getCurrentUser();
+    }
 
     /**
      * @inheritDoc
