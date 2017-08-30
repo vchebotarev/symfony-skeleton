@@ -59,6 +59,15 @@
         "snc/redis-bundle":                    "^2.0",
         "twig/extensions":                     "^1.5",
 
+        "bower-asset/fontawesome":           "^4.7",
+        "bower-asset/foundation-icon-fonts": "~3.0@dev",
+        "bower-asset/glyphicons":            "^0.0.2",
+        "bower-asset/icomoon":               "^0.1.2",
+        "bower-asset/ionicons":              "^2.0",
+        "bower-asset/material-design-icons": "^3.0",
+        "bower-asset/octicons":              "^6.0",
+        "bower-asset/open-iconic":           "^1.1",
+
         "hirak/prestissimo":         "^0.3.7",
         "fxp/composer-asset-plugin": "^1.3"
     },
