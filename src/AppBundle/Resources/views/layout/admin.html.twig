@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <title>{% block page_title %}{% endblock %}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Admin {% block page_title %}{% endblock %}</title>
 
     {# css + js #}
     {% include '@App/layout/include/_head.html.twig' %}
@@ -10,7 +12,60 @@
 </head>
 <body>
 
-{% block content %}{% endblock %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="{{ url('app_admin_default_index') }}">
+        <img src="http://symfony.com/images/v5/logos/sf-positive.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+        Admin
+    </a>
+
+    {# todo navbar collapse #}
+
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+        </li>
+        <li class="nav-item dropdown">
+            <button class="btn btn-link nav-link dropdown-toggle" type="button" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown link
+            </button>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+        </li>
+    </ul>
+
+    <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUserLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-user-circle"></i> Username{# {{ app.user.username }} #}
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownUserLink">
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-user-circle"></i> Профиль
+                </a>
+                <a class="dropdown-item" href="#">
+                    <i class="fa fa-power-off"></i> Выход
+                </a>
+            </div>
+        </li>
+    </ul>
+</nav>
+
+<div class="content">
+    <div class="container-fluid">
+        <h1>{{ block('page_title') }}</h1>
+
+        {% block content %}{% endblock %}
+    </div>
+</div>
 
 </body>
 </html>
