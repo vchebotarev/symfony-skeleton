@@ -39,3 +39,9 @@ services:
 
     fos_user.user_manager:
         alias: app.user.manager
+
+    app.user.token_manager:
+        class: App\User\UserTokenManager
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '@app.token.generator'

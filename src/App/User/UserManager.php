@@ -5,6 +5,7 @@ namespace App\User;
 use App\Email\EmailHelper;
 use App\FOS\User\AbstractUserManager;
 use AppBundle\Entity\User;
+use AppBundle\Entity\UserToken;
 use Doctrine\ORM\EntityManager;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 
@@ -129,7 +130,13 @@ class UserManager extends AbstractUserManager
      */
     public function findUserByConfirmationToken($token)
     {
-        //todo
+        $userToken = $this->objectManager->getRepository(UserToken::class)->findOneBy(array(
+            'hash' => $token,
+        ));
+        if (!$userToken) {
+            return null;
+        }
+        return $userToken->getUser();
     }
 
 }
