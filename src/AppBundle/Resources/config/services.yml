@@ -54,6 +54,14 @@ services:
             - { name: twig.extension }
 
 
+# Mailer
+    app.mailer.mailer:
+        class: App\Mailer\Mailer
+        arguments:
+            - '@swiftmailer.mailer'
+            - '@templating'
+
+
 # Token
     app.token.generator:
         class: App\Token\TokenGenerator
