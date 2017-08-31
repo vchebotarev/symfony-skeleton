@@ -46,6 +46,25 @@ services:
         tags:
             - { name: form.type }
 
+    app.auth.form.type.reset_request:
+        class: App\Auth\Form\Type\ResetRequestFormType
+        arguments:
+            - '@app.user.manager'
+            - '@app.user.token_manager'
+            - '@app.mailer.auth'
+        tags:
+            - { name: form.type }
+
+    app.auth.form.type.reset_reset:
+        class: App\Auth\Form\Type\ResetFormType
+        arguments:
+            - '@app.user.manipulator'
+            - '@app.user.token_manager'
+            - '@request_stack'
+            - '@app.auth.login_manager'
+        tags:
+            - { name: form.type }
+
 
 # Email
     app.email.check_url_detector:

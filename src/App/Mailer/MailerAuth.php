@@ -63,7 +63,18 @@ class MailerAuth implements MailerInterface
      */
     public function sendResettingEmailMessage(UserInterface $user)
     {
-        // TODO: Implement sendResettingEmailMessage() method.
+        /** @var User $user */
+        $to       = $user->getEmail();
+        $subject  = 'Изменение пароля на портале';
+        $params   = array(
+            'user'  => $user,
+            'url'   => $this->router->generate('app_auth_reset_reset', array(
+                'token' => $this->userTokenManager->saveToken(UserToken::TYPE_RESET_PASSWORD, $user),
+            ), UrlGeneratorInterface::ABSOLUTE_URL),
+        );
+        $template = '@App/mail/reset_confirm.html.twig';
+
+        $this->mailer->sendTemplated($to, $subject, $template, $params);
     }
 
 }

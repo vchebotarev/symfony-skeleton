@@ -82,4 +82,14 @@ class UserManipulator
         }
     }
 
+    /**
+     * @param User   $user
+     * @param string $password
+     */
+    public function changePassword(User $user, string $password)
+    {
+        $user->setPassword($this->passwordHelper->encodePassword($password, $user));
+        $this->userManager->updateUser($user);
+    }
+
 }
