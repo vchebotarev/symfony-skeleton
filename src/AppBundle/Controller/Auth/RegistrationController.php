@@ -2,7 +2,9 @@
 
 namespace AppBundle\Controller\Auth;
 
+use App\Auth\Form\Type\RegistrationFormType;
 use App\Symfony\Controller\AbstractController;
+use AppBundle\Entity\UserToken;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -14,16 +16,49 @@ class RegistrationController extends AbstractController
      */
     public function registerAction(Request $request)
     {
-        return $this->render('');
+        if ($this->getUser()) {
+            return $this->redirectToRoute('app_private_default_index');
+        }
+
+        $form = $this->createForm(RegistrationFormType::class);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $email = $form->getData()['email'];
+            return $this->render('@App/Auth/Registration/register_success.html.twig', [
+                'email' => $email,
+            ]);
+
+        }
+
+        return $this->render('@App/Auth/Registration/register.html.twig', [
+            'form' => $form->createView(),
+        ]);
     }
 
     /**
-     * @param Request $request
+     * @param string $token
      * @return Response
      */
-    public function confirmAction(Request $request)
+    public function confirmAction(string $token)
     {
-        return $this->render('');
+        $userToken = $this->get('app.user.token_manager')->findTokenByHashAndType($token, UserToken::TYPE_REGISTRATION);
+        if (!$userToken) {
+            //todo защита от перебора
+            $response = new Response();
+            $response->setStatusCode(Response::HTTP_NOT_FOUND);
+            return $this->render('@App/Auth/Registration/confirm_error.html.twig', [], $response);
+        }
+
+        $user = $userToken->getUser();
+
+        //Обновляем пользователя
+        $this->get('app.user.manipulator')->enable($user);
+
+        //Авторизовываем пользователя
+        $this->get('app.auth.login_manager')->loginUserByLink($user, 'main');
+
+        return $this->render('@App/Auth/Registration/confirm_success.html.twig');
     }
 
     /**

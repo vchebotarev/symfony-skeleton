@@ -38,6 +38,15 @@ services:
         alias: app.auth.login_manager
 
 
+# Auth Forms
+    app.auth.form.type.registration:
+        class: App\Auth\Form\Type\RegistrationFormType
+        arguments:
+            - '@app.user.manipulator'
+        tags:
+            - { name: form.type }
+
+
 # Email
     app.email.check_url_detector:
         class: App\Email\EmailCheckUrlDetector
@@ -60,6 +69,13 @@ services:
         arguments:
             - '@swiftmailer.mailer'
             - '@templating'
+
+    app.mailer.auth:
+        class: App\Mailer\MailerAuth
+        arguments:
+            - '@app.mailer.mailer'
+            - '@router'
+            - '@app.user.token_manager'
 
 
 # Token
@@ -104,6 +120,14 @@ services:
 
     fos_user.user_manager:
         alias: app.user.manager
+
+    app.user.manipulator:
+        class: App\User\UserManipulator
+        arguments:
+            - '@app.user.manager'
+            - '@app.auth.password_helper'
+            - '@app.mailer.auth'
+            - '@app.user.token_manager'
 
     app.user.token_manager:
         class: App\User\UserTokenManager
