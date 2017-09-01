@@ -180,3 +180,35 @@ services:
         arguments:
             - '@doctrine.orm.entity_manager'
             - '@app.token.generator'
+
+    app.user.security.voter:
+        class: App\User\Security\UserVoter
+        arguments:
+            - '@app.user.token_manager'
+        tags:
+            - { name: security.voter }
+
+# User forms
+    app.user.form.type.change_password:
+        class: App\User\Form\Type\ChangePasswordType
+        arguments:
+            - '@app.user.manager'
+            - '@app.user.manipulator'
+        tags:
+            - { name: form.type }
+
+    app.user.form.type.change_username:
+        class: App\User\Form\Type\ChangeUsernameType
+        arguments:
+            - '@app.user.manager'
+            - '@app.user.manipulator'
+        tags:
+            - { name: form.type }
+
+    app.user.form.type.change_email:
+        class: App\User\Form\Type\ChangeEmailType
+        arguments:
+            - '@app.user.manager'
+            - '@app.mailer.tokened'
+        tags:
+            - { name: form.type }

@@ -1,14 +1,20 @@
 
+# Общедоступные пути
 app_public:
     resource: 'routing/public.yml'
 
+
+# Все что связано с авторизацией, регистрацией, сбросом пароля
 app_auth:
     resource: 'routing/auth.yml'
 
+
+# Только для авторизованных пользователей
 app_private:
-    prefix:   /private
     resource: 'routing/private.yml'
 
+
+# Админка
 app_admin:
     prefix:   /admin
     resource: 'routing/admin.yml'

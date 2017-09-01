@@ -77,4 +77,25 @@ class MailerTokened implements MailerInterface
         $this->mailer->sendTemplated($to, $subject, $template, $params);
     }
 
+    /**
+     * @param User   $user
+     * @param string $newEmail
+     */
+    public function sendEmailChangeConfirmation(User $user, $newEmail)
+    {
+        $to       = $newEmail;
+        $subject  = 'Изменение e-mail на портале';
+        $params   = array(
+            'user'  => $user,
+            'url'   => $this->router->generate('app_private_profile_change_email_confirm', array(
+                'token' => $this->userTokenManager->saveToken(UserToken::TYPE_CHANGE_EMAIL, $user, array(
+                    'email' => $newEmail,
+                )),
+            ), UrlGeneratorInterface::ABSOLUTE_URL),
+        );
+        $template = '@App/mail/change_email_confirm.html.twig';
+
+        $this->mailer->sendTemplated($to, $subject, $template, $params);
+    }
+
 }

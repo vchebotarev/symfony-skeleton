@@ -1,4 +1,26 @@
 
 app_private_default_index:
-    path:     /
+    path:     /private/
     defaults: { _controller: AppBundle:PrivateArea/Default:index }
+
+app_private_profile_index:
+    path:     /private/profile
+    defaults: { _controller: AppBundle:PrivateArea/Profile:index }
+
+app_private_profile_change_username:
+    path:     /private/profile/change-username
+    defaults: { _controller: AppBundle:PrivateArea/Profile:changeUsername }
+
+app_private_profile_change_password:
+    path:     /private/profile/change-password
+    defaults: { _controller: AppBundle:PrivateArea/Profile:changePassword }
+
+app_private_profile_change_email:
+    path:     /private/profile/change-email
+    defaults: { _controller: AppBundle:PrivateArea/Profile:changeEmail }
+
+app_private_profile_change_email_confirm:
+    path:     /email/confirm/{token}
+    defaults: { _controller: AppBundle:PrivateArea/Profile:changeEmailConfirm }
+    requirements:
+        token: '^[a-f0-9]{32}$'

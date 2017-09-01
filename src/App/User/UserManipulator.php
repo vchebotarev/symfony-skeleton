@@ -92,4 +92,24 @@ class UserManipulator
         $this->userManager->updateUser($user);
     }
 
+    /**
+     * @param User   $user
+     * @param string $email
+     */
+    public function changeEmail(User $user, string $email)
+    {
+        $user->setEmail($email);
+        $this->userManager->updateUser($user);
+    }
+
+    /**
+     * @param User   $user
+     * @param string $username
+     */
+    public function changeUsername(User $user, string $username)
+    {
+        $user->setUsername($username);
+        $this->userManager->updateUser($user);
+    }
+
 }
