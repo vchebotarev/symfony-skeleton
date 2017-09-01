@@ -24,6 +24,7 @@ class AppKernel extends Kernel
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
             new Gregwar\CaptchaBundle\GregwarCaptchaBundle(),
             new Snc\RedisBundle\SncRedisBundle(),
+            new Chebur\LoginFormBundle\CheburLoginFormBundle(),
 
             new AppBundle\AppBundle(),
         ];

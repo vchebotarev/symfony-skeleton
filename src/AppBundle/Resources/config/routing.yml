@@ -6,7 +6,7 @@ app_auth:
     resource: 'routing/auth.yml'
 
 app_private:
-    prefix:   /pa
+    prefix:   /private
     resource: 'routing/private.yml'
 
 app_admin:

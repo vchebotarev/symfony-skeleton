@@ -1,16 +1,40 @@
 # To get started with security, check out the documentation:
 # https://symfony.com/doc/current/security.html
 security:
+    #access_denied_url:                   ~
+    #session_fixation_strategy:           'migrate' #todo
+    hide_user_not_found:                 true      #Общая ошибка входа, вместо пользователь не найден
+    #always_authenticate_before_granting: false     #todo
+    #erase_credentials:                   true      #todo
+    #access_decision_manager:
+        #strategy:                      'affirmative' #todo
+        #allow_if_all_abstain:          false         #todo
+        #allow_if_equal_granted_denied: true          #todo
+
+    #acl: #todo
 
     encoders:
         AppBundle\Entity\User:
-            algorithm: bcrypt
+            algorithm: 'bcrypt'
             cost:      12
+        Symfony\Component\Security\Core\User\User:
+            algorithm:   'plaintext'
+            ignore_case: false
 
-    # https://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
-    providers:
-        in_memory:
-            memory: ~
+    providers: # Где ищутся пользователи для авторизации
+        user_provider_admin_db:
+            id: 'app.auth.user_provider.admin'
+        user_provider_admin_memory:
+            memory:
+                users:
+                    admin:
+                        password: '321321' #todo change
+                        roles:    ['ROLE_SUPER_ADMIN']
+        user_provider_admin:
+            chain:
+                providers: ['user_provider_admin_memory', 'user_provider_admin_db']
+        user_provider_main:
+            id: 'app.auth.user_provider.main'
 
     firewalls:
         # disables authentication for assets and the profiler, adapt it according to your needs
@@ -18,12 +42,89 @@ security:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
 
+        admin: # этот фаервол указываем раньше ибо по паттерну пересечение с main
+            pattern:      '/admin.*'
+            anonymous:    true
+            user_checker: 'app.auth.user_checker'
+            chebur_form_login:
+                form:                           'App\Auth\Form\Type\LoginAdminFormType'
+                username_parameter:             '_username'
+                password_parameter:             '_password'
+                provider:                       'user_provider_admin'
+                use_forward:                    false
+                login_path:                     '/admin/login'
+                check_path:                     '/admin/login/check'
+                hide_user_not_found:            true
+                always_use_default_target_path: true
+                default_target_path:            '/admin/'
+            logout:
+                path:               '/admin/logout'
+                target:             '/admin/login'
+                invalidate_session: true
+
         main:
-            anonymous: ~
-            # activate different ways to authenticate
+            pattern:      '.*'
+            anonymous:    true
+            #context:      'user' # Указать один и тот же для нескольких фаерволов, чтобы они между собой делили пользователя
+            user_checker: 'app.auth.user_checker'
+            chebur_form_login:
+                form:                           'App\Auth\Form\Type\LoginMainFormType' #Форма авторизации
+                username_parameter:             '_username'          # параметр формы логина
+                password_parameter:             '_password'          # параметр формы логина
+                provider:                       'user_provider_main' # user_provider_main
+                use_forward:                    false                # Рендеринг формы логина прямо на недостпной странице
+                login_path:                     '/login'             # Урл формы логина
+                check_path:                     '/login/check'       # Урл проверки отсабмиченной формы логина
+                hide_user_not_found:            false                # Показывать сообщения, что такого юзера нет в системе при логине
+                require_previous_session:       true                 #todo
+                success_handler:                null                 # Сервис удачной авторизации
+                always_use_default_target_path: false                # Всегда использовать 'default_target_path'
+                default_target_path:            '/private/'          # Куда редиректить после успешного логина
+                target_path_parameter:          'return_url'         # Если после логина не надо в 'default_target_path'
+                use_referer:                    false                # После успешного логина возвращаться туда, откуда перекинуло на логин
+                failure_handler:                null                 # Сервис неудачной авторизации
+                failure_path:                   null                 # Куда редиректить в случае неудачного логина
+                failure_forward:                false                # Сразу рендерить страницу для неудачного логина
+                failure_path_parameter:         '_failure_path'      # Параметр в урле куда ретиректить в случае неудачного логина
+                remember_me:                    true                 # Доступность "запомнить меня"
+                #csrf_parameter:                 _csrf_token
+                #csrf_token_id:                  authenticate
+                #csrf_token_generator:           my.csrf_token_generator.id
+            remember_me:
+                secret:                '%secret%'     # ключ шифрования куки
+                name:                  'REMEMBERME'   # имя куки
+                lifetime:              31536000       # время жизни куки в секундах
+                path:                  /              # path "дейсвия" куки
+                #domain:                              # домен "дейсвия" куки
+                secure:                false          # https
+                httponly:              true           # доступна только для http (js до свидания)
+                remember_me_parameter: '_remember_me' # параметр запоминать ли на форме логина
+                always_remember_me:    false          # каждый раз запоминает при логине юзера
+                #token_provider:                      # сервис, который будет отвечать за хранения ключа не в куке
+            logout:
+                path:               '/logout'
+                target:             '/'
+                invalidate_session: true
+                #delete_cookies:                                 #todo
+                #handlers: [some.service.id, another.service.id] #todo
+                #success_handler: some.service.id                #todo
 
-            # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
-            #http_basic: ~
+    role_hierarchy:
+        ROLE_ADMIN:       ROLE_USER
+        ROLE_SUPER_ADMIN: [ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
 
-            # https://symfony.com/doc/current/security/form_login_setup.html
-            #form_login: ~
+    access_control:
+        #requires_channel: #todo
+        - { path: ^/login,       roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/login/check, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/logout,      roles: IS_AUTHENTICATED_ANONYMOUSLY }
+
+        - { path: ^/admin/login,       roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/admin/login/check, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/admin/logout,      roles: IS_AUTHENTICATED_ANONYMOUSLY }
+
+        - { path: ^/admin, roles: ROLE_ADMIN }
+
+        - { path: ^/private, roles: ROLE_USER }
+
+        - { path: ^/.*, role: IS_AUTHENTICATED_ANONYMOUSLY }

@@ -9,12 +9,19 @@ use Symfony\Component\HttpFoundation\Response;
 class SecurityController extends AbstractController
 {
     /**
-     * @param Request $request
      * @return Response
      */
-    public function loginAction(Request $request)
+    public function loginAction()
     {
-        return $this->render('');
+        if ($this->getUser()) {
+            return $this->redirectToRoute('app_public_default_index');
+        }
+
+        $form = $this->get('chebur.login_form.form.helper')->getLoginForm('main');
+
+        return $this->render('@App/Auth/Security/login.html.twig', [
+            'form' => $form->createView(),
+        ]);
     }
 
     public function checkAction()

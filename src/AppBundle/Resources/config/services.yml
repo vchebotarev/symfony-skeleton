@@ -37,6 +37,18 @@ services:
     fos_user.security.login_manager:
         alias: app.auth.login_manager
 
+# User Providers
+    app.auth.user_provider.main:
+        class:  App\Auth\UserProvider\UserProviderMain
+        public: false
+        arguments:
+            - '@app.user.manager'
+
+    app.auth.user_provider.admin:
+        class:  App\Auth\UserProvider\UserProviderAdmin
+        public: false
+        arguments:
+            - '@app.user.manager'
 
 # Auth Forms
     app.auth.form.type.registration:
@@ -62,6 +74,21 @@ services:
             - '@app.user.token_manager'
             - '@request_stack'
             - '@app.auth.login_manager'
+        tags:
+            - { name: form.type }
+
+    app.auth.form.type.login.main:
+        class: App\Auth\Form\Type\LoginMainFormType
+        arguments:
+            - '@router'
+            - '@app.email.helper'
+            - '@validator'
+        tags:
+            - { name: form.type }
+
+    app.auth.form.type.login.admin:
+        class: App\Auth\Form\Type\LoginAdminFormType
+        parent: app.auth.form.type.login.main
         tags:
             - { name: form.type }
 

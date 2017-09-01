@@ -34,7 +34,7 @@
 
         "beberlei/DoctrineExtensions":         "^1.0",
         "browscap/browscap-php":               "^3.1",
-        "chebur/login-form-bundle":            "^0.0.8",
+        "chebur/login-form-bundle":            "^0.0.10",
         "chebur/sphinx-bundle":                "^0.0.5",
         "chebur/twig-php-functions-bundle":    "^0.0.2",
         "craue/formflow-bundle":               "~3.0@dev",

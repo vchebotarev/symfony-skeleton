@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "6991b3200d1890dd542bd729c51d5dc8",
+    "content-hash": "d40a352c3bd0f0dd1553b9a1fd026a40",
     "packages": [
         {
             "name": "beberlei/DoctrineExtensions",
@@ -535,16 +535,16 @@
         },
         {
             "name": "chebur/login-form-bundle",
-            "version": "0.0.8",
+            "version": "0.0.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vchebotarev/login-form-bundle.git",
-                "reference": "6cc4c5346825efe3ab5dd1362a70424ec8440ad6"
+                "reference": "a1122cbb6fffab2d02f22237a8f4adffcf520bd1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vchebotarev/login-form-bundle/zipball/6cc4c5346825efe3ab5dd1362a70424ec8440ad6",
-                "reference": "6cc4c5346825efe3ab5dd1362a70424ec8440ad6",
+                "url": "https://api.github.com/repos/vchebotarev/login-form-bundle/zipball/a1122cbb6fffab2d02f22237a8f4adffcf520bd1",
+                "reference": "a1122cbb6fffab2d02f22237a8f4adffcf520bd1",
                 "shasum": ""
             },
             "type": "symfony-bundle",
@@ -574,7 +574,7 @@
                 "symfony",
                 "symfony3"
             ],
-            "time": "2017-08-23T13:56:10+00:00"
+            "time": "2017-09-01T12:34:24+00:00"
         },
         {
             "name": "chebur/sphinx-bundle",
