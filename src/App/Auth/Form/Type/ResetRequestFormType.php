@@ -2,6 +2,7 @@
 
 namespace App\Auth\Form\Type;
 
+use App\Mailer\MailerTokened;
 use App\Symfony\Form\AbstractType;
 use App\Symfony\Validator\Constraints\Chain;
 use App\Symfony\Validator\Constraints\EntityExists;
@@ -9,7 +10,6 @@ use App\User\UserManager;
 use App\User\UserTokenManager;
 use AppBundle\Entity\User;
 use AppBundle\Entity\UserToken;
-use FOS\UserBundle\Mailer\MailerInterface;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormEvent;
@@ -33,16 +33,16 @@ class ResetRequestFormType extends AbstractType
     protected $userTokenManager;
 
     /**
-     * @var MailerInterface
+     * @var MailerTokened
      */
     protected $mailer;
 
     /**
      * @param UserManager      $userManager
      * @param UserTokenManager $userTokenManager
-     * @param MailerInterface  $mailer
+     * @param MailerTokened    $mailer
      */
-    public function __construct(UserManager $userManager, UserTokenManager $userTokenManager, MailerInterface $mailer)
+    public function __construct(UserManager $userManager, UserTokenManager $userTokenManager, MailerTokened $mailer)
     {
         $this->userManager      = $userManager;
         $this->userTokenManager = $userTokenManager;

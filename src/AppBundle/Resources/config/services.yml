@@ -63,7 +63,7 @@ services:
         arguments:
             - '@app.user.manager'
             - '@app.user.token_manager'
-            - '@app.mailer.auth'
+            - '@app.mailer.tokened'
         tags:
             - { name: form.type }
 
@@ -116,8 +116,8 @@ services:
             - '@swiftmailer.mailer'
             - '@templating'
 
-    app.mailer.auth:
-        class: App\Mailer\MailerAuth
+    app.mailer.tokened:
+        class: App\Mailer\MailerTokened
         arguments:
             - '@app.mailer.mailer'
             - '@router'
@@ -172,7 +172,7 @@ services:
         arguments:
             - '@app.user.manager'
             - '@app.auth.password_helper'
-            - '@app.mailer.auth'
+            - '@app.mailer.tokened'
             - '@app.user.token_manager'
 
     app.user.token_manager:

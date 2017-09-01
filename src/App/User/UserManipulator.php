@@ -3,9 +3,9 @@
 namespace App\User;
 
 use App\Auth\PasswordHelper;
+use App\Mailer\MailerTokened;
 use AppBundle\Entity\User;
 use AppBundle\Entity\UserToken;
-use FOS\UserBundle\Mailer\MailerInterface;
 
 class UserManipulator
 {
@@ -15,7 +15,7 @@ class UserManipulator
     protected $userManager;
 
     /**
-     * @var MailerInterface
+     * @var MailerTokened
      */
     protected $mailer;
 
@@ -32,10 +32,10 @@ class UserManipulator
     /**
      * @param UserManager      $userManager
      * @param PasswordHelper   $passwordHelper
-     * @param MailerInterface  $mailer
+     * @param MailerTokened    $mailer
      * @param UserTokenManager $userTokenManager
      */
-    public function __construct(UserManager $userManager, PasswordHelper $passwordHelper, MailerInterface $mailer, UserTokenManager $userTokenManager)
+    public function __construct(UserManager $userManager, PasswordHelper $passwordHelper, MailerTokened $mailer, UserTokenManager $userTokenManager)
     {
         $this->userManager      = $userManager;
         $this->mailer           = $mailer;

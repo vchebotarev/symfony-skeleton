@@ -10,7 +10,7 @@ use FOS\UserBundle\Model\UserInterface;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Component\Routing\RouterInterface;
 
-class MailerAuth implements MailerInterface
+class MailerTokened implements MailerInterface
 {
     /**
      * @var Mailer
@@ -65,7 +65,7 @@ class MailerAuth implements MailerInterface
     {
         /** @var User $user */
         $to       = $user->getEmail();
-        $subject  = 'Изменение пароля на портале';
+        $subject  = 'Восстановление пароля на портале';
         $params   = array(
             'user'  => $user,
             'url'   => $this->router->generate('app_auth_reset_reset', array(
