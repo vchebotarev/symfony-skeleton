@@ -112,4 +112,42 @@ class UserManipulator
         $this->userManager->updateUser($user);
     }
 
+    /**
+     * @param User $user
+     */
+    public function lock(User $user)
+    {
+        $user->setIsLocked(true);
+        $this->userManager->updateUser($user);
+    }
+
+    /**
+     * @param User $user
+     */
+    public function unlock(User $user)
+    {
+        $user->setIsLocked(false);
+        $this->userManager->updateUser($user);
+    }
+
+    /**
+     * @param User   $user
+     * @param string $role
+     */
+    public function roleAdd(User $user, string $role)
+    {
+        $user->addRole($role);
+        $this->userManager->updateUser($user);
+    }
+
+    /**
+     * @param User   $user
+     * @param string $role
+     */
+    public function roleRemove(User $user, string $role)
+    {
+        $user->removeRole($role);
+        $this->userManager->updateUser($user);
+    }
+
 }
