@@ -3,6 +3,7 @@
 namespace App\Symfony\Controller;
 
 use AppBundle\Entity\User;
+use Doctrine\ORM\EntityManager;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller as BaseController;
 
 abstract class AbstractController extends BaseController
@@ -13,6 +14,17 @@ abstract class AbstractController extends BaseController
     public function getUser()
     {
         return $this->get('app.user.manager')->getCurrentUser();
+    }
+
+    /**
+     * @param string|null $name
+     * @return EntityManager
+     */
+    protected function getEm($name = null)
+    {
+        /** @var EntityManager $em */
+        $em = $this->getDoctrine()->getManager($name);
+        return $em;
     }
 
     /**
