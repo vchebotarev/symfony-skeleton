@@ -1,0 +1,29 @@
+
+{% extends '@App/layout/admin.html.twig' %}
+
+{% block page_title %}
+    История входов пользователя {{ user.getId() }}
+{% endblock %}
+
+{% block content %}
+
+    <table class="table table-hover table-striped">
+        <tr>
+            <th>Дата</th>
+            <th>Тип</th>
+            <th>Браузер</th>
+            <th>Ip</th>
+            <th>Посетитель</th>
+        </tr>
+        {% for log in logs %}
+            <tr>
+                <td>{{ log.getDateCreated()|date('d.m.Y H:i') }}</td>
+                <td>{{ auth_log_type_name(log.getType()) }}</td>
+                <td>{{ log.getUserAgent().getName() }}</td>
+                <td>{{ log.getIp() }}</td>
+                <td>{{ log.getVisitor().getHash() }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}

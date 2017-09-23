@@ -7,6 +7,7 @@ use App\User\Form\Type\ChangeEmailType;
 use App\User\Form\Type\ChangePasswordType;
 use App\User\Form\Type\ChangeUsernameType;
 use App\User\Security\UserVoter;
+use AppBundle\Entity\UserAuthLog;
 use AppBundle\Entity\UserToken;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -20,6 +21,20 @@ class ProfileController extends AbstractController
     public function indexAction()
     {
         return $this->render('@App/PrivateArea/Profile/index.html.twig');
+    }
+
+    /**
+     * @return Response
+     */
+    public function authLogAction()
+    {
+        $this->denyAccessUnlessGranted(UserVoter::VIEW_AUTH_LOG, $this->getUser());
+
+        $logs = $this->getEm()->getRepository(UserAuthLog::class)->findByUser($this->getUser());
+
+        return $this->render('@App/PrivateArea/Profile/auth_log.html.twig', [
+            'logs' => $logs,
+        ]);
     }
 
     /**

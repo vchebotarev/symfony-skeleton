@@ -1,0 +1,6 @@
+
+app_admin_user_auth_log:
+    path:     /{id}/auth-log
+    defaults: { _controller: AppBundle:Admin\User:authLog }
+    requirements:
+        id: '\d+'

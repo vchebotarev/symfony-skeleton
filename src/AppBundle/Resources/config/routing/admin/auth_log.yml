@@ -1,0 +1,8 @@
+
+app_admin_auth_log_index:
+    path:     /
+    defaults: { _controller: FrameworkBundle:Redirect:redirect, route: app_admin_auth_log_list, permanent: true }
+
+app_admin_auth_log_list:
+    path:     /list
+    defaults: { _controller: AppBundle:Admin\AuthLog:list }

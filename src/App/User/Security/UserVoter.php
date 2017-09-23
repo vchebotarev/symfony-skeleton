@@ -6,11 +6,13 @@ use App\User\UserTokenManager;
 use AppBundle\Entity\User;
 use AppBundle\Entity\UserToken;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
+use Symfony\Component\Security\Core\Authorization\AccessDecisionManagerInterface;
 use Symfony\Component\Security\Core\Authorization\Voter\Voter;
 
 class UserVoter extends Voter
 {
-    const CHANGE_EMAIL = 'user.change.email';
+    const CHANGE_EMAIL  = 'user.change.email';
+    const VIEW_AUTH_LOG = 'user.view.auth_log';
 
     /**
      * @var UserTokenManager
@@ -18,10 +20,17 @@ class UserVoter extends Voter
     protected $userTokenManager;
 
     /**
-     * @param UserTokenManager $userTokenManager
+     * @var AccessDecisionManagerInterface
      */
-    public function __construct(UserTokenManager $userTokenManager)
+    protected $decisionManager;
+
+    /**
+     * @param AccessDecisionManagerInterface $decisionManager
+     * @param UserTokenManager               $userTokenManager
+     */
+    public function __construct(AccessDecisionManagerInterface $decisionManager, UserTokenManager $userTokenManager)
     {
+        $this->decisionManager  = $decisionManager;
         $this->userTokenManager = $userTokenManager;
     }
 
@@ -33,6 +42,9 @@ class UserVoter extends Voter
         if ($attribute == self::CHANGE_EMAIL) {
             return true;
         }
+        if ($attribute == self::VIEW_AUTH_LOG) {
+            return true;
+        }
 
         return false;
     }
@@ -40,8 +52,9 @@ class UserVoter extends Voter
     /**
      * @inheritDoc
      */
-    protected function voteOnAttribute($attribute, $subject, TokenInterface $token)
+    protected function voteOnAttribute($attribute, $user, TokenInterface $token)
     {
+        /** @var User $user */
         /** @var User $currentUser */
         $currentUser = $token->getUser();
 
@@ -54,6 +67,15 @@ class UserVoter extends Voter
                 return false;
             }
             return true;
+        }
+        if ($attribute == self::VIEW_AUTH_LOG) {
+            if ($this->decisionManager->decide($token, [User::ROLE_ADMIN])) {
+                return true;
+            }
+            if (!$user) {
+                return false;
+            }
+            return $user->getId() == $currentUser->getId();
         }
 
         throw new \RuntimeException();

@@ -194,6 +194,7 @@ services:
     app.user.security.voter:
         class: App\User\Security\UserVoter
         arguments:
+            - '@security.access.decision_manager'
             - '@app.user.token_manager'
         tags:
             - { name: security.voter }

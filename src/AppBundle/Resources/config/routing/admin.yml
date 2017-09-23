@@ -2,3 +2,13 @@
 app_admin_default_index:
     path:     /
     defaults: { _controller: AppBundle:Admin/Default:index }
+
+# Users
+app_admin_user:
+    prefix:   /user
+    resource: 'admin/user.yml'
+
+# Auth log
+app_admin_auth_log:
+    prefix:   /auth-log
+    resource: 'admin/auth_log.yml'
