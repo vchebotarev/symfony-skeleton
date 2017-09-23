@@ -16,6 +16,16 @@ services:
         tags:
             - { name: kernel.event_subscriber }
 
+    app.auth.log.helper:
+        class: App\Auth\Log\AuthLogHelper
+
+    app.auth.log.twig.extension:
+        class: AppBundle\Twig\Extension\AuthLogExtension
+        arguments:
+            - '@app.auth.log.helper'
+        tags:
+            - { name: twig.extension }
+
     app.auth.user_checker:
         class: App\Auth\UserChecker
 
