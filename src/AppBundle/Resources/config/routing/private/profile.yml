@@ -1,0 +1,22 @@
+
+# prefix: /private/profile
+
+app_private_profile_index:
+    path:     /
+    defaults: { _controller: AppBundle:PrivateArea/Profile:index }
+
+app_private_profile_auth_log:
+    path:     /auth-log
+    defaults: { _controller: AppBundle:PrivateArea\Profile:authLog }
+
+app_private_profile_change_username:
+    path:     /change-username
+    defaults: { _controller: AppBundle:PrivateArea/Profile:changeUsername }
+
+app_private_profile_change_password:
+    path:     /change-password
+    defaults: { _controller: AppBundle:PrivateArea/Profile:changePassword }
+
+app_private_profile_change_email:
+    path:     /change-email
+    defaults: { _controller: AppBundle:PrivateArea/Profile:changeEmail }

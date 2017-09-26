@@ -11,6 +11,7 @@ app_auth:
 
 # Только для авторизованных пользователей
 app_private:
+    prefix:   /private
     resource: 'routing/private.yml'
 
 

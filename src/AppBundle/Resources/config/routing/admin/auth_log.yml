@@ -1,4 +1,6 @@
 
+# prefix: /admin/user
+
 app_admin_auth_log_index:
     path:     /
     defaults: { _controller: FrameworkBundle:Redirect:redirect, route: app_admin_auth_log_list, permanent: true }

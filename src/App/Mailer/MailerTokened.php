@@ -87,7 +87,7 @@ class MailerTokened implements MailerInterface
         $subject  = 'Изменение e-mail на портале';
         $params   = array(
             'user'  => $user,
-            'url'   => $this->router->generate('app_private_profile_change_email_confirm', array(
+            'url'   => $this->router->generate('app_public_email_confirm', array(
                 'token' => $this->userTokenManager->saveToken(UserToken::TYPE_CHANGE_EMAIL, $user, array(
                     'email' => $newEmail,
                 )),

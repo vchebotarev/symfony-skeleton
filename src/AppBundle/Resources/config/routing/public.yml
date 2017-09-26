@@ -2,3 +2,10 @@
 app_public_default_index:
     path:     /
     defaults: { _controller: AppBundle:PublicArea/Default:index }
+
+# Email confirm
+app_public_email_confirm:
+    path:     /email/confirm/{token}
+    defaults: { _controller: AppBundle:PrivateArea/Profile:changeEmailConfirm }
+    requirements:
+        token: '^[a-f0-9]{32}$'
