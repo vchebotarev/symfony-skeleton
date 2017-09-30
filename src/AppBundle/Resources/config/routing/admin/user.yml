@@ -1,8 +1,62 @@
 
 # prefix: /admin/user
 
+app_admin_user_index:
+    path:     /
+    defaults: { _controller: FrameworkBundle:Redirect:redirect, route: app_admin_user_list, permanent: true }
+
+app_admin_user_list:
+    path:     /list
+    defaults: { _controller: AppBundle:Admin\User:list }
+
+app_admin_user_view:
+    path:     /{id}
+    defaults: { _controller: AppBundle:Admin\User:view }
+    requirements:
+        id: '\d+'
+
 app_admin_user_auth_log:
     path:     /{id}/auth-log
     defaults: { _controller: AppBundle:Admin\User:authLog }
+    requirements:
+        id: '\d+'
+
+app_admin_user_create:
+    path:     /create
+    defaults: { _controller: AppBundle:Admin\User:create }
+
+app_admin_user_edit:
+    path:     /{id}/edit
+    defaults: { _controller: AppBundle:Admin\User:edit }
+    requirements:
+        id: '\d+'
+
+app_admin_user_change_username:
+    path:     /{id}/change-username
+    defaults: { _controller: AppBundle:Admin\User:changeUsername }
+    requirements:
+        id: '\d+'
+
+app_admin_user_change_email:
+    path:     /{id}/change-email
+    defaults: { _controller: AppBundle:Admin\User:changeEmail }
+    requirements:
+        id: '\d+'
+
+app_admin_user_enable:
+    path:     /{id}/enable
+    defaults: { _controller: AppBundle:Admin\User:enable }
+    requirements:
+        id: '\d+'
+
+app_admin_user_lock:
+    path:     /{id}/lock
+    defaults: { _controller: AppBundle:Admin\User:lock }
+    requirements:
+        id: '\d+'
+
+app_admin_user_unlock:
+    path:     /{id}/unlock
+    defaults: { _controller: AppBundle:Admin\User:unlock }
     requirements:
         id: '\d+'

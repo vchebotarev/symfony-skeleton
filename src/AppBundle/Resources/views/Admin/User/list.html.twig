@@ -1,0 +1,50 @@
+
+{% extends '@App/layout/admin.html.twig' %}
+
+{% block page_title %}
+    Список пользователей
+{% endblock %}
+
+{% block content %}
+
+    <a href="{{ path('app_admin_user_create') }}" class="btn btn-primary">Создать пользователя</a>
+
+    <br>
+    <br>
+
+    <table class="table table-hover table-striped">
+        <tr>
+            <th>Id</th>
+            <th>Имя пользователя</th>
+            <th>E-mail</th>
+            <th>Дата создания</th>
+            <th></th>
+        </tr>
+        {% for user in users %}
+            {% set tr_class = '' %}
+            {% set tr_title = '' %}
+            {% if user.isLocked() %}
+                {% set tr_class = 'table-danger' %}
+                {% set tr_title = 'Заблокирован' %}
+            {% elseif not user.enabled %}
+                {% set tr_class = 'table-warning' %}
+                {% set tr_title = 'Неактивирован' %}
+            {% endif %}
+            <tr class="{{ tr_class }}" title="{{ tr_title }}">
+                <td>{{ user.getId() }}</td>
+                <td>{{ user.getUsername() }}</td>
+                <td>{{ user.getEmail() }}</td>
+                <td>{{ user.getDateCreated()|date('d.m.Y H:i') }}</td>
+                <td>
+                    {% if is_granted('user.view', user) %}
+                        <a href="{{ path('app_admin_user_view', {'id': user.getId()}) }}" class="btn btn-primary" title="Просмотр"><i class="fa fa-eye"></i></a>
+                    {% endif %}
+                    {% if is_granted('user.edit', user) %}
+                        <a href="{{ path('app_admin_user_edit', {'id': user.getId()}) }}" class="btn btn-secondary" title="Редактирование"><i class="fa fa-edit"></i></a>
+                    {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}

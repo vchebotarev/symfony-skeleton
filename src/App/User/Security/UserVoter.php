@@ -13,6 +13,13 @@ class UserVoter extends Voter
 {
     const CHANGE_EMAIL  = 'user.change.email';
     const VIEW_AUTH_LOG = 'user.view.auth_log';
+    const LIST          = 'user.list';
+    const VIEW          = 'user.view';
+    const CREATE        = 'user.create';
+    const EDIT          = 'user.edit';
+    const ENABLE        = 'user.enable';
+    const LOCK          = 'user.lock';
+    const UNLOCK        = 'user.unlock';
 
     /**
      * @var UserTokenManager
@@ -37,12 +44,33 @@ class UserVoter extends Voter
     /**
      * @inheritDoc
      */
-    protected function supports($attribute, $subject)
+    protected function supports($attribute, $user)
     {
         if ($attribute == self::CHANGE_EMAIL) {
             return true;
         }
         if ($attribute == self::VIEW_AUTH_LOG) {
+            return true;
+        }
+        if ($attribute == self::LIST) {
+            return true;
+        }
+        if ($attribute == self::CREATE) {
+            return true;
+        }
+        if ($user instanceof User && $attribute == self::VIEW) {
+            return true;
+        }
+        if ($user instanceof User && $attribute == self::EDIT) {
+            return true;
+        }
+        if ($user instanceof User && $attribute == self::ENABLE) {
+            return true;
+        }
+        if ($user instanceof User && $attribute == self::LOCK) {
+            return true;
+        }
+        if ($user instanceof User && $attribute == self::UNLOCK) {
             return true;
         }
 
@@ -76,6 +104,36 @@ class UserVoter extends Voter
                 return false;
             }
             return $user->getId() == $currentUser->getId();
+        }
+        if ($attribute == self::LIST) {
+            return $this->decisionManager->decide($token, [User::ROLE_ADMIN]);
+        }
+        if ($attribute == self::CREATE) {
+            return $this->decisionManager->decide($token, [User::ROLE_ADMIN]);
+        }
+        if ($attribute == self::VIEW) {
+            return $this->decisionManager->decide($token, [User::ROLE_ADMIN]);
+        }
+        if ($attribute == self::EDIT) {
+            return $this->decisionManager->decide($token, [User::ROLE_ADMIN]);
+        }
+        if ($attribute == self::ENABLE) {
+            if ($user->isEnabled()) {
+                return false;
+            }
+            return $this->decisionManager->decide($token, [User::ROLE_ADMIN]);
+        }
+        if ($attribute == self::LOCK) {
+            if ($user->isLocked()) {
+                return false;
+            }
+            return $this->decisionManager->decide($token, [User::ROLE_ADMIN]);
+        }
+        if ($attribute == self::UNLOCK) {
+            if (!$user->isLocked()) {
+                return false;
+            }
+            return $this->decisionManager->decide($token, [User::ROLE_ADMIN]);
         }
 
         throw new \RuntimeException();

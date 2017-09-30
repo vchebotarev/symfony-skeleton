@@ -200,6 +200,20 @@ services:
             - { name: security.voter }
 
 # User forms
+    app.user.form.type.create:
+        class: App\User\Form\Type\CreateUserType
+        arguments:
+            - '@app.user.manipulator'
+        tags:
+            - { name: form.type }
+
+    app.user.form.type.edit:
+        class: App\User\Form\Type\EditUserType
+        arguments:
+            - '@app.user.manager'
+        tags:
+            - { name: form.type }
+
     app.user.form.type.change_password:
         class: App\User\Form\Type\ChangePasswordType
         arguments:
@@ -216,10 +230,24 @@ services:
         tags:
             - { name: form.type }
 
+    app.user.form.type.change_username_admin:
+        class: App\User\Form\Type\ChangeUsernameAdminFormType
+        arguments:
+            - '@app.user.manipulator'
+        tags:
+            - { name: form.type }
+
     app.user.form.type.change_email:
         class: App\User\Form\Type\ChangeEmailType
         arguments:
             - '@app.user.manager'
             - '@app.mailer.tokened'
+        tags:
+            - { name: form.type }
+
+    app.user.form.type.change_email_admin:
+        class: App\User\Form\Type\ChangeEmailAdminFormType
+        arguments:
+            - '@app.user.manipulator'
         tags:
             - { name: form.type }

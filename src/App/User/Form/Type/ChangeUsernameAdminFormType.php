@@ -6,45 +6,36 @@ use App\Symfony\Form\AbstractType;
 use App\Symfony\Validator\Constraints\Chain;
 use App\Symfony\Validator\Constraints\EntityExists;
 use App\Symfony\Validator\Constraints\Username;
-use App\Symfony\Validator\Constraints\UserPassword;
-use App\User\UserManager;
 use App\User\UserManipulator;
 use AppBundle\Entity\User;
-use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\FormEvents;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\Callback;
 use Symfony\Component\Validator\Constraints\NotNull;
 use Symfony\Component\Validator\Context\ExecutionContextInterface;
 
-class ChangeUsernameType extends AbstractType
+class ChangeUsernameAdminFormType extends AbstractType
 {
-    /**
-     * @var UserManager
-     */
-    protected $userManager;
-
     /**
      * @var UserManipulator
      */
     protected $userManipulator;
 
     /**
-     * @param UserManager     $userManager
      * @param UserManipulator $userManipulator
      */
-    public function __construct(UserManager $userManager, UserManipulator $userManipulator)
+    public function __construct(UserManipulator $userManipulator)
     {
-        $this->userManager     = $userManager;
         $this->userManipulator = $userManipulator;
     }
 
     /**
-     * @param FormBuilderInterface $builder
-     * @param array                $options
+     * @inheritDoc
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -52,31 +43,28 @@ class ChangeUsernameType extends AbstractType
 
         $builder->setMethod(Request::METHOD_POST)->setAction('');
 
-        $builder->add('password', PasswordType::class, [
-            'label'       => 'Ваш текущий пароль',
-            'constraints' => [
-                new Chain([
-                    new NotNull([
-                        'message' => 'Введите ваш текущий пароль',
-                    ]),
-                    new UserPassword([
-                        'message' => 'Неверный пароль',
-                    ]),
-                ]),
+        $builder->add('username', RepeatedType::class, [
+            'type'            => TextType::class,
+            'first_name'      => 'username',
+            'second_name'     => 'username_confirm',
+            'first_options'   => [
+                'label' => 'Логин',
             ],
-        ]);
-
-        $builder->add('username', TextType::class, [
-            'label'       => 'Логин',
-            'constraints' => [
+            'second_options'  => [
+                'label' => 'Повторите логин',
+            ],
+            'invalid_message' => 'Введенные логины не совпадают',
+            'constraints'     => [
                 new Chain([
                     new NotNull([
-                        'message' => 'Введите username',
+                        'message' => 'Введите новый логин',
                     ]),
                     new Username(),
-                    new Callback(function ($value, ExecutionContextInterface $context) use ($formType) {
-                        if ($formType->userManager->getCurrentUser()->getUsername() == $value) {
-                            $context->buildViolation('Старый и новый логина не должны совпадать')->addViolation();
+                    new Callback(function ($value, ExecutionContextInterface $context) use ($options) {
+                        /** @var User $user */
+                        $user = $options['user'];
+                        if ($user->getUsername() == $value) {
+                            $context->buildViolation('Старый и новый логин не должны совпадать')->addViolation();
                         }
                     }),
                     new EntityExists([
@@ -95,19 +83,31 @@ class ChangeUsernameType extends AbstractType
     }
 
     /**
+     * @inheritDoc
+     */
+    public function configureOptions(OptionsResolver $resolver)
+    {
+        parent::configureOptions($resolver);
+
+        $resolver->setRequired('user');
+        $resolver->addAllowedTypes('user', User::class);
+    }
+
+    /**
      * @param FormEvent $event
      */
     public function postSubmit(FormEvent $event)
     {
         $form = $event->getForm();
+        $data = $event->getData();
 
         if (!$form->isSubmitted() || !$form->isValid()) {
             return;
         }
 
-        $user     = $this->userManager->getCurrentUser();
-        $username = $form->getData()['username'];
-        $this->userManipulator->changeUsername($user, $username);
-    }
+        /** @var User $user */
+        $user = $form->getConfig()->getOption('user');
 
+        $this->userManipulator->changeUsername($user, $data['username']);
+    }
 }
