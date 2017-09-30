@@ -1,0 +1,26 @@
+
+# prefix: /admin/profile
+
+app_admin_profile_index:
+    path:     /
+    defaults: { _controller: AppBundle:Admin/Profile:index }
+
+app_admin_profile_edit:
+    path:     /
+    defaults: { _controller: AppBundle:Admin/Profile:edit }
+
+app_admin_profile_auth_log:
+    path:     /auth-log
+    defaults: { _controller: AppBundle:Admin\Profile:authLog }
+
+app_admin_profile_change_username:
+    path:     /change-username
+    defaults: { _controller: AppBundle:Admin/Profile:changeUsername }
+
+app_admin_profile_change_password:
+    path:     /change-password
+    defaults: { _controller: AppBundle:Admin/Profile:changePassword }
+
+app_admin_profile_change_email:
+    path:     /change-email
+    defaults: { _controller: AppBundle:Admin/Profile:changeEmail }

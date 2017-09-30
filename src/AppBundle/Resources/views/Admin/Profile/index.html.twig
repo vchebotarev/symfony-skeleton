@@ -1,0 +1,24 @@
+
+{% extends '@App/layout/admin.html.twig' %}
+
+{% block page_title %}
+    Профиль
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        <a href="{{ path('app_admin_profile_change_username') }}" class="btn btn-primary">Изменить логин</a>
+        <br>
+        <br>
+        <a href="{{ path('app_admin_profile_change_password') }}" class="btn btn-primary">Изменить пароль</a>
+        {% if is_granted('user.change.email') %}
+            <br>
+            <br>
+            <a href="{{ path('app_admin_profile_change_email') }}" class="btn btn-primary">Изменить e-mail</a>
+        {% endif %}
+    </p>
+
+    {{ dump(app.user) }}
+
+{% endblock %}

@@ -53,6 +53,7 @@ class ChangeEmailType extends AbstractType
         $builder->setMethod(Request::METHOD_POST)->setAction('');
 
         $builder->add('password', PasswordType::class, [
+            'label'       => 'Ваш текущий пароль',
             'constraints' => [
                 new Chain([
                     new NotNull([

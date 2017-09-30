@@ -5,6 +5,11 @@ app_admin_default_index:
     path:     /
     defaults: { _controller: AppBundle:Admin/Default:index }
 
+# Profile
+app_admin_profile:
+    prefix:   /profile
+    resource: 'admin/profile.yml'
+
 # Users
 app_admin_user:
     prefix:   /user
