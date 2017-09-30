@@ -5,8 +5,8 @@ namespace AppBundle\Controller\Admin;
 use App\Symfony\Controller\AbstractController;
 use App\User\Form\Type\ChangeEmailAdminFormType;
 use App\User\Form\Type\ChangeUsernameAdminFormType;
-use App\User\Form\Type\CreateUserType;
-use App\User\Form\Type\EditUserType;
+use App\User\Form\Type\CreateUserFormType;
+use App\User\Form\Type\EditUserFormType;
 use App\User\Security\UserVoter;
 use AppBundle\Entity\User;
 use AppBundle\Entity\UserAuthLog;
@@ -77,7 +77,7 @@ class UserController extends AbstractController
     {
         $this->denyAccessUnlessGranted(UserVoter::CREATE);
 
-        $form = $this->createForm(CreateUserType::class);
+        $form = $this->createForm(CreateUserFormType::class);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -106,7 +106,7 @@ class UserController extends AbstractController
             return $this->redirectToRoute('app_admin_profile_edit');
         }
 
-        $form = $this->createForm(EditUserType::class, [
+        $form = $this->createForm(EditUserFormType::class, [
             'fio_f'         => $user->getFioF(),
             'fio_i'         => $user->getFioI(),
             'fio_o'         => $user->getFioO(),

@@ -20,7 +20,7 @@ use Symfony\Component\Validator\Constraints\Email;
 use Symfony\Component\Validator\Constraints\NotNull;
 use Symfony\Component\Validator\Context\ExecutionContextInterface;
 
-class ChangeEmailType extends AbstractType
+class ChangeEmailFormType extends AbstractType
 {
     /**
      * @var UserManager

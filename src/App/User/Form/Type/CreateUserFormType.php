@@ -4,37 +4,34 @@ namespace App\User\Form\Type;
 
 use App\Symfony\Form\AbstractType;
 use App\Symfony\Validator\Constraints\Chain;
+use App\Symfony\Validator\Constraints\EntityExists;
 use App\Symfony\Validator\Constraints\Password;
-use App\Symfony\Validator\Constraints\UserPassword;
-use App\User\UserManager;
+use App\Symfony\Validator\Constraints\Username;
 use App\User\UserManipulator;
+use AppBundle\Entity\User;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\FormEvents;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Validator\Constraints\Email;
 use Symfony\Component\Validator\Constraints\NotNull;
 
-class ChangePasswordType extends AbstractType
+class CreateUserFormType extends AbstractType
 {
-    /**
-     * @var UserManager
-     */
-    protected $userManager;
-
     /**
      * @var UserManipulator
      */
     protected $userManipulator;
 
     /**
-     * @param UserManager     $userManager
      * @param UserManipulator $userManipulator
      */
-    public function __construct(UserManager $userManager, UserManipulator $userManipulator)
+    public function __construct(UserManipulator $userManipulator)
     {
-        $this->userManager     = $userManager;
         $this->userManipulator = $userManipulator;
     }
 
@@ -48,20 +45,35 @@ class ChangePasswordType extends AbstractType
 
         $builder->setMethod(Request::METHOD_POST)->setAction('');
 
-        $builder->add('password', PasswordType::class, [
-            'label'       => 'Ваш текущий пароль',
+        $builder->add('username', TextType::class, [
+            'label'       => 'Логин',
             'constraints' => [
                 new Chain([
-                    new NotNull([
-                        'message' => 'Введите ваш текущий пароль',
-                    ]),
-                    new UserPassword([
-                        'message' => 'Неверный пароль',
+                    new Username(),
+                    new EntityExists([
+                        'notExistMode' => true,
+                        'message'      => 'Пользователь с таким логином уже есть в системе',
+                        'entityClass'  => User::class,
+                        'field'        => 'username',
                     ]),
                 ]),
             ],
         ]);
-        $builder->add('password_new', RepeatedType::class, [
+        $builder->add('email', EmailType::class, [
+            'label'       => 'E-mail',
+            'constraints' => [
+                new Chain([
+                    new Email(),
+                    new EntityExists([
+                        'notExistMode' => true,
+                        'message'      => 'Пользователь с таким e-mail уже есть в системе',
+                        'entityClass'  => User::class,
+                        'field'        => 'email',
+                    ]),
+                ]),
+            ],
+        ]);
+        $builder->add('password', RepeatedType::class, [
             'type'            => PasswordType::class,
             'first_name'      => 'password',
             'second_name'     => 'password_confirm',
@@ -75,13 +87,9 @@ class ChangePasswordType extends AbstractType
             'constraints'     => [
                 new Chain([
                     new NotNull([
-                        'message' => 'Введите новый пароль',
+                        'message' => 'Введите пароль',
                     ]),
                     new Password(),
-                    new UserPassword([
-                        'notValidMode' => true,
-                        'message'      => 'Текущий и новый пароль не должны совпадать',
-                    ]),
                 ]),
             ],
         ]);
@@ -102,9 +110,11 @@ class ChangePasswordType extends AbstractType
             return;
         }
 
-        $user     = $this->userManager->getCurrentUser();
-        $password = $form->getData()['password_new'];
-        $this->userManipulator->changePassword($user, $password);
+        $username = $form->getData()['username'];
+        $email    = $form->getData()['email'];
+        $password = $form->getData()['password'];
+
+        $this->userManipulator->create($username, $email, $password);
     }
 
 }

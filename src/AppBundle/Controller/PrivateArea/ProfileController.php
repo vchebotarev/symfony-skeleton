@@ -3,9 +3,9 @@
 namespace AppBundle\Controller\PrivateArea;
 
 use App\Symfony\Controller\AbstractController;
-use App\User\Form\Type\ChangeEmailType;
-use App\User\Form\Type\ChangePasswordType;
-use App\User\Form\Type\ChangeUsernameType;
+use App\User\Form\Type\ChangeEmailFormType;
+use App\User\Form\Type\ChangePasswordFormType;
+use App\User\Form\Type\ChangeUsernameFormType;
 use App\User\Security\UserVoter;
 use AppBundle\Entity\UserAuthLog;
 use Symfony\Component\HttpFoundation\Request;
@@ -42,7 +42,7 @@ class ProfileController extends AbstractController
      */
     public function changeUsernameAction(Request $request)
     {
-        $form = $this->createForm(ChangeUsernameType::class);
+        $form = $this->createForm(ChangeUsernameFormType::class);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -60,7 +60,7 @@ class ProfileController extends AbstractController
      */
     public function changePasswordAction(Request $request)
     {
-        $form = $this->createForm(ChangePasswordType::class);
+        $form = $this->createForm(ChangePasswordFormType::class);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -84,7 +84,7 @@ class ProfileController extends AbstractController
             return $this->render('@App/PrivateArea/Profile/change_email_error.html.twig', [], $response);
         }
 
-        $form = $this->createForm(ChangeEmailType::class);
+        $form = $this->createForm(ChangeEmailFormType::class);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

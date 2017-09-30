@@ -20,7 +20,7 @@ use Symfony\Component\Validator\Constraints\Callback;
 use Symfony\Component\Validator\Constraints\NotNull;
 use Symfony\Component\Validator\Context\ExecutionContextInterface;
 
-class ChangeUsernameType extends AbstractType
+class ChangeUsernameFormType extends AbstractType
 {
     /**
      * @var UserManager

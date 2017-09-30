@@ -199,21 +199,21 @@ services:
 
 # User forms
     app.user.form.type.create:
-        class: App\User\Form\Type\CreateUserType
+        class: App\User\Form\Type\CreateUserFormType
         arguments:
             - '@app.user.manipulator'
         tags:
             - { name: form.type }
 
     app.user.form.type.edit:
-        class: App\User\Form\Type\EditUserType
+        class: App\User\Form\Type\EditUserFormType
         arguments:
             - '@app.user.manager'
         tags:
             - { name: form.type }
 
     app.user.form.type.change_password:
-        class: App\User\Form\Type\ChangePasswordType
+        class: App\User\Form\Type\ChangePasswordFormType
         arguments:
             - '@app.user.manager'
             - '@app.user.manipulator'
@@ -221,7 +221,7 @@ services:
             - { name: form.type }
 
     app.user.form.type.change_username:
-        class: App\User\Form\Type\ChangeUsernameType
+        class: App\User\Form\Type\ChangeUsernameFormType
         arguments:
             - '@app.user.manager'
             - '@app.user.manipulator'
@@ -236,7 +236,7 @@ services:
             - { name: form.type }
 
     app.user.form.type.change_email:
-        class: App\User\Form\Type\ChangeEmailType
+        class: App\User\Form\Type\ChangeEmailFormType
         arguments:
             - '@app.user.manager'
             - '@app.mailer.tokened'
