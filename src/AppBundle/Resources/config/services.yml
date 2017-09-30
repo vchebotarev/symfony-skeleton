@@ -81,8 +81,6 @@ services:
         class: App\Auth\Form\Type\ResetFormType
         arguments:
             - '@app.user.manipulator'
-            - '@app.user.token_manager'
-            - '@request_stack'
             - '@app.auth.login_manager'
         tags:
             - { name: form.type }

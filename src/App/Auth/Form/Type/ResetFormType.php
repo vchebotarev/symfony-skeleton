@@ -8,16 +8,14 @@ use App\Symfony\Validator\Constraints\Chain;
 use App\Symfony\Validator\Constraints\Password;
 use App\Symfony\Validator\Constraints\UserPassword;
 use App\User\UserManipulator;
-use App\User\UserTokenManager;
 use AppBundle\Entity\User;
-use AppBundle\Entity\UserToken;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\FormEvents;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\RequestStack;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\NotNull;
 
 class ResetFormType extends AbstractType
@@ -28,31 +26,17 @@ class ResetFormType extends AbstractType
     protected $userManipulator;
 
     /**
-     * @var UserTokenManager
-     */
-    protected $userTokenManager;
-
-    /**
-     * @var RequestStack
-     */
-    protected $requestStack;
-
-    /**
      * @var LoginManager
      */
     protected $loginManager;
 
     /**
      * @param UserManipulator  $userManipulator
-     * @param UserTokenManager $userTokenManager
-     * @param RequestStack     $requestStack
      * @param LoginManager     $loginManager
      */
-    public function __construct(UserManipulator $userManipulator, UserTokenManager $userTokenManager, RequestStack $requestStack, LoginManager $loginManager)
+    public function __construct(UserManipulator $userManipulator, LoginManager $loginManager)
     {
         $this->userManipulator  = $userManipulator;
-        $this->userTokenManager = $userTokenManager;
-        $this->requestStack     = $requestStack;
         $this->loginManager     = $loginManager;
     }
 
@@ -83,7 +67,7 @@ class ResetFormType extends AbstractType
                     ]),
                     new Password(),
                     new UserPassword([
-                        'user'         => $this->getUserFromRequestToken(),
+                        'user'         => $options['user'],
                         'notValidMode' => true,
                         'message'      => 'Новый пароль не должны совпадать с текущим',
                     ]),
@@ -97,15 +81,14 @@ class ResetFormType extends AbstractType
     }
 
     /**
-     * @return User
+     * @inheritDoc
      */
-    protected function getUserFromRequestToken()
+    public function configureOptions(OptionsResolver $resolver)
     {
-        //это хак, чтобы добыть юзера, проще было бы сделать хендлер для формы, но не хочу плодить классы
-        $tokenHash = $this->requestStack->getCurrentRequest()->attributes->get('_route_params')['token'];
-        $userToken = $this->userTokenManager->findTokenByHashAndType($tokenHash, UserToken::TYPE_RESET_PASSWORD);
+        parent::configureOptions($resolver);
 
-        return $userToken->getUser();
+        $resolver->setRequired('user');
+        $resolver->addAllowedTypes('user', User::class);
     }
 
     /**
@@ -118,7 +101,7 @@ class ResetFormType extends AbstractType
             return;
         }
 
-        $user = $this->getUserFromRequestToken();
+        $user = $form->getConfig()->getOption('user');
 
         $this->userManipulator->enable($user); //Подтверждаем юзера
         $this->userManipulator->changePassword($user, $event->getForm()->getData()['password']);

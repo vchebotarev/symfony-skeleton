@@ -52,7 +52,9 @@ class ResetController extends AbstractController
             return $this->render('@App/Auth/Reset/reset_error.html.twig', [], $response);
         }
 
-        $formReset = $this->createForm(ResetFormType::class);
+        $formReset = $this->createForm(ResetFormType::class, null, [
+            'user' => $userToken->getUser(),
+        ]);
         $formReset->handleRequest($request);
 
         if ($formReset->isSubmitted() && $formReset->isValid()) {
