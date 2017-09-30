@@ -1,0 +1,7 @@
+
+services:
+
+# Chebur Search
+    app.chebur.search.manager:
+        class: App\Chebur\Search\SearchManager
+        parent: chebur.search.manager.default

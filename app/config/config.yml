@@ -102,3 +102,17 @@ swiftmailer:
 #    spool: #не забываем  вызывать swiftmailer:spool:send #пока отключаем spool чтобы сразу происходила отправка
 #        type: memory #это не работает в винде
 #        type: file
+
+# Chebur Search
+chebur_search:
+    param_names:
+        page:  page
+        limit: limit
+        sort:  sort
+        order: order
+    services:
+        manager: app.chebur.search.manager
+    templates:
+        pagination: '@CheburSearch/Pagination/bs4beta.html.twig'
+        limitation: '@CheburSearch/Limitation/bs4beta.html.twig'
+        sorting:    '@CheburSearch/Sorting/bs4beta.html.twig'

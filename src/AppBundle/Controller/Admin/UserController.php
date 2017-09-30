@@ -2,11 +2,13 @@
 
 namespace AppBundle\Controller\Admin;
 
+use App\Search\Param;
 use App\Symfony\Controller\AbstractController;
 use App\User\Form\Type\ChangeEmailAdminFormType;
 use App\User\Form\Type\ChangeUsernameAdminFormType;
 use App\User\Form\Type\CreateUserFormType;
 use App\User\Form\Type\EditUserFormType;
+use App\User\Search\Form\Type\SearchAdminFormType;
 use App\User\Security\UserVoter;
 use AppBundle\Entity\User;
 use AppBundle\Entity\UserAuthLog;
@@ -26,10 +28,36 @@ class UserController extends AbstractController
             throw $this->createAccessDeniedException();
         }
 
-        $users = $this->getEm()->getRepository(User::class)->findAll();
+        $form = $this->createForm(SearchAdminFormType::class);
+        $form->handleRequest($request);
+
+        $search = $this->get('chebur.search.manager')
+            ->createBuilderAdmin()
+            ->setItemsSource($this->get('app.user.search.admin'), $form->getData())
+            ->setSorts([
+                Param::CREATED  => [
+                    Param::DESC => 'Регистрация свежие',
+                    Param::ASC  => 'Регистрация старые',
+                ],
+                Param::USERNAME => [
+                    Param::ASC  => 'Username A-Я',
+                    Param::DESC => 'Username Я-A',
+                ],
+                Param::EMAIL    => [
+                    Param::ASC  => 'E-mail A-Я',
+                    Param::DESC => 'E-mail Я-A',
+                ],
+                //todo
+                //Param::LOGIN    => [
+                //    Param::ASC  => 'Последний вход давно',
+                //    Param::DESC => 'Последний вход свежие',
+                //],
+            ])
+            ->build($request);
 
         return $this->render('@App/Admin/User/list.html.twig', [
-            'users' => $users,
+            'form'   => $form->createView(),
+            'search' => $search,
         ]);
     }
 

@@ -1,5 +1,6 @@
 
 imports:
+    - { resource: services/chebur.yml }
     - { resource: services/monolog.yml }
     - { resource: services/symfony.yml }
 
@@ -196,6 +197,17 @@ services:
             - '@app.user.token_manager'
         tags:
             - { name: security.voter }
+
+# User search
+    app.user.search.admin:
+        class: App\User\Search\UserSearchAdmin
+        arguments:
+            - '@doctrine.orm.entity_manager'
+
+    app.user.search.form.type.admin:
+        class: App\User\Search\Form\Type\SearchAdminFormType
+        tags:
+            - { name: form.type }
 
 # User forms
     app.user.form.type.create:

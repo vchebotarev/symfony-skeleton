@@ -21,23 +21,16 @@
     {# todo navbar collapse #}
 
     <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
+            <a class="nav-link" href="{{ path('app_admin_default_index') }}">Home</a>
         </li>
         <li class="nav-item dropdown">
             <button class="btn btn-link nav-link dropdown-toggle" type="button" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown link
+                Пользователи
             </button>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
+                <a class="dropdown-item" href="{{ path('app_admin_user_list') }}">Список</a>
+                <a class="dropdown-item" href="{{ path('app_admin_auth_log_list') }}">История входов</a>
             </div>
         </li>
     </ul>

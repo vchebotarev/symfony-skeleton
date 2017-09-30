@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "2e2b07308f6cc0fa9f320b7d1addf46e",
+    "content-hash": "4117c7082a7ac5d043af19cbf1c11e2a",
     "packages": [
         {
             "name": "beberlei/DoctrineExtensions",
@@ -575,6 +575,61 @@
                 "symfony3"
             ],
             "time": "2017-09-01T12:34:24+00:00"
+        },
+        {
+            "name": "chebur/search-bundle",
+            "version": "0.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/vchebotarev/search-bundle.git",
+                "reference": "152afd34bfb1f9d4f1ee1de553a07b75e249c46a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/vchebotarev/search-bundle/zipball/152afd34bfb1f9d4f1ee1de553a07b75e249c46a",
+                "reference": "152afd34bfb1f9d4f1ee1de553a07b75e249c46a",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Chebur\\SearchBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vladimir Chebotarev",
+                    "email": "v.yu.chebotarev@mail.ru",
+                    "homepage": "http://github.com/vchebotarev"
+                }
+            ],
+            "description": "Symfony 2-3 search, pagination, limitation and sorting bundle",
+            "homepage": "https://github.com/vchebotarev",
+            "keywords": [
+                "Symfony2",
+                "bundle",
+                "filter",
+                "limit",
+                "limitation",
+                "offset",
+                "order",
+                "pager",
+                "pagination",
+                "paginator",
+                "search",
+                "sort",
+                "sorting",
+                "symfony",
+                "symfony3"
+            ],
+            "time": "2017-10-07T08:24:01+00:00"
         },
         {
             "name": "chebur/sphinx-bundle",

@@ -26,6 +26,7 @@ class AppKernel extends Kernel
             new Snc\RedisBundle\SncRedisBundle(),
             new Matthias\SymfonyConsoleForm\Bundle\SymfonyConsoleFormBundle(),
             new Chebur\LoginFormBundle\CheburLoginFormBundle(),
+            new Chebur\SearchBundle\CheburSearchBundle(),
 
             new AppBundle\AppBundle(),
         ];
