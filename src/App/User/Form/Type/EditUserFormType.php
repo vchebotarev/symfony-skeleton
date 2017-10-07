@@ -2,7 +2,7 @@
 
 namespace App\User\Form\Type;
 
-use App\Symfony\Form\AbstractType;
+use App\Symfony\Form\AbstractFormType;
 use App\User\GenderedInterface;
 use App\User\UserManager;
 use AppBundle\Entity\User;
@@ -14,7 +14,7 @@ use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\FormEvents;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class EditUserFormType extends AbstractType
+class EditUserFormType extends AbstractFormType
 {
     /**
      * @var UserManager

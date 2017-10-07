@@ -2,7 +2,7 @@
 
 namespace App\Auth\Form\Type;
 
-use App\Symfony\Form\AbstractType;
+use App\Symfony\Form\AbstractFormType;
 use App\Symfony\Validator\Constraints\Chain;
 use App\Symfony\Validator\Constraints\EntityExists;
 use App\Symfony\Validator\Constraints\Password;
@@ -23,7 +23,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Validator\Constraints\Email;
 use Symfony\Component\Validator\Constraints\NotNull;
 
-class RegistrationFormType extends AbstractType
+class RegistrationFormType extends AbstractFormType
 {
     /**
      * @var UserManipulator

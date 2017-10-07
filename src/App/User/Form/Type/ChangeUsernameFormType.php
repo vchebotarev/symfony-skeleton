@@ -2,7 +2,7 @@
 
 namespace App\User\Form\Type;
 
-use App\Symfony\Form\AbstractType;
+use App\Symfony\Form\AbstractFormType;
 use App\Symfony\Validator\Constraints\Chain;
 use App\Symfony\Validator\Constraints\EntityExists;
 use App\Symfony\Validator\Constraints\Username;
@@ -20,7 +20,7 @@ use Symfony\Component\Validator\Constraints\Callback;
 use Symfony\Component\Validator\Constraints\NotNull;
 use Symfony\Component\Validator\Context\ExecutionContextInterface;
 
-class ChangeUsernameFormType extends AbstractType
+class ChangeUsernameFormType extends AbstractFormType
 {
     /**
      * @var UserManager

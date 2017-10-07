@@ -3,7 +3,7 @@
 namespace App\Auth\Form\Type;
 
 use App\Auth\LoginManager;
-use App\Symfony\Form\AbstractType;
+use App\Symfony\Form\AbstractFormType;
 use App\Symfony\Validator\Constraints\Chain;
 use App\Symfony\Validator\Constraints\Password;
 use App\Symfony\Validator\Constraints\UserPassword;
@@ -18,7 +18,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\NotNull;
 
-class ResetFormType extends AbstractType
+class ResetFormType extends AbstractFormType
 {
     /**
      * @var UserManipulator

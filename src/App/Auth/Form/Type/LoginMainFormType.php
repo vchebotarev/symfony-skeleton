@@ -3,7 +3,7 @@
 namespace App\Auth\Form\Type;
 
 use App\Email\EmailHelper;
-use App\Symfony\Form\AbstractType;
+use App\Symfony\Form\AbstractFormType;
 use App\Symfony\Validator\Constraints\Chain;
 use App\Symfony\Validator\Constraints\Password;
 use App\Symfony\Validator\Constraints\Username;
@@ -19,7 +19,7 @@ use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Context\ExecutionContextInterface;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
-class LoginMainFormType extends AbstractType
+class LoginMainFormType extends AbstractFormType
 {
     /**
      * @var RouterInterface

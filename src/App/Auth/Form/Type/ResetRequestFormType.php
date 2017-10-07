@@ -3,7 +3,7 @@
 namespace App\Auth\Form\Type;
 
 use App\Mailer\MailerTokened;
-use App\Symfony\Form\AbstractType;
+use App\Symfony\Form\AbstractFormType;
 use App\Symfony\Validator\Constraints\Chain;
 use App\Symfony\Validator\Constraints\EntityExists;
 use App\User\UserManager;
@@ -20,7 +20,7 @@ use Symfony\Component\Validator\Constraints\Email;
 use Symfony\Component\Validator\Constraints\NotNull;
 use Symfony\Component\Validator\Context\ExecutionContextInterface;
 
-class ResetRequestFormType extends AbstractType
+class ResetRequestFormType extends AbstractFormType
 {
     /**
      * @var UserManager

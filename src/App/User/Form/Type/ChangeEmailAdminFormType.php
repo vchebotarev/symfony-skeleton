@@ -2,7 +2,7 @@
 
 namespace App\User\Form\Type;
 
-use App\Symfony\Form\AbstractType;
+use App\Symfony\Form\AbstractFormType;
 use App\Symfony\Validator\Constraints\Chain;
 use App\Symfony\Validator\Constraints\EntityExists;
 use App\User\UserManipulator;
@@ -19,7 +19,7 @@ use Symfony\Component\Validator\Constraints\Email;
 use Symfony\Component\Validator\Constraints\NotNull;
 use Symfony\Component\Validator\Context\ExecutionContextInterface;
 
-class ChangeEmailAdminFormType extends AbstractType
+class ChangeEmailAdminFormType extends AbstractFormType
 {
     /**
      * @var UserManipulator

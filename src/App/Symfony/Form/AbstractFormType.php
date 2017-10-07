@@ -2,10 +2,13 @@
 
 namespace App\Symfony\Form;
 
-use Symfony\Component\Form\AbstractType as BaseAbstractType;
+use Symfony\Component\Form\AbstractType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-abstract class AbstractType extends BaseAbstractType
+/**
+ * Базовый класс для создания форм, но не контролов
+ */
+abstract class AbstractFormType extends AbstractType
 {
     /**
      * @inheritdoc
