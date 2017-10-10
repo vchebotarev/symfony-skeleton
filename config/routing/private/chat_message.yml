@@ -1,0 +1,52 @@
+
+# prefix: /private/chat/message
+
+app_private_chat_message_list:
+    path:     /list/{chatId}
+    defaults: { _controller: App\Controller\PrivateArea\ChatMessageController:listAction }
+    requirements:
+        chatId: '\d+'
+    options:
+        expose: true
+    #todo ajax only
+
+app_private_chat_message_create:
+    path:     /create/{chatId}
+    methods:  ['POST']
+    defaults: { _controller: App\Controller\PrivateArea\ChatMessageController:createAction }
+    requirements:
+        chatId: '\d+'
+    #todo ajax only
+
+app_private_chat_message_create_by_user:
+    path:     /create/user/{userId}
+    defaults: { _controller: App\Controller\PrivateArea\ChatMessageController:createByUserAction }
+    requirements:
+        userId: '\d+'
+
+app_private_chat_message_delete:
+    path:     /delete/{id}
+    methods:  ['POST']
+    defaults: { _controller: App\Controller\PrivateArea\ChatMessageController:deleteAction }
+    requirements:
+        id: '\d+'
+    options:
+        expose: true
+    #todo ajax only
+
+app_private_chat_message_read:
+    path:     /read
+    defaults: { _controller: App\Controller\PrivateArea\ChatMessageController:readAction }
+    #todo ajax only
+
+app_private_chat_message_is_read:
+    path:     /is-read
+    defaults: { _controller: App\Controller\PrivateArea\ChatMessageController:isReadAction }
+    #todo ajax only
+
+app_private_chat_message_count_unread:
+    path:     /count-unread
+    defaults: { _controller: App\Controller\PrivateArea\ChatMessageController:countUnreadAction }
+    options:
+        expose: true
+    #todo ajax only

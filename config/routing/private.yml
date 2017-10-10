@@ -14,3 +14,13 @@ app_private_profile:
 app_private_user:
     prefix:   /user
     resource: 'private/user.yml'
+
+# Chats
+app_private_chat:
+    prefix:   /chat
+    resource: 'private/chat.yml'
+
+# Chat messages
+app_private_chat_message:
+    prefix:   /chat/message
+    resource: 'private/chat_message.yml'

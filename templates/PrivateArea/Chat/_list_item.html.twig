@@ -1,0 +1,57 @@
+
+{#
+    @var ChatSearchItem $chat
+#}
+
+<div class="chat-list-item p-2 border {% if chat.countUnread > 0 %} bg-secondary {% endif %}" data-id="{{ chat.id }}">
+    <div class="row">
+        <div class="col-1 ava">
+            {% if chat.users|length == 2 %}
+                {% for u in chat.users %}
+                    {% if u.id != app.user.id %}
+                        <img src="http://symfony.com/images/v5/logos/sf-positive.svg" class="img-fluid rounded-circle">{# todo ava #}
+                    {% endif %}
+                {% endfor %}
+            {% else %}
+                {% set i = 0 %}
+                {% for u in chat.users %}
+                    {% if u.id != app.user.id and i < 3 %}
+                        <img src="http://symfony.com/images/v5/logos/sf-positive.svg" class="img-fluid rounded-circle w-25">{# todo ava #}
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        </div>
+        <div class="col">
+            <div class="row">
+                <div class="col">
+                    {% if chat.users|length == 2 %}
+                        {% for u in chat.users %}
+                            {% if u.id != app.user.id %}
+                                <a href="{{ path('app_private_user_view', {'id': u.id}) }}" title="Профиль пользователя {{ u.username }}">{{ u.username }}</a>
+                            {% endif %}
+                        {% endfor %}
+                    {% else %}
+                        {{ chat.name }}
+                    {% endif %}
+                </div>
+                <div class="col">
+                    {% if chat.lastMessage %}
+                        {{ chat.lastMessage.dateCreated|date }}
+                    {% endif %}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col {% if not chat.lastMessage.isRead %} bg-secondary {% endif %}">
+                    {{ chat.lastMessage.body|slice(0, 30) }}
+                </div>
+                <div class="col">
+                    <span class="badge badge-warning" title="Непрочитанных сообщений">{{ chat.countUnread }}</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-1">
+            <a class="btn btn-success" href="{{ path('app_private_chat_view', {'id': chat.id}) }}"><i class="fa fa-eye" title="Просмотреть чат"></i></a>
+            <button class="btn btn-link chat-delete" title="Удалить чат"><i class="fa fa-remove"></i></button>
+        </div>
+    </div>
+</div>

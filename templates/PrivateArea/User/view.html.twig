@@ -10,6 +10,10 @@
     <h1>{{ block('page_title') }}</h1>
 
     <p>
+        {% if is_granted('chat.message.send', user) %}
+            <a class="btn btn-secondary" href="{{ path('app_private_chat_message_create_by_user', {'userId': user.id }) }}">Написать сообщение</a>
+        {% endif %}
+
         {{ dump(user) }}
     </p>
 

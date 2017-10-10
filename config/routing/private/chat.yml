@@ -1,0 +1,39 @@
+
+# prefix: /private/chat
+
+app_private_chat_index:
+    path:     /
+    defaults: { _controller: FrameworkBundle:Redirect:redirect, route: app_private_chat_list, permanent: true }
+
+app_private_chat_list:
+    path:     /list
+    defaults: { _controller: App\Controller\PrivateArea\ChatController:listAction }
+    options:
+        expose: true
+
+app_private_chat_view:
+    path:     /{id}
+    defaults: { _controller: App\Controller\PrivateArea\ChatController:viewAction }
+    requirements:
+        id: '\d+'
+
+app_private_chat_delete:
+    path:     /delete/{id}
+    methods:  ['POST']
+    defaults: { _controller: App\Controller\PrivateArea\ChatController:deleteAction }
+    requirements:
+        id: '\d+'
+    options:
+        expose: true
+    #todo ajax only
+
+app_private_chat_count_unread:
+    path:     /count-unread
+    defaults: { _controller: App\Controller\PrivateArea\ChatController:countUnreadAction }
+    options:
+        expose: true
+    #todo ajax only
+
+#todo добавление пользователей в чат
+#todo выход из многопользовательского чата
+#todo изменение название многопользовательского чата

@@ -14,6 +14,7 @@ class Param
 
     const Q       = 'q';
     const CREATED = 'created';
+    const UPDATED = 'updated';
     const LOGIN   = 'login';
 
     const ENABLED = 'enabled';

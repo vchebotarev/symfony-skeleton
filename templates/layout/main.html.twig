@@ -24,9 +24,44 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link 1</a>
-                </li>
+                {% if app.user %}
+                    <li class="nav-item">
+                        {% set chat_unread = count_chat_unread() %}
+                        {% set chat_message_unread = count_chat_message_unread() %}
+                        <a class="nav-link" href="{{ path('app_private_chat_index') }}">
+                            Сообщения
+                            <span class="chat-unread-count {% if chat_unread == 0 %}d-none{% endif %} badge badge-primary">{{ chat_unread }}</span>
+                            <span class="chat-message-unread-count {% if chat_message_unread == 0 %}d-none{% endif %} badge badge-primary">{{ chat_message_unread }}</span>
+                        </a>
+                    </li>
+                    <script type="text/javascript">
+                        $(document).ready(function(){
+                            //обновление количества непрочитанных чатов + сообщений
+                            setInterval(function() {
+                                $.get(Routing.generate('app_private_chat_count_unread'), function (data) {
+                                    var c = data.count;
+                                    var badge = $('.chat-unread-count');
+                                    badge.html(c);
+                                    if (c > 0) {
+                                        badge.removeClass('d-none');
+                                    } else {
+                                        badge.addClass('d-none');
+                                    }
+                                }, 'json');
+                                $.get(Routing.generate('app_private_chat_message_count_unread'), function (data) {
+                                    var c = data.count;
+                                    var badge = $('.chat-message-unread-count');
+                                    badge.html(c);
+                                    if (c > 0) {
+                                        badge.removeClass('d-none');
+                                    } else {
+                                        badge.addClass('d-none');
+                                    }
+                                }, 'json');
+                            }, 60000);
+                        });
+                    </script>
+                {% endif %}
                 <li class="nav-item">
                     <a class="nav-link" href="#">Link 2</a>
                 </li>

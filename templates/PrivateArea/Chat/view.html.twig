@@ -1,0 +1,80 @@
+
+{% extends 'layout/main.html.twig' %}
+
+{% block page_title %}
+    Диалог
+{% endblock %}
+
+{% block header_assets %}
+    {{ parent() }}
+    <script src="{{ asset('js/chat.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset('css/chat.css') }}">
+{% endblock %}
+
+{% block content %}
+
+    <div class="border">
+        <div class="row">
+            <div class="col-1">
+                <a href="{{ path('app_private_chat_list') }}" title="К списку чатов"><i class="fa fa-chevron-left"></i></a>
+            </div>
+            <div class="col-1">
+                {% if chat.users|length == 2 %}
+                    {% for u in chat.users %}
+                        {% if u.user.id != app.user.id %}
+                            <img src="http://symfony.com/images/v5/logos/sf-positive.svg" class="img-fluid rounded-circle">{# todo ava #}
+                        {% endif %}
+                    {% endfor %}
+                {% else %}
+                    {% for u in chat.users %}
+                        {% if u.id != app.user.id and loop.index0 < 3 %}
+                            <img src="http://symfony.com/images/v5/logos/sf-positive.svg" class="img-fluid rounded-circle w-25">{# todo ava #}
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+            </div>
+            <div class="col">
+                {% if chat.users|length == 2 %}
+                    {% for u in chat.users %}
+                        {% if u.user.id != app.user.id %}
+                            <a href="{{ path('app_private_user_view', {'id': u.user.id}) }}">{{ u.user.username }}</a>
+                        {% endif %}
+                    {% endfor %}
+                {% else %}
+                    {{ chat.name }}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <h2 class="chat-list-empty text-center {% if search.items|length > 0 %}d-none{% endif %}">
+        Cписок сообщений пуст
+    </h2>
+
+    <button class="btn btn-secondary w-100 chat-message-list-more {% if search.totalCount <= search.items|length %}d-none{% endif %}" type="button" data-chat-id="{{ chat.id }}">
+        Показать ещё
+    </button>
+
+    <div class="chat-message-list">
+        {% include 'PrivateArea/ChatMessage/_list.html.twig' %}
+    </div>
+
+    {% if is_granted('chat.message.send', chat) %}
+        <div class="bg-light border p-2"> {# todo пристыковать к самому низу блока #}
+            {{ form_start(form, {'attr': {'class': 'chat-message-create'}}) }}
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            {{ form_widget(form.body, {'attr': {'class': 'form-control'}}) }}
+                            <div class="invalid-feedback"></div>
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <button type="submit" class="btn btn-primary">Отправить</button>
+                    </div>
+                </div>
+            {{ form_end(form) }}
+        </div>
+    {% endif %}
+
+{% endblock %}

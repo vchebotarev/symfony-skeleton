@@ -1,0 +1,31 @@
+
+{#
+    @var ChatMessageSearchItem $message
+#}
+
+<div class="chat-message-list-item p-2 border
+                {% if not message.isRead %} unread {% endif %}
+                {% if message.user.id == app.user.id %} my {% endif %}
+                " data-id="{{ message.id }}">
+    <div class="row">
+        <div class="col-1">
+            <img src="http://symfony.com/images/v5/logos/sf-positive.svg" class="img-fluid rounded-circle">{# todo ava #}
+        </div>
+        <div class="col">
+            <div class="row">
+                <div class="col">
+                    <a href="{{ path('app_private_user_view', {'id': message.user.id}) }}">{{ message.user.username }}</a>
+                </div>
+                <div class="col-auto text-right">
+                    {{ message.dateCreated|date }}
+                </div>
+            </div>
+            <div class="col">
+                {{ message.body }}
+            </div>
+        </div>
+        <div class="col-auto">
+            <button class="btn btn-link chat-message-delete"><i class="fa fa-remove"></i></button>
+        </div>
+    </div>
+</div>

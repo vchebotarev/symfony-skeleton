@@ -290,3 +290,63 @@ services:
             - '@app.user.manipulator'
         tags:
             - { name: form.type }
+
+# Chat
+    app.chat.manager:
+        class: App\Chat\ChatManager
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '@app.user.manager'
+
+    app.chat.security.voter:
+        class: App\Chat\Security\ChatVoter
+        tags:
+            - { name: security.voter }
+
+    app.chat.counter:
+        class: App\Chat\ChatCounter
+        arguments:
+            - '@doctrine.orm.entity_manager'
+
+    app.chat.search.chats:
+        class: App\Chat\Search\ChatsItemsSource
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '@app.user.manager'
+            - '@app.chat.search.transformer'
+
+    app.chat.search.transformer:
+        class: App\Chat\Search\ChatSearchItemTransformer
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '@app.user.manager'
+            - '@app.chat.message.search.transformer'
+
+    app.chat.twig.extension:
+        class: App\Twig\Extension\ChatExtension
+        arguments:
+            - '@app.chat.counter'
+            - '@app.user.manager'
+        tags:
+            - { name: twig.extension }
+
+# Char messages
+    app.chat.message.form.type.create:
+        class: App\Chat\Message\Form\Type\ChatMessageCreateFormType
+        arguments:
+            - '@app.chat.manager'
+        tags:
+            - { name: form.type }
+
+    app.chat.message.search:
+        class: App\Chat\Message\Search\ChatMessagesItemsSource
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '@app.user.manager'
+            - '@app.chat.message.search.transformer'
+
+    app.chat.message.search.transformer:
+        class: App\Chat\Message\Search\ChatMessageSearchItemTransformer
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '@app.user.manager'
