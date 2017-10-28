@@ -6,6 +6,11 @@ imports:
 
 services:
 
+# Commands
+    App\Command\:
+        resource: '../src/App/Command'
+        tags: ['console.command']
+
 #Auth
     app.auth.log.subscriber:
         class: App\Auth\Log\AuthLogEventSubscriber
@@ -21,7 +26,7 @@ services:
         class: App\Auth\Log\AuthLogHelper
 
     app.auth.log.twig.extension:
-        class: AppBundle\Twig\Extension\AuthLogExtension
+        class: App\Twig\Extension\AuthLogExtension
         arguments:
             - '@app.auth.log.helper'
         tags:
@@ -110,7 +115,7 @@ services:
         class: App\Email\EmailHelper
 
     app.email.twig.extension:
-        class: AppBundle\Twig\Extension\EmailExtension
+        class: App\Twig\Extension\EmailExtension
         arguments:
             - '@app.email.helper'
             - '@app.email.check_url_detector'

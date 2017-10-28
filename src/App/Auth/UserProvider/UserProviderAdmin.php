@@ -2,7 +2,7 @@
 
 namespace App\Auth\UserProvider;
 
-use AppBundle\Entity\User;
+use App\Entity\User;
 
 class UserProviderAdmin extends UserProviderMain
 {

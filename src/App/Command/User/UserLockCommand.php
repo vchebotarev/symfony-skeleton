@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Command\User;
+namespace App\Command\User;
 
 use App\Symfony\Command\AbstractContainerAwareCommand;
 use Symfony\Component\Console\Input\InputArgument;
@@ -8,12 +8,12 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Question\Question;
 
-class UserUnlockCommand extends AbstractContainerAwareCommand
+class UserLockCommand extends AbstractContainerAwareCommand
 {
     protected function configure()
     {
-        $this->setName('app:user:unlock');
-        $this->setDescription('Unlock user');
+        $this->setName('app:user:lock');
+        $this->setDescription('Lock user');
         $this->addArgument('user', InputArgument::REQUIRED, 'User id or username or email');
     }
 
@@ -30,9 +30,9 @@ class UserUnlockCommand extends AbstractContainerAwareCommand
             return;
         }
 
-        $this->getContainer()->get('app.user.manipulator')->unlock($user);
+        $this->getContainer()->get('app.user.manipulator')->lock($user);
 
-        $output->writeln('<info>User was successfully unlocked</info>');
+        $output->writeln('<info>User was successfully locked</info>');
     }
 
     /**

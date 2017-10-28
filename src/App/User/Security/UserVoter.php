@@ -3,8 +3,8 @@
 namespace App\User\Security;
 
 use App\User\UserTokenManager;
-use AppBundle\Entity\User;
-use AppBundle\Entity\UserToken;
+use App\Entity\User;
+use App\Entity\UserToken;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Core\Authorization\AccessDecisionManagerInterface;
 use Symfony\Component\Security\Core\Authorization\Voter\Voter;

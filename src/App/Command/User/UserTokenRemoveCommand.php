@@ -1,9 +1,9 @@
 <?php
 
-namespace AppBundle\Command\User;
+namespace App\Command\User;
 
 use App\Symfony\Command\AbstractContainerAwareCommand;
-use AppBundle\Entity\UserToken;
+use App\Entity\UserToken;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 

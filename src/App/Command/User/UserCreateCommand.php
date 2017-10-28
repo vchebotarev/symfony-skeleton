@@ -1,12 +1,12 @@
 <?php
 
-namespace AppBundle\Command\User;
+namespace App\Command\User;
 
 use App\Symfony\Command\AbstractContainerAwareCommand;
 use App\Symfony\Validator\Constraints\EntityExists;
 use App\Symfony\Validator\Constraints\Password;
 use App\Symfony\Validator\Constraints\Username;
-use AppBundle\Entity\User;
+use App\Entity\User;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;

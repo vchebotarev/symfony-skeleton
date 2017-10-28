@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Entity;
+namespace App\Entity;
 
 use App\Doctrine\Column;
 use App\FOS\User\AbstractUser;
@@ -9,7 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Table(name="user")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\UserRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  * @ORM\HasLifecycleCallbacks()
  */
 class User extends AbstractUser implements GenderedInterface, \JsonSerializable

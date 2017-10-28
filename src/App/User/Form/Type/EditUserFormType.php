@@ -5,7 +5,7 @@ namespace App\User\Form\Type;
 use App\Symfony\Form\AbstractFormType;
 use App\User\GenderedInterface;
 use App\User\UserManager;
-use AppBundle\Entity\User;
+use App\Entity\User;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;

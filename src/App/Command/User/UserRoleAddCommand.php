@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Command\User;
+namespace App\Command\User;
 
 use App\Symfony\Command\AbstractContainerAwareCommand;
 use Symfony\Component\Console\Input\InputArgument;
@@ -8,13 +8,13 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Question\Question;
 
-class UserRoleRemoveCommand extends AbstractContainerAwareCommand
+class UserRoleAddCommand extends AbstractContainerAwareCommand
 {
     protected function configure()
     {
-        $this->setName('app:user:role:remove');
-        $this->setAliases(['fos:user:demote',]);
-        $this->setDescription('Remove role from user');
+        $this->setName('app:user:role:add');
+        $this->setAliases(['fos:user:promote',]);
+        $this->setDescription('Add role to user');
         $this->addArgument('user', InputArgument::REQUIRED, 'User id or username or email');
         $this->addArgument('role', InputArgument::REQUIRED, 'Role');
     }
@@ -35,9 +35,9 @@ class UserRoleRemoveCommand extends AbstractContainerAwareCommand
             return;
         }
 
-        $this->getContainer()->get('app.user.manipulator')->roleRemove($user, $role);
+        $this->getContainer()->get('app.user.manipulator')->roleAdd($user, $role);
 
-        $output->writeln('<info>Role was successfully removed from user</info>');
+        $output->writeln('<info>Role was successfully added to user</info>');
     }
 
     /**

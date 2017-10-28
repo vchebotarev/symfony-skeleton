@@ -4,7 +4,7 @@ namespace AppBundle\Controller\Auth;
 
 use App\Auth\Form\Type\RegistrationFormType;
 use App\Symfony\Controller\AbstractController;
-use AppBundle\Entity\UserToken;
+use App\Entity\UserToken;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 

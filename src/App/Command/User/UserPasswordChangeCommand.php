@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Command\User;
+namespace App\Command\User;
 
 use App\Symfony\Command\AbstractContainerAwareCommand;
 use App\Symfony\Validator\Constraints\Chain;

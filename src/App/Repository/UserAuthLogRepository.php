@@ -1,10 +1,10 @@
 <?php
 
-namespace AppBundle\Repository;
+namespace App\Repository;
 
 use App\Doctrine\ORM\EntityRepository;
-use AppBundle\Entity\User;
-use AppBundle\Entity\UserAuthLog;
+use App\Entity\User;
+use App\Entity\UserAuthLog;
 use Doctrine\Common\Collections\Criteria;
 
 class UserAuthLogRepository extends EntityRepository

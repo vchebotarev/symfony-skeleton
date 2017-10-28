@@ -3,8 +3,8 @@
 namespace App\Mailer;
 
 use App\User\UserTokenManager;
-use AppBundle\Entity\User;
-use AppBundle\Entity\UserToken;
+use App\Entity\User;
+use App\Entity\UserToken;
 use FOS\UserBundle\Mailer\MailerInterface;
 use FOS\UserBundle\Model\UserInterface;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;

@@ -3,7 +3,7 @@
 namespace AppBundle\Controller\PublicArea;
 
 use App\Symfony\Controller\AbstractController;
-use AppBundle\Entity\UserToken;
+use App\Entity\UserToken;
 use Symfony\Component\HttpFoundation\Response;
 
 class EmailController extends AbstractController

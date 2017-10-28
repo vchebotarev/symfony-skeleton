@@ -4,7 +4,7 @@ namespace App\Auth\Log;
 
 use App\UserAgent\UserAgentManager;
 use App\Visitor\VisitorManager;
-use AppBundle\Entity\UserAuthLog;
+use App\Entity\UserAuthLog;
 use Doctrine\ORM\EntityManager;
 use HWI\Bundle\OAuthBundle\Security\Core\Authentication\Token\OAuthToken;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;

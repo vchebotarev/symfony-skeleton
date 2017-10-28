@@ -1,13 +1,13 @@
 <?php
 
-namespace AppBundle\Entity;
+namespace App\Entity;
 
 use App\Doctrine\Column;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Table(name="user_auth_log")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\UserAuthLogRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\UserAuthLogRepository")
  * @ORM\HasLifecycleCallbacks
  */
 class UserAuthLog

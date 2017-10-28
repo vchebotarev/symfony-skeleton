@@ -14,7 +14,7 @@ security:
     #acl: #todo
 
     encoders:
-        AppBundle\Entity\User:
+        App\Entity\User:
             algorithm: 'bcrypt'
             cost:      12
         Symfony\Component\Security\Core\User\User:

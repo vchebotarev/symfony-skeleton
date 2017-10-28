@@ -4,8 +4,8 @@ namespace App\User;
 
 use App\Auth\PasswordHelper;
 use App\Mailer\MailerTokened;
-use AppBundle\Entity\User;
-use AppBundle\Entity\UserToken;
+use App\Entity\User;
+use App\Entity\UserToken;
 
 class UserManipulator
 {

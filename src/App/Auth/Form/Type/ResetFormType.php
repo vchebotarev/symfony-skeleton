@@ -8,7 +8,7 @@ use App\Symfony\Validator\Constraints\Chain;
 use App\Symfony\Validator\Constraints\Password;
 use App\Symfony\Validator\Constraints\UserPassword;
 use App\User\UserManipulator;
-use AppBundle\Entity\User;
+use App\Entity\User;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\FormBuilderInterface;

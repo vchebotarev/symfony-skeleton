@@ -2,7 +2,7 @@
 
 namespace App\Doctrine\Column;
 
-use AppBundle\Entity\User as UserEntity;
+use App\Entity\User as UserEntity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -12,7 +12,7 @@ trait User
 {
     /**
      * @var UserEntity
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User")
+     * @ORM\ManyToOne(targetEntity="App\Entity\User")
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id", nullable=false, onDelete="CASCADE")
      */
     protected $user;

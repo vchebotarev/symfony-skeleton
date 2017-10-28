@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Twig\Extension;
+namespace App\Twig\Extension;
 
 use App\Email\EmailCheckUrlDetector;
 use App\Email\EmailHelper;

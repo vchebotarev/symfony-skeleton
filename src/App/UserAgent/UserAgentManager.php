@@ -2,7 +2,7 @@
 
 namespace App\UserAgent;
 
-use AppBundle\Entity\UserAgent;
+use App\Entity\UserAgent;
 use Doctrine\ORM\EntityManager;
 use Symfony\Component\HttpFoundation\RequestStack;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Entity;
+namespace App\Entity;
 
 use App\Doctrine\Column;
 use Doctrine\ORM\Mapping as ORM;
@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @todo unique hash
  * @ORM\Table(name="visitor")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\VisitorRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\VisitorRepository")
  */
 class Visitor
 {

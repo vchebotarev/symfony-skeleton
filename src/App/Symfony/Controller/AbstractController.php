@@ -2,7 +2,7 @@
 
 namespace App\Symfony\Controller;
 
-use AppBundle\Entity\User;
+use App\Entity\User;
 use Doctrine\ORM\EntityManager;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller as BaseController;
 

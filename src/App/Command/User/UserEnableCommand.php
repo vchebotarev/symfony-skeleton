@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Command\User;
+namespace App\Command\User;
 
 use App\Symfony\Command\AbstractContainerAwareCommand;
 use Symfony\Component\Console\Input\InputArgument;
@@ -8,12 +8,13 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Question\Question;
 
-class UserLockCommand extends AbstractContainerAwareCommand
+class UserEnableCommand extends AbstractContainerAwareCommand
 {
     protected function configure()
     {
-        $this->setName('app:user:lock');
-        $this->setDescription('Lock user');
+        $this->setName('app:user:enable');
+        $this->setAliases(['fos:user:activate',]);
+        $this->setDescription('Enable user');
         $this->addArgument('user', InputArgument::REQUIRED, 'User id or username or email');
     }
 
@@ -30,9 +31,9 @@ class UserLockCommand extends AbstractContainerAwareCommand
             return;
         }
 
-        $this->getContainer()->get('app.user.manipulator')->lock($user);
+        $this->getContainer()->get('app.user.manipulator')->enable($user);
 
-        $output->writeln('<info>User was successfully locked</info>');
+        $output->writeln('<info>User was successfully enabled</info>');
     }
 
     /**

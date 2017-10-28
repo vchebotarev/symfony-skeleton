@@ -8,7 +8,7 @@ use App\Symfony\Validator\Constraints\Chain;
 use App\Symfony\Validator\Constraints\EntityExists;
 use App\Symfony\Validator\Constraints\UserPassword;
 use App\User\UserManager;
-use AppBundle\Entity\User;
+use App\Entity\User;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\FormBuilderInterface;

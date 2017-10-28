@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Entity;
+namespace App\Entity;
 
 use App\Doctrine\Column;
 use Doctrine\ORM\Mapping as ORM;
@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @todo unique type + user and type + hash
  * @ORM\Table(name="user_token")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\UserTokenRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\UserTokenRepository")
  * @ORM\HasLifecycleCallbacks()
  */
 class UserToken
