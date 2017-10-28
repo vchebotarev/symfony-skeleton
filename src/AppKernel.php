@@ -27,8 +27,6 @@ class AppKernel extends Kernel
             new Matthias\SymfonyConsoleForm\Bundle\SymfonyConsoleFormBundle(),
             new Chebur\LoginFormBundle\CheburLoginFormBundle(),
             new Chebur\SearchBundle\CheburSearchBundle(),
-
-            new AppBundle\AppBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
