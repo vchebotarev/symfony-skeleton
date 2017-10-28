@@ -15,4 +15,4 @@ _test:
     defaults:  { _controller: AppBundle:Test:test }
 
 _main:
-    resource: '@AppBundle/Resources/config/routing.yml'
+    resource: 'routing.yml'
