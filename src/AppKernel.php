@@ -53,7 +53,8 @@ class AppKernel extends Kernel
         return array_merge(
             parent::getKernelParameters(),
             [
-                'kernel.not_debug' => !$this->debug,
+                'kernel.not_debug'  => !$this->debug,
+                'kernel.source_dir' => $this->getProjectDir() . '/src',
             ]
         );
     }

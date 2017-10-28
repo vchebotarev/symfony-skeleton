@@ -8,12 +8,12 @@ services:
 
 # Commands
     App\Command\:
-        resource: '../src/App/Command'
+        resource: '%kernel.source_dir%/App/Command'
         tags: ['console.command']
 
 # Controllers (делаем через сервисы, чтобы работал автокомплит)
     App\Controller\:
-        resource: '../src/App/Controller'
+        resource: '%kernel.source_dir%/App/Controller'
 
 #Auth
     app.auth.log.subscriber:

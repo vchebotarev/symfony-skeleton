@@ -62,14 +62,14 @@ doctrine:
             App:
                 is_bundle: false
                 type:      annotation
-                dir:       '%kernel.project_dir%/src/App/Entity'
+                dir:       '%kernel.source_dir%/App/Entity'
                 prefix:    'App\Entity\'
                 alias:     App
         default_repository_class: App\Doctrine\ORM\EntityRepository
 
 # Doctrine Migrations
 doctrine_migrations:
-    dir_name:   '%kernel.project_dir%/src/App/Migration'
+    dir_name:   '%kernel.source_dir%/App/Migration'
     namespace:  App\Migration
     table_name: migration
 
@@ -77,7 +77,7 @@ doctrine_migrations:
 gregwar_captcha:
     as_url:           true
     reload:           true
-    font:             '%kernel.root_dir%/../vendor/gregwar/captcha/Font/captcha2.ttf'
+    font:             '%kernel.project_dir%/vendor/gregwar/captcha/Font/captcha2.ttf'
     quality:          90
     max_front_lines:  2
     max_behind_lines: 2
