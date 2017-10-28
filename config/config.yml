@@ -62,14 +62,14 @@ doctrine:
             App:
                 is_bundle: false
                 type:      annotation
-                dir:       '%kernel.source_dir%/App/Entity'
+                dir:       '%kernel.source_dir%/Entity'
                 prefix:    'App\Entity\'
                 alias:     App
         default_repository_class: App\Doctrine\ORM\EntityRepository
 
 # Doctrine Migrations
 doctrine_migrations:
-    dir_name:   '%kernel.source_dir%/App/Migration'
+    dir_name:   '%kernel.source_dir%/Migration'
     namespace:  App\Migration
     table_name: migration
 
