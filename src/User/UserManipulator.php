@@ -150,4 +150,22 @@ class UserManipulator
         $this->userManager->updateUser($user);
     }
 
+    /**
+     * @param User $user
+     */
+    public function roleAddAdmin(User $user)
+    {
+        $user->addRole(User::ROLE_ADMIN);
+        $this->userManager->updateUser($user);
+    }
+
+    /**
+     * @param User $user
+     */
+    public function roleRemoveAdmin(User $user)
+    {
+        $user->removeRole(User::ROLE_ADMIN);
+        $this->userManager->updateUser($user);
+    }
+
 }

@@ -264,6 +264,38 @@ class UserController extends AbstractController
     }
 
     /**
+     * @param Request $request
+     * @param int     $id
+     * @return RedirectResponse
+     */
+    public function roleAddAdminAction(Request $request, $id)
+    {
+        $user = $this->findUser($id, UserVoter::ROLE_ADD_ADMIN);
+
+        $this->get('app.user.manipulator')->roleAddAdmin($user);
+
+        return $this->redirectToRoute('app_admin_user_view', [
+            'id' => $id,
+        ]);
+    }
+
+    /**
+     * @param Request $request
+     * @param int     $id
+     * @return RedirectResponse
+     */
+    public function roleRemoveAdminAction(Request $request, $id)
+    {
+        $user = $this->findUser($id, UserVoter::ROLE_REMOVE_ADMIN);
+
+        $this->get('app.user.manipulator')->roleRemoveAdmin($user);
+
+        return $this->redirectToRoute('app_admin_user_view', [
+            'id' => $id,
+        ]);
+    }
+
+    /**
      * @param int   $id
      * @param mixed $attr
      * @return User|null

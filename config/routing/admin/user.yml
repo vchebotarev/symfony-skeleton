@@ -60,3 +60,15 @@ app_admin_user_unlock:
     defaults: { _controller: App\Controller\Admin\UserController:unlockAction }
     requirements:
         id: '\d+'
+
+app_admin_user_role_add_admin:
+    path:     /{id}/role/add/admin
+    defaults: { _controller: App\Controller\Admin\UserController:roleAddAdminAction }
+    requirements:
+        id: '\d+'
+
+app_admin_user_role_remove_admin:
+    path:     /{id}/role/remove/admin
+    defaults: { _controller: App\Controller\Admin\UserController:roleRemoveAdminAction }
+    requirements:
+        id: '\d+'

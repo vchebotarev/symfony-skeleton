@@ -13,16 +13,24 @@
         <a href="{{ path('app_admin_user_change_username', {'id': user.getId()}) }}" class="btn btn-secondary">Изменить username</a>
     {% endif %}
 
-    {% if not user.isEnabled() and is_granted('user.enable') %}
+    {% if is_granted('user.enable') %}
         <a href="{{ path('app_admin_user_enable', {'id': user.getId()}) }}" class="btn btn-secondary">Активировать</a>
     {% endif %}
 
-    {% if not user.isLocked() and is_granted('user.lock', user) %}
+    {% if is_granted('user.lock', user) %}
         <a href="{{ path('app_admin_user_lock', {'id': user.getId()}) }}" class="btn btn-secondary">Заблокировать</a>
     {% endif %}
 
-    {% if user.isLocked() and is_granted('user.unlock', user) %}
+    {% if is_granted('user.unlock', user) %}
         <a href="{{ path('app_admin_user_unlock', {'id': user.getId()}) }}" class="btn btn-secondary">Разблокировать</a>
+    {% endif %}
+
+    {% if is_granted('user.role.add.admin', user) %}
+        <a href="{{ path('app_admin_user_role_add_admin', {'id': user.getId()}) }}" class="btn btn-secondary">Сделать админом</a>
+    {% endif %}
+
+    {% if is_granted('user.role.remove.admin', user) %}
+        <a href="{{ path('app_admin_user_role_remove_admin', {'id': user.getId()}) }}" class="btn btn-secondary">Снять админство</a>
     {% endif %}
 
     {% if is_granted('user.view.auth_log', user) %}

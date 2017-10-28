@@ -2,24 +2,26 @@
 
 namespace App\User\Security;
 
-use App\User\UserTokenManager;
 use App\Entity\User;
 use App\Entity\UserToken;
+use App\User\UserTokenManager;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Core\Authorization\AccessDecisionManagerInterface;
 use Symfony\Component\Security\Core\Authorization\Voter\Voter;
 
 class UserVoter extends Voter
 {
-    const CHANGE_EMAIL  = 'user.change.email';
-    const VIEW_AUTH_LOG = 'user.view.auth_log';
-    const LIST          = 'user.list';
-    const VIEW          = 'user.view';
-    const CREATE        = 'user.create';
-    const EDIT          = 'user.edit';
-    const ENABLE        = 'user.enable';
-    const LOCK          = 'user.lock';
-    const UNLOCK        = 'user.unlock';
+    const CHANGE_EMAIL      = 'user.change.email';
+    const VIEW_AUTH_LOG     = 'user.view.auth_log';
+    const LIST              = 'user.list';
+    const VIEW              = 'user.view';
+    const CREATE            = 'user.create';
+    const EDIT              = 'user.edit';
+    const ENABLE            = 'user.enable';
+    const LOCK              = 'user.lock';
+    const UNLOCK            = 'user.unlock';
+    const ROLE_ADD_ADMIN    = 'user.role.add.admin';
+    const ROLE_REMOVE_ADMIN = 'user.role.remove.admin';
 
     /**
      * @var UserTokenManager
@@ -71,6 +73,12 @@ class UserVoter extends Voter
             return true;
         }
         if ($user instanceof User && $attribute == self::UNLOCK) {
+            return true;
+        }
+        if ($user instanceof User && $attribute == self::ROLE_ADD_ADMIN) {
+            return true;
+        }
+        if ($user instanceof User && $attribute == self::ROLE_REMOVE_ADMIN) {
             return true;
         }
 
@@ -134,6 +142,18 @@ class UserVoter extends Voter
                 return false;
             }
             return $this->decisionManager->decide($token, [User::ROLE_ADMIN]);
+        }
+        if ($attribute == self::ROLE_ADD_ADMIN) {
+            if ($user->isAdmin()) {
+                return false;
+            }
+            return $this->decisionManager->decide($token, [User::ROLE_SUPER_ADMIN]);
+        }
+        if ($attribute == self::ROLE_REMOVE_ADMIN) {
+            if (!$user->isAdmin()) {
+                return false;
+            }
+            return $this->decisionManager->decide($token, [User::ROLE_SUPER_ADMIN]);
         }
 
         throw new \RuntimeException();

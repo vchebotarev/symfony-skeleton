@@ -63,10 +63,22 @@ class User extends AbstractUser implements GenderedInterface, \JsonSerializable
     protected $password = '';
 
     /**
+     * @var bool
+     * @ORM\Column(name="is_admin", type="boolean", options={"default": false})
+     */
+    protected $isAdmin = false;
+
+    /**
+     * @var bool
+     * @ORM\Column(name="is_super_admin", type="boolean", options={"default": false})
+     */
+    protected $isSuperAdmin = false;
+
+    /**
      * @var array
      * @ORM\Column(name="roles", type="json_array")
      */
-    protected $roles = [self::ROLE_DEFAULT];
+    protected $roles = [];
 
     use Column\DateCreated;
 
@@ -209,6 +221,131 @@ class User extends AbstractUser implements GenderedInterface, \JsonSerializable
     public function setPassword($password)
     {
         $this->password = $password;
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isAdmin() : bool
+    {
+        return $this->isAdmin;
+    }
+
+    /**
+     * @param bool $isAdmin
+     * @return $this
+     */
+    public function setIsAdmin(bool $isAdmin)
+    {
+        $this->isAdmin = $isAdmin;
+        if (!$isAdmin) {
+            $this->setIsSuperAdmin(false);
+        }
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isSuperAdmin() : bool
+    {
+        return $this->isSuperAdmin;
+    }
+
+    /**
+     * @param bool $isSuperAdmin
+     * @return $this
+     */
+    public function setIsSuperAdmin(bool $isSuperAdmin)
+    {
+        $this->isSuperAdmin = $isSuperAdmin;
+        return $this;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setSuperAdmin($isSuperAdmin)
+    {
+        return $this->setIsSuperAdmin((bool)$isSuperAdmin);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function getRoles() : array
+    {
+        $roles = $this->roles;
+        $roles[] = static::ROLE_DEFAULT;
+        if ($this->isAdmin()) {
+            $roles[] = static::ROLE_ADMIN;
+        }
+        if ($this->isSuperAdmin()) {
+            $roles[] = static::ROLE_SUPER_ADMIN;
+        }
+        return $roles;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function setRoles(array $roles)
+    {
+        $this->roles = array();
+        foreach ($roles as $role) {
+            $this->addRole($role);
+        }
+        return $this;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function hasRole($role) : bool
+    {
+        return in_array(strtoupper($role), $this->getRoles(), true);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function addRole($role)
+    {
+        $role = strtoupper($role);
+        if ($role === static::ROLE_DEFAULT) {
+            return $this;
+        } elseif ($role == static::ROLE_SUPER_ADMIN) {
+            $this->setIsSuperAdmin(true);
+            $this->setIsAdmin(true);
+        } elseif ($role == static::ROLE_ADMIN) {
+            $this->setIsAdmin(true);
+        } else {
+            if (!in_array($role, $this->roles, true)) {
+                $this->roles[] = $role;
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function removeRole($role)
+    {
+        if ($role === static::ROLE_DEFAULT) {
+            return $this;
+        } elseif ($role == static::ROLE_SUPER_ADMIN) {
+            $this->setIsSuperAdmin(false);
+        } elseif ($role == static::ROLE_ADMIN) {
+            $this->setIsSuperAdmin(false);
+            $this->setIsAdmin(false);
+        } else {
+            if (false !== $key = array_search(strtoupper($role), $this->roles, true)) {
+                unset($this->roles[$key]);
+                $this->roles = array_values($this->roles);
+            }
+        }
         return $this;
     }
 
