@@ -20,5 +20,5 @@ services:
 
 # Exception Controller
     app.twig.controller.exception:
-        class: AppBundle\Controller\ExceptionController
+        class: App\Controller\ExceptionController
         parent: twig.controller.exception

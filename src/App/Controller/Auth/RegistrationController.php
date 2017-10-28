@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Controller\Auth;
+namespace App\Controller\Auth;
 
 use App\Auth\Form\Type\RegistrationFormType;
 use App\Symfony\Controller\AbstractController;

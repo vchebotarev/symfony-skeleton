@@ -1,22 +1,21 @@
 <?php
 
-namespace AppBundle\Controller\PublicArea;
+namespace App\Controller;
 
 use App\Symfony\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class DefaultController extends AbstractController
+class TestController extends AbstractController
 {
     /**
      * @param Request $request
      * @return Response
      */
-    public function indexAction(Request $request)
+    public function testAction(Request $request)
     {
-        return $this->render('PublicArea/Default/index.html.twig', [
 
-        ]);
+        return new Response('Test');
     }
 
 }

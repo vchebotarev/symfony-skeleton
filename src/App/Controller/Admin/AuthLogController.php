@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Controller\Admin;
+namespace App\Controller\Admin;
 
 use App\Symfony\Controller\AbstractController;
 use App\User\Security\UserVoter;

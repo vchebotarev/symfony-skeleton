@@ -3,7 +3,7 @@
 
 app_admin_default_index:
     path:     /
-    defaults: { _controller: AppBundle:Admin/Default:index }
+    defaults: { _controller: App\Controller\Admin\DefaultController:indexAction }
 
 # Profile
 app_admin_profile:

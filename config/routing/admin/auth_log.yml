@@ -7,4 +7,4 @@ app_admin_auth_log_index:
 
 app_admin_auth_log_list:
     path:     /list
-    defaults: { _controller: AppBundle:Admin\AuthLog:list }
+    defaults: { _controller: App\Controller\Admin\AuthLogController:listAction }

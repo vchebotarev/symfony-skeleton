@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Controller\PublicArea;
+namespace App\Controller\PublicArea;
 
 use App\Symfony\Controller\AbstractController;
 use App\Entity\UserToken;

@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Controller\Admin;
+namespace App\Controller\PrivateArea;
 
 use App\Symfony\Controller\AbstractController;
 use App\User\Form\Type\ChangeEmailFormType;
@@ -13,25 +13,13 @@ use Symfony\Component\HttpFoundation\Response;
 
 class ProfileController extends AbstractController
 {
+
     /**
      * @return Response
      */
     public function indexAction()
     {
-        return $this->render('Admin/Profile/index.html.twig');
-    }
-
-    /**
-     * @param Request $request
-     * @return Response
-     */
-    public function editAction(Request $request)
-    {
-        //todo
-
-        return $this->render('Admin/Profile/edit.html.twig', [
-
-        ]);
+        return $this->render('PrivateArea/Profile/index.html.twig');
     }
 
     /**
@@ -43,7 +31,7 @@ class ProfileController extends AbstractController
 
         $logs = $this->getEm()->getRepository(UserAuthLog::class)->findByUser($this->getUser());
 
-        return $this->render('Admin/Profile/auth_log.html.twig', [
+        return $this->render('PrivateArea/Profile/auth_log.html.twig', [
             'logs' => $logs,
         ]);
     }
@@ -58,10 +46,10 @@ class ProfileController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            return $this->render('Admin/Profile/change_username_success.html.twig');
+            return $this->render('PrivateArea/Profile/change_username_success.html.twig');
         }
 
-        return $this->render('Admin/Profile/change_username.html.twig', [
+        return $this->render('PrivateArea/Profile/change_username.html.twig', [
             'form' => $form->createView(),
         ]);
     }
@@ -76,10 +64,10 @@ class ProfileController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            return $this->render('Admin/Profile/change_password_success.html.twig');
+            return $this->render('PrivateArea/Profile/change_password_success.html.twig');
         }
 
-        return $this->render('Admin/Profile/change_password.html.twig', [
+        return $this->render('PrivateArea/Profile/change_password.html.twig', [
             'form' => $form->createView(),
         ]);
     }
@@ -93,7 +81,7 @@ class ProfileController extends AbstractController
         if (!$this->isGranted(UserVoter::CHANGE_EMAIL)) {
             $response = new Response();
             $response->setStatusCode(Response::HTTP_FORBIDDEN);
-            return $this->render('Admin/Profile/change_email_error.html.twig', [], $response);
+            return $this->render('PrivateArea/Profile/change_email_error.html.twig', [], $response);
         }
 
         $form = $this->createForm(ChangeEmailFormType::class);
@@ -101,12 +89,12 @@ class ProfileController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $email = $form->getData()['email'];
-            return $this->render('Admin/Profile/change_email_success.html.twig', [
+            return $this->render('PrivateArea/Profile/change_email_success.html.twig', [
                 'email' => $email,
             ]);
         }
 
-        return $this->render('Admin/Profile/change_email.html.twig', [
+        return $this->render('PrivateArea/Profile/change_email.html.twig', [
             'form' => $form->createView(),
         ]);
     }

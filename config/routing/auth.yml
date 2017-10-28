@@ -2,118 +2,118 @@
 #Вход
 app_auth_security_login:
     path:     /login
-    defaults: { _controller: AppBundle:Auth/Security:login }
+    defaults: { _controller: App\Controller\Auth\SecurityController:loginAction }
 fos_user_security_login:
     path:     /login
-    defaults: { _controller: AppBundle:Auth/Security:login }
+    defaults: { _controller: App\Controller\Auth\SecurityController:loginAction }
 sonata_user_security_login:
     path:     /login
-    defaults: { _controller: AppBundle:Auth/Security:login }
+    defaults: { _controller: App\Controller\Auth\SecurityController:loginAction }
 
 app_auth_security_check:
     path:     /login/check
-    defaults: { _controller: AppBundle:Auth/Security:check }
+    defaults: { _controller: App\Controller\Auth\SecurityController:checkAction }
 fos_user_security_check:
     path:     /login/check
-    defaults: { _controller: AppBundle:Auth/Security:check }
+    defaults: { _controller: App\Controller\Auth\SecurityController:checkAction }
 sonata_user_security_check:
     path:     /login/check
-    defaults: { _controller: AppBundle:Auth/Security:check }
+    defaults: { _controller: App\Controller\Auth\SecurityController:checkAction }
 
 
 #Выход
 app_auth_logout:
     path:     /logout
-    defaults: { _controller: AppBundle:Auth/Security:logout }
+    defaults: { _controller: App\Controller\Auth\SecurityController:logoutAction }
 fos_user_security_logout:
     path:     /logout
-    defaults: { _controller: AppBundle:Auth/Security:logout }
+    defaults: { _controller: App\Controller\Auth\SecurityController:logoutAction }
 sonata_user_security_logout:
     path:     /logout
-    defaults: { _controller: AppBundle:Auth/Security:logout }
+    defaults: { _controller: App\Controller\Auth\SecurityController:logoutAction }
 
 
 #Вход (Админка)
 app_auth_admin_security_login:
     path:     /admin/login
-    defaults: { _controller: AppBundle:Auth/AdminSecurity:login }
+    defaults: { _controller: App\Controller\Auth\AdminSecurityController:loginAction }
 sonata_user_admin_security_login:
     path:     /admin/login
-    defaults: { _controller: AppBundle:Auth/AdminSecurity:login }
+    defaults: { _controller: App\Controller\Auth\AdminSecurityController:loginAction }
 
 app_auth_admin_security_check:
     path:     /admin/login/check
-    defaults: { _controller: AppBundle:Auth/AdminSecurity:check }
+    defaults: { _controller: App\Controller\Auth\AdminSecurityController:checkAction }
 sonata_user_admin_security_check:
     path:     /admin/login/check
-    defaults: { _controller: AppBundle:Auth/AdminSecurity:check }
+    defaults: { _controller: App\Controller\Auth\AdminSecurityController:checkAction }
 
 
 #Выход (Админка)
 app_auth_admin_logout:
     path:     /admin/logout
-    defaults: { _controller: AppBundle:Auth/AdminSecurity:logout }
+    defaults: { _controller: App\Controller\Auth\AdminSecurityController:logoutAction }
 sonata_user_admin_security_logout:
     path:     /admin/logout
-    defaults: { _controller: AppBundle:Auth/AdminSecurity:logout }
+    defaults: { _controller: App\Controller\Auth\AdminSecurityController:logoutAction }
 
 
 #Регистрация
 app_auth_registration_register:
     path:     /registration
-    defaults: { _controller: AppBundle:Auth/Registration:register }
+    defaults: { _controller: App\Controller\Auth\RegistrationController:registerAction }
 fos_user_registration_register:
     path:     /registration
-    defaults: { _controller: AppBundle:Auth/Registration:register }
+    defaults: { _controller: App\Controller\Auth\RegistrationController:registerAction }
 sonata_user_registration_register:
     path:     /registration
-    defaults: { _controller: AppBundle:Auth/Registration:register }
+    defaults: { _controller: App\Controller\Auth\RegistrationController:registerAction }
 
 app_auth_registration_confirm:
     path:     /registration/{token}
-    defaults: { _controller: AppBundle:Auth/Registration:confirm }
+    defaults: { _controller: App\Controller\Auth\RegistrationController:confirmAction }
     requirements:
         token: '^[a-f0-9]{32}$'
 fos_user_registration_confirm:
     path:     /registration/{token}
-    defaults: { _controller: AppBundle:Auth/Registration:confirm }
+    defaults: { _controller: App\Controller\Auth\RegistrationController:confirmAction }
     requirements:
         token: '^[a-f0-9]{32}$'
 sonata_user_registration_confirm:
     path:     /registration/{token}
-    defaults: { _controller: AppBundle:Auth/Registration:confirm }
+    defaults: { _controller: App\Controller\Auth\RegistrationController:confirmAction }
     requirements:
         token: '^[a-f0-9]{32}$'
 
 #Повторная отправка письма с подтверждением регистрации
 app_auth_registration_resend:
     path:     /registration/resend
-    defaults: { _controller: AppBundle:Auth/Registration:resend }
+    defaults: { _controller: App\Controller\Auth\RegistrationController:resendAction }
 
 
 #Восстановление пароля
 app_auth_reset_request:
     path:     /reset
-    defaults: { _controller: AppBundle:Auth/Reset:request }
+    defaults: { _controller: App\Controller\Auth\ResetController:requestAction }
 fos_user_resetting_request:
     path:     /reset
-    defaults: { _controller: AppBundle:Auth/Reset:request }
+    defaults: { _controller: App\Controller\Auth\ResetController:requestAction }
 sonata_user_resetting_request:
     path:     /reset
-    defaults: { _controller: AppBundle:Auth/Reset:request }
+    defaults: { _controller: App\Controller\Auth\ResetController:requestAction }
 
 app_auth_reset_reset:
     path:     /reset/{token}
-    defaults: { _controller: AppBundle:Auth/Reset:reset }
+    defaults: { _controller: App\Controller\Auth\ResetController:resetAction }
     requirements:
         token: '^[a-f0-9]{32}$'
 fos_user_resetting_reset:
     path:     /reset/{token}
-    defaults: { _controller: AppBundle:Auth/Reset:reset }
+    defaults: { _controller: App\Controller\Auth\ResetController:resetAction }
     requirements:
         token: '^[a-f0-9]{32}$'
 sonata_user_resetting_reset:
     path:     /reset/{token}
-    defaults: { _controller: AppBundle:Auth/Reset:reset }
+    defaults: { _controller: App\Controller\Auth\ResetController:resetAction }
     requirements:
         token: '^[a-f0-9]{32}$'

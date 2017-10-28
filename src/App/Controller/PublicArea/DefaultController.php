@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Controller\Admin;
+namespace App\Controller\PublicArea;
 
 use App\Symfony\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -14,7 +14,7 @@ class DefaultController extends AbstractController
      */
     public function indexAction(Request $request)
     {
-        return $this->render('Admin/Default/index.html.twig', [
+        return $this->render('PublicArea/Default/index.html.twig', [
 
         ]);
     }

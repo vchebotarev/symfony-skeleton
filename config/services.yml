@@ -11,6 +11,10 @@ services:
         resource: '../src/App/Command'
         tags: ['console.command']
 
+# Controllers (делаем через сервисы, чтобы работал автокомплит)
+    App\Controller\:
+        resource: '../src/App/Controller'
+
 #Auth
     app.auth.log.subscriber:
         class: App\Auth\Log\AuthLogEventSubscriber

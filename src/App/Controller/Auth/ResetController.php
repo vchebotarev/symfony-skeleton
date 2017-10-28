@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Controller\Auth;
+namespace App\Controller\Auth;
 
 use App\Auth\Form\Type\ResetFormType;
 use App\Auth\Form\Type\ResetRequestFormType;

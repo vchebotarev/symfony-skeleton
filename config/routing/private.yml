@@ -3,7 +3,7 @@
 
 app_private_default_index:
     path:     /
-    defaults: { _controller: AppBundle:PrivateArea/Default:index }
+    defaults: { _controller: App\Controller\PrivateArea\DefaultController:indexAction }
 
 # Profile
 app_private_profile:

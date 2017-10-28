@@ -1,21 +1,22 @@
 <?php
 
-namespace AppBundle\Controller;
+namespace App\Controller\PrivateArea;
 
 use App\Symfony\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class TestController extends AbstractController
+class DefaultController extends AbstractController
 {
     /**
      * @param Request $request
      * @return Response
      */
-    public function testAction(Request $request)
+    public function indexAction(Request $request)
     {
+        return $this->render('PrivateArea/Default/index.html.twig', [
 
-        return new Response('Test');
+        ]);
     }
 
 }

@@ -7,56 +7,56 @@ app_admin_user_index:
 
 app_admin_user_list:
     path:     /list
-    defaults: { _controller: AppBundle:Admin\User:list }
+    defaults: { _controller: App\Controller\Admin\UserController:listAction }
 
 app_admin_user_view:
     path:     /{id}
-    defaults: { _controller: AppBundle:Admin\User:view }
+    defaults: { _controller: App\Controller\Admin\UserController:viewAction }
     requirements:
         id: '\d+'
 
 app_admin_user_auth_log:
     path:     /{id}/auth-log
-    defaults: { _controller: AppBundle:Admin\User:authLog }
+    defaults: { _controller: App\Controller\Admin\UserController:authLogAction }
     requirements:
         id: '\d+'
 
 app_admin_user_create:
     path:     /create
-    defaults: { _controller: AppBundle:Admin\User:create }
+    defaults: { _controller: App\Controller\Admin\UserController:createAction }
 
 app_admin_user_edit:
     path:     /{id}/edit
-    defaults: { _controller: AppBundle:Admin\User:edit }
+    defaults: { _controller: App\Controller\Admin\UserController:editAction }
     requirements:
         id: '\d+'
 
 app_admin_user_change_username:
     path:     /{id}/change-username
-    defaults: { _controller: AppBundle:Admin\User:changeUsername }
+    defaults: { _controller: App\Controller\Admin\UserController:changeUsernameAction }
     requirements:
         id: '\d+'
 
 app_admin_user_change_email:
     path:     /{id}/change-email
-    defaults: { _controller: AppBundle:Admin\User:changeEmail }
+    defaults: { _controller: App\Controller\Admin\UserController:changeEmailAction }
     requirements:
         id: '\d+'
 
 app_admin_user_enable:
     path:     /{id}/enable
-    defaults: { _controller: AppBundle:Admin\User:enable }
+    defaults: { _controller: App\Controller\Admin\UserController:enableAction }
     requirements:
         id: '\d+'
 
 app_admin_user_lock:
     path:     /{id}/lock
-    defaults: { _controller: AppBundle:Admin\User:lock }
+    defaults: { _controller: App\Controller\Admin\UserController:lockAction }
     requirements:
         id: '\d+'
 
 app_admin_user_unlock:
     path:     /{id}/unlock
-    defaults: { _controller: AppBundle:Admin\User:unlock }
+    defaults: { _controller: App\Controller\Admin\UserController:unlockAction }
     requirements:
         id: '\d+'

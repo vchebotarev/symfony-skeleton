@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Controller\Auth;
+namespace App\Controller\Auth;
 
 use App\Symfony\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
