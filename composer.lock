@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "673fbc24baf8fc0dae1674f03eb77d35",
+    "content-hash": "2340b7e6152f0f431bea29a2fe229cde",
     "packages": [
         {
             "name": "beberlei/DoctrineExtensions",
@@ -202,128 +202,6 @@
             "description": "Font Awesome"
         },
         {
-            "name": "bower-asset/foundation-icon-fonts",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/zurb/foundation-icon-fonts.git",
-                "reference": "afed003521ff971bc614de68bba2676e16ce39f4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/zurb/foundation-icon-fonts/zipball/afed003521ff971bc614de68bba2676e16ce39f4",
-                "reference": "afed003521ff971bc614de68bba2676e16ce39f4",
-                "shasum": ""
-            },
-            "type": "bower-asset-library",
-            "extra": {
-                "bower-asset-main": [
-                    "foundation-icons.css"
-                ],
-                "bower-asset-ignore": [],
-                "branch-alias": {
-                    "dev-master": "3.0.0-dev"
-                }
-            },
-            "time": "2015-02-16T18:10:15+00:00"
-        },
-        {
-            "name": "bower-asset/glyphicons",
-            "version": "0.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/urnix/glyphicons.git",
-                "reference": "dcc8c84816c745930181220f041a925ed546aa82"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/urnix/glyphicons/zipball/dcc8c84816c745930181220f041a925ed546aa82",
-                "reference": "dcc8c84816c745930181220f041a925ed546aa82",
-                "shasum": ""
-            },
-            "type": "bower-asset-library",
-            "extra": {
-                "bower-asset-main": [
-                    "styles/glyphicons.css"
-                ]
-            }
-        },
-        {
-            "name": "bower-asset/icomoon",
-            "version": "0.1.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/layerssss/icomoon-bower.git",
-                "reference": "3559b052a59b784792b86603aa4f7d60ca348536"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/layerssss/icomoon-bower/zipball/3559b052a59b784792b86603aa4f7d60ca348536",
-                "reference": "3559b052a59b784792b86603aa4f7d60ca348536",
-                "shasum": ""
-            },
-            "type": "bower-asset-library",
-            "extra": {
-                "bower-asset-main": [
-                    "style.css",
-                    "fonts/icomoon.eot",
-                    "fonts/icomoon.svg",
-                    "fonts/icomoon.ttf",
-                    "fonts/icomoon.woff"
-                ],
-                "bower-asset-ignore": []
-            },
-            "license": [
-                "CC BY 3.0 -- http://creativecommons.org/licenses/by/3.0/"
-            ],
-            "description": "icomoon free font as a bower component",
-            "keywords": [
-                "bower",
-                "icomoon"
-            ]
-        },
-        {
-            "name": "bower-asset/ionicons",
-            "version": "v2.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ionic-team/ionicons.git",
-                "reference": "ecb4b806831005c25b97ed9089fbb1d7dcc0879c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ionic-team/ionicons/zipball/ecb4b806831005c25b97ed9089fbb1d7dcc0879c",
-                "reference": "ecb4b806831005c25b97ed9089fbb1d7dcc0879c",
-                "shasum": ""
-            },
-            "type": "bower-asset-library",
-            "extra": {
-                "bower-asset-main": [
-                    "css/ionicons.css",
-                    "fonts/*"
-                ],
-                "bower-asset-ignore": [
-                    "**/.*",
-                    "builder",
-                    "node_modules",
-                    "bower_components",
-                    "test",
-                    "tests"
-                ]
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Ionicons - free and beautiful icons from the creators of Ionic Framework",
-            "keywords": [
-                "fonts",
-                "icon font",
-                "icons",
-                "ionic",
-                "web font"
-            ]
-        },
-        {
             "name": "bower-asset/jquery",
             "version": "3.2.1",
             "source": {
@@ -353,78 +231,6 @@
                 "jquery",
                 "library"
             ]
-        },
-        {
-            "name": "bower-asset/material-design-icons",
-            "version": "3.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/google/material-design-icons.git",
-                "reference": "40ef0f297970f0e78bf87569f43ea90ec53d571c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/google/material-design-icons/zipball/40ef0f297970f0e78bf87569f43ea90ec53d571c",
-                "reference": "40ef0f297970f0e78bf87569f43ea90ec53d571c",
-                "shasum": ""
-            },
-            "type": "bower-asset-library",
-            "license": [
-                "Apache-2.0"
-            ],
-            "description": "Material Design icons by Google",
-            "keywords": [
-                "google",
-                "icons",
-                "material",
-                "material-design"
-            ]
-        },
-        {
-            "name": "bower-asset/octicons",
-            "version": "v6.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/primer/octicons.git",
-                "reference": "d5dffe2d5f2292fb8537784f222d1263b7ee0377"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/primer/octicons/zipball/d5dffe2d5f2292fb8537784f222d1263b7ee0377",
-                "reference": "d5dffe2d5f2292fb8537784f222d1263b7ee0377",
-                "shasum": ""
-            },
-            "type": "bower-asset-library"
-        },
-        {
-            "name": "bower-asset/open-iconic",
-            "version": "1.1.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/iconic/open-iconic.git",
-                "reference": "1d1e8885c5031874b32f4e480e371ce2b1c24144"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/iconic/open-iconic/zipball/1d1e8885c5031874b32f4e480e371ce2b1c24144",
-                "reference": "1d1e8885c5031874b32f4e480e371ce2b1c24144",
-                "shasum": ""
-            },
-            "type": "bower-asset-library",
-            "extra": {
-                "bower-asset-main": [
-                    "./sprite/open-iconic.min.svg"
-                ],
-                "bower-asset-ignore": [
-                    "*.json",
-                    "*.md"
-                ]
-            },
-            "license": [
-                "MIT",
-                "OFL-1.1"
-            ],
-            "description": "An open source icon set in SVG, webfont and raster formats"
         },
         {
             "name": "bower-asset/popper.js",
@@ -6288,8 +6094,7 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "craue/formflow-bundle": 20,
-        "bower-asset/bootstrap": 10,
-        "bower-asset/foundation-icon-fonts": 20
+        "bower-asset/bootstrap": 10
     },
     "prefer-stable": false,
     "prefer-lowest": false,
