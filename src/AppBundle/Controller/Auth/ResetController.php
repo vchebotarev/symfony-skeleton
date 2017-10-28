@@ -26,12 +26,12 @@ class ResetController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $email = $form->getData()['email'];
-            return $this->render('@App/Auth/Reset/request_success.html.twig', [
+            return $this->render('Auth/Reset/request_success.html.twig', [
                 'email' => $email,
             ]);
         }
 
-        return $this->render('@App/Auth/Reset/request.html.twig', [
+        return $this->render('Auth/Reset/request.html.twig', [
             'form' => $form->createView(),
         ]);
     }
@@ -49,7 +49,7 @@ class ResetController extends AbstractController
             //todo защита от перебора
             $response = new Response();
             $response->setStatusCode(Response::HTTP_NOT_FOUND);
-            return $this->render('@App/Auth/Reset/reset_error.html.twig', [], $response);
+            return $this->render('Auth/Reset/reset_error.html.twig', [], $response);
         }
 
         $formReset = $this->createForm(ResetFormType::class, null, [
@@ -58,10 +58,10 @@ class ResetController extends AbstractController
         $formReset->handleRequest($request);
 
         if ($formReset->isSubmitted() && $formReset->isValid()) {
-            return $this->render('@App/Auth/Reset/reset_success.html.twig');
+            return $this->render('Auth/Reset/reset_success.html.twig');
         }
 
-        return $this->render('@App/Auth/Reset/reset.html.twig', [
+        return $this->render('Auth/Reset/reset.html.twig', [
             'form' => $formReset->createView(),
         ]);
     }

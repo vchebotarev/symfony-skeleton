@@ -1,0 +1,29 @@
+
+{% extends 'layout/main.html.twig' %}
+
+{% block page_title %}
+    История входов
+{% endblock %}
+
+{% block content %}
+
+    <h1>{{ block('page_title') }}</h1>
+
+    <table class="table table-hover table-striped">
+        <tr>
+            <th>Дата</th>
+            <th>Тип</th>
+            <th>Браузер</th>
+            <th>Ip</th>
+        </tr>
+        {% for log in logs %}
+            <tr>
+                <td>{{ log.getDateCreated()|date('d.m.Y H:i') }}</td>
+                <td>{{ auth_log_type_name(log.getType()) }}</td>
+                <td>{{ log.getUserAgent().getName() }}</td>
+                <td>{{ log.getIp() }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}

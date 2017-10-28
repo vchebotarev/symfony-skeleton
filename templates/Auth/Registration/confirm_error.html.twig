@@ -1,0 +1,18 @@
+
+{% extends 'layout/main.html.twig' %}
+
+{% block page_title %}
+    Подтверждение регистрации
+{% endblock %}
+
+{% block content %}
+
+    <h1>{{ block('page_title') }}</h1>
+
+    <p>
+        Ошибка подтверждения учетной записи.
+        <br>
+        Токен просрочен или не существует вовсе.
+    </p>
+
+{% endblock %}

@@ -19,7 +19,7 @@ class AdminSecurityController extends AbstractController
 
         $form = $this->get('chebur.login_form.form.helper')->getLoginForm('admin');
 
-        return $this->render('@App/Auth/AdminSecurity/login.html.twig', [
+        return $this->render('Auth/AdminSecurity/login.html.twig', [
             'form' => $form->createView(),
         ]);
     }

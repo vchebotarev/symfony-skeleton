@@ -18,7 +18,7 @@ class EmailController extends AbstractController
         if (!$userToken) {
             $response = new Response();
             $response->setStatusCode(Response::HTTP_FORBIDDEN);
-            return $this->render('@App/PublicArea/Email/change_email_confirm_error_token.html.twig', [], $response);
+            return $this->render('PublicArea/Email/change_email_confirm_error_token.html.twig', [], $response);
         }
 
         $user     = $userToken->getUser();
@@ -29,7 +29,7 @@ class EmailController extends AbstractController
         if ($userEmail) {
             $response = new Response();
             $response->setStatusCode(Response::HTTP_FORBIDDEN);
-            return $this->render('@App/PublicArea/Email/change_email_confirm_error_email.html.twig', [], $response);
+            return $this->render('PublicArea/Email/change_email_confirm_error_email.html.twig', [], $response);
         }
 
         //Изменяем почту
@@ -38,7 +38,7 @@ class EmailController extends AbstractController
         //Авторизовываем пользователя
         $this->get('app.auth.login_manager')->loginUserByLink($user, 'main');
 
-        return $this->render('@App/PublicArea/Email/change_email_confirm_success.html.twig');
+        return $this->render('PublicArea/Email/change_email_confirm_success.html.twig');
     }
 
 }

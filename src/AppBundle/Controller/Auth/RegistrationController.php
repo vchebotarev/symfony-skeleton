@@ -25,13 +25,13 @@ class RegistrationController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $email = $form->getData()['email'];
-            return $this->render('@App/Auth/Registration/register_success.html.twig', [
+            return $this->render('Auth/Registration/register_success.html.twig', [
                 'email' => $email,
             ]);
 
         }
 
-        return $this->render('@App/Auth/Registration/register.html.twig', [
+        return $this->render('Auth/Registration/register.html.twig', [
             'form' => $form->createView(),
         ]);
     }
@@ -47,7 +47,7 @@ class RegistrationController extends AbstractController
             //todo защита от перебора
             $response = new Response();
             $response->setStatusCode(Response::HTTP_NOT_FOUND);
-            return $this->render('@App/Auth/Registration/confirm_error.html.twig', [], $response);
+            return $this->render('Auth/Registration/confirm_error.html.twig', [], $response);
         }
 
         $user = $userToken->getUser();
@@ -58,7 +58,7 @@ class RegistrationController extends AbstractController
         //Авторизовываем пользователя
         $this->get('app.auth.login_manager')->loginUserByLink($user, 'main');
 
-        return $this->render('@App/Auth/Registration/confirm_success.html.twig');
+        return $this->render('Auth/Registration/confirm_success.html.twig');
     }
 
     /**

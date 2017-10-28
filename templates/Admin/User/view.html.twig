@@ -1,0 +1,37 @@
+
+{% extends 'layout/admin.html.twig' %}
+
+{% block page_title %}
+    Пользователь {{ user.getId() }}
+{% endblock %}
+
+{% block content %}
+
+    {% if is_granted('user.edit', user) %}
+        <a href="{{ path('app_admin_user_edit', {'id': user.getId()}) }}" class="btn btn-secondary">Редактировать</a>
+        <a href="{{ path('app_admin_user_change_email', {'id': user.getId()}) }}" class="btn btn-secondary">Изменить email</a>
+        <a href="{{ path('app_admin_user_change_username', {'id': user.getId()}) }}" class="btn btn-secondary">Изменить username</a>
+    {% endif %}
+
+    {% if not user.isEnabled() and is_granted('user.enable') %}
+        <a href="{{ path('app_admin_user_enable', {'id': user.getId()}) }}" class="btn btn-secondary">Активировать</a>
+    {% endif %}
+
+    {% if not user.isLocked() and is_granted('user.lock', user) %}
+        <a href="{{ path('app_admin_user_lock', {'id': user.getId()}) }}" class="btn btn-secondary">Заблокировать</a>
+    {% endif %}
+
+    {% if user.isLocked() and is_granted('user.unlock', user) %}
+        <a href="{{ path('app_admin_user_unlock', {'id': user.getId()}) }}" class="btn btn-secondary">Разблокировать</a>
+    {% endif %}
+
+    {% if is_granted('user.view.auth_log', user) %}
+        <a href="{{ path('app_admin_user_auth_log', {'id': user.getId()}) }}" class="btn btn-secondary">История входов</a>
+    {% endif %}
+
+    <br>
+    <br>
+
+    {{ dump(user) }}
+
+{% endblock %}

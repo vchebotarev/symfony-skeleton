@@ -55,7 +55,7 @@ class UserController extends AbstractController
             ])
             ->build($request);
 
-        return $this->render('@App/Admin/User/list.html.twig', [
+        return $this->render('Admin/User/list.html.twig', [
             'form'   => $form->createView(),
             'search' => $search,
         ]);
@@ -75,7 +75,7 @@ class UserController extends AbstractController
             return $this->redirectToRoute('app_admin_profile_index');
         }
 
-        return $this->render('@App/Admin/User/view.html.twig', [
+        return $this->render('Admin/User/view.html.twig', [
             'user' => $user,
         ]);
     }
@@ -91,7 +91,7 @@ class UserController extends AbstractController
 
         $logs = $this->getEm()->getRepository(UserAuthLog::class)->findByUser($user);
 
-        return $this->render('@App/Admin/User/auth_log.html.twig', [
+        return $this->render('Admin/User/auth_log.html.twig', [
             'user' => $user,
             'logs' => $logs,
         ]);
@@ -115,7 +115,7 @@ class UserController extends AbstractController
             ]);
         }
 
-        return $this->render('@App/Admin/User/create.html.twig', [
+        return $this->render('Admin/User/create.html.twig', [
             'form' => $form->createView(),
         ]);
     }
@@ -151,7 +151,7 @@ class UserController extends AbstractController
             ]);
         }
 
-        return $this->render('@App/Admin/User/edit.html.twig', [
+        return $this->render('Admin/User/edit.html.twig', [
             'form' => $form->createView(),
             'user' => $user,
         ]);
@@ -177,7 +177,7 @@ class UserController extends AbstractController
             ]);
         }
 
-        return $this->render('@App/Admin/User/change_email.html.twig', [
+        return $this->render('Admin/User/change_email.html.twig', [
             'user' => $user,
             'form' => $form->createView(),
         ]);
@@ -203,7 +203,7 @@ class UserController extends AbstractController
             ]);
         }
 
-        return $this->render('@App/Admin/User/change_username.html.twig', [
+        return $this->render('Admin/User/change_username.html.twig', [
             'user' => $user,
             'form' => $form->createView(),
         ]);

@@ -1,0 +1,30 @@
+
+{% extends 'layout/admin.html.twig' %}
+
+{% block page_title %}
+    Изменение логина пользователя {{ user.getId() }}
+{% endblock %}
+
+{% block content %}
+
+    {{ form_start(form) }}
+        <div class="invalid-feedback" style="display: block;">
+            {{ form_errors(form) }}
+        </div>
+
+        <div class="form-group {% if not form.username.vars.valid %} is-invalid {% endif %}">
+            {{ form_label(form.username.username) }}
+            {{ form_widget(form.username.username, {'attr': {'class': 'form-control'}}) }}
+            <div class="invalid-feedback">
+                {{ form_errors(form.username.username) }}
+            </div>
+        </div>
+        <div class="form-group {% if not form.username.vars.valid %} is-invalid {% endif %}">
+            {{ form_label(form.username.username_confirm) }}
+            {{ form_widget(form.username.username_confirm, {'attr': {'class': 'form-control'}}) }}
+        </div>
+
+        <button type="submit" class="btn btn-primary">Изменить</button>
+    {{ form_end(form) }}
+
+{% endblock %}

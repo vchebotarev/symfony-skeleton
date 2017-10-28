@@ -1,0 +1,18 @@
+
+{% extends 'layout/main.html.twig' %}
+
+{% block page_title %}
+    Изменение e-mail
+{% endblock %}
+
+{% block content %}
+
+    <h1>{{ block('page_title') }}</h1>
+
+    <p>
+        Ошибка подтверждения изменения e-mail.
+        <br>
+        Токен просрочен или не существует вовсе.
+    </p>
+
+{% endblock %}

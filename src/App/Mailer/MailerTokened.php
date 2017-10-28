@@ -53,7 +53,7 @@ class MailerTokened implements MailerInterface
                 'token' => $this->userTokenManager->saveToken(UserToken::TYPE_REGISTRATION, $user),
             ), UrlGeneratorInterface::ABSOLUTE_URL),
         );
-        $template = '@App/mail/registration_confirm.html.twig';
+        $template = 'mail/registration_confirm.html.twig';
 
         $this->mailer->sendTemplated($to, $subject, $template, $params);
     }
@@ -72,7 +72,7 @@ class MailerTokened implements MailerInterface
                 'token' => $this->userTokenManager->saveToken(UserToken::TYPE_RESET_PASSWORD, $user),
             ), UrlGeneratorInterface::ABSOLUTE_URL),
         );
-        $template = '@App/mail/reset_confirm.html.twig';
+        $template = 'mail/reset_confirm.html.twig';
 
         $this->mailer->sendTemplated($to, $subject, $template, $params);
     }
@@ -93,7 +93,7 @@ class MailerTokened implements MailerInterface
                 )),
             ), UrlGeneratorInterface::ABSOLUTE_URL),
         );
-        $template = '@App/mail/change_email_confirm.html.twig';
+        $template = 'mail/change_email_confirm.html.twig';
 
         $this->mailer->sendTemplated($to, $subject, $template, $params);
     }

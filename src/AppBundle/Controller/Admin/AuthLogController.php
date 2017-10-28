@@ -20,7 +20,7 @@ class AuthLogController extends AbstractController
 
         $logs = $this->getEm()->getRepository(UserAuthLog::class)->findAll();
 
-        return $this->render('@App/Admin/AuthLog/list.html.twig', [
+        return $this->render('Admin/AuthLog/list.html.twig', [
             'logs' => $logs,
         ]);
     }

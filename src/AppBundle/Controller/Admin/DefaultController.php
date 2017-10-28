@@ -14,7 +14,7 @@ class DefaultController extends AbstractController
      */
     public function indexAction(Request $request)
     {
-        return $this->render('@App/Admin/Default/index.html.twig', [
+        return $this->render('Admin/Default/index.html.twig', [
 
         ]);
     }

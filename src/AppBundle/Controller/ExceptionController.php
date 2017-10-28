@@ -15,7 +15,7 @@ class ExceptionController extends BaseExceptionController
     protected function findTemplate(Request $request, $format, $code, $showException)
     {
         if (!$showException) {
-            $template = sprintf('@App/Exception/error%s.%s.twig', $code, $format);
+            $template = sprintf('Exception/error%s.%s.twig', $code, $format);
             if ($this->templateExists($template)) {
                 return $template;
             }

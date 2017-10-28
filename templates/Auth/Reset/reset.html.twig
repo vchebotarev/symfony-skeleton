@@ -1,0 +1,32 @@
+
+{% extends 'layout/main.html.twig' %}
+
+{% block page_title %}
+    Восстановление пароля
+{% endblock %}
+
+{% block content %}
+
+    <h1>Восстановление пароля</h1>
+
+    <p>
+        {{ form_start(form) }}
+            <div class="invalid-feedback" style="display: block;">
+                {{ form_errors(form) }}
+            </div>
+            <div class="form-group {% if not form.password.vars.valid %} is-invalid {% endif %}">
+                {{ form_label(form.password.password) }}
+                {{ form_widget(form.password.password, {'attr': {'class': 'form-control'}}) }}
+                <div class="invalid-feedback">
+                    {{ form_errors(form.password.password) }}
+                </div>
+            </div>
+            <div class="form-group {% if not form.password.vars.valid %} is-invalid {% endif %}">
+                {{ form_label(form.password.password_confirm) }}
+                {{ form_widget(form.password.password_confirm, {'attr': {'class': 'form-control'}}) }}
+            </div>
+            <button type="submit" class="btn btn-primary">Изменить пароль</button>
+        {{ form_end(form) }}
+    </p>
+
+{% endblock %}
