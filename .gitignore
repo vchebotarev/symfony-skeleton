@@ -1,7 +1,7 @@
 
 # Symfony 3
 /.web-server-pid
-/app/config/parameters.yml
+/config/parameters.yml
 /build/
 /phpunit.xml
 /bin/symfony_requirements
@@ -9,13 +9,13 @@
 !var/cache/.gitkeep
 !var/logs/.gitkeep
 !var/sessions/.gitkeep
-/web/bundles/
+/public/bundles/
 .env
 
 # Composer
 /composer.phar
 /vendor/
-/web/vendor/
+/public/vendor/
 
 # PhpStorm
 /.idea/

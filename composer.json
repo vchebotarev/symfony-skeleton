@@ -5,11 +5,7 @@
     "autoload": {
         "psr-4": {
             "": "src/"
-        },
-        "classmap": [
-            "app/AppKernel.php",
-            "app/AppCache.php"
-        ]
+        }
     },
     "autoload-dev": {
         "psr-4": {
@@ -93,8 +89,8 @@
         "component-dir": "vendor/components",
         "fxp-asset": {
             "installer-paths": {
-                "npm-asset-library":   "web/vendor",
-                "bower-asset-library": "web/vendor"
+                "npm-asset-library":   "public/vendor",
+                "bower-asset-library": "public/vendor"
             }
         }
     },
@@ -102,11 +98,11 @@
         "symfony-app-dir":        "app",
         "symfony-bin-dir":        "bin",
         "symfony-var-dir":        "var",
-        "symfony-web-dir":        "web",
+        "symfony-web-dir":        "public",
         "symfony-tests-dir":      "tests",
         "symfony-assets-install": "relative",
         "incenteev-parameters": {
-            "file": "app/config/parameters.yml"
+            "file": "config/parameters.yml"
         },
         "branch-alias":           null
     }
