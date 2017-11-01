@@ -29,6 +29,7 @@ monolog:
             handler: swift
         swift:
             type:         swift_mailer
+            level:        critical
             from_email:   '%monolog.mail.from_email%'
             to_email:     '%monolog.mail.to_email%'
             subject:      'An Error Occurred!'
