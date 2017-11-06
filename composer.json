@@ -58,8 +58,9 @@
         "syslogic/doctrine-json-functions":    "^1.1",
         "twig/extensions":                     "^1.5",
 
-        "bower-asset/bootstrap":   "v4.0.0-beta1",
+        "npm-asset/bootstrap":     "4.0.0-beta.2",
         "bower-asset/fontawesome": "^4.7",
+        "bower-asset/jquery":      "^3.2",
 
         "hirak/prestissimo":         "^0.3.7",
         "fxp/composer-asset-plugin": "^1.3"
