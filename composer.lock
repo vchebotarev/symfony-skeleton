@@ -4,8 +4,54 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "f3e8ef52d690185f18e2c6513d87f625",
+    "content-hash": "8899d22211f6e76bffd987a8a4db4ea3",
     "packages": [
+        {
+            "name": "alexpts/symfony-asset-strategy-last-modify",
+            "version": "2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/alexpts/symfony-asset-strategy-last-modify.git",
+                "reference": "2fe4c257b41c53716c5d09a3bcac3b33bb1cf214"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/alexpts/symfony-asset-strategy-last-modify/zipball/2fe4c257b41c53716c5d09a3bcac3b33bb1cf214",
+                "reference": "2fe4c257b41c53716c5d09a3bcac3b33bb1cf214",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1",
+                "symfony/asset": "^3.3"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "dev-master",
+                "phpunit/phpunit": "^6.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "PTS\\SymfonyAsset": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alex",
+                    "email": "alexpts@yandex.ru"
+                }
+            ],
+            "description": "Strategy for symfony asset component",
+            "homepage": "https://github.com/alexpts/symfony-asset-strategy-last-modify",
+            "keywords": [
+                "asset",
+                "version"
+            ],
+            "time": "2017-07-25T06:51:58+00:00"
+        },
         {
             "name": "beberlei/DoctrineExtensions",
             "version": "v1.0.19",

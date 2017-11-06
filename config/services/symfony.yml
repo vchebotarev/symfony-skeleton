@@ -22,3 +22,9 @@ services:
     app.twig.controller.exception:
         class: App\Controller\ExceptionController
         parent: twig.controller.exception
+
+# Assets
+    app.symfony.assets.version_strategy.last_modified:
+        class: PTS\SymfonyAsset\LastModifyStrategy
+        arguments:
+            - '%kernel.project_dir%/public'
