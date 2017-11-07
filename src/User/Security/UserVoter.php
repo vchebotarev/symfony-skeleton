@@ -120,7 +120,10 @@ class UserVoter extends Voter
             return $this->decisionManager->decide($token, [User::ROLE_ADMIN]);
         }
         if ($attribute == self::VIEW) {
-            return $this->decisionManager->decide($token, [User::ROLE_ADMIN]);
+            if ($this->decisionManager->decide($token, [User::ROLE_ADMIN])) {
+                return true;
+            }
+            return !$user->isLocked() && $user->isEnabled();
         }
         if ($attribute == self::EDIT) {
             return $this->decisionManager->decide($token, [User::ROLE_ADMIN]);

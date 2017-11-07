@@ -1,0 +1,8 @@
+
+# prefix: /private/user
+
+app_private_user_view:
+    path:     /{id}
+    defaults: { _controller: App\Controller\PrivateArea\UserController:viewAction }
+    requirements:
+        id: '\d+'

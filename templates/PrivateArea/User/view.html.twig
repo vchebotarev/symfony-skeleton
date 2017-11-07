@@ -1,0 +1,16 @@
+
+{% extends 'layout/main.html.twig' %}
+
+{% block page_title %}
+    Профиль пользователя {{ user.username }}
+{% endblock %}
+
+{% block content %}
+
+    <h1>{{ block('page_title') }}</h1>
+
+    <p>
+        {{ dump(user) }}
+    </p>
+
+{% endblock %}

@@ -9,3 +9,8 @@ app_private_default_index:
 app_private_profile:
     prefix:   /profile
     resource: 'private/profile.yml'
+
+# User
+app_private_user:
+    prefix:   /user
+    resource: 'private/user.yml'
