@@ -77,12 +77,12 @@ security:
                 check_path:                     '/login/check'       # Урл проверки отсабмиченной формы логина
                 hide_user_not_found:            false                # Показывать сообщения, что такого юзера нет в системе при логине
                 require_previous_session:       true                 #todo
-                success_handler:                null                 # Сервис удачной авторизации
+                success_handler:                app.symfony.security.authentication.success_handler.ajax
                 always_use_default_target_path: false                # Всегда использовать 'default_target_path'
                 default_target_path:            '/private/'          # Куда редиректить после успешного логина
                 target_path_parameter:          'return_url'         # Если после логина не надо в 'default_target_path'
                 use_referer:                    false                # После успешного логина возвращаться туда, откуда перекинуло на логин
-                failure_handler:                null                 # Сервис неудачной авторизации
+                failure_handler:                app.symfony.security.authentication.failure_handler.ajax
                 failure_path:                   null                 # Куда редиректить в случае неудачного логина
                 failure_forward:                false                # Сразу рендерить страницу для неудачного логина
                 failure_path_parameter:         '_failure_path'      # Параметр в урле куда ретиректить в случае неудачного логина

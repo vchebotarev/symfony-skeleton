@@ -17,7 +17,6 @@ services:
         tags:
             - { name: validator.constraint_validator, alias: validator.user_password }
 
-
 # Exception Controller
     app.twig.controller.exception:
         class: App\Controller\ExceptionController
@@ -28,3 +27,14 @@ services:
         class: PTS\SymfonyAsset\LastModifyStrategy
         arguments:
             - '%kernel.project_dir%/public'
+
+# Security
+    app.symfony.security.authentication.success_handler.ajax:
+        class: App\Symfony\Security\Authentication\AjaxAuthenticationSuccessHandler
+        parent: security.authentication.success_handler
+
+    app.symfony.security.authentication.failure_handler.ajax:
+        class: App\Symfony\Security\Authentication\AjaxAuthenticationFailureHandler
+        parent: security.authentication.failure_handler
+        arguments:
+            - '@translator'
