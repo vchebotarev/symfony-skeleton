@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "ad37edc3998e36fc07b9b426d5806b0b",
+    "content-hash": "5590b35ad74488d71aba65f3632639be",
     "packages": [
         {
             "name": "alexpts/symfony-asset-strategy-last-modify",
@@ -298,16 +298,16 @@
         },
         {
             "name": "chebur/login-form-bundle",
-            "version": "0.0.10",
+            "version": "0.0.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vchebotarev/login-form-bundle.git",
-                "reference": "a1122cbb6fffab2d02f22237a8f4adffcf520bd1"
+                "reference": "0b448227d6d5066cdfd6210cd34089573f3841e0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vchebotarev/login-form-bundle/zipball/a1122cbb6fffab2d02f22237a8f4adffcf520bd1",
-                "reference": "a1122cbb6fffab2d02f22237a8f4adffcf520bd1",
+                "url": "https://api.github.com/repos/vchebotarev/login-form-bundle/zipball/0b448227d6d5066cdfd6210cd34089573f3841e0",
+                "reference": "0b448227d6d5066cdfd6210cd34089573f3841e0",
                 "shasum": ""
             },
             "type": "symfony-bundle",
@@ -337,7 +337,7 @@
                 "symfony",
                 "symfony3"
             ],
-            "time": "2017-09-01T12:34:24+00:00"
+            "time": "2017-11-07T14:35:49+00:00"
         },
         {
             "name": "chebur/search-bundle",

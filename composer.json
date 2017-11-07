@@ -31,7 +31,7 @@
         "alexpts/symfony-asset-strategy-last-modify": "^2.0",
         "beberlei/DoctrineExtensions":                "^1.0",
         "browscap/browscap-php":                      "^3.1",
-        "chebur/login-form-bundle":                   "^0.0.10",
+        "chebur/login-form-bundle":                   "^0.0.12",
         "chebur/search-bundle":                       "^0.0.1",
         "chebur/sphinx-bundle":                       "^0.0.5",
         "chebur/twig-php-functions-bundle":           "^0.0.2",

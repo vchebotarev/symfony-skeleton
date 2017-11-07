@@ -3,7 +3,7 @@
 security:
     #access_denied_url:                   ~
     #session_fixation_strategy:           'migrate' #todo
-    hide_user_not_found:                 true      #Общая ошибка входа, вместо пользователь не найден
+    hide_user_not_found:                 false      #Общая ошибка входа, вместо пользователь не найден
     #always_authenticate_before_granting: false     #todo
     #erase_credentials:                   true      #todo
     #access_decision_manager:
@@ -54,7 +54,6 @@ security:
                 use_forward:                    false
                 login_path:                     '/admin/login'
                 check_path:                     '/admin/login/check'
-                hide_user_not_found:            true
                 always_use_default_target_path: true
                 default_target_path:            '/admin/'
             logout:
@@ -75,7 +74,6 @@ security:
                 use_forward:                    false                # Рендеринг формы логина прямо на недостпной странице
                 login_path:                     '/login'             # Урл формы логина
                 check_path:                     '/login/check'       # Урл проверки отсабмиченной формы логина
-                hide_user_not_found:            false                # Показывать сообщения, что такого юзера нет в системе при логине
                 require_previous_session:       true                 #todo
                 success_handler:                app.symfony.security.authentication.success_handler.ajax
                 always_use_default_target_path: false                # Всегда использовать 'default_target_path'
