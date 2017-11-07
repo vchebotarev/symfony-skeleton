@@ -35,7 +35,7 @@
         "chebur/search-bundle":                       "^0.0.1",
         "chebur/sphinx-bundle":                       "^0.0.5",
         "chebur/twig-php-functions-bundle":           "^0.0.2",
-        "craue/formflow-bundle":                      "~3.0@dev",
+        "craue/formflow-bundle":                      "^3.0",
         "doctrine/doctrine-fixtures-bundle":          "^2.3",
         "doctrine/doctrine-migrations-bundle":        "^1.2",
         "egeloen/ckeditor-bundle":                    "^6.0",

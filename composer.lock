@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "8899d22211f6e76bffd987a8a4db4ea3",
+    "content-hash": "ad37edc3998e36fc07b9b426d5806b0b",
     "packages": [
         {
             "name": "alexpts/symfony-asset-strategy-last-modify",
@@ -546,7 +546,7 @@
         },
         {
             "name": "craue/formflow-bundle",
-            "version": "dev-master",
+            "version": "3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/craue/CraueFormFlowBundle.git",
@@ -6191,7 +6191,6 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "craue/formflow-bundle": 20,
         "npm-asset/bootstrap": 10
     },
     "prefer-stable": false,
