@@ -5,6 +5,7 @@ namespace App\Controller\Admin;
 use App\Symfony\Controller\AbstractController;
 use App\User\Form\Type\ChangeEmailFormType;
 use App\User\Form\Type\ChangePasswordFormType;
+use App\User\Form\Type\ChangeTimezoneFormType;
 use App\User\Form\Type\ChangeUsernameFormType;
 use App\User\Security\UserVoter;
 use App\Entity\UserAuthLog;
@@ -107,6 +108,24 @@ class ProfileController extends AbstractController
         }
 
         return $this->render('Admin/Profile/change_email.html.twig', [
+            'form' => $form->createView(),
+        ]);
+    }
+
+    /**
+     * @param Request $request
+     * @return Response
+     */
+    public function changeTimezoneAction(Request $request)
+    {
+        $form = $this->createForm(ChangeTimezoneFormType::class);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            return $this->render('Admin/Profile/change_timezone_success.html.twig');
+        }
+
+        return $this->render('Admin/Profile/change_timezone.html.twig', [
             'form' => $form->createView(),
         ]);
     }

@@ -83,6 +83,12 @@ class User extends AbstractUser implements GenderedInterface, \JsonSerializable
     use Column\DateCreated;
 
     /**
+     * @var string
+     * @ORM\Column(name="timezone", type="string", options={"default": ""})
+     */
+    protected $timezone = '';
+
+    /**
      * @return string
      */
     public function getUsername(): string
@@ -346,6 +352,24 @@ class User extends AbstractUser implements GenderedInterface, \JsonSerializable
                 $this->roles = array_values($this->roles);
             }
         }
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTimezone() : string
+    {
+        return $this->timezone;
+    }
+
+    /**
+     * @param string $timezone
+     * @return $this
+     */
+    public function setTimezone(string $timezone)
+    {
+        $this->timezone = $timezone;
         return $this;
     }
 

@@ -24,3 +24,7 @@ app_admin_profile_change_password:
 app_admin_profile_change_email:
     path:     /change-email
     defaults: { _controller: App\Controller\Admin\ProfileController:changeEmailAction }
+
+app_admin_profile_change_timezone:
+    path:     /change-timezone
+    defaults: { _controller: App\Controller\Admin\ProfileController:changeTimezoneAction }

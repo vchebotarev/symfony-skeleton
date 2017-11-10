@@ -20,3 +20,8 @@ Icons
 http://realfavicongenerator.net/
 http://stackoverflow.com/questions/5110776/apple-touch-icon-for-websites
 http://stackoverflow.com/questions/4014823/does-a-favicon-have-to-be-32x32-or-16x16
+
+Временные зоны
+https://github.com/lunetics/TimezoneBundle - "угадывание" временной зоны
+ивент изменения временной зоны
+промежуточное хранение временной зоны в сессии

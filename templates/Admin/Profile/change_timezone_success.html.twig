@@ -1,0 +1,16 @@
+
+{% extends 'layout/admin.html.twig' %}
+
+{% block page_title %}
+    Изменение часового пояса
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        Вы успешно изменили ваш часовой пояс.
+        <br>
+        <a href="{{ path('app_admin_profile_index') }}">Вернуться в профиль</a>
+    </p>
+
+{% endblock %}

@@ -20,3 +20,7 @@ app_private_profile_change_password:
 app_private_profile_change_email:
     path:     /change-email
     defaults: { _controller: App\Controller\PrivateArea\ProfileController:changeEmailAction }
+
+app_private_profile_change_timezone:
+    path:     /change-timezone
+    defaults: { _controller: App\Controller\PrivateArea\ProfileController:changeTimezoneAction }

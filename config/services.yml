@@ -172,6 +172,17 @@ services:
             - '@doctrine.orm.entity_manager'
             - '@request_stack'
 
+#Timezone
+    app.timezone.manager:
+        class: App\Timezone\TimezoneManager
+
+    app.timezone.event_subscriber:
+        class: App\Timezone\TimezoneEventSubscriber
+        arguments:
+            - '@app.user.manager'
+            - '@doctrine.orm.entity_manager'
+        tags:
+            - { name: kernel.event_subscriber }
 
 # User
     app.user.manager:
@@ -230,6 +241,14 @@ services:
         class: App\User\Form\Type\EditUserFormType
         arguments:
             - '@app.user.manager'
+        tags:
+            - { name: form.type }
+
+    app.user.form.type.change_timezone:
+        class: App\User\Form\Type\ChangeTimezoneFormType
+        arguments:
+            - '@app.user.manager'
+            - '@app.timezone.manager'
         tags:
             - { name: form.type }
 
