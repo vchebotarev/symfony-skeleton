@@ -1,6 +1,7 @@
 
 imports:
     - { resource: services/chebur.yml }
+    - { resource: services/doctrine.yml }
     - { resource: services/monolog.yml }
     - { resource: services/symfony.yml }
 

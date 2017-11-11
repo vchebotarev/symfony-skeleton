@@ -1,0 +1,7 @@
+
+services:
+
+    app.doctrine.dbal.event.listener:
+        class: App\Doctrine\DBAL\Event\Listeners\MysqlOnlyFullGroupByDisable
+        tags:
+            - { name: doctrine.event_subscriber }
