@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "5590b35ad74488d71aba65f3632639be",
+    "content-hash": "ce1ffd7be0fed62f69477f4ac94f2205",
     "packages": [
         {
             "name": "alexpts/symfony-asset-strategy-last-modify",
@@ -225,6 +225,48 @@
                 "jquery",
                 "library"
             ]
+        },
+        {
+            "name": "bower-asset/jquery-form",
+            "version": "v4.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jquery-form/form.git",
+                "reference": "4beae57bc92402e2d03ca66b5ae2942d0c94c695"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jquery-form/form/zipball/4beae57bc92402e2d03ca66b5ae2942d0c94c695",
+                "reference": "4beae57bc92402e2d03ca66b5ae2942d0c94c695",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/jquery": ">=1.7.2"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": "src/jquery.form.js",
+                "bower-asset-ignore": [
+                    "README.md",
+                    "composer.json",
+                    "package.json"
+                ]
+            },
+            "license": [
+                "(LGPL-2.1+ OR MIT)"
+            ],
+            "description": "The jQuery Form Plugin allows you to easily and unobtrusively upgrade HTML forms to use AJAX.",
+            "keywords": [
+                "ajax",
+                "form",
+                "html-form",
+                "jquery",
+                "jquery-form",
+                "jquery-plugin",
+                "json",
+                "json-form"
+            ],
+            "time": "2017-08-09T20:56:53+00:00"
         },
         {
             "name": "browscap/browscap-php",
