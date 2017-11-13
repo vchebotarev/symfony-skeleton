@@ -224,8 +224,7 @@
                 "javascript",
                 "jquery",
                 "library"
-            ],
-            "time": "2017-03-20T19:02:00+00:00"
+            ]
         },
         {
             "name": "browscap/browscap-php",
@@ -487,16 +486,16 @@
         },
         {
             "name": "composer/ca-bundle",
-            "version": "1.0.8",
+            "version": "1.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/ca-bundle.git",
-                "reference": "9dd73a03951357922d8aee6cc084500de93e2343"
+                "reference": "36344aeffdc37711335563e6108cda86566432a6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/9dd73a03951357922d8aee6cc084500de93e2343",
-                "reference": "9dd73a03951357922d8aee6cc084500de93e2343",
+                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/36344aeffdc37711335563e6108cda86566432a6",
+                "reference": "36344aeffdc37711335563e6108cda86566432a6",
                 "shasum": ""
             },
             "require": {
@@ -542,20 +541,20 @@
                 "ssl",
                 "tls"
             ],
-            "time": "2017-09-11T07:24:36+00:00"
+            "time": "2017-11-13T15:51:25+00:00"
         },
         {
             "name": "craue/formflow-bundle",
-            "version": "3.0.0",
+            "version": "3.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/craue/CraueFormFlowBundle.git",
-                "reference": "8ee11efa55596bf1cdd79458c89f9f12bdaa28aa"
+                "reference": "51fe9940b6ee259928bf79a7dfb2284addcc231f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craue/CraueFormFlowBundle/zipball/8ee11efa55596bf1cdd79458c89f9f12bdaa28aa",
-                "reference": "8ee11efa55596bf1cdd79458c89f9f12bdaa28aa",
+                "url": "https://api.github.com/repos/craue/CraueFormFlowBundle/zipball/51fe9940b6ee259928bf79a7dfb2284addcc231f",
+                "reference": "51fe9940b6ee259928bf79a7dfb2284addcc231f",
                 "shasum": ""
             },
             "require": {
@@ -607,7 +606,7 @@
                 "symfony3",
                 "wizard"
             ],
-            "time": "2017-09-04T11:06:52+00:00"
+            "time": "2017-11-08T09:56:42+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -1487,34 +1486,32 @@
         },
         {
             "name": "doctrine/migrations",
-            "version": "v1.5.0",
+            "version": "v1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/migrations.git",
-                "reference": "c81147c0f2938a6566594455367e095150547f72"
+                "reference": "ae765cee290a82975806fe49748acdd4d0580c6f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/migrations/zipball/c81147c0f2938a6566594455367e095150547f72",
-                "reference": "c81147c0f2938a6566594455367e095150547f72",
+                "url": "https://api.github.com/repos/doctrine/migrations/zipball/ae765cee290a82975806fe49748acdd4d0580c6f",
+                "reference": "ae765cee290a82975806fe49748acdd4d0580c6f",
                 "shasum": ""
             },
             "require": {
-                "doctrine/dbal": "~2.2",
+                "doctrine/dbal": "~2.6",
                 "ocramius/proxy-manager": "^1.0|^2.0",
-                "php": "^5.5|^7.0",
-                "symfony/console": "~2.3|~3.0",
-                "symfony/yaml": "~2.3|~3.0"
+                "php": "^7.1",
+                "symfony/console": "~3.3|^4.0",
+                "symfony/yaml": "~3.3|^4.0"
             },
             "require-dev": {
-                "doctrine/coding-standard": "dev-master",
-                "doctrine/orm": "2.*",
+                "doctrine/coding-standard": "^1.0",
+                "doctrine/orm": "~2.5",
                 "jdorn/sql-formatter": "~1.1",
-                "johnkary/phpunit-speedtrap": "~1.0@dev",
                 "mikey179/vfsstream": "^1.6",
-                "mockery/mockery": "^0.9.4",
-                "phpunit/phpunit": "~4.7",
-                "satooshi/php-coveralls": "^1.0"
+                "phpunit/phpunit": "~6.2",
+                "squizlabs/php_codesniffer": "^3.0"
             },
             "suggest": {
                 "jdorn/sql-formatter": "Allows to generate formatted SQL with the diff command."
@@ -1557,7 +1554,7 @@
                 "database",
                 "migrations"
             ],
-            "time": "2016-12-25T22:54:00+00:00"
+            "time": "2017-11-09T15:46:53+00:00"
         },
         {
             "name": "doctrine/orm",
@@ -1860,16 +1857,16 @@
         },
         {
             "name": "foolz/sphinxql-query-builder",
-            "version": "1.1.1",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FoolCode/SphinxQL-Query-Builder.git",
-                "reference": "dd8fc0370fb30919447056563c8c66ea0ff74075"
+                "reference": "ca6e6836b5f1bc5077e0d179874aa252440ea4dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FoolCode/SphinxQL-Query-Builder/zipball/dd8fc0370fb30919447056563c8c66ea0ff74075",
-                "reference": "dd8fc0370fb30919447056563c8c66ea0ff74075",
+                "url": "https://api.github.com/repos/FoolCode/SphinxQL-Query-Builder/zipball/ca6e6836b5f1bc5077e0d179874aa252440ea4dc",
+                "reference": "ca6e6836b5f1bc5077e0d179874aa252440ea4dc",
                 "shasum": ""
             },
             "require": {
@@ -1879,7 +1876,7 @@
                 "foolz/sphinxql": "self.version"
             },
             "require-dev": {
-                "phpunit/phpunit": "4.4.*"
+                "phpunit/phpunit": "6.3.*"
             },
             "type": "library",
             "autoload": {
@@ -1907,7 +1904,7 @@
                 "sphinxql",
                 "sql"
             ],
-            "time": "2016-12-15T13:51:59+00:00"
+            "time": "2017-11-07T14:00:57+00:00"
         },
         {
             "name": "friendsofsymfony/jsrouting-bundle",
@@ -3195,7 +3192,7 @@
                     "email": "stof@notk.org"
                 },
                 {
-                    "name": "Knplabs",
+                    "name": "KnpLabs",
                     "homepage": "http://knplabs.com"
                 },
                 {
@@ -4348,35 +4345,35 @@
         },
         {
             "name": "php-amqplib/rabbitmq-bundle",
-            "version": "v1.13.0",
+            "version": "v1.14.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-amqplib/RabbitMqBundle.git",
-                "reference": "564e87c7d4c47f545838de57a78f657a8304374b"
+                "reference": "acafbdb72d8f0c95a5e0279245a70b64581e172e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-amqplib/RabbitMqBundle/zipball/564e87c7d4c47f545838de57a78f657a8304374b",
-                "reference": "564e87c7d4c47f545838de57a78f657a8304374b",
+                "url": "https://api.github.com/repos/php-amqplib/RabbitMqBundle/zipball/acafbdb72d8f0c95a5e0279245a70b64581e172e",
+                "reference": "acafbdb72d8f0c95a5e0279245a70b64581e172e",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.0",
-                "php-amqplib/php-amqplib": "~2.6",
-                "psr/log": "~1.0",
-                "symfony/config": "~2.3 || ~3.0",
-                "symfony/console": "~2.3 || ~3.0",
-                "symfony/dependency-injection": "~2.3 || ~3.0",
-                "symfony/event-dispatcher": "~2.3 || ~3.0",
-                "symfony/yaml": "~2.3 || ~3.0"
+                "php": "^5.3.9|^7.0",
+                "php-amqplib/php-amqplib": "^2.6",
+                "psr/log": "^1.0",
+                "symfony/config": "^2.7|^3.0|^4.0",
+                "symfony/console": "^2.7|^3.0|^4.0",
+                "symfony/dependency-injection": "^2.7|^3.0|^4.0",
+                "symfony/event-dispatcher": "^2.7|^3.0|^4.0",
+                "symfony/yaml": "^2.7|^3.0|^4.0"
             },
             "replace": {
                 "oldsound/rabbitmq-bundle": "self.version"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.8 || ~5.0",
-                "symfony/debug": "~2.3 || ~3.0",
-                "symfony/serializer": "~2.3 || ~3.0"
+                "phpunit/phpunit": "^4.8|^5.0",
+                "symfony/debug": "^2.7|^3.0|^4.0",
+                "symfony/serializer": "^2.7|^3.0|^4.0"
             },
             "suggest": {
                 "symfony/framework-bundle": "To use this lib as a full Symfony Bundle and to use the profiler data collector"
@@ -4412,7 +4409,7 @@
                 "queue",
                 "rabbitmq"
             ],
-            "time": "2017-06-12T07:05:02+00:00"
+            "time": "2017-11-08T09:06:50+00:00"
         },
         {
             "name": "phpcollection/phpcollection",
@@ -5601,16 +5598,16 @@
         },
         {
             "name": "symfony/symfony",
-            "version": "v3.3.10",
+            "version": "v3.3.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "cfef3b2d505ae4375b17032bd03ed9a3da4b7b43"
+                "reference": "97e753fa58c6ab8751e5f77995d1ed7737a99f1b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/cfef3b2d505ae4375b17032bd03ed9a3da4b7b43",
-                "reference": "cfef3b2d505ae4375b17032bd03ed9a3da4b7b43",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/97e753fa58c6ab8751e5f77995d1ed7737a99f1b",
+                "reference": "97e753fa58c6ab8751e5f77995d1ed7737a99f1b",
                 "shasum": ""
             },
             "require": {
@@ -5633,7 +5630,7 @@
             },
             "conflict": {
                 "phpdocumentor/reflection-docblock": "<3.0||>=3.2.0,<3.2.2",
-                "phpdocumentor/type-resolver": "<0.2.0",
+                "phpdocumentor/type-resolver": "<0.2.1",
                 "phpunit/phpunit": "<4.8.35|<5.4.3,>=5.0"
             },
             "provide": {
@@ -5695,6 +5692,7 @@
             },
             "require-dev": {
                 "cache/integration-tests": "dev-master",
+                "doctrine/annotations": "~1.0",
                 "doctrine/cache": "~1.6",
                 "doctrine/data-fixtures": "1.0.*",
                 "doctrine/dbal": "~2.4",
@@ -5750,7 +5748,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2017-10-05T23:40:32+00:00"
+            "time": "2017-11-10T20:08:30+00:00"
         },
         {
             "name": "syslogic/doctrine-json-functions",
@@ -6130,16 +6128,16 @@
         },
         {
             "name": "symfony/phpunit-bridge",
-            "version": "v3.3.10",
+            "version": "v3.3.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/phpunit-bridge.git",
-                "reference": "6e40d1c8bc4037edf3852c0b29fdd2923c4e2133"
+                "reference": "0cbc5e0f8af23dadf270371b9627f1f264cf6021"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/phpunit-bridge/zipball/6e40d1c8bc4037edf3852c0b29fdd2923c4e2133",
-                "reference": "6e40d1c8bc4037edf3852c0b29fdd2923c4e2133",
+                "url": "https://api.github.com/repos/symfony/phpunit-bridge/zipball/0cbc5e0f8af23dadf270371b9627f1f264cf6021",
+                "reference": "0cbc5e0f8af23dadf270371b9627f1f264cf6021",
                 "shasum": ""
             },
             "require": {
@@ -6188,7 +6186,7 @@
             ],
             "description": "Symfony PHPUnit Bridge",
             "homepage": "https://symfony.com",
-            "time": "2017-10-02T06:54:00+00:00"
+            "time": "2017-11-07T14:16:22+00:00"
         }
     ],
     "aliases": [],
