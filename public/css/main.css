@@ -1,0 +1,14 @@
+
+/*************************************************** Sticky footer ****************************************************/
+#footer {
+    position: absolute;
+    bottom: 0;
+    height: 3.5rem; /* фактическая высота футера */
+}
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    margin-bottom: 3.5rem; /* фактическая высота футера */
+}
