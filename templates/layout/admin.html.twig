@@ -7,18 +7,7 @@
     <title>Admin {% block page_title %}{% endblock %}</title>
 
     {% block header_assets %}
-        {# jQuery #}
-        <script src="{{ asset('vendor/jquery/dist/jquery.min.js') }}"></script>
-        {# Bootstrap #}
-        <link rel="stylesheet" href="{{ asset('vendor/bootstrap/dist/css/bootstrap.min.css') }}">
-        <script src="{{ asset('vendor/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
-        {# Bootstrap more #}
-        <link rel="stylesheet" href="{{ asset('css/bootstrap-more/general.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/bootstrap-more/forms.css') }}">
-        {# Fontawesome http://fontawesome.io/icons/ #}
-        <link rel="stylesheet" href="{{ asset('vendor/fontawesome/css/font-awesome.min.css') }}">
-        {# jQuery form https://jquery-form.github.io/form/ #}
-        <script src="{{ asset('vendor/jquery-form/dist/jquery.form.min.js') }}"></script>
+        {% include 'layout/_assets.html.twig' %}
     {% endblock %}
 
 </head>
