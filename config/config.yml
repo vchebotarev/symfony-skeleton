@@ -112,6 +112,9 @@ swiftmailer:
 #        type: memory #это не работает в винде
 #        type: file
 
+# FOS JsRouting Bundle #todo
+#fos_js_routing:
+
 # Chebur Search
 chebur_search:
     param_names:
