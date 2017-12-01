@@ -71,9 +71,10 @@ doctrine:
 
 # Doctrine Migrations
 doctrine_migrations:
-    dir_name:   '%kernel.source_dir%/Migration'
-    namespace:  App\Migration
-    table_name: migration
+    dir_name:        '%kernel.source_dir%/Migration'
+    namespace:       App\Migration
+    table_name:      migration
+    custom_template: '%kernel.source_dir%/Doctrine/DBAL/Migrations/template'
 
 # Gregwar Captcha
 gregwar_captcha:

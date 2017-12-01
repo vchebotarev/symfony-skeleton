@@ -1,0 +1,26 @@
+<?php declare(strict_types = 1);
+
+namespace <namespace>;
+
+use Doctrine\DBAL\Migrations\AbstractMigration;
+use Doctrine\DBAL\Schema\Schema;
+
+class Version<version> extends AbstractMigration
+{
+    /**
+     * @inheritdoc
+     */
+    public function up(Schema $schema)
+    {
+<up>
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function down(Schema $schema)
+    {
+<down>
+    }
+
+}
