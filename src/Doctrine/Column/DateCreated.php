@@ -11,8 +11,7 @@ trait DateCreated
 {
     /**
      * @var \DateTime
-     * @todo ORM\Version
-     * @ORM\Column(name="date_created", type="datetime")
+     * @ORM\Column(name="date_created", type="datetimetz")
      */
     protected $dateCreated;
 

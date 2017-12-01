@@ -54,6 +54,7 @@ doctrine:
         wrapper_class: App\Doctrine\DBAL\ReopeningConnectionWrapper
         types:
             json_array: App\Doctrine\DBAL\Types\JsonArrayType
+            datetimetz: App\Doctrine\DBAL\Types\DateTimeTzType
 
     orm:
         auto_generate_proxy_classes: '%kernel.debug%'
