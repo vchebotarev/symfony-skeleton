@@ -35,6 +35,42 @@
                 <a class="dropdown-item" href="{{ path('app_admin_user_review_list') }}">Отзывы</a>
             </div>
         </li>
+        <li class="nav-item">
+            {% set ticket_unread = count_ticket_unread() %}
+            {% set ticket_message_unread = count_ticket_message_unread() %}
+            <a class="nav-link" href="{{ path('app_private_ticket_index') }}">
+                Тикеты
+                <span class="ticket-unread-count {% if chat_unread == 0 %}d-none{% endif %} badge badge-primary">{{ ticket_unread }}</span>
+                <span class="ticket-message-unread-count {% if chat_message_unread == 0 %}d-none{% endif %} badge badge-primary">{{ ticket_message_unread }}</span>
+            </a>
+        </li>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                //обновление количества непрочитанных чатов + сообщений
+                setInterval(function() {
+                    $.get(Routing.generate('app_admin_ticket_count_unread'), function (data) {
+                        var c = data.count;
+                        var badge = $('.ticket-unread-count');
+                        badge.html(c);
+                        if (c > 0) {
+                            badge.removeClass('d-none');
+                        } else {
+                            badge.addClass('d-none');
+                        }
+                    }, 'json');
+                    $.get(Routing.generate('app_admin_ticket_message_count_unread'), function (data) {
+                        var c = data.count;
+                        var badge = $('.ticket-message-unread-count');
+                        badge.html(c);
+                        if (c > 0) {
+                            badge.removeClass('d-none');
+                        } else {
+                            badge.addClass('d-none');
+                        }
+                    }, 'json');
+                }, 60000);
+            });
+        </script>
     </ul>
 
     <ul class="navbar-nav">

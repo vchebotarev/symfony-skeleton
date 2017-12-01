@@ -1,0 +1,26 @@
+
+# prefix: /admin/ticket/message
+
+app_admin_ticket_message_list:
+    path:     /list/{ticketId}
+    defaults: { _controller: App\Controller\Admin\TicketMessageController:listAction }
+    requirements:
+        ticketId: '\d+'
+    options:
+        expose: true
+    #todo ajax only
+
+app_admin_ticket_message_create:
+    path:     /create/{ticketId}
+    methods:  ['POST']
+    defaults: { _controller: App\Controller\Admin\TicketMessageController:createAction }
+    requirements:
+        chatId: '\d+'
+    #todo ajax only
+
+app_admin_ticket_message_count_unread:
+    path:     /count-unread
+    defaults: { _controller: App\Controller\Admin\TicketMessageController:countUnreadAction }
+    options:
+        expose: true
+    #todo ajax only

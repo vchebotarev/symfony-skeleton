@@ -1,0 +1,34 @@
+
+# prefix: /private/ticket
+
+app_private_ticket_index:
+    path:     /
+    defaults: { _controller: FrameworkBundle:Redirect:redirect, route: app_private_ticket_list, permanent: true }
+
+app_private_ticket_list:
+    path:     /list
+    defaults: { _controller: App\Controller\PrivateArea\TicketController:listAction }
+
+app_private_ticket_view:
+    path:     /{id}
+    defaults: { _controller: App\Controller\PrivateArea\TicketController:viewAction }
+    requirements:
+        id: '\d+'
+
+app_private_ticket_create:
+    path:     /create
+    defaults: { _controller: App\Controller\PrivateArea\TicketController:createAction }
+
+app_private_ticket_archive:
+    path:     /{id}/archive
+    defaults: { _controller: App\Controller\PrivateArea\TicketController:archiveAction }
+    requirements:
+        id: '\d+'
+    #todo ajax only
+
+app_private_ticket_count_unread:
+    path:     /count-unread
+    defaults: { _controller: App\Controller\PrivateArea\TicketController:countUnreadAction }
+    options:
+        expose: true
+    #todo ajax only

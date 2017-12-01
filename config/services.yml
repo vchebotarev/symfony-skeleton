@@ -383,3 +383,64 @@ services:
         arguments:
             - '@doctrine.orm.entity_manager'
             - '@app.user.manager'
+
+# Ticket
+    app.ticket.manager:
+        class: App\Ticket\TicketManager
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '@app.user.manager'
+
+    app.ticket.counter:
+        class: App\Ticket\TicketCounter
+        arguments:
+            - '@doctrine.orm.entity_manager'
+
+    app.ticket.twig.extension:
+        class: App\Twig\Extension\TicketExtension
+        arguments:
+            - '@app.ticket.counter'
+            - '@app.user.manager'
+        tags:
+            - { name: twig.extension }
+
+    app.ticket.security.voter:
+        class: App\Ticket\Security\TicketVoter
+        arguments:
+            - '@security.access.decision_manager'
+        tags:
+            - { name: security.voter }
+
+    app.ticket.form.type.create:
+        class: App\Ticket\Form\Type\TicketCreateFormType
+        arguments:
+            - '@app.ticket.manager'
+        tags:
+            - { name: form.type }
+
+    app.ticket.search.source:
+        class: App\Ticket\Search\TicketItemsSource
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '@app.user.manager'
+            - '@app.ticket.search.transformer'
+
+    app.ticket.search.transformer:
+        class: App\Ticket\Search\TicketSearchItemTransformer
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '@app.user.manager'
+
+# Ticket Message
+    app.ticket.message.search.source:
+        class: App\Ticket\Message\Search\TicketMessagesItemsSource
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '@app.user.manager'
+            - '@app.ticket.message.search.transformer'
+
+    app.ticket.message.search.transformer:
+        class: App\Ticket\Message\Search\TicketMessageSearchItemTransformer
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '@app.user.manager'

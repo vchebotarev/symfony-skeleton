@@ -29,3 +29,13 @@ app_private_chat:
 app_private_chat_message:
     prefix:   /chat/message
     resource: 'private/chat_message.yml'
+
+# Tickets
+app_private_ticket:
+    prefix:   /ticket
+    resource: 'private/ticket.yml'
+
+# Ticket messages
+app_private_ticket_message:
+    prefix:   /ticket/message
+    resource: 'private/ticket_message.yml'

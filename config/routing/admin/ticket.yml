@@ -1,0 +1,36 @@
+
+# prefix: /admin/ticket
+
+app_admin_ticket_index:
+    path:     /
+    defaults: { _controller: FrameworkBundle:Redirect:redirect, route: app_admin_ticket_list, permanent: true }
+
+app_admin_ticket_list:
+    path:     /list
+    defaults: { _controller: App\Controller\Admin\TicketController:listAction }
+
+app_admin_ticket_view:
+    path:     /{id}
+    defaults: { _controller: App\Controller\Admin\TicketController:viewAction }
+    requirements:
+        id: '\d+'
+
+app_admin_ticket_create:
+    path:     /create/{userId}
+    defaults: { _controller: App\Controller\Admin\TicketController:createAction }
+    requirements:
+        userId: '\d+'
+
+app_admin_ticket_archive:
+    path:     /{id}/archive
+    defaults: { _controller: App\Controller\Admin\TicketController:archiveAction }
+    requirements:
+        id: '\d+'
+    #todo ajax only
+
+app_admin_ticket_count_unread:
+    path:     /count-unread
+    defaults: { _controller: App\Controller\Admin\TicketController:countUnreadAction }
+    options:
+        expose: true
+    #todo ajax only

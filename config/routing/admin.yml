@@ -24,3 +24,13 @@ app_admin_user_review:
 app_admin_auth_log:
     prefix:   /auth-log
     resource: 'admin/auth_log.yml'
+
+# Tickets
+app_admin_ticket:
+    prefix:   /ticket
+    resource: 'admin/ticket.yml'
+
+# Ticket messages
+app_admin_ticket_message:
+    prefix:   /ticket/message
+    resource: 'admin/ticket_message.yml'
