@@ -6,8 +6,8 @@ use App\Chat\ChatManager;
 use App\Entity\Chat;
 use App\Entity\User;
 use App\Symfony\Form\AbstractFormType;
+use App\Symfony\Form\FormHelper;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
-use Symfony\Component\Form\Form;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\FormEvents;
@@ -25,11 +25,18 @@ class ChatMessageCreateFormType extends AbstractFormType
     protected $chatManager;
 
     /**
-     * @param ChatManager $chatManager
+     * @var FormHelper
      */
-    public function __construct(ChatManager $chatManager)
+    protected $formHelper;
+
+    /**
+     * @param ChatManager $chatManager
+     * @param FormHelper  $formHelper
+     */
+    public function __construct(ChatManager $chatManager, FormHelper $formHelper)
     {
         $this->chatManager = $chatManager;
+        $this->formHelper  = $formHelper;
     }
 
     /**
@@ -107,11 +114,7 @@ class ChatMessageCreateFormType extends AbstractFormType
             $message = $this->chatManager->createMessageByUser($user, $body);
         }
 
-        //супер-мега хак, потому что я не люблю работать в формах с моделями
-        $closure = \Closure::bind(function (Form $form, $data){
-            $form->modelData = $data;
-        }, null, Form::class);
-        $closure($form, $message);
+        $this->formHelper->setDataForce($form, $message);
     }
 
 }

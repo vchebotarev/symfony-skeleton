@@ -335,6 +335,7 @@ services:
         class: App\Chat\Message\Form\Type\ChatMessageCreateFormType
         arguments:
             - '@app.chat.manager'
+            - '@app.symfony.form.helper'
         tags:
             - { name: form.type }
 

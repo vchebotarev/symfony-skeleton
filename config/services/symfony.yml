@@ -38,3 +38,7 @@ services:
         parent: security.authentication.failure_handler
         arguments:
             - '@translator'
+
+# Form
+    app.symfony.form.helper:
+        class: App\Symfony\Form\FormHelper
