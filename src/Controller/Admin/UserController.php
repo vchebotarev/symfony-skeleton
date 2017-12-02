@@ -68,7 +68,8 @@ class UserController extends AbstractController
      */
     public function viewAction(Request $request, $id)
     {
-        $user = $this->findUser($id, UserVoter::VIEW);
+        /** @var User $user */
+        $user = $this->findById($id, User::class, UserVoter::VIEW);
 
         //Редиректим в профиль если это текущий пользователь
         if ($user->getId() == $this->getUser()->getId()) {
@@ -87,7 +88,8 @@ class UserController extends AbstractController
      */
     public function authLogAction(Request $request, $id)
     {
-        $user = $this->findUser($id, UserVoter::VIEW_AUTH_LOG);
+        /** @var User $user */
+        $user = $this->findById($id, User::class, UserVoter::VIEW_AUTH_LOG);
 
         $logs = $this->getEm()->getRepository(UserAuthLog::class)->findByUser($user);
 
@@ -127,7 +129,8 @@ class UserController extends AbstractController
      */
     public function editAction(Request $request, $id)
     {
-        $user = $this->findUser($id, UserVoter::EDIT);
+        /** @var User $user */
+        $user = $this->findById($id, User::class, UserVoter::EDIT);
 
         //Редиректим в редактирование профиля если это текущий пользователь
         if ($user->getId() == $this->getUser()->getId()) {
@@ -164,7 +167,8 @@ class UserController extends AbstractController
      */
     public function changeEmailAction(Request $request , $id)
     {
-        $user = $this->findUser($id, UserVoter::EDIT);
+        /** @var User $user */
+        $user = $this->findById($id, User::class, UserVoter::EDIT);
 
         $form = $this->createForm(ChangeEmailAdminFormType::class, null, [
             'user' => $user,
@@ -190,7 +194,8 @@ class UserController extends AbstractController
      */
     public function changeUsernameAction(Request $request, $id)
     {
-        $user = $this->findUser($id, UserVoter::EDIT);
+        /** @var User $user */
+        $user = $this->findById($id, User::class, UserVoter::EDIT);
 
         $form = $this->createForm(ChangeUsernameAdminFormType::class, null, [
             'user' => $user,
@@ -216,7 +221,8 @@ class UserController extends AbstractController
      */
     public function enableAction(Request $request, $id)
     {
-        $user = $this->findUser($id, UserVoter::ENABLE);
+        /** @var User $user */
+        $user = $this->findById($id, User::class, UserVoter::ENABLE);
 
         $this->get('app.user.manipulator')->enable($user);
 
@@ -234,7 +240,8 @@ class UserController extends AbstractController
      */
     public function lockAction(Request $request, $id)
     {
-        $user = $this->findUser($id, UserVoter::LOCK);
+        /** @var User $user */
+        $user = $this->findById($id, User::class, UserVoter::LOCK);
 
         $this->get('app.user.manipulator')->lock($user);
 
@@ -252,7 +259,8 @@ class UserController extends AbstractController
      */
     public function unlockAction(Request $request, $id)
     {
-        $user = $this->findUser($id, UserVoter::UNLOCK);
+        /** @var User $user */
+        $user = $this->findById($id, User::class, UserVoter::UNLOCK);
 
         $this->get('app.user.manipulator')->unlock($user);
 
@@ -270,7 +278,8 @@ class UserController extends AbstractController
      */
     public function roleAddAdminAction(Request $request, $id)
     {
-        $user = $this->findUser($id, UserVoter::ROLE_ADD_ADMIN);
+        /** @var User $user */
+        $user = $this->findById($id, User::class, UserVoter::ROLE_ADD_ADMIN);
 
         $this->get('app.user.manipulator')->roleAddAdmin($user);
 
@@ -286,30 +295,14 @@ class UserController extends AbstractController
      */
     public function roleRemoveAdminAction(Request $request, $id)
     {
-        $user = $this->findUser($id, UserVoter::ROLE_REMOVE_ADMIN);
+        /** @var User $user */
+        $user = $this->findById($id, User::class, UserVoter::ROLE_REMOVE_ADMIN);
 
         $this->get('app.user.manipulator')->roleRemoveAdmin($user);
 
         return $this->redirectToRoute('app_admin_user_view', [
             'id' => $id,
         ]);
-    }
-
-    /**
-     * @param int   $id
-     * @param mixed $attr
-     * @return User|null
-     */
-    protected function findUser($id, $attr = null)
-    {
-        $user = $this->get('app.user.manager')->findUserById($id);
-        if (!$user) {
-            throw $this->createNotFoundException();
-        }
-        if ($attr) {
-            $this->denyAccessUnlessGranted($attr, $user);
-        }
-        return $user;
     }
 
 }

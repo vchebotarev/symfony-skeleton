@@ -2,6 +2,7 @@
 
 namespace App\Controller\PrivateArea;
 
+use App\Entity\User;
 use App\Symfony\Controller\AbstractController;
 use App\User\Security\UserVoter;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -17,14 +18,12 @@ class UserController extends AbstractController
      */
     public function viewAction(Request $request, $id)
     {
-        $user = $this->get('app.user.manager')->findUserById($id);
-        if (!$user) {
-            throw $this->createNotFoundException();
-        }
+        /** @var User $user */
+        $user = $this->findById($id, User::class, UserVoter::VIEW);
+
         if ($user->getId() == $this->getUser()->getId()) {
             return $this->redirectToRoute('app_private_profile_index');
         }
-        $this->denyAccessUnlessGranted(UserVoter::VIEW, $user);
 
         return $this->render('PrivateArea/User/view.html.twig', [
             'user' => $user,

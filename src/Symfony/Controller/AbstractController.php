@@ -37,4 +37,22 @@ abstract class AbstractController extends BaseController
         return $jsonResponse;
     }
 
+    /**
+     * @param int    $id
+     * @param string $className
+     * @param mixed  $attr
+     * @return object
+     */
+    protected function findById(int $id, string $className, $attr = null)
+    {
+        $obj = $this->getEm()->getRepository($className)->find($id);
+        if (!$obj) {
+            throw $this->createNotFoundException();
+        }
+        if ($attr !== null) {
+            $this->denyAccessUnlessGranted($attr, $obj);
+        }
+        return $obj;
+    }
+
 }

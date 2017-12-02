@@ -34,16 +34,6 @@ class ChatManager
 
     /**
      * @param int $id
-     * @return Chat|null
-     */
-    public function findChatById(int $id)
-    {
-        $chat = $this->em->getRepository(Chat::class)->find($id);
-        return $chat;
-    }
-
-    /**
-     * @param int $id
      * @return ChatMessage|null
      */
     public function findChatMessageById(int $id)

@@ -61,7 +61,8 @@ class ChatController extends AbstractController
      */
     public function viewAction(Request $request, $id)
     {
-        $chat = $this->findChat($id, ChatVoter::VIEW);
+        /** @var Chat $chat */
+        $chat = $this->findById($id, Chat::class, ChatVoter::VIEW);
 
         $search = $this->get('chebur.search.manager')
             ->createBuilder()
@@ -93,7 +94,8 @@ class ChatController extends AbstractController
         if (!$request->isXmlHttpRequest()) {
             throw $this->createNotFoundException();
         }
-        $chat = $this->findChat($id, ChatVoter::DELETE);
+        /** @var Chat */
+        $chat = $this->findById($id, Chat::class, ChatVoter::DELETE);
 
         $this->get('app.chat.manager')->deleteChat($chat);
 
@@ -117,23 +119,6 @@ class ChatController extends AbstractController
         return $this->json([
             'count' => $count,
         ]);
-    }
-
-    /**
-     * @param int         $id
-     * @param null|string $attr
-     * @return Chat
-     */
-    protected function findChat(int $id, $attr = null)
-    {
-        $chat = $this->get('app.chat.manager')->findChatById($id);
-        if (!$chat) {
-            throw $this->createNotFoundException();
-        }
-        if ($attr !== null) {
-            $this->denyAccessUnlessGranted($attr, $chat);
-        }
-        return $chat;
     }
 
 }

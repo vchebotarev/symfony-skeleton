@@ -4,6 +4,9 @@ namespace App\Controller\PrivateArea;
 
 use App\Chat\Message\Form\Type\ChatMessageCreateFormType;
 use App\Chat\Security\ChatVoter;
+use App\Entity\Chat;
+use App\Entity\ChatMessage;
+use App\Entity\User;
 use App\Search\Param;
 use App\Symfony\Controller\AbstractController;
 use Symfony\Component\Form\FormErrorIterator;
@@ -24,11 +27,8 @@ class ChatMessageController extends AbstractController
             throw $this->createNotFoundException();
         }
 
-        $chat = $this->get('app.chat.manager')->findChatById($chatId);
-        if (!$chat) {
-            throw $this->createNotFoundException();
-        }
-        $this->denyAccessUnlessGranted(ChatVoter::VIEW, $chat);
+        /** @var ChatVoter $chat */
+        $chat = $this->findById($chatId, Chat::class, ChatVoter::VIEW);
 
         $search = $this->get('chebur.search.manager')
             ->createBuilder()
@@ -60,11 +60,8 @@ class ChatMessageController extends AbstractController
             throw $this->createNotFoundException();
         }
 
-        $chat = $this->get('app.chat.manager')->findChatById($chatId);
-        if (!$chat) {
-            throw $this->createNotFoundException();
-        }
-        $this->denyAccessUnlessGranted(ChatVoter::SEND, $chat);
+        /** @var Chat $chat */
+        $chat = $this->findById($chatId, Chat::class, ChatVoter::SEND);
 
         $form = $this->createForm(ChatMessageCreateFormType::class, null, [
             'chat' => $chat,
@@ -104,11 +101,8 @@ class ChatMessageController extends AbstractController
      */
     public function createByUserAction(Request $request, $userId)
     {
-        $user = $this->get('app.user.manager')->findUserById($userId);
-        if (!$user) {
-            throw $this->createNotFoundException();
-        }
-        $this->denyAccessUnlessGranted(ChatVoter::SEND, $user);
+        /** @var User $user */
+        $user = $this->findById($userId, User::class, ChatVoter::SEND);
 
         $form = $this->createForm(ChatMessageCreateFormType::class, null, [
             'user' => $user,
@@ -143,11 +137,8 @@ class ChatMessageController extends AbstractController
             throw $this->createNotFoundException();
         }
 
-        $chatMessage = $this->get('app.chat.manager')->findChatMessageById($id);
-        if (!$chatMessage) {
-            throw $this->createNotFoundException();
-        }
-        $this->denyAccessUnlessGranted(ChatVoter::DELETE, $chatMessage);
+        /** @var ChatMessage $chatMessage */
+        $chatMessage = $this->findById($id, ChatMessage::class, ChatVoter::DELETE);
 
         $this->get('app.chat.manager')->deleteMessage($chatMessage);
 
