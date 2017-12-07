@@ -15,6 +15,11 @@ app_admin_user:
     prefix:   /user
     resource: 'admin/user.yml'
 
+# User review
+app_admin_user_review:
+    prefix:   /user/review
+    resource: 'admin/user_review.yml'
+
 # Auth log
 app_admin_auth_log:
     prefix:   /auth-log

@@ -291,6 +291,38 @@ services:
         tags:
             - { name: form.type }
 
+# User review
+    app.user.review.manager:
+        class: App\User\Review\UserReviewManager
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '@app.user.manager'
+
+    app.user.review.voter:
+        class: App\User\Review\Security\UserReviewVoter
+        arguments:
+            - '@security.access.decision_manager'
+            - '@doctrine.orm.entity_manager'
+        tags:
+            - { name: security.voter }
+
+    app.user.review.form.type.create:
+        class: App\User\Review\Form\Type\UserReviewCreateFormType
+        arguments:
+            - '@app.user.review.manager'
+        tags:
+            - { name: form.type }
+
+    app.user.review.search.source:
+        class: App\User\Review\Search\UserReviewItemsSource
+        arguments:
+            - '@doctrine.orm.entity_manager'
+
+    app.user.review.type.twig.extension:
+        class: App\Twig\Extension\UserReviewExtension
+        tags:
+            - { name: twig.extension }
+
 # Chat
     app.chat.manager:
         class: App\Chat\ChatManager

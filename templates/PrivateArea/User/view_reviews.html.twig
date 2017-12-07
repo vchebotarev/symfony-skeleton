@@ -1,0 +1,47 @@
+
+{% extends 'layout/main.html.twig' %}
+
+{% block page_title %}
+    Отзывы на пользователя {{ user.username }}
+{% endblock %}
+
+{% block content %}
+
+    <h1>{{ block('page_title') }}</h1>
+
+    {% if is_granted('user.review.create', user) %}
+        <a class="btn btn-secondary" href="{{ path('app_private_user_review_create', {'userId': user.id }) }}">Создать отзыв</a>
+    {% endif %}
+
+    <ul>
+        {% for review in reviews %}
+            <li class="row" data-id="{{ review.id }}">
+                <div class="col">
+                    <a href="{{ path('app_private_user_view', {'id': review.userCreated.id}) }}">{{ review.userCreated.username }}</a>
+                    <br>
+                    Тип: {{ user_review_type_name(review.type) }}
+                    <br>
+                    {{ review.body }}
+                </div>
+                <div class="col-auto">
+                    {% if is_granted('user.review.delete', review) %}
+                        <button type="button" class="btn btn-secondary btn-delete">Удалить</button>
+                    {% endif %}
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <script type="text/javascript">
+        $('.btn-delete').click(function () {
+            var li = $(this).closest('li');
+            var id = li.data('id');
+            $.post(Routing.generate('app_private_user_review_delete', {'id': id}), {}, function(data){
+                if (data.success === 1) {
+                    li.remove();
+                }
+            }, 'json');
+        });
+    </script>
+
+{% endblock %}

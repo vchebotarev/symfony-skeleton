@@ -20,6 +20,7 @@ class Param
     const ENABLED = 'enabled';
     const LOCKED  = 'locked';
     const NAME    = 'name';
+    const TYPE    = 'type';
 
     const USER     = 'user';
     const USERNAME = 'username';

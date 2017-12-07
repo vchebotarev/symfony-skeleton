@@ -1,0 +1,109 @@
+
+{% extends 'layout/admin.html.twig' %}
+
+{% block page_title %}
+    Список отзывов на пользователей
+{% endblock %}
+
+{% block content %}
+
+    {{ form_start(form) }}
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    {{ form_label(form.type) }}
+                    {{ form_widget(form.type, {'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    {{ form_label(form.user) }}
+                    {{ form_widget(form.user, {'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    {{ form_label(form.user_created) }}
+                    {{ form_widget(form.user_created, {'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    {{ form_label(form.created) }}
+                    <div class="input-group">
+                        {{ form_widget(form.created.from, {'attr': {'class': 'form-control'}}) }}
+                        <span class="input-group-addon">-</span>
+                        {{ form_widget(form.created.to, {'attr': {'class': 'form-control'}}) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-secondary">Найти</button>
+
+    {{ form_end(form) }}
+
+    <br>
+    <br>
+
+    <div class="row justify-content-end">
+        <div class="col-auto">
+            {{ chebur_search_sorting(search) }}
+        </div>
+    </div>
+
+    <br>
+
+    <table class="table table-hover table-striped">
+        <tr>
+            <th>Id</th>
+            <th>Пользователю</th>
+            <th>Пользователем</th>
+            <th>Тип</th>
+            <th>Сообщение</th>
+            <th>Дата создания</th>
+            <th></th>
+        </tr>
+        {% for review in search %}
+            <tr data-id="{{ review.id }}">
+                <td>{{ review.getId() }}</td>
+                <td>
+                    <a href="{{ path('app_admin_user_view', {'id': review.user.id}) }}">{{ review.user.getUsername() }} : {{ review.user.id }}</a>
+                </td>
+                <td>
+                    <a href="{{ path('app_admin_user_view', {'id': review.userCreated.id}) }}">{{ review.userCreated.getUsername() }} : {{ review.userCreated.id }}</a>
+                </td>
+                <td>{{ user_review_type_name(review.type) }}</td>
+                <td>{{ review.body }}</td>
+                <td>{{ review.getDateCreated()|date('d.m.Y H:i') }}</td>
+                <td>
+                    {% if is_granted('user.review.delete', review) %}
+                        <button type="button" class="btn btn-primary btn-delete" title="Просмотр"><i class="fa fa-remove"></i></button>
+                    {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <div class="row">
+        <div class="col-auto mr-auto">
+            {{ chebur_search_pagination(search) }}
+        </div>
+        <div class="col-auto ">
+            {{ chebur_search_limitation(search) }}
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $('.btn-delete').click(function () {
+            var tr = $(this).closest('tr');
+            var id = tr.data('id');
+            $.post(Routing.generate('app_private_user_review_delete', {'id': id}), {}, function(data){
+                if (data.success === 1) {
+                    tr.remove();
+                }
+            }, 'json');
+        });
+    </script>
+
+{% endblock %}

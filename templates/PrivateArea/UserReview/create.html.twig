@@ -1,0 +1,28 @@
+
+{% extends 'layout/main.html.twig' %}
+
+{% block page_title %}
+    Создание отзыва на пользователя {{ user.username }}
+{% endblock %}
+
+{% block content %}
+
+    <h1>{{ block('page_title') }}</h1>
+
+    {{ form_start(form) }}
+
+        <div class="form-group">
+            {{ form_label(form.type) }}
+            {{ form_widget(form.type, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="form-group">
+            {{ form_label(form.body) }}
+            {{ form_widget(form.body, {'attr': {'class': 'form-control'}}) }}
+        </div>
+
+        <div>
+            <button type="submit" class="btn btn-primary">Создать</button>
+        </div>
+    {{ form_end(form) }}
+
+{% endblock %}

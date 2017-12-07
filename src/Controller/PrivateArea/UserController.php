@@ -3,6 +3,7 @@
 namespace App\Controller\PrivateArea;
 
 use App\Entity\User;
+use App\Entity\UserReview;
 use App\Symfony\Controller\AbstractController;
 use App\User\Security\UserVoter;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -30,5 +31,22 @@ class UserController extends AbstractController
         ]);
     }
 
+    /**
+     * @param Request $request
+     * @param int     $id
+     * @return Response
+     */
+    public function viewReviewsAction(Request $request, $id)
+    {
+        /** @var User $user */
+        $user = $this->findById($id, User::class, UserVoter::VIEW);
+
+        $reviews = $this->getEm()->getRepository(UserReview::class)->findByUser($user);
+
+        return $this->render('/PrivateArea/User/view_reviews.html.twig', [
+            'reviews' => $reviews,
+            'user'    => $user,
+        ]);
+    }
 
 }

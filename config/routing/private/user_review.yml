@@ -1,0 +1,18 @@
+
+# prefix: /private/user/review
+
+app_private_user_review_create:
+    path:     /create/{userId}
+    defaults: { _controller: App\Controller\PrivateArea\UserReviewController:createAction }
+    requirements:
+        userId: '\d+'
+
+app_private_user_review_delete:
+    path:     /delete/{id}
+    methods:  ['POST']
+    defaults: { _controller: App\Controller\PrivateArea\UserReviewController:deleteAction }
+    requirements:
+        id: '\d+'
+    options:
+        expose: true
+    #todo ajax only

@@ -15,6 +15,11 @@ app_private_user:
     prefix:   /user
     resource: 'private/user.yml'
 
+# User review
+app_private_user_review:
+    prefix:   /user/review
+    resource: 'private/user_review.yml'
+
 # Chats
 app_private_chat:
     prefix:   /chat

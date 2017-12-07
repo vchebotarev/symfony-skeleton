@@ -6,3 +6,9 @@ app_private_user_view:
     defaults: { _controller: App\Controller\PrivateArea\UserController:viewAction }
     requirements:
         id: '\d+'
+
+app_private_user_view_reviews:
+    path:     /{id}/reviews
+    defaults: { _controller: App\Controller\PrivateArea\UserController:viewReviewsAction }
+    requirements:
+        id: '\d+'
