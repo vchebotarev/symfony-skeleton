@@ -7,21 +7,17 @@
 
 {% block content %}
 
-    <h1>{{ block('page_title') }}</h1>
-
-    <p>
-        <a href="{{ path('app_private_profile_change_username') }}" class="btn btn-primary">Изменить логин</a>
+    <a href="{{ path('app_private_profile_change_username') }}" class="btn btn-primary">Изменить логин</a>
+    <br>
+    <br>
+    <a href="{{ path('app_private_profile_change_password') }}" class="btn btn-primary">Изменить пароль</a>
+    <br>
+    <br>
+    <a href="{{ path('app_private_profile_change_timezone') }}" class="btn btn-primary">Изменить часовой пояс</a>
+    {% if is_granted('user.change.email') %}
         <br>
         <br>
-        <a href="{{ path('app_private_profile_change_password') }}" class="btn btn-primary">Изменить пароль</a>
-        <br>
-        <br>
-        <a href="{{ path('app_private_profile_change_timezone') }}" class="btn btn-primary">Изменить часовой пояс</a>
-        {% if is_granted('user.change.email') %}
-            <br>
-            <br>
-            <a href="{{ path('app_private_profile_change_email') }}" class="btn btn-primary">Изменить e-mail</a>
-        {% endif %}
-    </p>
+        <a href="{{ path('app_private_profile_change_email') }}" class="btn btn-primary">Изменить e-mail</a>
+    {% endif %}
 
 {% endblock %}

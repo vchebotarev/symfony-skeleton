@@ -7,7 +7,6 @@
 
 {% block content %}
 
-    <h1>Новое сообщение пользователю <a href="{{ path('app_private_user_view', {'id': user.id}) }}">{{ user.username }}</a></h1>
     {% if chat %}
         <h3><a href="{{ path('app_private_chat_view', {'id': chat.id}) }}">Перейти к диалогу с {{ user.username }}</a></h3>
     {% endif %}

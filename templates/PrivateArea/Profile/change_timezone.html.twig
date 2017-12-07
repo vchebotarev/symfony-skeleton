@@ -7,24 +7,20 @@
 
 {% block content %}
 
-    <h1>{{ block('page_title') }}</h1>
-
-    <p>
-        {{ form_start(form) }}
-            <div class="invalid-feedback" style="display: block;">
-                {{ form_errors(form) }}
+    {{ form_start(form) }}
+        <div class="invalid-feedback" style="display: block;">
+            {{ form_errors(form) }}
+        </div>
+        <div class="form-group {% if not form.timezone.vars.valid %} is-invalid {% endif %}">
+            {{ form_label(form.timezone) }}
+            {{ form_widget(form.timezone, {'attr': {'class': 'form-control'}}) }}
+            <div class="invalid-feedback">
+                {{ form_errors(form.timezone) }}
             </div>
-            <div class="form-group {% if not form.timezone.vars.valid %} is-invalid {% endif %}">
-                {{ form_label(form.timezone) }}
-                {{ form_widget(form.timezone, {'attr': {'class': 'form-control'}}) }}
-                <div class="invalid-feedback">
-                    {{ form_errors(form.timezone) }}
-                </div>
-            </div>
-            <div class="form-group">
-                <button type="submit" class="btn btn-primary">Изменить часовой пояс</button>
-            </div>
-        {{ form_end(form) }}
-    </p>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Изменить часовой пояс</button>
+        </div>
+    {{ form_end(form) }}
 
 {% endblock %}

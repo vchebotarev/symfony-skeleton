@@ -7,55 +7,51 @@
 
 {% block content %}
 
-    <h1>{{ block('page_title') }}</h1>
+    {{ form_start(form) }}
+        <div class="invalid-feedback" style="display: block;">
+            {{ form_errors(form) }}
+        </div>
+        <div class="form-group {% if not form.username.vars.valid %} is-invalid {% endif %}">
+            {{ form_label(form.username) }}
+            {{ form_widget(form.username, {'attr': {'class': 'form-control'}}) }}
+            <div class="invalid-feedback">
+                {{ form_errors(form.username) }}
+            </div>
+        </div>
+        <div class="form-group {% if not form.email.vars.valid %} is-invalid {% endif %}">
+            {{ form_label(form.email) }}
+            {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
+            <div class="invalid-feedback">
+                {{ form_errors(form.email) }}
+            </div>
+        </div>
+        <div class="form-group {% if not form.password.vars.valid %} is-invalid {% endif %}">
+            {{ form_label(form.password.password) }}
+            {{ form_widget(form.password.password, {'attr': {'class': 'form-control'}}) }}
+            <div class="invalid-feedback">
+                {{ form_errors(form.password.password) }}
+            </div>
+        </div>
+        <div class="form-group {% if not form.password.vars.valid %} is-invalid {% endif %}">
+            {{ form_label(form.password.password_confirm) }}
+            {{ form_widget(form.password.password_confirm, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="form-group {% if not form.recaptcha.vars.valid %} is-invalid {% endif %}">
+            {% if not form.recaptcha.vars.valid %}
+                {{ form_errors(form.recaptcha) }}
+            {% endif %}
+            {% form_theme form 'EWZRecaptchaBundle:Form:ewz_recaptcha_widget.html.twig' %}
+            {{ form_widget(form.recaptcha) }}
+        </div>
+        <div class="form-group {% if not form.captcha.vars.valid %} is-invalid {% endif %}">
+            {# todo captcha form theme #}
+            {{ form_widget(form.captcha, {'attr': {'class': 'form-control'}}) }}
+            <div class="invalid-feedback">
+                {{ form_errors(form.captcha) }}
+            </div>
+        </div>
 
-    <p>
-        {{ form_start(form) }}
-            <div class="invalid-feedback" style="display: block;">
-                {{ form_errors(form) }}
-            </div>
-            <div class="form-group {% if not form.username.vars.valid %} is-invalid {% endif %}">
-                {{ form_label(form.username) }}
-                {{ form_widget(form.username, {'attr': {'class': 'form-control'}}) }}
-                <div class="invalid-feedback">
-                    {{ form_errors(form.username) }}
-                </div>
-            </div>
-            <div class="form-group {% if not form.email.vars.valid %} is-invalid {% endif %}">
-                {{ form_label(form.email) }}
-                {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
-                <div class="invalid-feedback">
-                    {{ form_errors(form.email) }}
-                </div>
-            </div>
-            <div class="form-group {% if not form.password.vars.valid %} is-invalid {% endif %}">
-                {{ form_label(form.password.password) }}
-                {{ form_widget(form.password.password, {'attr': {'class': 'form-control'}}) }}
-                <div class="invalid-feedback">
-                    {{ form_errors(form.password.password) }}
-                </div>
-            </div>
-            <div class="form-group {% if not form.password.vars.valid %} is-invalid {% endif %}">
-                {{ form_label(form.password.password_confirm) }}
-                {{ form_widget(form.password.password_confirm, {'attr': {'class': 'form-control'}}) }}
-            </div>
-            <div class="form-group {% if not form.recaptcha.vars.valid %} is-invalid {% endif %}">
-                {% if not form.recaptcha.vars.valid %}
-                    {{ form_errors(form.recaptcha) }}
-                {% endif %}
-                {% form_theme form 'EWZRecaptchaBundle:Form:ewz_recaptcha_widget.html.twig' %}
-                {{ form_widget(form.recaptcha) }}
-            </div>
-            <div class="form-group {% if not form.captcha.vars.valid %} is-invalid {% endif %}">
-                {# todo captcha form theme #}
-                {{ form_widget(form.captcha, {'attr': {'class': 'form-control'}}) }}
-                <div class="invalid-feedback">
-                    {{ form_errors(form.captcha) }}
-                </div>
-            </div>
-
-            <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
-        {{ form_end(form) }}
-    </p>
+        <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+    {{ form_end(form) }}
 
 {% endblock %}
