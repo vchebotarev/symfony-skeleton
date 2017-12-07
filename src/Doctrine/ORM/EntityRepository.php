@@ -24,15 +24,22 @@ class EntityRepository extends BaseEntityRepository
     }
 
     /**
-     * @todo closure
-     * @todo проверить
      * @param array $criteria
      * @return int
      */
-    public function countBy(array $criteria) : int
+    public function countBy(array $criteria = []) : int
     {
         $persister = $this->em->getUnitOfWork()->getEntityPersister($this->_entityName);
         return $persister->count($criteria);
+    }
+
+    /**
+     * @param array $criteria
+     * @return bool
+     */
+    public function existsBy(array $criteria = []) : bool
+    {
+        return $this->countBy($criteria) > 0;
     }
 
     /**
