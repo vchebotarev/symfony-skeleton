@@ -1,0 +1,55 @@
+
+{% extends 'layout/admin.html.twig' %}
+
+{% block page_title %}
+    Ставки лота {{ lot.id }}
+{% endblock %}
+
+{% block content %}
+
+    <a class="btn btn-secondary" href="{{ path('app_admin_lot_view', {'id': lot.id}) }}">Вернуться к лоту</a>
+    <br>
+    <br>
+
+    <table class="table table-hover table-striped">
+        <tr>
+            <th>Id</th>
+            <th>Пользователь</th>
+            <th>Ставка</th>
+            <th>Дата создания</th>
+            <th></th>
+        </tr>
+        {% for bet in bets %}
+            <tr data-id="{{ bet.id }}">
+                <td>{{ bet.id }}</td>
+                <td>
+                    <a href="{{ path('app_admin_user_view', {'id': bet.user.id}) }}">{{ bet.user.username }} : {{ bet.user.id }}</a>
+                </td>
+                <td>
+                    {{ bet.price }}
+                </td>
+                <td>
+                    {{ bet.dateCreated|date('d.m.Y H:i') }}
+                </td>
+                <td>
+                    {% if is_granted('lot.bet.delete', bet) %}
+                        <button type="button" class="btn btn-danger btn-delete"><i class="fa fa-remove"></i></button>
+                    {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <script type="text/javascript">
+        $('.btn-delete').click(function () {
+            var tr = $(this).closest('tr');
+            var id = tr.data('id');
+            $.post(Routing.generate('app_admin_lot_bet_delete', {'id': id}), {}, function(data){
+                if (data.success === 1) {
+                    tr.remove();
+                }
+            }, 'json');
+        });
+    </script>
+
+{% endblock %}

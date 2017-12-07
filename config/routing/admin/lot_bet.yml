@@ -1,0 +1,12 @@
+
+# prefix: /admin/lot/bet
+
+app_admin_lot_bet_delete:
+    path:     /{id}/delete
+    methods:  ['POST']
+    defaults: { _controller: App\Controller\Admin\LotBetController:deleteAction }
+    requirements:
+        id: '\d+'
+    options:
+        expose: true
+    #todo ajax only

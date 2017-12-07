@@ -1,0 +1,28 @@
+
+{% extends 'layout/main.html.twig' %}
+
+{% block page_title %}
+    Сделать ставку лоту #{{ lot.id }}
+{% endblock %}
+
+{% block content %}
+
+    {{ form_start(form) }}
+
+        <div class="invalid-feedback" style="display: block;">
+            {{ form_errors(form) }}
+        </div>
+        <div class="form-group {% if not form.price.vars.valid %} is-invalid {% endif %}">
+            {{ form_label(form.price) }}
+            {{ form_widget(form.price, {'attr': {'class': 'form-control'}}) }}
+            <div class="invalid-feedback">
+                {{ form_errors(form.price) }}
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Сделать ставку</button>
+        </div>
+
+    {{ form_end(form) }}
+
+{% endblock %}

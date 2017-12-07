@@ -21,6 +21,7 @@ class Param
     const LOCKED  = 'locked';
     const NAME    = 'name';
     const TYPE    = 'type';
+    const STATUS  = 'status';
 
     const USER     = 'user';
     const USERNAME = 'username';

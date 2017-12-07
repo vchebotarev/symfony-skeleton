@@ -24,3 +24,13 @@ app_admin_user_review:
 app_admin_auth_log:
     prefix:   /auth-log
     resource: 'admin/auth_log.yml'
+
+# Lot
+app_admin_lot:
+    prefix:   /lot
+    resource: 'admin/lot.yml'
+
+# Lot bet
+app_admin_lot_bet:
+    prefix:   /lot
+    resource: 'admin/lot_bet.yml'

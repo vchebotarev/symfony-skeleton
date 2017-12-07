@@ -383,3 +383,72 @@ services:
         arguments:
             - '@doctrine.orm.entity_manager'
             - '@app.user.manager'
+
+# Lot
+    app.lot.manager:
+        class: App\Lot\LotManager
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '@app.lot.time.manager'
+
+    app.lot.form.type.add:
+        class: App\Lot\Form\Type\LotCreateFormType
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '@app.user.manager'
+            - '@app.symfony.form.helper'
+        tags:
+            - { name: form.type }
+
+    app.lot.form.type.bet:
+        class: App\Lot\Bet\Form\Type\LotBetCreateFormType
+        arguments:
+            - '@app.lot.bet.manager'
+        tags:
+            - { name: form.type }
+
+    app.lot.form.type.start:
+        class: App\Lot\Form\Type\LotStartFormType
+        arguments:
+            - '@app.lot.manager'
+        tags:
+            - { name: form.type }
+
+    app.lot.time.manager:
+        class: App\Lot\LotTimeManager
+
+    app.lot.voter:
+        class: App\Lot\Security\LotVoter
+        arguments:
+            - '@security.access.decision_manager'
+            - '@app.lot.bet.manager'
+        tags:
+            - { name: security.voter }
+
+    app.lot.search.source:
+        class: App\Lot\Search\LotSearchItemsSource
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '@app.lot.search.transformer'
+
+    app.lot.search.transformer:
+        class: App\Lot\Search\LotSearchItemTransformer
+        arguments:
+            - '@doctrine.orm.entity_manager'
+
+# Lot bet
+    app.lot.bet.manager:
+        class: App\Lot\Bet\LotBetManager
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '@app.user.manager'
+            - '@app.lot.manager'
+            - '@app.lot.time.manager'
+
+    app.lot.bet.voter:
+        class: App\Lot\Bet\Security\LotBetVoter
+        arguments:
+            - '@app.lot.bet.manager'
+            - '@security.access.decision_manager'
+        tags:
+            - { name: security.voter }

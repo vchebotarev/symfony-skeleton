@@ -1,0 +1,32 @@
+
+# prefix: /private/lot
+
+app_private_lot_index:
+    path:     /
+    defaults: { _controller: FrameworkBundle:Redirect:redirect, route: app_private_lot_list, permanent: true }
+
+app_private_lot_list:
+    path:     /list
+    defaults: { _controller: App\Controller\PrivateArea\LotController:listAction }
+
+app_private_lot_view:
+    path:     /{id}
+    defaults: { _controller: App\Controller\PrivateArea\LotController:viewAction }
+    requirements:
+        id: '\d+'
+
+app_private_lot_view_bets:
+    path:     /{id}/bets
+    defaults: { _controller: App\Controller\PrivateArea\LotController:viewBetsAction }
+    requirements:
+        id: '\d+'
+
+app_private_lot_add:
+    path:     /add
+    defaults: { _controller: App\Controller\PrivateArea\LotController:addAction }
+
+app_private_lot_start:
+    path:     /{id}/start
+    defaults: { _controller: App\Controller\PrivateArea\LotController:startAction }
+    requirements:
+        id: '\d+'

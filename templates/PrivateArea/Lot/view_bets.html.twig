@@ -1,0 +1,14 @@
+
+{% extends 'layout/main.html.twig' %}
+
+{% block page_title %}
+    Ставки лота #{{ lot.id }}
+{% endblock %}
+
+{% block content %}
+
+    {% for bet in bets %}
+        {{ dump(bet) }}
+    {% endfor %}
+
+{% endblock %}

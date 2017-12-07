@@ -1,0 +1,101 @@
+
+{% extends 'layout/admin.html.twig' %}
+
+{% block page_title %}
+    Список лотов
+{% endblock %}
+
+{% block content %}
+
+    {{ form_start(form) }}
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group">
+                    <div class="input-group">
+                        {{ form_widget(form.q, {'attr': {'class': 'form-control'}}) }}
+                        <span class="input-group-btn">
+                            <button class="btn btn-secondary" type="submit">Найти</button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    {{ form_label(form.user) }}
+                    {{ form_widget(form.user, {'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    {{ form_label(form.status) }}
+                    {{ form_widget(form.status, {'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-secondary">Найти</button>
+    {{ form_end(form) }}
+
+    <br>
+    <br>
+
+    <div class="row justify-content-end">
+        <div class="col-auto">
+            {{ chebur_search_sorting(search) }}
+        </div>
+    </div>
+
+    <br>
+
+    <table class="table table-hover table-striped">
+        <tr>
+            <th>Id</th>
+            <th>Статус</th>
+            <th>Название</th>
+            <th>Пользователь</th>
+            <th>Цена/Блиц</th>
+            <th>Последняя ставка</th>
+            <th>Ставок</th>
+            <th>Дата создания</th>
+            <th>Дата старта</th>
+            <th>Дата закрытия</th>
+            <th></th>
+        </tr>
+        {% for lot in search %}
+            <tr>
+                <td>{{ lot.getId() }}</td>
+                <td>{{ lot.getStatus() }}</td>
+                <td>{{ lot.getName() }}</td>
+                <td><a href="{{ path('app_admin_user_view', {'id': lot.getUser().getId()}) }}">{{ lot.getUser().getUsername() }}</a></td>
+                <td>
+                    {{ lot.getPriceStart() }}
+                    {% if lot.getPriceBlitz() %}
+                        / {{ lot.getPriceBlitz()  }}
+                    {% endif %}
+                </td>
+                <td>
+                    {% if lot.getBetLast() %}
+                        {{ lot.getBetLast().price }}
+                        <a href="{{ path('app_admin_user_view', {'id': lot.getBetLast().getUser().getId()}) }}">{{ lot.getBetLast().getUser().getUsername() }}</a>
+                    {% endif %}
+                </td>
+                <td>{{ lot.getBetCount() }}</td>
+                <td>{{ lot.getDateCreated()|date('d.m.Y H:i') }}</td>
+                <td>{{ lot.getDateStarted()|date('d.m.Y H:i') }}</td>
+                <td>{{ lot.getDateFinished()|date('d.m.Y H:i') }}</td>
+                <td>
+                    <a href="{{ path('app_admin_lot_view', {'id': lot.getId()}) }}" class="btn btn-primary" title="Просмотр"><i class="fa fa-eye"></i></a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <div class="row">
+        <div class="col-auto mr-auto">
+            {{ chebur_search_pagination(search) }}
+        </div>
+        <div class="col-auto ">
+            {{ chebur_search_limitation(search) }}
+        </div>
+    </div>
+
+{% endblock %}

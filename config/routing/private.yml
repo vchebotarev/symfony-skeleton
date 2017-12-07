@@ -29,3 +29,13 @@ app_private_chat:
 app_private_chat_message:
     prefix:   /chat/message
     resource: 'private/chat_message.yml'
+
+# Lot
+app_private_lot:
+    prefix:   /lot
+    resource: 'private/lot.yml'
+
+# Lot bet
+app_private_lot_bet:
+    prefix:   /lot/bet
+    resource: 'private/lot_bet.yml'

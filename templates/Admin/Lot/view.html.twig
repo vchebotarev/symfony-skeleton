@@ -1,0 +1,14 @@
+
+{% extends 'layout/admin.html.twig' %}
+
+{% block page_title %}
+    Лот {{ lot.getId() }}
+{% endblock %}
+
+{% block content %}
+
+    <a class="btn btn-secondary" href="{{ path('app_admin_lot_view_bets', {'id': lot.id }) }}">Ставки</a>
+
+    {{ dump(lot) }}
+
+{% endblock %}

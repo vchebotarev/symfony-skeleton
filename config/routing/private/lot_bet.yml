@@ -1,0 +1,8 @@
+
+# prefix: /private/lot/bet
+
+app_private_lot_bet_create:
+    path:     /create/{lotId}
+    defaults: { _controller: App\Controller\PrivateArea\LotBetController:createAction }
+    requirements:
+        lotId: '\d+'

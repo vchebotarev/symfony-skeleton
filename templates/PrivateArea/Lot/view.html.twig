@@ -1,0 +1,19 @@
+
+{% extends 'layout/main.html.twig' %}
+
+{% block page_title %}
+    Лот #{{ lot.id }}
+{% endblock %}
+
+{% block content %}
+
+    {% if is_granted('lot.bet.create', lot) %}
+        <a class="btn btn-primary" href="{{ path('app_private_lot_bet_create', {'lotId': lot.id}) }}">Сделать ставку</a>
+    {% endif %}
+    {% if is_granted('lot.start', lot) %}
+        <a class="btn btn-primary" href="{{ path('app_private_lot_start', {'id': lot.id}) }}">Запустить</a>
+    {% endif %}
+
+    {{ dump(lot) }}
+
+{% endblock %}

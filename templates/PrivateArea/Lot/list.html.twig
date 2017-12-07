@@ -1,0 +1,16 @@
+
+{% extends 'layout/main.html.twig' %}
+
+{% block page_title %}
+    Список лотов
+{% endblock %}
+
+{% block content %}
+
+    {% if is_granted('lot.add') %}
+        <a class="btn btn-primary" href="{{ path('app_private_lot_add') }}">Добавить лот</a>
+    {% endif %}
+
+    {# todo #}
+
+{% endblock %}
