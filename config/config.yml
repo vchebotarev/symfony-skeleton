@@ -68,6 +68,9 @@ doctrine:
                 prefix:    'App\Entity\'
                 alias:     App
         default_repository_class: App\Doctrine\ORM\EntityRepository
+        dql:
+            string_functions:
+                field: DoctrineExtensions\Query\Mysql\Field
 
 # Doctrine Migrations
 doctrine_migrations:
