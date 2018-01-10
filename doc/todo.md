@@ -32,3 +32,18 @@ https://github.com/lunetics/TimezoneBundle - "угадывание" времен
 ajax обновление списка сообщений и списка чатов
 подгрузка старых чатов на основе даты
 верстка посимпатичнее
+
+Поле ввода Ip адреса + трансформер
+
+Нормальное поле ввода даты
+
+Прикрутить тему форм бутстрапа 4
+
+Social
+"getjump/vk" "bocharsky-bw/vkontakte-php-sdk" "atehnix/vk-client"
+https://vk.com/dev/methods https://www.instagram.com/developer/ https://apiok.ru/dev/methods/rest/
+https://www.instagram.com/name/?__a=1
+
+https://habrahabr.ru/post/345802/ + комменты
+
+webpack
