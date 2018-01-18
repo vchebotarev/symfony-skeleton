@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "36bdef9a5ab3d2d4aa4382a12531c214",
+    "content-hash": "8999df3810a6523c64b94f20ea6fef90",
     "packages": [
         {
             "name": "alexpts/symfony-asset-strategy-last-modify",
@@ -5072,6 +5072,64 @@
             ],
             "description": "A security checker for your composer.lock",
             "time": "2017-10-29T18:48:08+00:00"
+        },
+        {
+            "name": "smart-core/accelerator-cache-bundle",
+            "version": "1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Smart-Core/AcceleratorCacheBundle.git",
+                "reference": "c0d67ebe438572f9f4dd42287ade11741722fe30"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Smart-Core/AcceleratorCacheBundle/zipball/c0d67ebe438572f9f4dd42287ade11741722fe30",
+                "reference": "c0d67ebe438572f9f4dd42287ade11741722fe30",
+                "shasum": ""
+            },
+            "require": {
+                "symfony/console": ">=2.1",
+                "symfony/framework-bundle": ">=2.1"
+            },
+            "require-dev": {
+                "composer/composer": "1.0.*@dev",
+                "matthiasnoback/symfony-dependency-injection-test": "~2.1",
+                "phpunit/phpunit": "~6.3"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "SmartCore\\Bundle\\AcceleratorCacheBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Thibault Duplessis",
+                    "homepage": "https://github.com/ornicar"
+                },
+                {
+                    "name": "Contributors",
+                    "homepage": "https://github.com/Smart-Core/AcceleratorCacheBundle/contributors"
+                }
+            ],
+            "description": "Provides a command line task to clear PHP Accelerators cache from the console",
+            "homepage": "https://github.com/Smart-Core/AcceleratorCacheBundle",
+            "keywords": [
+                "Opcache",
+                "apc",
+                "task",
+                "wincache"
+            ],
+            "time": "2017-11-21T06:48:52+00:00"
         },
         {
             "name": "snc/redis-bundle",

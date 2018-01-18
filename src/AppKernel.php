@@ -22,6 +22,7 @@ class AppKernel extends Kernel
             new \Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
 
             new \Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
+            new \Doctrine\Bundle\DoctrineCacheBundle\DoctrineCacheBundle(),
             new \EWZ\Bundle\RecaptchaBundle\EWZRecaptchaBundle(),
             new \FOS\JsRoutingBundle\FOSJsRoutingBundle(),
             new \Gregwar\CaptchaBundle\GregwarCaptchaBundle(),
@@ -29,6 +30,7 @@ class AppKernel extends Kernel
             new \Matthias\SymfonyConsoleForm\Bundle\SymfonyConsoleFormBundle(),
             new \Chebur\LoginFormBundle\CheburLoginFormBundle(),
             new \Chebur\SearchBundle\CheburSearchBundle(),
+            new \SmartCore\Bundle\AcceleratorCacheBundle\AcceleratorCacheBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

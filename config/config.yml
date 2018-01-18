@@ -71,6 +71,36 @@ doctrine:
         dql:
             string_functions:
                 field: DoctrineExtensions\Query\Mysql\Field
+        metadata_cache_driver:
+            type: service
+            id:   doctrine_cache.providers.array_cache
+        query_cache_driver:
+            type: service
+            id:   doctrine_cache.providers.array_cache
+        result_cache_driver:
+            type: service
+            id:   doctrine_cache.providers.chain_cache
+
+# Doctrine Cache
+doctrine_cache:
+    providers:
+        array_cache:
+            type: array
+        predis_cache:
+            type: predis
+            predis:
+                client_id: 'snc_redis.doctrine'
+        chain_cache:
+            type: chain
+            chain:
+                providers:
+                    - array_cache
+                    - predis_cache
+
+# Чистка APC cache
+accelerator_cache:
+    host: '%host.main%'
+    web_dir: '%kernel.project_dir%/public'
 
 # Doctrine Migrations
 doctrine_migrations:
@@ -106,6 +136,14 @@ snc_redis:
             alias:   default
             dsn:     '%redis.dsn%'
             logging: '%kernel.debug%'
+        doctrine:
+            type:    predis
+            alias:   doctrine
+            dsn:     "%redis.dsn%/1"
+            logging: "%kernel.debug%"
+#            options: #todo указание базы работает лишь в dsn
+#                parameters:
+#                    database: 1
 
 # Swiftmailer Configuration
 swiftmailer:
