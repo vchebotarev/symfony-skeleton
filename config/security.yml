@@ -46,11 +46,11 @@ security:
             pattern:      '/admin.*'
             anonymous:    true
             user_checker: 'app.auth.user_checker'
+            provider:     'user_provider_admin'
             chebur_form_login:
                 form:                           'App\Auth\Form\Type\LoginAdminFormType'
                 username_parameter:             '_username'
                 password_parameter:             '_password'
-                provider:                       'user_provider_admin'
                 use_forward:                    false
                 login_path:                     '/admin/login'
                 check_path:                     '/admin/login/check'
@@ -66,11 +66,11 @@ security:
             anonymous:    true
             #context:      'user' # Указать один и тот же для нескольких фаерволов, чтобы они между собой делили пользователя
             user_checker: 'app.auth.user_checker'
+            provider:     'user_provider_main'
             chebur_form_login:
                 form:                           'App\Auth\Form\Type\LoginMainFormType' #Форма авторизации
                 username_parameter:             '_username'          # параметр формы логина
                 password_parameter:             '_password'          # параметр формы логина
-                provider:                       'user_provider_main' # user_provider_main
                 use_forward:                    false                # Рендеринг формы логина прямо на недостпной странице
                 login_path:                     '/login'             # Урл формы логина
                 check_path:                     '/login/check'       # Урл проверки отсабмиченной формы логина
