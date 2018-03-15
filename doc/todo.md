@@ -6,6 +6,9 @@ http://msdn.microsoft.com/en-us/library/ie/dn455106.aspx
 humans.txt
 
 robots.txt
+https://github.com/cdaguerre/robots-bundle
+https://github.com/evheniy/RobotsTxtBundle
+https://github.com/ricbra/robots-txt-bundle
 
 crossdomain.xml
 
@@ -46,4 +49,58 @@ https://www.instagram.com/name/?__a=1
 
 https://habrahabr.ru/post/345802/ + комменты
 
-webpack
+перейти на scss, а далее webpack
+https://habrahabr.ru/post/332052/
+
+Удаление учетной записи
+
+Авторизация за пользователя из админки
+
+session redis
+
+redis select database
+
+tickets
+
+lots - auctions
+
+symfony 4
+
+Deploy
+https://deployer.org/
+https://symfony.com/doc/current/deployment
+https://getcomposer.org/doc/articles/autoloader-optimization.md
+
+Подбор пароля
+- защита капчей
+- кол-во попыток (на учетку, на ip, на visitor)
+
+использовать темы форм
+
+показать пароль
+
+input-group-in
+
+uuid - guid
+https://habrahabr.ru/company/virgilsecurity/blog/311676/
+https://habrahabr.ru/post/334994/
+"pascaldevink/shortuuid"
+"ramsey/uuid"
+"ramsey/uuid-doctrine"
+
+Изучить и если надо подключить бандлы
+cache/cache-bundle
+emanueleminotto/twig-cache-bundle
+vich/uploader-bundle
+nelmio/cors-bundle
+stfalcon/tinymce-bundle
+presta/sitemap-bundle
+misd/phone-number-bundle
+payum/payum-bundle
+mopa/bootstrap-bundle
+liip/monitor-bundle
+genemu/form-bundle
+ekino/newrelic-bundle
+rollerworks/password-strength-bundle
+tbbc/money-bundle
+gos/web-socket-bundle
