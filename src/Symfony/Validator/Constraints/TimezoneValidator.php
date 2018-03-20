@@ -19,7 +19,7 @@ class TimezoneValidator extends ConstraintValidator
             throw new UnexpectedTypeException($constraint, Timezone::class);
         }
 
-        if (!$value) {
+        if (null === $value || '' === $value) {
             return;
         }
 

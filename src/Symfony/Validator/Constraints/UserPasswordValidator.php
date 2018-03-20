@@ -42,7 +42,6 @@ class UserPasswordValidator extends  ConstraintValidator
         }
 
         if (null === $password || '' === $password) {
-            $this->context->addViolation($constraint->message);
             return;
         }
 

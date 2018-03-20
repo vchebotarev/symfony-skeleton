@@ -43,6 +43,11 @@ class EntityExists extends Constraint
     public $service = 'validator.exist';
 
     /**
+     * @var array
+     */
+    public $except = [];
+
+    /**
      * @return array
      */
     public function getRequiredOptions()

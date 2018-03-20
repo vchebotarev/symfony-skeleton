@@ -17,6 +17,10 @@ class Md5Validator extends ConstraintValidator
             throw new UnexpectedTypeException($constraint, Md5::class);
         }
 
+        if (null === $value || '' === $value) {
+            return;
+        }
+
         if (strlen($value) !== 32 || !ctype_xdigit($value)) {//or regexp '/^[a-f0-9]{32}$/i'
             $this->context->buildViolation($constraint->message)
                 ->setParameter('{{ value }}', $this->formatValue($value))

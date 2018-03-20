@@ -17,6 +17,10 @@ class EqualValidator extends ConstraintValidator
             throw new UnexpectedTypeException($constraint, Equal::class);
         }
 
+        if (null === $value || '' === $value) {
+            return;
+        }
+
         $fieldValue = $this->context->getRoot()->get($constraint->field)->getData();
 
         $equal = $value === $fieldValue; //todo проверить для разных типов

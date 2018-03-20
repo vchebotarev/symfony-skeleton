@@ -32,6 +32,10 @@ class EntityExistsValidator extends ConstraintValidator
             throw new UnexpectedTypeException($constraint, EntityExists::class);
         }
 
+        if (!empty($constraint->except) && in_array($value, $constraint->except)) {
+            return;
+        }
+
         if ($constraint->em) {
             $em = $this->managerRegistry->getManager($constraint->em);
             if (!$em) {
