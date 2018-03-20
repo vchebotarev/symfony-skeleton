@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e87b75fbbf86cd139b9b690be4b58f63",
+    "content-hash": "6a8c978ae4eb6f7091996d7ea0fd37ff",
     "packages": [
         {
             "name": "alexpts/symfony-asset-strategy-last-modify",
@@ -3797,6 +3797,46 @@
                 "transformation"
             ],
             "time": "2017-09-09T03:53:30+00:00"
+        },
+        {
+            "name": "martinlindhe/php-mb-helpers",
+            "version": "0.1.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/martinlindhe/php-mb-helpers.git",
+                "reference": "3550df9e6976f753d2879543e4aaf96eaa9657a2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/martinlindhe/php-mb-helpers/zipball/3550df9e6976f753d2879543e4aaf96eaa9657a2",
+                "reference": "3550df9e6976f753d2879543e4aaf96eaa9657a2",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.6"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/mb_helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Martin Lindhe",
+                    "email": "martin@ubique.se"
+                }
+            ],
+            "description": "Provides mb_ucwords(), mb_ucfirst(), mb_strrev(), mb_str_pad(), mb_count_chars(), mb_str_split()",
+            "homepage": "https://github.com/martinlindhe/php-mb-helpers",
+            "time": "2015-11-01T14:06:04+00:00"
         },
         {
             "name": "matthiasnoback/symfony-console-form",

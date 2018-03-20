@@ -51,6 +51,7 @@
         "knplabs/knp-snappy-bundle":                  "^1.4",
         "knplabs/knp-time-bundle":                    "^1.7",
         "liip/imagine-bundle":                        "^1.8",
+        "martinlindhe/php-mb-helpers":                "^0.1.6",
         "matthiasnoback/symfony-console-form":        "^2.3",
         "mobiledetect/mobiledetectlib":               "^2.8",
         "php-amqplib/rabbitmq-bundle":                "^1.13",
