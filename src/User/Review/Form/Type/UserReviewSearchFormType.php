@@ -11,6 +11,7 @@ use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class UserReviewSearchFormType extends AbstractFormType
 {
@@ -40,6 +41,14 @@ class UserReviewSearchFormType extends AbstractFormType
             'required' => false,
             'type'     => DateType::class,
         ]);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function configureOptions(OptionsResolver $resolver)
+    {
+        $resolver->setDefault('csrf_protection', false);
     }
 
 }
