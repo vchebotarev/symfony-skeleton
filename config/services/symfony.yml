@@ -42,3 +42,8 @@ services:
 # Form
     app.symfony.form.helper:
         class: App\Symfony\Form\FormHelper
+
+    app.symfony.form.extension.novalidate:
+        class: App\Symfony\Form\Extension\NovalidateFormTypeExtension
+        tags:
+            - { name: form.type_extension, extended_type: Symfony\Component\Form\Extension\Core\Type\FormType }

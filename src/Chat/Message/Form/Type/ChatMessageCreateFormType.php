@@ -75,8 +75,6 @@ class ChatMessageCreateFormType extends AbstractFormType
      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        parent::configureOptions($resolver);
-
         $resolver->setDefined('user');
         $resolver->addAllowedTypes('user', [
             User::class,

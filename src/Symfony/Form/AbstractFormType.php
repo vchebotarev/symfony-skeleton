@@ -18,14 +18,4 @@ abstract class AbstractFormType extends AbstractType
         return '';
     }
 
-    /**
-     * @inheritdoc
-     */
-    public function configureOptions(OptionsResolver $resolver)
-    {
-        $resolver->setDefault('attr', [
-            'novalidate' => 'novalidate',
-        ]);
-    }
-
 }

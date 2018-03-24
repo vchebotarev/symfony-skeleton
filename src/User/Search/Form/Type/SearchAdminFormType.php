@@ -66,8 +66,6 @@ class SearchAdminFormType extends AbstractFormType
      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        parent::configureOptions($resolver);
-
         $resolver->setDefault('csrf_protection', false);
     }
 

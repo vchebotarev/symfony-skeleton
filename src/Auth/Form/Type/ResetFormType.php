@@ -85,8 +85,6 @@ class ResetFormType extends AbstractFormType
      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        parent::configureOptions($resolver);
-
         $resolver->setRequired('user');
         $resolver->addAllowedTypes('user', User::class);
     }
