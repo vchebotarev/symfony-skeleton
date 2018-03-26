@@ -171,3 +171,13 @@ chebur_search:
         pagination: '@CheburSearch/Pagination/bs4beta.html.twig'
         limitation: '@CheburSearch/Limitation/bs4beta.html.twig'
         sorting:    '@CheburSearch/Sorting/bs4beta.html.twig'
+
+# php-http httplug
+httplug:
+    clients:
+        default:
+            factory: 'httplug.factory.curl'
+        guzzle:
+            factory: 'httplug.factory.guzzle6'
+        socket:
+            factory: 'httplug.factory.socket'

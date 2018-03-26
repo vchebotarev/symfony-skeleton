@@ -31,6 +31,7 @@ class AppKernel extends Kernel
             new \Chebur\LoginFormBundle\CheburLoginFormBundle(),
             new \Chebur\SearchBundle\CheburSearchBundle(),
             new \SmartCore\Bundle\AcceleratorCacheBundle\AcceleratorCacheBundle(),
+            new \Http\HttplugBundle\HttplugBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
