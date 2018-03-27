@@ -3,22 +3,6 @@
 <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
 <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
 
-{# jQuery #}
-<script src="{{ asset('vendor/jquery/dist/jquery.min.js') }}"></script>
-
-{# Bootstrap #}
-<link rel="stylesheet" href="{{ asset('vendor/bootstrap/dist/css/bootstrap.min.css') }}">
-<script src="{{ asset('vendor/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
-
-{# Fontawesome http://fontawesome.io/icons/ #}
-<link rel="stylesheet" href="{{ asset('vendor/fontawesome/css/font-awesome.min.css') }}">
-
-{# jQuery form https://jquery-form.github.io/form/ #}
-<script src="{{ asset('vendor/jquery-form/dist/jquery.form.min.js') }}"></script>
-
-{# Bootstrap more #}
-<link rel="stylesheet" href="{{ asset('css/bootstrap-more/forms.css') }}">
-<link rel="stylesheet" href="{{ asset('css/bootstrap-more.css') }}">
-
-{# CSS Main #}
-<link rel="stylesheet" href="{{ asset('css/main.css') }}">
+{# App #}
+<link rel="stylesheet" href="{{ asset('build/app.css') }}">
+<script src="{{ asset('build/app.js') }}"></script>

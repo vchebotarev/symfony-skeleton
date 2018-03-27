@@ -30,7 +30,8 @@ framework:
     fragments: ~
     http_method_override: true
     assets:
-        version_strategy: app.symfony.assets.version_strategy.last_modified
+        json_manifest_path: '%kernel.project_dir%/public/build/manifest.json'
+        #version_strategy: app.symfony.assets.version_strategy.last_modified
     php_errors:
         log: true
 

@@ -1,0 +1,12 @@
+{
+    "dependencies": {
+        "@symfony/webpack-encore": "symfony/webpack-encore",
+        "node-sass":               "^4.8.3",
+        "sass-loader":             "^6.0.7",
+
+        "bootstrap":               "^4.0.0",
+        "font-awesome":            "^4.7.0",
+        "jquery":                  "^3.3.1",
+        "popper.js":               "^1.14.1"
+    }
+}

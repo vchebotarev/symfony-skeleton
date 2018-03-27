@@ -23,3 +23,8 @@
 !.idea/encodings.xml
 !.idea/fileTemplates/
 !.idea/inspectionProfiles/
+
+# Yarn
+/node_modules/
+/yarn-error.log
+/public/build/
