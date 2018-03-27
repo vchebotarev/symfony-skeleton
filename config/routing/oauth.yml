@@ -1,0 +1,17 @@
+
+# prefix: /oauth
+
+# Непосредственно присоединение учетки соц. сети
+hwi_oauth_connect_service:
+    path:     /oauth/{service}/connect
+    defaults: { _controller: HWIOAuthBundle:Connect:connectService }
+
+# Редирект на социалку и для логина и для присоединения
+hwi_oauth_service_redirect:
+    path:     /oauth/{service}/redirect
+    defaults: { _controller: HWIOAuthBundle:Connect:redirectToService }
+
+# Проверка авторизации через соц сеть
+app_auth_security_check_oauth:
+    path:     /login/{service}/check
+    defaults: { _controller: App\Controller\Auth\SecurityController:checkOauthAction }

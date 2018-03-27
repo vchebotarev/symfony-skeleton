@@ -1,0 +1,36 @@
+
+{% extends 'layout/main.html.twig' %}
+
+{% block page_title %}
+    OAuth
+{% endblock %}
+
+{% block content %}
+
+    <a href="{{ path('app_private_profile_index') }}">Вернуться в профиль</a>
+    <br>
+    <br>
+
+    <ul>
+        {% for res in resource_owners %}
+            <li class="row">
+                <div class="col">
+                    {{ oauth_name(res) }}
+                </div>
+                <div class="col">
+                    {% if user_socials[oauth_id(res)] is defined %}
+                        {{ user_socials[oauth_id(res)].data.realname }}
+                    {% else %}
+                        <a class="btn btn-hover-primary" href="{{ path('hwi_oauth_service_redirect', {service: res.getName()}) }}">Привязать</a>
+                    {% endif %}
+                </div>
+                <div class="col">
+                    {% if user_socials[oauth_id(res)] is defined %}
+                        <a class="btn btn-danger" href="{{ path('app_private_profile_oauth_disconnect', {service: res.getName()}) }}">Отвязать</a>
+                    {% endif %}
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

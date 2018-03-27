@@ -10,6 +10,9 @@ parameters:
     # Twig cache bundle
     twig_cache.adapter.class: Asm89\Twig\CacheExtension\CacheProvider\PsrCacheAdapter
 
+    # HWI OAuth Bundle
+    hwi_oauth.security.oauth_utils.class: App\OAuth\OAuthUtils
+
 services:
 
 # Commands
@@ -122,6 +125,28 @@ services:
         tags:
             - { name: form.type }
 
+#OAuth
+    app.oauth.user_provider.main:
+        class: App\OAuth\UserProvider\UserProviderMain
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '@app.oauth.resource_owner.helper'
+
+    app.oauth.connector:
+        class: App\OAuth\Connector
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '@app.oauth.resource_owner.helper'
+
+    app.oauth.resource_owner.helper:
+        class: App\OAuth\ResourceOwnerHelper
+
+    app.oauth.twig.extension:
+        class: App\Twig\Extension\OAuthExtension
+        arguments:
+            - '@app.oauth.resource_owner.helper'
+        tags:
+            - { name: twig.extension }
 
 # Email
     app.email.check_url_detector:

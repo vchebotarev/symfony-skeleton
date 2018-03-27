@@ -36,4 +36,17 @@
 
     {{ form_end(form) }}
 
+    <div>
+        <h2>Войти с помощью</h2>
+        <ul>
+            {% for res in resource_owners %}
+                <li>
+                    <a href="{{ path('hwi_oauth_service_redirect', {service: res.getName()}) }}" class="btn {{ res.getName() }}" title="Войти с помощью {{ oauth_name(res) }}">
+                        <i class="{{ oauth_icon_class(res) }}"></i>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
 {% endblock %}

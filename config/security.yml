@@ -106,6 +106,14 @@ security:
                 #delete_cookies:                                 #todo
                 #handlers: [some.service.id, another.service.id] #todo
                 #success_handler: some.service.id                #todo
+            oauth:
+                default_target_path:   '/private/'
+                target_path_parameter: 'return_url'
+                login_path:            '/login'
+                oauth_user_provider:
+                    service: app.oauth.user_provider.main
+                resource_owners:
+                    vkontakte: '/login/vkontakte/check'
 
     role_hierarchy:
         ROLE_ADMIN:       ROLE_USER

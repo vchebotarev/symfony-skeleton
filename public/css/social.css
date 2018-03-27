@@ -1,0 +1,50 @@
+
+.facebook {
+   background-color: #3b5998;
+   background-image: linear-gradient(#4e69a2, #3b5998 50%);
+   color: #ffffff;
+}
+.google {
+    background-color: #dc483c;
+    color: #ffffff;
+}
+.instagram {
+    background: radial-gradient(circle at 33% 100%, #fed373 4%, #f15245 30%, #d92e7f 62%, #9b36b7 85%, #515ecf);
+    color: #ffffff;
+}
+.linkedin {
+    background-color: #007bb6;
+    color: #ffffff;
+}
+.mailru {
+   background-color: #168de2;
+   color: #fda840;
+}
+.odnoklassniki {
+   background-color: #ee8208;
+   color: #ffffff;
+}
+.twitter {
+   background-color: #1da1f2;
+   color: #ffffff;
+}
+.vkontakte {
+   background-color: #6287ae;
+   color: #ffffff;
+}
+.windows {
+    background-color: #00adef;
+    color: #ffffff;
+}
+.yahoo {
+    background-color: #7b0099;
+    color: #ffffff;
+}
+.yandex {
+   background-color: #ed1e24;
+   color: #ffffff;
+}
+.youtube {
+   background-color: #ff0000;
+   color: #ffffff;
+}

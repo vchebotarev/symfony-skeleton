@@ -256,3 +256,18 @@ httplug:
             factory: 'httplug.factory.guzzle6'
         socket:
             factory: 'httplug.factory.socket'
+
+# OAuth
+hwi_oauth:
+    firewall_names:        [main]
+    use_referer:           true #todo один большой из-за полной неразберихи в урлах и редиректах
+    target_path_parameter: return_url
+    connect:
+        confirmation:      false
+        account_connector: app.oauth.connector
+    resource_owners:
+        vkontakte: # App\OAuth\ResourceOwnerHelper::VKONTAKTE_NAME
+            type:          vkontakte
+            client_id:     '%oauth.vkontakte.client_id%'
+            client_secret: '%oauth.vkontakte.client_secret%'
+            scope:         'email'

@@ -35,3 +35,7 @@ parameters:
 
     # Hosts
     host.main: 'http://ss.dev'
+
+    # OAuth
+    oauth.vkontakte.client_id:     'ThisTokenIsNotSoSecretChangeIt'
+    oauth.vkontakte.client_secret: 'ThisTokenIsNotSoSecretChangeIt'

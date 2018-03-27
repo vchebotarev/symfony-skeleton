@@ -24,3 +24,11 @@ app_private_profile_change_email:
 app_private_profile_change_timezone:
     path:     /change-timezone
     defaults: { _controller: App\Controller\PrivateArea\ProfileController:changeTimezoneAction }
+
+app_private_profile_oauth:
+    path:     /oauth
+    defaults: { _controller: App\Controller\PrivateArea\ProfileController:oauthAction }
+
+app_private_profile_oauth_disconnect:
+    path:     /oauth/{service}/disconnect
+    defaults: { _controller: App\Controller\PrivateArea\ProfileController:oauthDisconnectAction }

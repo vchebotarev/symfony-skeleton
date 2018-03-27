@@ -2,13 +2,15 @@
 
 namespace App\Controller\PrivateArea;
 
+use App\Entity\UserAuthLog;
+use App\Entity\UserSocial;
 use App\Symfony\Controller\AbstractController;
 use App\User\Form\Type\ChangeEmailFormType;
 use App\User\Form\Type\ChangePasswordFormType;
 use App\User\Form\Type\ChangeTimezoneFormType;
 use App\User\Form\Type\ChangeUsernameFormType;
 use App\User\Security\UserVoter;
-use App\Entity\UserAuthLog;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -21,6 +23,37 @@ class ProfileController extends AbstractController
     public function indexAction()
     {
         return $this->render('PrivateArea/Profile/index.html.twig');
+    }
+
+    /**
+     * @return Response
+     */
+    public function oauthAction()
+    {
+        $userSocials    = $this->getEm()->getRepository(UserSocial::class)->findByUser($this->getUser());
+        $resourceOwners = $this->get('hwi_oauth.security.oauth_utils')->getResourceOwnersObjects();
+
+        return $this->render('/PrivateArea/Profile/oauth.html.twig', [
+            'resource_owners' => $resourceOwners,
+            'user_socials'    => $userSocials,
+        ]);
+    }
+
+    /**
+     * @param Request $request
+     * @param string  $service
+     * @return RedirectResponse
+     */
+    public function oauthDisconnectAction(Request $request, $service)
+    {
+        //todo csrf
+        $resourceOwner = $this->get('hwi_oauth.security.oauth_utils')->getResourceOwnerObjectByName($service);
+        if (!$resourceOwner) {
+            throw $this->createNotFoundException();
+        }
+        $this->get('app.oauth.connector')->disconnect($this->getUser(), $resourceOwner);
+
+        return $this->redirectToRoute('app_private_profile_oauth');
     }
 
     /**

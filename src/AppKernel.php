@@ -33,6 +33,7 @@ class AppKernel extends Kernel
             new \SmartCore\Bundle\AcceleratorCacheBundle\AcceleratorCacheBundle(),
             new \Http\HttplugBundle\HttplugBundle(),
             new \EmanueleMinotto\TwigCacheBundle\TwigCacheBundle(),
+            new \HWI\Bundle\OAuthBundle\HWIOAuthBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
