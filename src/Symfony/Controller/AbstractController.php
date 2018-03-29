@@ -5,6 +5,8 @@ namespace App\Symfony\Controller;
 use App\Entity\User;
 use Doctrine\ORM\EntityManager;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller as BaseController;
+use Symfony\Component\Form\Extension\Core\Type\FormType;
+use Symfony\Component\Form\FormBuilderInterface;
 
 abstract class AbstractController extends BaseController
 {
@@ -35,6 +37,17 @@ abstract class AbstractController extends BaseController
         $jsonResponse = parent::json($data, $status, $headers, $context);
         $jsonResponse->setEncodingOptions(JSON_UNESCAPED_UNICODE);
         return $jsonResponse;
+    }
+
+    /**
+     * @param string     $name
+     * @param null|mixed $data
+     * @param array      $options
+     * @return FormBuilderInterface
+     */
+    protected function createNamedFormBuilder($name = '', $data = null, array $options = array())
+    {
+        return $this->container->get('form.factory')->createNamedBuilder($name, FormType::class, $data, $options);
     }
 
     /**
