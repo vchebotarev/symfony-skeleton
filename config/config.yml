@@ -24,9 +24,7 @@ framework:
     default_locale: '%locale%'
     trusted_hosts: ~
     session:
-        # https://symfony.com/doc/current/reference/configuration/framework.html#handler-id
-        handler_id: session.handler.native_file
-        save_path: '%kernel.project_dir%/var/sessions/%kernel.environment%'
+        handler_id: snc_redis.session.handler
     fragments: ~
     http_method_override: true
     assets:
@@ -144,6 +142,13 @@ snc_redis:
 #            options: #todo указание базы работает лишь в dsn
 #                parameters:
 #                    database: 1
+        session:
+            type:    predis
+            alias:   session
+            dsn:     "%redis.dsn%/2"
+            logging: "%kernel.debug%"
+    session:
+        client: session
 
 # Swiftmailer Configuration
 swiftmailer:
