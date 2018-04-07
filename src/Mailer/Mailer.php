@@ -55,7 +55,7 @@ class Mailer
             ];
         }
 
-        $message = \Swift_Message::newInstance()
+        $message = (new \Swift_Message())
             ->setSubject($subject)
             ->setFrom($from)
             ->setTo($to)
@@ -81,7 +81,7 @@ class Mailer
             ];
         }
 
-        $message = \Swift_Message::newInstance()
+        $message = (new \Swift_Message())
             ->setSubject($subject)
             ->setFrom($from)
             ->setTo($to)

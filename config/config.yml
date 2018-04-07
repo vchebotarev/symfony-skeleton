@@ -214,13 +214,21 @@ snc_redis:
 
 # Swiftmailer Configuration
 swiftmailer:
-    transport: '%mailer_transport%'
-    host: '%mailer_host%'
-    username: '%mailer_user%'
-    password: '%mailer_password%'
-#    spool: #не забываем  вызывать swiftmailer:spool:send #пока отключаем spool чтобы сразу происходила отправка
-#        type: memory #это не работает в винде
-#        type: file
+    default_mailer: default
+    mailers:
+        default:
+            transport: '%swiftmailer.default.transport%'
+            host:      '%swiftmailer.default.host%'
+            username:  '%swiftmailer.default.user%'
+            password:  '%swiftmailer.default.password%'
+#           spool: #не забываем  вызывать swiftmailer:spool:send #пока отключаем spool чтобы сразу происходила отправка
+#               type: memory #это не работает в винде
+#               type: file
+        monolog:
+            transport: '%swiftmailer.monolog.transport%'
+            host:      '%swiftmailer.monolog.host%'
+            username:  '%swiftmailer.monolog.user%'
+            password:  '%swiftmailer.monolog.password%'
 
 # FOS JsRouting Bundle #todo
 #fos_js_routing:

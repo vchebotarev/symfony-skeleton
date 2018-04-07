@@ -29,6 +29,7 @@ monolog:
             handler: swift
         swift:
             type:         swift_mailer
+            mailer:       swiftmailer.mailer.monolog
             level:        critical
             from_email:   '%monolog.mail.from_email%'
             to_email:     '%monolog.mail.to_email%'
@@ -44,6 +45,7 @@ monolog:
             #channels:              ['!event', '!doctrine', '!console']
         swift_console:
             type:         swift_mailer
+            mailer:       swiftmailer.mailer.monolog
             level:        error
             from_email:   '%monolog.mail.from_email%'
             to_email:     '%monolog.mail.to_email%'
