@@ -4,8 +4,11 @@ namespace App\Twig\Extension;
 
 use App\Email\EmailCheckUrlDetector;
 use App\Email\EmailHelper;
+use Twig\Extension\AbstractExtension;
+use Twig\TwigFunction;
+use Twig\TwigTest;
 
-class EmailExtension extends \Twig_Extension
+class EmailExtension extends AbstractExtension
 {
     /**
      * @var EmailHelper
@@ -33,7 +36,7 @@ class EmailExtension extends \Twig_Extension
     public function getFunctions()
     {
         return [
-            new \Twig_SimpleFunction('email_check_url', [$this, 'emailCheckUrl']),
+            new TwigFunction('email_check_url', [$this, 'emailCheckUrl']),
         ];
     }
 
@@ -43,7 +46,7 @@ class EmailExtension extends \Twig_Extension
     public function getTests()
     {
         return [
-            new \Twig_SimpleTest('email', [$this, 'isEmail']),
+            new TwigTest('email', [$this, 'isEmail']),
         ];
     }
 

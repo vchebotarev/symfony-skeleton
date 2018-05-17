@@ -3,8 +3,10 @@
 namespace App\Twig\Extension;
 
 use App\User\Review\UserReviewType;
+use Twig\Extension\AbstractExtension;
+use Twig\TwigFunction;
 
-class UserReviewExtension extends \Twig_Extension
+class UserReviewExtension extends AbstractExtension
 {
     /**
      * @inheritdoc
@@ -12,7 +14,7 @@ class UserReviewExtension extends \Twig_Extension
     public function getFunctions()
     {
         return [
-            new \Twig_SimpleFunction('user_review_type_name', [$this, 'userReviewTypeName']),
+            new TwigFunction('user_review_type_name', [$this, 'userReviewTypeName']),
         ];
     }
 

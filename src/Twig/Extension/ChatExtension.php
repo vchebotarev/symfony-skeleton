@@ -4,8 +4,10 @@ namespace App\Twig\Extension;
 
 use App\Chat\ChatCounter;
 use App\User\UserManager;
+use Twig\Extension\AbstractExtension;
+use Twig\TwigFunction;
 
-class ChatExtension extends \Twig_Extension
+class ChatExtension extends AbstractExtension
 {
     /**
      * @var UserManager
@@ -33,8 +35,8 @@ class ChatExtension extends \Twig_Extension
     public function getFunctions()
     {
         return [
-            new \Twig_SimpleFunction('count_chat_unread', [$this, 'countChatUnread']),
-            new \Twig_SimpleFunction('count_chat_message_unread', [$this, 'countMessageUnread']),
+            new TwigFunction('count_chat_unread', [$this, 'countChatUnread']),
+            new TwigFunction('count_chat_message_unread', [$this, 'countMessageUnread']),
         ];
     }
 

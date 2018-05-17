@@ -3,8 +3,10 @@
 namespace App\Twig\Extension;
 
 use App\Auth\Log\AuthLogHelper;
+use Twig\Extension\AbstractExtension;
+use Twig\TwigFunction;
 
-class AuthLogExtension extends \Twig_Extension
+class AuthLogExtension extends AbstractExtension
 {
     /**
      * @var AuthLogHelper
@@ -25,7 +27,7 @@ class AuthLogExtension extends \Twig_Extension
     public function getFunctions()
     {
         return [
-            new \Twig_SimpleFunction('auth_log_type_name', [$this, 'getName']),
+            new TwigFunction('auth_log_type_name', [$this, 'getName']),
         ];
     }
 
