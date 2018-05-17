@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8a9ff2f4ab08d2146f1e68f6c2f6bf10",
+    "content-hash": "1dfe8853423ab0d178eb2e033c55b2e3",
     "packages": [
         {
             "name": "alexpts/symfony-asset-strategy-last-modify",
