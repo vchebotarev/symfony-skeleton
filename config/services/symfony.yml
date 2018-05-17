@@ -47,3 +47,13 @@ services:
         class: App\Symfony\Form\Extension\NovalidateFormTypeExtension
         tags:
             - { name: form.type_extension, extended_type: Symfony\Component\Form\Extension\Core\Type\FormType }
+
+    app.symfony.form.extension.hint_help:
+        class: App\Symfony\Form\Extension\HintHelpExtension
+        tags:
+            - { name: form.type_extension, extended_type: Symfony\Component\Form\Extension\Core\Type\FormType }
+
+    app.symfony.form.twig.extension:
+        class: App\Twig\Extension\FormExtension
+        tags:
+            - { name: twig.extension }

@@ -37,6 +37,8 @@ twig:
     paths: ['%kernel.project_dir%/templates']
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
+    form_themes:
+        - 'form_theme/hint_help.html.twig'
     exception_controller: app.twig.controller.exception:showAction
 
 # Doctrine Configuration

@@ -1,0 +1,14 @@
+
+{%- block form_hint -%}
+    {%- if hint -%}
+        <i class="fa fa-question-circle-o" data-toggle="tooltip" data-placement="top" title="{{ hint }}"></i>
+    {%- endif -%}
+{%- endblock form_hint -%}
+
+{%- block form_help -%}
+    {%- if help -%}
+        <div class="form-text">
+            {{- help -}}
+        </div>
+    {%- endif -%}
+{%- endblock form_help -%}
