@@ -104,3 +104,5 @@ ekino/newrelic-bundle
 rollerworks/password-strength-bundle
 tbbc/money-bundle
 gos/web-socket-bundle
+
+Сволочи из jetbrains изменили способ хранения стандартов для проекта - надо адаптировать
