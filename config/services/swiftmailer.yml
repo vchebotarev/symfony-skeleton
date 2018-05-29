@@ -1,0 +1,9 @@
+
+services:
+    swiftmailer.mailer.transport.mail.event_dispatcher:
+        parent: swiftmailer.transport.eventdispatcher.abstract
+
+    swiftmailer.mailer.transport.mail:
+        class: App\SwiftMailer\Transport\MailTransport
+        arguments:
+            - '@swiftmailer.mailer.transport.mail.event_dispatcher'

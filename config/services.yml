@@ -4,6 +4,7 @@ imports:
     - { resource: services/doctrine.yml }
     - { resource: services/monolog.yml }
     - { resource: services/symfony.yml }
+    - { resource: services/swiftmailer.yml }
 
 parameters:
     # Twig cache bundle
