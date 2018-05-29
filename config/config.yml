@@ -31,6 +31,42 @@ framework:
         version_strategy: app.symfony.assets.version_strategy.last_modified
     php_errors:
         log: true
+    cache:
+        pools:
+            #app и system зарезервированны и очень мутные в плане настройки
+            cache.default: #кеш общего пользования
+                adapter:  cache.adapter.redis
+                provider: snc_redis.default
+                public:   true
+                #namespace: '' # https://github.com/symfony/symfony/pull/26743
+            cache.validator:
+                adapter:  cache.adapter.redis
+                provider: snc_redis.system
+                public:   false
+            cache.serializer:
+                adapter:  cache.adapter.redis
+                provider: snc_redis.system
+                public:   false
+            cache.annotations:
+                adapter:  cache.adapter.redis
+                provider: snc_redis.system
+                public:   false
+            cache.doctrine_metadata:
+                adapter:  cache.adapter.redis
+                provider: snc_redis.system
+                public:   false
+            cache.doctrine_query:
+                adapter:  cache.adapter.redis
+                provider: snc_redis.system
+                public:   false
+            cache.doctrine_result:
+                adapter:  cache.adapter.redis
+                provider: snc_redis.system
+                public:   false
+            cache.doctrine_second_level:
+                adapter:  cache.adapter.redis
+                provider: snc_redis.system
+                public:   false
 
 # Twig Configuration
 twig:
@@ -73,29 +109,49 @@ doctrine:
                 field: DoctrineExtensions\Query\Mysql\Field
         metadata_cache_driver:
             type: service
-            id:   doctrine_cache.providers.array_cache
+            id:   doctrine_cache.providers.doctrine_metadata
         query_cache_driver:
             type: service
-            id:   doctrine_cache.providers.array_cache
+            id:   doctrine_cache.providers.doctrine_query
         result_cache_driver:
             type: service
-            id:   doctrine_cache.providers.chain_cache
+            id:   doctrine_cache.providers.doctrine_result
+        second_level_cache:
+            region_cache_driver:
+                type: service
+                id:   doctrine_cache.providers.doctrine_second_level
+            enabled: true
 
-# Doctrine Cache
+# Doctrine Cache (только для кеширования доктрины)
 doctrine_cache:
+    custom_providers:
+        psr6:
+            prototype:        app.doctrine.cache.provider.psr6
+            definition_class: App\Doctrine\Cache\Provider\Definition\Psr6Definition
+        psr16:
+            prototype:        app.doctrine.cache.provider.psr16
+            definition_class: App\Doctrine\Cache\Provider\Definition\Psr16Definition
     providers:
-        array_cache:
-            type: array
-        predis_cache:
-            type: predis
-            predis:
-                client_id: 'snc_redis.doctrine'
-        chain_cache:
-            type: chain
-            chain:
-                providers:
-                    - array_cache
-                    - predis_cache
+        doctrine_metadata:
+            custom_provider:
+                type: psr6
+                options:
+                    cache_pool: cache.doctrine_metadata
+        doctrine_query:
+            custom_provider:
+                type: psr6
+                options:
+                    cache_pool: cache.doctrine_query
+        doctrine_result:
+            custom_provider:
+                type: psr6
+                options:
+                    cache_pool: cache.doctrine_result
+        doctrine_second_level:
+            custom_provider:
+                type: psr6
+                options:
+                    cache_pool: cache.doctrine_second_level
 
 # Чистка APC cache
 accelerator_cache:
@@ -129,21 +185,17 @@ ewz_recaptcha:
 
 # Redis
 snc_redis:
-    #todo sessions, doctrine, firewall
     clients:
         default:
             type:    predis
             alias:   default
             dsn:     '%redis.dsn%'
             logging: '%kernel.debug%'
-        doctrine:
+        system:
             type:    predis
-            alias:   doctrine
+            alias:   system
             dsn:     "%redis.dsn%/1"
             logging: "%kernel.debug%"
-#            options: #todo указание базы работает лишь в dsn
-#                parameters:
-#                    database: 1
         session:
             type:    predis
             alias:   session

@@ -1,7 +1,17 @@
 
 services:
 
+# Db
     app.doctrine.dbal.event.listener:
         class: App\Doctrine\DBAL\Event\Listeners\MysqlOnlyFullGroupByDisable
         tags:
             - { name: doctrine.event_subscriber }
+
+# Cache
+    app.doctrine.cache.provider.psr6:
+        class: App\Doctrine\Cache\Provider\Psr6Cache
+        abstract: true
+
+    app.doctrine.cache.provider.psr16:
+        class: App\Doctrine\Cache\Provider\Psr16Cache
+        abstract: true

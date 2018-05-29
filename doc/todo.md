@@ -47,3 +47,5 @@ https://www.instagram.com/name/?__a=1
 https://habrahabr.ru/post/345802/ + комменты
 
 webpack
+
+Doctrine second level cache

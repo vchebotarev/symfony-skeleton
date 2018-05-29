@@ -16,6 +16,12 @@ services:
     App\Controller\:
         resource: '%kernel.source_dir%/Controller'
 
+# Cache
+    cache.default.simple: #psr16
+        class: Symfony\Component\Cache\Simple\Psr6Cache
+        arguments:
+            - '@cache.default'
+
 #Auth
     app.auth.log.subscriber:
         class: App\Auth\Log\AuthLogEventSubscriber
