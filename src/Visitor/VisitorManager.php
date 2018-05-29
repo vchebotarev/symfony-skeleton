@@ -64,10 +64,8 @@ class VisitorManager
             return;
         }
 
-        $hash = $this->generateHash($request->getClientIp(), $request->headers->get('User-Agent'));
-
         $visitor = new Visitor();
-        $visitor->setHash($hash);
+        $visitor->setHash($this->generateHash());
         $this->em->persist($visitor);
         $this->em->flush($visitor);
 
@@ -86,13 +84,11 @@ class VisitorManager
     }
 
     /**
-     * @param string $ip
-     * @param string $userAgent
      * @return string
      */
-    protected function generateHash(string $ip, string $userAgent) : string
+    protected function generateHash() : string
     {
-        return md5($ip.'_'.$userAgent.microtime());
+        return md5(microtime().rand(0, 1000));
     }
 
     /**
@@ -104,7 +100,12 @@ class VisitorManager
             return;
         }
 
-        $expire = self::COOKIE_TTL ? time() + self::COOKIE_TTL : 0;
+        //Чтобы не дергать куку постоянно
+        if ($this->request->getSession()->has(self::COOKIE_KEY)) {
+            return;
+        }
+
+        $expire = time() + self::COOKIE_TTL;
         $response->headers->setCookie(new Cookie(self::COOKIE_KEY, $this->getCurrentVisitor()->getHash(), $expire)); // в куки hash
 
         $this->request->getSession()->set(self::COOKIE_KEY, $this->currentVisitor->getId()); // в сессии id
