@@ -32,6 +32,7 @@ class AppKernel extends Kernel
             new \Chebur\SearchBundle\CheburSearchBundle(),
             new \SmartCore\Bundle\AcceleratorCacheBundle\AcceleratorCacheBundle(),
             new \Http\HttplugBundle\HttplugBundle(),
+            new \EmanueleMinotto\TwigCacheBundle\TwigCacheBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

@@ -51,6 +51,10 @@ framework:
                 adapter:  cache.adapter.redis
                 provider: snc_redis.system
                 public:   false
+            cache.twig:
+                adapter:  cache.adapter.redis
+                provider: snc_redis.system
+                public:   true #обязательно true для TwigCacheBundle
             cache.doctrine_metadata:
                 adapter:  cache.adapter.redis
                 provider: snc_redis.system
@@ -76,6 +80,10 @@ twig:
     form_themes:
         - 'form_theme/hint_help.html.twig'
     exception_controller: app.twig.controller.exception:showAction
+
+# TwigCacheBundle
+twig_cache:
+    service: cache.twig
 
 # Doctrine Configuration
 doctrine:

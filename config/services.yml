@@ -5,6 +5,10 @@ imports:
     - { resource: services/monolog.yml }
     - { resource: services/symfony.yml }
 
+parameters:
+    # Twig cache bundle
+    twig_cache.adapter.class: Asm89\Twig\CacheExtension\CacheProvider\PsrCacheAdapter
+
 services:
 
 # Commands
