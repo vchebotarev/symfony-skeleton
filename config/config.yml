@@ -195,17 +195,17 @@ ewz_recaptcha:
 snc_redis:
     clients:
         default:
-            type:    predis
+            type:    phpredis
             alias:   default
             dsn:     '%redis.dsn%'
             logging: '%kernel.debug%'
         system:
-            type:    predis
+            type:    phpredis
             alias:   system
             dsn:     "%redis.dsn%/1"
             logging: "%kernel.debug%"
         session:
-            type:    predis
+            type:    phpredis
             alias:   session
             dsn:     "%redis.dsn%/2"
             logging: "%kernel.debug%"
