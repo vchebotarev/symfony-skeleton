@@ -26,15 +26,15 @@ $custom-checkbox-switch-transition:           all 0.3s ease-in-out !default;
 @mixin custom-checkbox-switch-after-margin-left($checked) {
     @if ($checked == 1) {
         @if ($custom-checkbox-switch-padding-in > 0) {
-            margin-left: $custom-checkbox-switch-before-w - $custom-checkbox-switch-after-w - $custom-checkbox-switch-padding-in;
+            left: $custom-checkbox-switch-before-w - $custom-checkbox-switch-after-w - $custom-checkbox-switch-padding-in;
         } @else {
-            margin-left: $custom-checkbox-switch-before-w - $custom-checkbox-switch-after-w - $custom-checkbox-switch-padding-in * 2;
+            left: $custom-checkbox-switch-before-w - $custom-checkbox-switch-after-w - $custom-checkbox-switch-padding-in * 2;
         }
     } @else {
         @if ($custom-checkbox-switch-padding-in > 0) {
-            margin-left: $custom-checkbox-switch-padding-in;
+            left: $custom-checkbox-switch-padding-in;
         } @else {
-            margin-left: 0;
+            left: 0;
         }
     }
 }
@@ -61,10 +61,10 @@ $custom-checkbox-switch-transition:           all 0.3s ease-in-out !default;
                 height: $custom-checkbox-switch-before-h;
                 width: $custom-checkbox-switch-before-w;
                 @if ($custom-checkbox-switch-before-h < $custom-checkbox-switch-after-h) {
-                    margin-top: ($custom-checkbox-switch-after-h - $custom-checkbox-switch-before-h) / 2;
+                    top: ($custom-checkbox-switch-after-h - $custom-checkbox-switch-before-h) / 2;
                 }
                 @if ($custom-checkbox-switch-padding-in < 0) {
-                    margin-left: $custom-checkbox-switch-padding-in * -1;
+                    left: $custom-checkbox-switch-padding-in * -1;
                 }
             }
             &::after {
@@ -74,7 +74,7 @@ $custom-checkbox-switch-transition:           all 0.3s ease-in-out !default;
                 height: $custom-checkbox-switch-after-h;
                 width: $custom-checkbox-switch-after-w;
                 @if ($custom-checkbox-switch-before-h > $custom-checkbox-switch-after-h) {
-                    margin-top: ($custom-checkbox-switch-before-h - $custom-checkbox-switch-after-h) / 2;
+                    top: ($custom-checkbox-switch-before-h - $custom-checkbox-switch-after-h) / 2;
                 }
                 @include custom-checkbox-switch-after-margin-left(0);
             }
