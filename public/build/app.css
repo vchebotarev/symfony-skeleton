@@ -10015,6 +10015,15 @@ textarea {
     }
 }
 */
+/********************** Аналог .no-gutters, но c четверными отступами, а не половинными как .row **********************/
+.half-gutters {
+  margin-right: -7.5px;
+  margin-left: -7.5px; }
+  .half-gutters > .col,
+  .half-gutters > [class*="col-"] {
+    padding-right: 7.5px;
+    padding-left: 7.5px; }
+
 /* Если родителю добавлять .is-valid/.is-invalid то получится аналог давнешнего .has-success/.has-danger */
 /* todo scss */
 .is-valid .invalid-tooltip,
