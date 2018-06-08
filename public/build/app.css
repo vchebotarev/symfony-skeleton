@@ -10024,6 +10024,20 @@ textarea {
     padding-right: 7.5px;
     padding-left: 7.5px; }
 
+/*********** В маках поле поиска выглядит так же как везде, в webkit браузерах нет особой декорации инпутов ***********/
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield; }
+
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button,
+input::-webkit-search-results-button,
+input::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; }
+
 /* Если родителю добавлять .is-valid/.is-invalid то получится аналог давнешнего .has-success/.has-danger */
 /* todo scss */
 .is-valid .invalid-tooltip,

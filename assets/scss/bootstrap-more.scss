@@ -61,3 +61,14 @@ textarea {
         padding-left: $grid-gutter-width / 4;
     }
 }
+
+/*********** В маках поле поиска выглядит так же как везде, в webkit браузерах нет особой декорации инпутов ***********/
+input[type="search"] {
+    @include appearance(textfield);
+}
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button,
+input::-webkit-search-results-button,
+input::-webkit-search-results-decoration {
+    @include appearance(none);
+}
