@@ -8,7 +8,6 @@ IOS style
     $custom-checkbox-switch-padding-in > 0
  */
 
-$custom-checkbox-switch-reverse:              0 !default;
 $custom-checkbox-switch-before-w:             2.2rem !default;
 $custom-checkbox-switch-before-h:             1rem !default;
 $custom-checkbox-switch-before-border-radius: $custom-checkbox-switch-before-h / 2 !default;
@@ -25,7 +24,7 @@ $custom-checkbox-switch-padding-outer:        0.5rem !default;
 $custom-checkbox-switch-transition:           all 0.3s ease-in-out !default;
 
 @mixin custom-checkbox-switch-after-margin-left($checked) {
-    @if (xor($checked == 1, $custom-checkbox-switch-reverse == 1)) { //$checked == 1 xor $custom-checkbox-switch-reverse == 1 - doesn't work
+    @if ($checked == 1) {
         @if ($custom-checkbox-switch-padding-in > 0) {
             margin-left: $custom-checkbox-switch-before-w - $custom-checkbox-switch-after-w - $custom-checkbox-switch-padding-in;
         } @else {
