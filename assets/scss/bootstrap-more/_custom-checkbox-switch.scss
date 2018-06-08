@@ -13,15 +13,17 @@ $custom-checkbox-switch-track-h:             1rem !default;
 $custom-checkbox-switch-track-border-radius: $custom-checkbox-switch-track-h / 2 !default;
 $custom-checkbox-switch-track-bg:            $custom-control-indicator-bg !default;
 $custom-checkbox-switch-track-bg-checked:    $custom-control-indicator-checked-bg !default;
+
 $custom-checkbox-switch-thumb-w:              1.5rem !default;
 $custom-checkbox-switch-thumb-h:              1.5rem !default;
 $custom-checkbox-switch-thumb-border-radius:  $custom-checkbox-switch-thumb-h / 2 !default;
 $custom-checkbox-switch-thumb-box-shadow:     0 0 0.3rem rgba(0, 0, 0, 0.3) !default;
 $custom-checkbox-switch-thumb-bg:             $input-bg !default;
 $custom-checkbox-switch-thumb-bg-checked:     $input-bg !default;
+
 $custom-checkbox-switch-padding-in:           -0.2rem !default;
 $custom-checkbox-switch-padding-outer:        0.5rem !default;
-$custom-checkbox-switch-transition:           all 0.15s ease-in-out !default;
+$custom-checkbox-switch-transition:           all 0.15s ease-in-out !default; //todo конкретно перечислить
 
 @mixin custom-checkbox-switch-after-margin-left($checked) {
     @if ($checked == 1) {
