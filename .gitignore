@@ -23,3 +23,6 @@
 !.idea/encodings.xml
 !.idea/fileTemplates/
 !.idea/inspectionProfiles/
+
+# PhpStorm - SCSS
+/public/build/app.css.map
