@@ -28,3 +28,25 @@ a:hover {
 textarea {
     resize: none;
 }
+
+/************************************ При фокусе в интуп - плейсхолдер "удаляется" (плавно) ***************************/
+// Плавно
+@include placeholder {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+// Плавно
+:focus {
+    @include placeholder {
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+}
+// Не плавно
+/*
+:focus {
+    @include placeholder {
+        color: transparent
+    }
+}
+*/

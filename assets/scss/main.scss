@@ -13,23 +13,6 @@ body {
     margin-bottom: 3.5rem; /* фактическая высота футера */
 }
 
-/************************************ При фокусе в интуп - плейсхолдер "удаляется" (плавно) ***************************/
-.form-control::-webkit-input-placeholder       {opacity: 1; transition: opacity 0.3s ease;}
-.form-control::-moz-placeholder                {opacity: 1; transition: opacity 0.3s ease;}
-.form-control:-moz-placeholder                 {opacity: 1; transition: opacity 0.3s ease;}
-.form-control:-ms-input-placeholder            {opacity: 1; transition: opacity 0.3s ease;}
-.form-control:focus::-webkit-input-placeholder {opacity: 0; transition: opacity 0.3s ease;}
-.form-control:focus::-moz-placeholder          {opacity: 0; transition: opacity 0.3s ease;}
-.form-control:focus:-moz-placeholder           {opacity: 0; transition: opacity 0.3s ease;}
-.form-control:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ease;}
-/*не плавно
-.form-control:focus::-webkit-input-placeholder {color: transparent}
-.form-control:focus::-moz-placeholder          {color: transparent}
-.form-control:focus:-moz-placeholder           {color: transparent}
-.form-control:focus:-ms-input-placeholder      {color: transparent}
-*/
-
-
 /***************************************** input-group-addon внутри элемента ******************************************/
 .input-group-inner {
     position: relative;
