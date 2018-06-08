@@ -1,0 +1,95 @@
+
+/*
+Material style
+    $custom-checkbox-switch-before-h < $custom-checkbox-switch-after-h
+    $custom-checkbox-switch-padding-in <= 0
+IOS style
+    $custom-checkbox-switch-before-h = $custom-checkbox-switch-after-h + $custom-checkbox-switch-padding-in
+    $custom-checkbox-switch-padding-in > 0
+ */
+
+$custom-checkbox-switch-reverse:              0 !default;
+$custom-checkbox-switch-before-w:             2.2rem !default;
+$custom-checkbox-switch-before-h:             1rem !default;
+$custom-checkbox-switch-before-border-radius: $custom-checkbox-switch-before-h / 2 !default;
+$custom-checkbox-switch-before-color:         $custom-control-indicator-bg !default;
+$custom-checkbox-switch-before-color-checked: $custom-control-indicator-checked-color !default;
+$custom-checkbox-switch-after-w:              1.5rem !default;
+$custom-checkbox-switch-after-h:              1.5rem !default;
+$custom-checkbox-switch-after-border-radius:  $custom-checkbox-switch-after-h / 2 !default;
+$custom-checkbox-switch-after-box-shadow:     0 0 0.3rem rgba(0, 0, 0, 0.3) !default;
+$custom-checkbox-switch-after-color:          $input-bg !default;
+$custom-checkbox-switch-after-color-checked:  $input-bg !default;
+$custom-checkbox-switch-padding-in:           -0.2rem !default;
+$custom-checkbox-switch-padding-outer:        0.5rem !default;
+$custom-checkbox-switch-transition:           all 0.3s ease-in-out !default;
+
+@mixin custom-checkbox-switch-after-margin-left($checked) {
+    @if (xor($checked == 1, $custom-checkbox-switch-reverse == 1)) { //$checked == 1 xor $custom-checkbox-switch-reverse == 1 - doesn't work
+        @if ($custom-checkbox-switch-padding-in > 0) {
+            margin-left: $custom-checkbox-switch-before-w - $custom-checkbox-switch-after-w - $custom-checkbox-switch-padding-in;
+        } @else {
+            margin-left: $custom-checkbox-switch-before-w - $custom-checkbox-switch-after-w - $custom-checkbox-switch-padding-in * 2;
+        }
+    } @else {
+        @if ($custom-checkbox-switch-padding-in > 0) {
+            margin-left: $custom-checkbox-switch-padding-in;
+        } @else {
+            margin-left: 0;
+        }
+    }
+}
+
+.custom-checkbox-switch {
+    padding-left: 0;
+    .custom-control-input {
+        ~ .custom-control-label {
+            cursor: pointer;
+            @if ($custom-checkbox-switch-padding-in > 0) {
+                padding-left: $custom-checkbox-switch-before-w + $custom-checkbox-switch-padding-outer;
+            } @else {
+                padding-left: $custom-checkbox-switch-before-w + $custom-checkbox-switch-padding-outer - $custom-checkbox-switch-padding-in * 2;
+            }
+            &::before,
+            &::after {
+                top: 0;
+                transition: $custom-checkbox-switch-transition;
+                content: '';
+            }
+            &::before {
+                background: $custom-checkbox-switch-before-color;
+                border-radius: $custom-checkbox-switch-before-border-radius;
+                height: $custom-checkbox-switch-before-h;
+                width: $custom-checkbox-switch-before-w;
+                @if ($custom-checkbox-switch-before-h < $custom-checkbox-switch-after-h) {
+                    margin-top: ($custom-checkbox-switch-after-h - $custom-checkbox-switch-before-h) / 2;
+                }
+                @if ($custom-checkbox-switch-padding-in < 0) {
+                    margin-left: $custom-checkbox-switch-padding-in * -1;
+                }
+            }
+            &::after {
+                background: $custom-checkbox-switch-after-color;
+                border-radius: $custom-checkbox-switch-after-border-radius;
+                box-shadow: $custom-checkbox-switch-after-box-shadow;
+                height: $custom-checkbox-switch-after-h;
+                width: $custom-checkbox-switch-after-w;
+                @if ($custom-checkbox-switch-before-h > $custom-checkbox-switch-after-h) {
+                    margin-top: ($custom-checkbox-switch-before-h - $custom-checkbox-switch-after-h) / 2;
+                }
+                @include custom-checkbox-switch-after-margin-left(0);
+            }
+        }
+        &:checked {
+            ~ .custom-control-label {
+                &::after {
+                    background: $custom-checkbox-switch-after-color-checked;
+                    @include custom-checkbox-switch-after-margin-left(1);
+                }
+                &::before {
+                    background: $custom-checkbox-switch-before-color-checked;
+                }
+            }
+        }
+    }
+}
