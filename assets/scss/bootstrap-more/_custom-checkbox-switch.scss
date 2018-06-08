@@ -1,6 +1,6 @@
 
 /*
-Material style
+Android style
     $custom-checkbox-switch-before-h < $custom-checkbox-switch-after-h
     $custom-checkbox-switch-padding-in <= 0
 IOS style
@@ -12,7 +12,7 @@ $custom-checkbox-switch-before-w:             2.2rem !default;
 $custom-checkbox-switch-before-h:             1rem !default;
 $custom-checkbox-switch-before-border-radius: $custom-checkbox-switch-before-h / 2 !default;
 $custom-checkbox-switch-before-color:         $custom-control-indicator-bg !default;
-$custom-checkbox-switch-before-color-checked: $custom-control-indicator-checked-color !default;
+$custom-checkbox-switch-before-color-checked: $custom-control-indicator-checked-bg !default;
 $custom-checkbox-switch-after-w:              1.5rem !default;
 $custom-checkbox-switch-after-h:              1.5rem !default;
 $custom-checkbox-switch-after-border-radius:  $custom-checkbox-switch-after-h / 2 !default;
@@ -56,7 +56,7 @@ $custom-checkbox-switch-transition:           all 0.3s ease-in-out !default;
                 content: '';
             }
             &::before {
-                background: $custom-checkbox-switch-before-color;
+                @include gradient-bg($custom-checkbox-switch-before-color);
                 border-radius: $custom-checkbox-switch-before-border-radius;
                 height: $custom-checkbox-switch-before-h;
                 width: $custom-checkbox-switch-before-w;
@@ -68,7 +68,7 @@ $custom-checkbox-switch-transition:           all 0.3s ease-in-out !default;
                 }
             }
             &::after {
-                background: $custom-checkbox-switch-after-color;
+                @include gradient-bg($custom-checkbox-switch-after-color);
                 border-radius: $custom-checkbox-switch-after-border-radius;
                 box-shadow: $custom-checkbox-switch-after-box-shadow;
                 height: $custom-checkbox-switch-after-h;
@@ -81,12 +81,12 @@ $custom-checkbox-switch-transition:           all 0.3s ease-in-out !default;
         }
         &:checked {
             ~ .custom-control-label {
-                &::after {
-                    background: $custom-checkbox-switch-after-color-checked;
-                    @include custom-checkbox-switch-after-margin-left(1);
-                }
                 &::before {
-                    background: $custom-checkbox-switch-before-color-checked;
+                    @include gradient-bg($custom-checkbox-switch-before-color-checked);
+                }
+                &::after {
+                    @include gradient-bg($custom-checkbox-switch-after-color-checked);
+                    @include custom-checkbox-switch-after-margin-left(1);
                 }
             }
         }
