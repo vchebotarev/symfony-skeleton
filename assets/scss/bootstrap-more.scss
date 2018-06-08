@@ -72,3 +72,9 @@ input::-webkit-search-results-button,
 input::-webkit-search-results-decoration {
     @include appearance(none);
 }
+
+/********************* Скрытие стрелок вверх и вниз, чтобы выглядело как обычный input[type="text"]********************/
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+    @include appearance(none);
+}

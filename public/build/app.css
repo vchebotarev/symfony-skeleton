@@ -10038,6 +10038,13 @@ input::-webkit-search-results-decoration {
   -moz-appearance: none;
   appearance: none; }
 
+/********************* Скрытие стрелок вверх и вниз, чтобы выглядело как обычный input[type="text"]********************/
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; }
+
 /* Если родителю добавлять .is-valid/.is-invalid то получится аналог давнешнего .has-success/.has-danger */
 /* todo scss */
 .is-valid .invalid-tooltip,
