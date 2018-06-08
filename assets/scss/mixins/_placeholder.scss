@@ -1,0 +1,36 @@
+
+// https://stackoverflow.com/questions/2610497/change-an-html5-inputs-placeholder-color-with-css
+// https://stackoverflow.com/questions/17181849/placeholder-mixin-scss-css
+
+@mixin optional-at-root($sel) {
+    @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+        @content;
+    }
+}
+
+@mixin placeholder {
+    //WebKit, Blink, Edge
+    @include optional-at-root('::-webkit-input-placeholder') {
+        @content;
+    }
+    //Mozilla Firefox 4 to 18
+    @include optional-at-root(':-moz-placeholder') {
+        @content;
+    }
+    //Mozilla Firefox 19+
+    @include optional-at-root('::-moz-placeholder') {
+        @content;
+    }
+    //Internet Explorer 10-11
+    @include optional-at-root(':-ms-input-placeholder') {
+        @content;
+    }
+    //Microsoft Edge
+    @include optional-at-root('::-ms-input-placeholder') {
+        @content;
+    }
+    //Most modern browsers
+    @include optional-at-root('::placeholder') {
+        @content;
+    }
+}
