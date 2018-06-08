@@ -21,7 +21,7 @@ $custom-checkbox-switch-thumb-color:          $input-bg !default;
 $custom-checkbox-switch-thumb-color-checked:  $input-bg !default;
 $custom-checkbox-switch-padding-in:           -0.2rem !default;
 $custom-checkbox-switch-padding-outer:        0.5rem !default;
-$custom-checkbox-switch-transition:           all 0.3s ease-in-out !default;
+$custom-checkbox-switch-transition:           all 0.15s ease-in-out !default;
 
 @mixin custom-checkbox-switch-after-margin-left($checked) {
     @if ($checked == 1) {
