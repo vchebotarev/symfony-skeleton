@@ -46,18 +46,18 @@ $custom-control-indicator-active-color:         $component-active-color !default
 $custom-control-indicator-active-bg:            lighten($component-active-bg, 35%) !default;
 $custom-control-indicator-active-box-shadow:    none !default;
 
-@mixin custom-checkbox-switch-after-margin-left($checked) {
+@function custom-checkbox-switch-thumb-left($checked) {
     @if ($checked == 1) {
         @if ($custom-checkbox-switch-padding-in > 0) {
-            left: $custom-checkbox-switch-track-w - $custom-checkbox-switch-thumb-w - $custom-checkbox-switch-padding-in;
+            @return $custom-checkbox-switch-track-w - $custom-checkbox-switch-thumb-w - $custom-checkbox-switch-padding-in;
         } @else {
-            left: $custom-checkbox-switch-track-w - $custom-checkbox-switch-thumb-w - $custom-checkbox-switch-padding-in * 2;
+            @return $custom-checkbox-switch-track-w - $custom-checkbox-switch-thumb-w - $custom-checkbox-switch-padding-in * 2;
         }
     } @else {
         @if ($custom-checkbox-switch-padding-in > 0) {
-            left: $custom-checkbox-switch-padding-in;
+            @return $custom-checkbox-switch-padding-in;
         } @else {
-            left: 0;
+            @return 0;
         }
     }
 }
@@ -99,7 +99,7 @@ $custom-control-indicator-active-box-shadow:    none !default;
                 @if ($custom-checkbox-switch-track-h > $custom-checkbox-switch-thumb-h) {
                     top: ($custom-checkbox-switch-track-h - $custom-checkbox-switch-thumb-h) / 2;
                 }
-                @include custom-checkbox-switch-after-margin-left(0);
+                left: custom-checkbox-switch-thumb-left(0);
             }
         }
         &:checked {
@@ -109,7 +109,7 @@ $custom-control-indicator-active-box-shadow:    none !default;
                 }
                 &::after {
                     @include gradient-bg($custom-checkbox-switch-thumb-checked-bg);
-                    @include custom-checkbox-switch-after-margin-left(1);
+                    left: custom-checkbox-switch-thumb-left(1);
                 }
             }
         }
