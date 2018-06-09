@@ -2,10 +2,8 @@
 /*
 Android style
     $custom-checkbox-switch-track-h < $custom-checkbox-switch-thumb-h
-    $custom-checkbox-switch-padding-in <= 0
 IOS style
-    $custom-checkbox-switch-track-h = $custom-checkbox-switch-thumb-h + $custom-checkbox-switch-padding-in
-    $custom-checkbox-switch-padding-in > 0
+    $custom-checkbox-switch-track-h >= $custom-checkbox-switch-thumb-h
  */
 
 $custom-checkbox-switch-track-h:                   $custom-control-indicator-size !default;
@@ -31,7 +29,7 @@ $custom-checkbox-switch-thumb-checked-disabled-bg: $custom-control-indicator-che
 $custom-checkbox-switch-thumb-active-w:            $custom-checkbox-switch-thumb-w * 1.2 !default;
 $custom-checkbox-switch-thumb-focus-box-shadow:    $custom-checkbox-switch-thumb-box-shadow !default;
 
-$custom-checkbox-switch-padding-in:    -0.2rem !default;
+$custom-checkbox-switch-padding-in:    ($custom-checkbox-switch-track-h - $custom-checkbox-switch-thumb-h) / 2 !default;
 $custom-checkbox-switch-padding-outer: 0.5rem !default;
 $custom-checkbox-switch-transition:    all 0.15s ease-in-out !default;
 
