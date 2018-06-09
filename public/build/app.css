@@ -10109,26 +10109,26 @@ input::-webkit-search-results-decoration {
 
 /*
 Android style
-    $custom-checkbox-switch-track-height < $custom-checkbox-switch-thumb-height
+    $custom-switch-track-height < $custom-switch-thumb-height
 IOS style
-    $custom-checkbox-switch-track-height >= $custom-checkbox-switch-thumb-height
+    $custom-switch-track-height >= $custom-switch-thumb-height
  */
-.custom-checkbox-switch {
+.custom-switch {
   padding-left: 0; }
-  .custom-checkbox-switch .custom-control-input ~ .custom-control-label {
+  .custom-switch .custom-control-input ~ .custom-control-label {
     padding-left: 3rem; }
-    .custom-checkbox-switch .custom-control-input ~ .custom-control-label::before, .custom-checkbox-switch .custom-control-input ~ .custom-control-label::after {
+    .custom-switch .custom-control-input ~ .custom-control-label::before, .custom-switch .custom-control-input ~ .custom-control-label::after {
       top: 0;
       transition: all 0.15s ease-in-out;
       content: ''; }
-    .custom-checkbox-switch .custom-control-input ~ .custom-control-label::before {
+    .custom-switch .custom-control-input ~ .custom-control-label::before {
       background-color: #dee2e6;
       border-radius: 0.5rem;
       height: 1rem;
       width: 2rem;
       top: 0.25rem;
       left: 0.25rem; }
-    .custom-checkbox-switch .custom-control-input ~ .custom-control-label::after {
+    .custom-switch .custom-control-input ~ .custom-control-label::after {
       background-color: #fff;
       border-radius: 0.75rem;
       box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.3);
@@ -10136,30 +10136,30 @@ IOS style
       width: 1.5rem;
       top: 0;
       left: 0; }
-  .custom-checkbox-switch .custom-control-input:checked:disabled ~ .custom-control-label::before {
+  .custom-switch .custom-control-input:checked:disabled ~ .custom-control-label::before {
     background-color: rgba(0, 123, 255, 0.5); }
-  .custom-checkbox-switch .custom-control-input:checked:disabled ~ .custom-control-label::after {
+  .custom-switch .custom-control-input:checked:disabled ~ .custom-control-label::after {
     background-color: #fff; }
-  .custom-checkbox-switch .custom-control-input:checked ~ .custom-control-label::before {
+  .custom-switch .custom-control-input:checked ~ .custom-control-label::before {
     background-color: #007bff; }
-  .custom-checkbox-switch .custom-control-input:checked ~ .custom-control-label::after {
+  .custom-switch .custom-control-input:checked ~ .custom-control-label::after {
     background-color: #fff;
     left: 1rem; }
-  .custom-checkbox-switch .custom-control-input:focus ~ .custom-control-label::before {
+  .custom-switch .custom-control-input:focus ~ .custom-control-label::before {
     box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(0, 123, 255, 0.25); }
-  .custom-checkbox-switch .custom-control-input:focus ~ .custom-control-label::after {
+  .custom-switch .custom-control-input:focus ~ .custom-control-label::after {
     box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.3); }
-  .custom-checkbox-switch .custom-control-input:disabled ~ .custom-control-label::before {
+  .custom-switch .custom-control-input:disabled ~ .custom-control-label::before {
     background-color: #e9ecef; }
-  .custom-checkbox-switch .custom-control-input:disabled ~ .custom-control-label::after {
+  .custom-switch .custom-control-input:disabled ~ .custom-control-label::after {
     background-color: #fff; }
-  .custom-checkbox-switch .custom-control-input:active ~ .custom-control-label::before {
+  .custom-switch .custom-control-input:active ~ .custom-control-label::before {
     background-color: #b3d7ff; }
-  .custom-checkbox-switch .custom-control-input:active ~ .custom-control-label::after {
+  .custom-switch .custom-control-input:active ~ .custom-control-label::after {
     background-color: #fff; }
-  .custom-checkbox-switch .custom-control-input:active:checked ~ .custom-control-label::after {
+  .custom-switch .custom-control-input:active:checked ~ .custom-control-label::after {
     left: 0.7rem; }
-  .custom-checkbox-switch .custom-control-input:active ~ .custom-control-label::after {
+  .custom-switch .custom-control-input:active ~ .custom-control-label::after {
     width: 1.8rem; }
 
 .facebook {
