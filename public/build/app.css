@@ -10133,19 +10133,27 @@ IOS style
     .custom-checkbox-switch .custom-control-input ~ .custom-control-label::after {
       background-color: #fff;
       border-radius: 0.75rem;
-      box-shadow: 0 0 0.3rem rgba(0, 0, 0, 0.3);
+      box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.3);
       height: 1.5rem;
       width: 1.5rem;
       left: 0; }
+  .custom-checkbox-switch .custom-control-input:checked:disabled ~ .custom-control-label::before {
+    background-color: rgba(0, 123, 255, 0.5); }
+  .custom-checkbox-switch .custom-control-input:checked:disabled ~ .custom-control-label::after {
+    background-color: #fff; }
   .custom-checkbox-switch .custom-control-input:checked ~ .custom-control-label::before {
     background-color: #007bff; }
   .custom-checkbox-switch .custom-control-input:checked ~ .custom-control-label::after {
     background-color: #fff;
     left: 1.1rem; }
-  .custom-checkbox-switch .custom-control-input:disabled:checked ~ .custom-control-label::before {
-    background-color: rgba(0, 123, 255, 0.5); }
+  .custom-checkbox-switch .custom-control-input:focus ~ .custom-control-label::before {
+    box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(0, 123, 255, 0.25); }
+  .custom-checkbox-switch .custom-control-input:focus ~ .custom-control-label::after {
+    box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.3); }
   .custom-checkbox-switch .custom-control-input:disabled ~ .custom-control-label::before {
     background-color: #e9ecef; }
+  .custom-checkbox-switch .custom-control-input:disabled ~ .custom-control-label::after {
+    background-color: #fff; }
   .custom-checkbox-switch .custom-control-input:active ~ .custom-control-label::before {
     background-color: #b3d7ff; }
   .custom-checkbox-switch .custom-control-input:active ~ .custom-control-label::after {

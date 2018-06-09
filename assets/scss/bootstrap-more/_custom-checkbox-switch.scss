@@ -11,35 +11,37 @@ IOS style
 $custom-checkbox-switch-track-w:             2.2rem !default;
 $custom-checkbox-switch-track-h:             1rem !default;
 $custom-checkbox-switch-track-border-radius: $custom-checkbox-switch-track-h / 2 !default;
+$custom-checkbox-switch-track-box-shadow:    $custom-control-indicator-box-shadow !default;
 $custom-checkbox-switch-track-bg:            $custom-control-indicator-bg !default;
 $custom-checkbox-switch-track-disabled-bg:   $custom-control-indicator-disabled-bg !default;
 $custom-checkbox-switch-track-active-bg:     $custom-control-indicator-active-bg !default;
 $custom-checkbox-switch-track-checked-bg:    $custom-control-indicator-checked-bg !default;
 $custom-checkbox-switch-track-checked-disabled-bg: $custom-control-indicator-checked-disabled-bg !default;
+$custom-checkbox-switch-track-focus-box-shadow: $custom-control-indicator-focus-box-shadow !default;
 
 $custom-checkbox-switch-thumb-w:              1.5rem !default;
 $custom-checkbox-switch-thumb-h:              1.5rem !default;
 $custom-checkbox-switch-thumb-border-radius:  $custom-checkbox-switch-thumb-h / 2 !default;
-$custom-checkbox-switch-thumb-box-shadow:     0 0 0.3rem rgba(0, 0, 0, 0.3) !default;
+$custom-checkbox-switch-thumb-box-shadow:     0 0 0.25rem rgba($black, 0.3) !default;
 $custom-checkbox-switch-thumb-bg:             $input-bg !default;
+$custom-checkbox-switch-thumb-disabled-bg:    $custom-checkbox-switch-thumb-bg !default;
 $custom-checkbox-switch-thumb-active-bg:      $custom-control-indicator-active-color !default;
 $custom-checkbox-switch-thumb-checked-bg:     $custom-control-indicator-checked-color !default;
+$custom-checkbox-switch-thumb-checked-disabled-bg: $custom-control-indicator-checked-color !default;
 $custom-checkbox-switch-thumb-active-w:       $custom-checkbox-switch-thumb-w * 1.2 !default;
+$custom-checkbox-switch-thumb-focus-box-shadow: $custom-checkbox-switch-thumb-box-shadow !default;
 
 $custom-checkbox-switch-padding-in:           -0.2rem !default;
 $custom-checkbox-switch-padding-outer:        0.5rem !default;
 $custom-checkbox-switch-transition:           all 0.15s ease-in-out !default; //todo конкретно перечислить
 
-//todo focus
-
 //todo обыгать
 $custom-control-indicator-size:         1rem !default;
 $custom-control-indicator-bg-size:      50% 50% !default;
-$custom-control-indicator-box-shadow:   inset 0 .25rem .25rem rgba($black, .1) !default;
 $custom-control-label-disabled-color:   $gray-600 !default;
-$custom-control-indicator-checked-color:        $component-active-color !default;
+
+//todo box shadow
 $custom-control-indicator-checked-box-shadow:   none !default;
-$custom-control-indicator-focus-box-shadow:     0 0 0 1px $body-bg, $input-btn-focus-box-shadow !default;
 $custom-control-indicator-active-box-shadow:    none !default;
 
 @function custom-checkbox-switch-thumb-left($checked) {
@@ -75,6 +77,7 @@ $custom-control-indicator-active-box-shadow:    none !default;
             }
             &::before {
                 @include gradient-bg($custom-checkbox-switch-track-bg);
+                @include box-shadow($custom-checkbox-switch-track-box-shadow);
                 border-radius: $custom-checkbox-switch-track-border-radius;
                 height: $custom-checkbox-switch-track-h;
                 width: $custom-checkbox-switch-track-w;
@@ -98,6 +101,16 @@ $custom-control-indicator-active-box-shadow:    none !default;
             }
         }
         &:checked {
+            &:disabled {
+                ~ .custom-control-label {
+                    &::before {
+                        background-color: $custom-checkbox-switch-track-checked-disabled-bg;
+                    }
+                    &::after {
+                        background-color: $custom-checkbox-switch-thumb-checked-disabled-bg;
+                    }
+                }
+            }
             ~ .custom-control-label {
                 &::before {
                     @include gradient-bg($custom-checkbox-switch-track-checked-bg);
@@ -108,38 +121,38 @@ $custom-control-indicator-active-box-shadow:    none !default;
                 }
             }
         }
-        &:disabled {
-            &:checked ~ .custom-control-label::before {
-                background-color: $custom-checkbox-switch-track-checked-disabled-bg;
+        &:focus ~ .custom-control-label {
+            &::before {
+                box-shadow: $custom-checkbox-switch-track-focus-box-shadow;
             }
-            ~ .custom-control-label::before {
-                background-color: $custom-checkbox-switch-track-disabled-bg;
+            &::after {
+                box-shadow: $custom-checkbox-switch-thumb-focus-box-shadow;
             }
         }
-        &:active {
-            ~ .custom-control-label {
-                &::before {
-                    background-color: $custom-checkbox-switch-track-active-bg;
-                }
-                &::after {
-                    background-color: $custom-checkbox-switch-thumb-active-bg;
-                }
+        &:disabled ~ .custom-control-label {
+            &::before {
+                background-color: $custom-checkbox-switch-track-disabled-bg;
+            }
+            &::after {
+                background-color: $custom-checkbox-switch-thumb-disabled-bg;
+            }
+        }
+        &:active ~ .custom-control-label {
+            &::before {
+                background-color: $custom-checkbox-switch-track-active-bg;
+            }
+            &::after {
+                background-color: $custom-checkbox-switch-thumb-active-bg;
             }
         }
         //ios thumb increase effect
         @if($custom-checkbox-switch-thumb-active-w != $custom-checkbox-switch-thumb-w) {
             &:active {
-                &:checked {
-                    ~ .custom-control-label {
-                        &::after {
-                            left: custom-checkbox-switch-thumb-left(1) - ($custom-checkbox-switch-thumb-active-w - $custom-checkbox-switch-thumb-w);
-                        }
-                    }
+                &:checked ~ .custom-control-label::after {
+                    left: custom-checkbox-switch-thumb-left(1) - ($custom-checkbox-switch-thumb-active-w - $custom-checkbox-switch-thumb-w);
                 }
-                ~ .custom-control-label {
-                    &::after {
-                        width: $custom-checkbox-switch-thumb-active-w;
-                    }
+                ~ .custom-control-label::after {
+                    width: $custom-checkbox-switch-thumb-active-w;
                 }
             }
         }
