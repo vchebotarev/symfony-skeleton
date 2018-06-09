@@ -10118,7 +10118,6 @@ IOS style
 .custom-checkbox-switch {
   padding-left: 0; }
   .custom-checkbox-switch .custom-control-input ~ .custom-control-label {
-    cursor: pointer;
     padding-left: 3.1rem; }
     .custom-checkbox-switch .custom-control-input ~ .custom-control-label::before, .custom-checkbox-switch .custom-control-input ~ .custom-control-label::after {
       top: 0;
@@ -10143,6 +10142,14 @@ IOS style
   .custom-checkbox-switch .custom-control-input:checked ~ .custom-control-label::after {
     background-color: #fff;
     left: 1.1rem; }
+  .custom-checkbox-switch .custom-control-input:disabled:checked ~ .custom-control-label::before {
+    background-color: rgba(0, 123, 255, 0.5); }
+  .custom-checkbox-switch .custom-control-input:disabled ~ .custom-control-label::before {
+    background-color: #e9ecef; }
+  .custom-checkbox-switch .custom-control-input:active ~ .custom-control-label::before {
+    background-color: #b3d7ff; }
+  .custom-checkbox-switch .custom-control-input:active ~ .custom-control-label::after {
+    background-color: #fff; }
   .custom-checkbox-switch .custom-control-input:active:checked ~ .custom-control-label::after {
     left: 0.8rem; }
   .custom-checkbox-switch .custom-control-input:active ~ .custom-control-label::after {
