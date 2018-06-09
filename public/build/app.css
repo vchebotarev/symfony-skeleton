@@ -10109,9 +10109,9 @@ input::-webkit-search-results-decoration {
 
 /*
 Android style
-    $custom-checkbox-switch-track-h < $custom-checkbox-switch-thumb-h
+    $custom-checkbox-switch-track-height < $custom-checkbox-switch-thumb-height
 IOS style
-    $custom-checkbox-switch-track-h >= $custom-checkbox-switch-thumb-h
+    $custom-checkbox-switch-track-height >= $custom-checkbox-switch-thumb-height
  */
 .custom-checkbox-switch {
   padding-left: 0; }

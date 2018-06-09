@@ -1,14 +1,14 @@
 
 /*
 Android style
-    $custom-checkbox-switch-track-h < $custom-checkbox-switch-thumb-h
+    $custom-checkbox-switch-track-height < $custom-checkbox-switch-thumb-height
 IOS style
-    $custom-checkbox-switch-track-h >= $custom-checkbox-switch-thumb-h
+    $custom-checkbox-switch-track-height >= $custom-checkbox-switch-thumb-height
  */
 
-$custom-checkbox-switch-track-h:                   $custom-control-indicator-size !default;
-$custom-checkbox-switch-track-w:                   $custom-checkbox-switch-track-h * 2 !default;
-$custom-checkbox-switch-track-border-radius:       $custom-checkbox-switch-track-h / 2 !default;
+$custom-checkbox-switch-track-height:              $custom-control-indicator-size !default;
+$custom-checkbox-switch-track-width:               $custom-checkbox-switch-track-height * 2 !default;
+$custom-checkbox-switch-track-border-radius:       $custom-checkbox-switch-track-height / 2 !default;
 $custom-checkbox-switch-track-box-shadow:          $custom-control-indicator-box-shadow !default;
 $custom-checkbox-switch-track-bg:                  $custom-control-indicator-bg !default;
 $custom-checkbox-switch-track-disabled-bg:         $custom-control-indicator-disabled-bg !default;
@@ -17,32 +17,32 @@ $custom-checkbox-switch-track-checked-bg:          $custom-control-indicator-che
 $custom-checkbox-switch-track-checked-disabled-bg: $custom-control-indicator-checked-disabled-bg !default;
 $custom-checkbox-switch-track-focus-box-shadow:    $custom-control-indicator-focus-box-shadow !default;
 
-$custom-checkbox-switch-thumb-h:                   1rem * $input-line-height !default;
-$custom-checkbox-switch-thumb-w:                   $custom-checkbox-switch-thumb-h !default;
-$custom-checkbox-switch-thumb-border-radius:       $custom-checkbox-switch-thumb-h / 2 !default;
+$custom-checkbox-switch-thumb-height:              1rem * $input-line-height !default;
+$custom-checkbox-switch-thumb-width:               $custom-checkbox-switch-thumb-height !default;
+$custom-checkbox-switch-thumb-border-radius:       $custom-checkbox-switch-thumb-height / 2 !default;
 $custom-checkbox-switch-thumb-box-shadow:          0 0 0.25rem rgba($black, 0.3) !default;
 $custom-checkbox-switch-thumb-bg:                  $input-bg !default;
 $custom-checkbox-switch-thumb-disabled-bg:         $custom-checkbox-switch-thumb-bg !default;
 $custom-checkbox-switch-thumb-active-bg:           $custom-control-indicator-active-color !default;
 $custom-checkbox-switch-thumb-checked-bg:          $custom-control-indicator-checked-color !default;
 $custom-checkbox-switch-thumb-checked-disabled-bg: $custom-control-indicator-checked-color !default;
-$custom-checkbox-switch-thumb-active-w:            $custom-checkbox-switch-thumb-w * 1.2 !default;
+$custom-checkbox-switch-thumb-active-w:            $custom-checkbox-switch-thumb-width * 1.2 !default;
 $custom-checkbox-switch-thumb-focus-box-shadow:    $custom-checkbox-switch-thumb-box-shadow !default;
 
-$custom-checkbox-switch-padding-in:    ($custom-checkbox-switch-track-h - $custom-checkbox-switch-thumb-h) / 2 !default;
+$custom-checkbox-switch-padding-inner: ($custom-checkbox-switch-track-height - $custom-checkbox-switch-thumb-height) / 2 !default;
 $custom-checkbox-switch-padding-outer: 0.5rem !default;
 $custom-checkbox-switch-transition:    all 0.15s ease-in-out !default;
 
 @function custom-checkbox-switch-thumb-left($checked) {
     @if ($checked == 1) {
-        @if ($custom-checkbox-switch-padding-in > 0) {
-            @return $custom-checkbox-switch-track-w - $custom-checkbox-switch-thumb-w - $custom-checkbox-switch-padding-in;
+        @if ($custom-checkbox-switch-padding-inner > 0) {
+            @return $custom-checkbox-switch-track-width - $custom-checkbox-switch-thumb-width - $custom-checkbox-switch-padding-inner;
         } @else {
-            @return $custom-checkbox-switch-track-w - $custom-checkbox-switch-thumb-w - $custom-checkbox-switch-padding-in * 2;
+            @return $custom-checkbox-switch-track-width - $custom-checkbox-switch-thumb-width - $custom-checkbox-switch-padding-inner * 2;
         }
     } @else {
-        @if ($custom-checkbox-switch-padding-in > 0) {
-            @return $custom-checkbox-switch-padding-in;
+        @if ($custom-checkbox-switch-padding-inner > 0) {
+            @return $custom-checkbox-switch-padding-inner;
         } @else {
             @return 0;
         }
@@ -53,10 +53,10 @@ $custom-checkbox-switch-transition:    all 0.15s ease-in-out !default;
     padding-left: 0;
     .custom-control-input {
         ~ .custom-control-label {
-            @if ($custom-checkbox-switch-padding-in > 0) {
-                padding-left: $custom-checkbox-switch-track-w + $custom-checkbox-switch-padding-outer;
+            @if ($custom-checkbox-switch-padding-inner > 0) {
+                padding-left: $custom-checkbox-switch-track-width + $custom-checkbox-switch-padding-outer;
             } @else {
-                padding-left: $custom-checkbox-switch-track-w + $custom-checkbox-switch-padding-outer - $custom-checkbox-switch-padding-in * 2;
+                padding-left: $custom-checkbox-switch-track-width + $custom-checkbox-switch-padding-outer - $custom-checkbox-switch-padding-inner * 2;
             }
             &::before,
             &::after {
@@ -68,15 +68,15 @@ $custom-checkbox-switch-transition:    all 0.15s ease-in-out !default;
                 @include gradient-bg($custom-checkbox-switch-track-bg);
                 @include box-shadow($custom-checkbox-switch-track-box-shadow);
                 border-radius: $custom-checkbox-switch-track-border-radius;
-                height: $custom-checkbox-switch-track-h;
-                width: $custom-checkbox-switch-track-w;
-                @if ($custom-checkbox-switch-track-h < $custom-checkbox-switch-thumb-h) {
-                    top: ($custom-checkbox-switch-thumb-h - $custom-checkbox-switch-track-h) / 2;
+                height: $custom-checkbox-switch-track-height;
+                width: $custom-checkbox-switch-track-width;
+                @if ($custom-checkbox-switch-track-height < $custom-checkbox-switch-thumb-height) {
+                    top: ($custom-checkbox-switch-thumb-height - $custom-checkbox-switch-track-height) / 2;
                 } @else {
                     top: 0;
                 }
-                @if ($custom-checkbox-switch-padding-in < 0) {
-                    left: $custom-checkbox-switch-padding-in * -1;
+                @if ($custom-checkbox-switch-padding-inner < 0) {
+                    left: $custom-checkbox-switch-padding-inner * -1;
                 } @else {
                     left: 0;
                 }
@@ -85,10 +85,10 @@ $custom-checkbox-switch-transition:    all 0.15s ease-in-out !default;
                 @include gradient-bg($custom-checkbox-switch-thumb-bg);
                 border-radius: $custom-checkbox-switch-thumb-border-radius;
                 box-shadow: $custom-checkbox-switch-thumb-box-shadow;
-                height: $custom-checkbox-switch-thumb-h;
-                width: $custom-checkbox-switch-thumb-w;
-                @if ($custom-checkbox-switch-track-h > $custom-checkbox-switch-thumb-h) {
-                    top: $custom-checkbox-switch-padding-in;
+                height: $custom-checkbox-switch-thumb-height;
+                width: $custom-checkbox-switch-thumb-width;
+                @if ($custom-checkbox-switch-track-height > $custom-checkbox-switch-thumb-height) {
+                    top: $custom-checkbox-switch-padding-inner;
                 } @else {
                     top: 0;
                 }
@@ -139,10 +139,10 @@ $custom-checkbox-switch-transition:    all 0.15s ease-in-out !default;
             }
         }
         //ios thumb increase effect
-        @if($custom-checkbox-switch-thumb-active-w != $custom-checkbox-switch-thumb-w) {
+        @if($custom-checkbox-switch-thumb-active-w != $custom-checkbox-switch-thumb-width) {
             &:active {
                 &:checked ~ .custom-control-label::after {
-                    left: custom-checkbox-switch-thumb-left(1) - ($custom-checkbox-switch-thumb-active-w - $custom-checkbox-switch-thumb-w);
+                    left: custom-checkbox-switch-thumb-left(1) - ($custom-checkbox-switch-thumb-active-w - $custom-checkbox-switch-thumb-width);
                 }
                 ~ .custom-control-label::after {
                     width: $custom-checkbox-switch-thumb-active-w;
