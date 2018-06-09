@@ -10143,6 +10143,10 @@ IOS style
   .custom-checkbox-switch .custom-control-input:checked ~ .custom-control-label::after {
     background-color: #fff;
     left: 1.1rem; }
+  .custom-checkbox-switch .custom-control-input:active:checked ~ .custom-control-label::after {
+    left: 0.8rem; }
+  .custom-checkbox-switch .custom-control-input:active ~ .custom-control-label::after {
+    width: 1.8rem; }
 
 .facebook {
   background-color: #3b5998;

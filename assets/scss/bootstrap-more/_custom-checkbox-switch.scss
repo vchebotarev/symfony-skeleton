@@ -20,6 +20,7 @@ $custom-checkbox-switch-thumb-border-radius:  $custom-checkbox-switch-thumb-h / 
 $custom-checkbox-switch-thumb-box-shadow:     0 0 0.3rem rgba(0, 0, 0, 0.3) !default;
 $custom-checkbox-switch-thumb-bg:             $input-bg !default;
 $custom-checkbox-switch-thumb-checked-bg:     $input-bg !default;
+$custom-checkbox-switch-thumb-active-w:       $custom-checkbox-switch-thumb-w * 1.2 !default;
 
 $custom-checkbox-switch-padding-in:           -0.2rem !default;
 $custom-checkbox-switch-padding-outer:        0.5rem !default;
@@ -28,7 +29,6 @@ $custom-checkbox-switch-transition:           all 0.15s ease-in-out !default; //
 //todo disabled
 //todo active
 //todo focus
-//todo определить когда зажимаешь что это за событие чтобы как в айфоне сделать шише ползунок
 
 //todo обыгать
 $custom-control-indicator-size:         1rem !default;
@@ -110,6 +110,23 @@ $custom-control-indicator-active-box-shadow:    none !default;
                 &::after {
                     @include gradient-bg($custom-checkbox-switch-thumb-checked-bg);
                     left: custom-checkbox-switch-thumb-left(1);
+                }
+            }
+        }
+        //ios thumb increase effect
+        @if($custom-checkbox-switch-thumb-active-w != $custom-checkbox-switch-thumb-w) {
+            &:active {
+                &:checked {
+                    ~ .custom-control-label {
+                        &::after {
+                            left: custom-checkbox-switch-thumb-left(1) - ($custom-checkbox-switch-thumb-active-w - $custom-checkbox-switch-thumb-w);
+                        }
+                    }
+                }
+                ~ .custom-control-label {
+                    &::after {
+                        width: $custom-checkbox-switch-thumb-active-w;
+                    }
                 }
             }
         }
