@@ -10109,16 +10109,14 @@ input::-webkit-search-results-decoration {
 
 /*
 Android style
-    $custom-checkbox-switch-track-h < $custom-checkbox-switch-after-h
-    $custom-checkbox-switch-padding-in <= 0
+    $custom-checkbox-switch-track-h < $custom-checkbox-switch-thumb-h
 IOS style
-    $custom-checkbox-switch-track-h = $custom-checkbox-switch-after-h + $custom-checkbox-switch-padding-in
-    $custom-checkbox-switch-padding-in > 0
+    $custom-checkbox-switch-track-h >= $custom-checkbox-switch-thumb-h
  */
 .custom-checkbox-switch {
   padding-left: 0; }
   .custom-checkbox-switch .custom-control-input ~ .custom-control-label {
-    padding-left: 3.1rem; }
+    padding-left: 3rem; }
     .custom-checkbox-switch .custom-control-input ~ .custom-control-label::before, .custom-checkbox-switch .custom-control-input ~ .custom-control-label::after {
       top: 0;
       transition: all 0.15s ease-in-out;
@@ -10127,15 +10125,16 @@ IOS style
       background-color: #dee2e6;
       border-radius: 0.5rem;
       height: 1rem;
-      width: 2.2rem;
+      width: 2rem;
       top: 0.25rem;
-      left: 0.2rem; }
+      left: 0.25rem; }
     .custom-checkbox-switch .custom-control-input ~ .custom-control-label::after {
       background-color: #fff;
       border-radius: 0.75rem;
       box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.3);
       height: 1.5rem;
       width: 1.5rem;
+      top: 0;
       left: 0; }
   .custom-checkbox-switch .custom-control-input:checked:disabled ~ .custom-control-label::before {
     background-color: rgba(0, 123, 255, 0.5); }
@@ -10145,7 +10144,7 @@ IOS style
     background-color: #007bff; }
   .custom-checkbox-switch .custom-control-input:checked ~ .custom-control-label::after {
     background-color: #fff;
-    left: 1.1rem; }
+    left: 1rem; }
   .custom-checkbox-switch .custom-control-input:focus ~ .custom-control-label::before {
     box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(0, 123, 255, 0.25); }
   .custom-checkbox-switch .custom-control-input:focus ~ .custom-control-label::after {
@@ -10159,7 +10158,7 @@ IOS style
   .custom-checkbox-switch .custom-control-input:active ~ .custom-control-label::after {
     background-color: #fff; }
   .custom-checkbox-switch .custom-control-input:active:checked ~ .custom-control-label::after {
-    left: 0.8rem; }
+    left: 0.7rem; }
   .custom-checkbox-switch .custom-control-input:active ~ .custom-control-label::after {
     width: 1.8rem; }
 

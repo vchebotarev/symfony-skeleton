@@ -7,7 +7,7 @@ IOS style
  */
 
 $custom-checkbox-switch-track-h:                   $custom-control-indicator-size !default;
-$custom-checkbox-switch-track-w:                   $custom-checkbox-switch-track-h * 2.2 !default;
+$custom-checkbox-switch-track-w:                   $custom-checkbox-switch-track-h * 2 !default;
 $custom-checkbox-switch-track-border-radius:       $custom-checkbox-switch-track-h / 2 !default;
 $custom-checkbox-switch-track-box-shadow:          $custom-control-indicator-box-shadow !default;
 $custom-checkbox-switch-track-bg:                  $custom-control-indicator-bg !default;
@@ -72,9 +72,13 @@ $custom-checkbox-switch-transition:    all 0.15s ease-in-out !default;
                 width: $custom-checkbox-switch-track-w;
                 @if ($custom-checkbox-switch-track-h < $custom-checkbox-switch-thumb-h) {
                     top: ($custom-checkbox-switch-thumb-h - $custom-checkbox-switch-track-h) / 2;
+                } @else {
+                    top: 0;
                 }
                 @if ($custom-checkbox-switch-padding-in < 0) {
                     left: $custom-checkbox-switch-padding-in * -1;
+                } @else {
+                    left: 0;
                 }
             }
             &::after {
@@ -84,7 +88,9 @@ $custom-checkbox-switch-transition:    all 0.15s ease-in-out !default;
                 height: $custom-checkbox-switch-thumb-h;
                 width: $custom-checkbox-switch-thumb-w;
                 @if ($custom-checkbox-switch-track-h > $custom-checkbox-switch-thumb-h) {
-                    top: ($custom-checkbox-switch-track-h - $custom-checkbox-switch-thumb-h) / 2;
+                    top: $custom-checkbox-switch-padding-in;
+                } @else {
+                    top: 0;
                 }
                 left: custom-checkbox-switch-thumb-left(0);
             }
