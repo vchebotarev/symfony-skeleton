@@ -8,7 +8,7 @@
 @import "mixins/xor";
 
 // Boostrap
-@import "../../public/vendor/bootstrap/scss/bootstrap";
+@import "bootstrap";
 
 // FontAwesome
 @import "../../public/vendor/font-awesome/web-fonts-with-css/scss/fontawesome";
@@ -17,6 +17,5 @@
 @import "../../public/vendor/font-awesome/web-fonts-with-css/scss/fa-solid";
 
 @import "bootstrap-more.scss";
-@import "bootstrap-more/forms.scss";
 @import "social.scss";
 @import "main.scss";
