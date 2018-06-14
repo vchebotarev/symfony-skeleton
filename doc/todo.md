@@ -6,6 +6,11 @@ http://msdn.microsoft.com/en-us/library/ie/dn455106.aspx
 humans.txt
 
 robots.txt
+https://github.com/cdaguerre/robots-bundle
+https://github.com/evheniy/RobotsTxtBundle
+https://github.com/ricbra/robots-txt-bundle
+https://github.com/miisieq/RobotsTxtBundle
+https://github.com/Novactive/NovaeZSEOBundle
 
 crossdomain.xml
 
