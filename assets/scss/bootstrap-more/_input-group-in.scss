@@ -2,7 +2,8 @@
 .input-group-text-in {
     color: $input-color;
     background-color: $input-bg;
-
+    position: relative;
+    z-index: 3;
     .input-group-append & {
         border-left: 0;
     }
@@ -11,53 +12,14 @@
     }
 }
 
-
-
-//.input-group-in {
-//    .input-group-append {
-//        > .btn,
-//        > .input-group-text {
-//            border: $input-border-width solid $input-border-color;
-//            background-color: $input-bg;
-//            color: $input-color;
-//            background-clip: padding-box;
-//            border-left: 0;
-//            position: relative;
-//            z-index: 2;
-//        }
-//    }
-//    .form-control,
-//    .custom-select,
-//    .custom-file {
-//        &:focus {
-//            z-index: inherit; //todo под вопросом
-//
-//            ~ .input-group-append {
-//                > .btn,
-//                > .input-group-text {
-//                    background-color: $input-focus-bg;
-//                    border-color: $input-focus-border-color;
-//                }
-//            }
-//        }
-//    }
-//}
-//@mixin form-validation-state-in-input($state, $color) {
-//    .input-group-in {
-//        .form-control,
-//        .custom-select {
-//            .was-validated &:#{$state},
-//            .is-#{$state} &,
-//            &.is-#{$state} {
-//                + .input-group-append {
-//                    > .btn,
-//                    > .input-group-text {
-//                        border-color: $color;
-//                    }
-//                }
-//            }
-//        }
-//    }
-//}
-//@include form-validation-state-in-input("valid", $form-feedback-valid-color);
-//@include form-validation-state-in-input("invalid", $form-feedback-invalid-color);
+@mixin form-validation-state-in-input($state, $color) {
+    .input-group-text-in {
+        .is-#{$state} &,
+        &.is-#{$state} {
+            border-color: $color;
+        }
+    }
+    //todo shadow (if prepend - use js)
+}
+@include form-validation-state-in-input("valid", $form-feedback-valid-color);
+@include form-validation-state-in-input("invalid", $form-feedback-invalid-color);

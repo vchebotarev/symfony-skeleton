@@ -10109,11 +10109,19 @@ input::-webkit-search-results-decoration {
 
 .input-group-text-in {
   color: #495057;
-  background-color: #fff; }
+  background-color: #fff;
+  position: relative;
+  z-index: 3; }
   .input-group-append .input-group-text-in {
     border-left: 0; }
   .input-group-prepend .input-group-text-in {
     border-right: 0; }
+
+.is-valid .input-group-text-in, .input-group-text-in.is-valid {
+  border-color: #28a745; }
+
+.is-invalid .input-group-text-in, .input-group-text-in.is-invalid {
+  border-color: #dc3545; }
 
 .facebook {
   background-color: #3b5998;
