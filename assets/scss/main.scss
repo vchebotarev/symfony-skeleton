@@ -13,23 +13,3 @@ body {
     margin-bottom: 3.5rem; /* фактическая высота футера */
 }
 
-/***************************************** input-group-addon внутри элемента ******************************************/
-.input-group-inner {
-    position: relative;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display:     -ms-flexbox;
-    display:         flex;
-}
-.input-group-inner .input-group-addon-inner {
-    margin: 0.5rem 0.75rem;
-    line-height: 1.25;
-    position: absolute;
-    z-index: 3;
-}
-.input-group-inner .input-group-addon-inner:first-child {
-    left: 0;
-}
-.input-group-inner input ~ .input-group-addon-inner {
-    right: 0;
-}
