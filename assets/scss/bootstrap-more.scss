@@ -78,3 +78,11 @@ input::-webkit-search-results-decoration {
 [type="number"]::-webkit-outer-spin-button {
     @include appearance(none);
 }
+
+/************************************ https://github.com/twbs/bootstrap/pull/26710 ************************************/
+.input-group-append:not(:last-child) {
+    margin-right: -$input-border-width;
+}
+.input-group-prepend:not(:first-child) {
+    margin-left: -$input-border-width;
+}

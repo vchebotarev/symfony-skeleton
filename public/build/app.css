@@ -2500,10 +2500,12 @@ input[type="button"].btn-block {
   .input-group-append .input-group-text + .btn {
     margin-left: -1px; }
 
-.input-group-prepend {
+.input-group-prepend,
+.input-group-append:not(:last-child) {
   margin-right: -1px; }
 
-.input-group-append {
+.input-group-append,
+.input-group-prepend:not(:first-child) {
   margin-left: -1px; }
 
 .input-group-text {
@@ -10044,6 +10046,13 @@ input::-webkit-search-results-decoration {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none; }
+
+/************************************ https://github.com/twbs/bootstrap/pull/26710 ************************************/
+.input-group-append:not(:last-child) {
+  margin-right: -1px; }
+
+.input-group-prepend:not(:first-child) {
+  margin-left: -1px; }
 
 /* Если родителю добавлять .is-valid/.is-invalid то получится аналог давнешнего .has-success/.has-danger */
 /* todo scss */
