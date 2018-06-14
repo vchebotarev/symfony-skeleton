@@ -31,8 +31,43 @@
                 <span class="custom-control-label">{{ form._remember_me.vars.label }}</span>
             </label>
         </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Войти</button>
+        </div>
 
-        <button type="submit" class="btn btn-primary">Войти</button>
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">prepend</span>
+                </div>
+                <input type="text" class="form-control" placeholder="input text">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="input text">
+                <div class="input-group-append">
+                    <span class="input-group-text">append</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text input-group-text-in">prepend</span>
+                </div>
+                <input type="text" class="form-control" placeholder="input text">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="input text">
+                <div class="input-group-append">
+                    <span class="input-group-text input-group-text-in">append</span>
+                </div>
+            </div>
+        </div>
 
     {{ form_end(form) }}
 
