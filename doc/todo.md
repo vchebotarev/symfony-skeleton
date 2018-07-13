@@ -108,3 +108,10 @@ gos/web-socket-bundle
 Сволочи из jetbrains изменили способ хранения стандартов для проекта - надо адаптировать
 
 Обычные ошибки из "контроллера" падают в почту как консольные 
+
+изменить способ генерация хеша для visitor исключив коллизии
+
+users + visitors online
+https://stackoverflow.com/questions/21878540/tracking-online-users-using-redis
+
+user + visitor online period log
