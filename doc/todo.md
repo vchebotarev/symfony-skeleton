@@ -115,3 +115,7 @@ users + visitors online
 https://stackoverflow.com/questions/21878540/tracking-online-users-using-redis
 
 user + visitor online period log
+
+user review vote + or -
+
+user review reply
