@@ -11,7 +11,19 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Lead
 {
+    const STATUS_NONE    = 0;
+    const DECLINED       = 4;
+    const APPROVED       = 1;
+    const APPROVED_FINAL = 2;
+
     use Column\Id;
+
+    /**
+     * @var Link
+     */
+    protected $link;
+
+
 
     protected $redirect_id;
 

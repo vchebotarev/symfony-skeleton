@@ -13,6 +13,10 @@ class Redirect
 {
     use Column\Id;
 
+    protected $link;
+
+    protected $user;
+
     protected $is_unique;
 
     protected $url_in;
