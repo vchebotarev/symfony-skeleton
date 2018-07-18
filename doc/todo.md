@@ -119,3 +119,7 @@ user + visitor online period log
 user review vote + or -
 
 user review reply
+
+Маска ввода
+https://github.com/nosir/cleave.js
+https://github.com/RobinHerbots/Inputmask
