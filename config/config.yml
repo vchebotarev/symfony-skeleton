@@ -271,3 +271,32 @@ hwi_oauth:
             client_id:     '%oauth.vkontakte.client_id%'
             client_secret: '%oauth.vkontakte.client_secret%'
             scope:         'email'
+
+# FOS Rest
+fos_rest: # http://symfony.com/doc/master/bundles/FOSRestBundle/configuration-reference.html
+    # disable_csrf_role: #todo разобраться что за зверь
+    # access_denied_listener: #todo https://symfony.com/doc/master/bundles/FOSRestBundle/3-listener-support.html#security-exception-listener
+    # unauthorized_challenge: #todo https://symfony.com/doc/master/bundles/FOSRestBundle/3-listener-support.html#security-exception-listener
+    param_fetcher_listener: false #http://symfony.com/doc/master/bundles/FOSRestBundle/param_fetcher_listener.html
+    # cache_dir:
+    # allowed_methods_listener: #todo https://symfony.com/doc/master/bundles/FOSRestBundle/3-listener-support.html#allowed-http-methods-listener
+    # routing_loader: #todo https://symfony.com/doc/current/bundles/FOSRestBundle/5-automatic-route-generation_single-restful-controller.html
+
+    body_converter:         false #ParamConverter преобразования тела в объект http://symfony.com/doc/master/bundles/FOSRestBundle/request_body_converter_listener.html
+    # service:
+    # serializer:
+    view: #todo почитать ещё подробнее
+        formats:
+            json: true
+            xml:  false
+        templating_formats: #рендерингом html этот бандл заниматься не будет !
+            html: false
+        force_redirects:
+            html: false
+        #view_response_listener: make 'return View' possible #todo http://symfony.com/doc/master/bundles/FOSRestBundle/view_response_listener.html
+    #todo exception:        http://symfony.com/doc/master/bundles/FOSRestBundle/4-exception-controller-support.html
+    body_listener:          false #возможность в теле передавать json в случае например POST http://symfony.com/doc/master/bundles/FOSRestBundle/body_listener.html
+    #todo format_listener:  https://symfony.com/doc/master/bundles/FOSRestBundle/format_listener.html
+    versioning:             false #todo only by query http://symfony.com/doc/master/bundles/FOSRestBundle/versioning.html
+    zone:
+        - { path: ^/api/* }
