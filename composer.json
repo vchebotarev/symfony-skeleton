@@ -45,6 +45,7 @@
         "emanueleminotto/twig-cache-bundle":          "^1.0",
         "excelwebzone/recaptcha-bundle":              "^1.4",
         "friendsofsymfony/jsrouting-bundle":          "^2.0",
+        "friendsofsymfony/rest-bundle":               "^2.3",
         "friendsofsymfony/user-bundle":               "^2.0",
         "gedmo/doctrine-extensions":                  "^2.4",
         "gregwar/captcha-bundle":                     "^2.0",
