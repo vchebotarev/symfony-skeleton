@@ -38,3 +38,8 @@ gregwar_captcha_routing:
 # HWIOAuthBundle
 hwi_oauth_routing:
     resource: 'routing/oauth.yml'
+
+# NelmioApiDocBundle
+nelmio_apidoc_routing:
+    prefix:   /api/doc
+    resource: '@NelmioApiDocBundle/Resources/config/routing/swaggerui.xml'

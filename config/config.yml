@@ -300,3 +300,39 @@ fos_rest: # http://symfony.com/doc/master/bundles/FOSRestBundle/configuration-re
     versioning:             false #todo only by query http://symfony.com/doc/master/bundles/FOSRestBundle/versioning.html
     zone:
         - { path: ^/api/* }
+
+# Api doc
+nelmio_api_doc:
+
+    documentation: #todo OMG https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md
+        host: api.example.com
+        schemes: [http, https]
+        info:
+            title: Swagger Sample App
+            description: This is a sample server Petstore server.
+            termsOfService: http://swagger.io/terms/
+            contact:
+                name: API Support
+                url: http://www.swagger.io/support
+                email: support@swagger.io
+            license:
+                name: Apache 2.0
+                url: http://www.apache.org/licenses/LICENSE-2.0.html
+            version: 1.0.1
+        securityDefinitions:
+            Bearer:
+                type: apiKey
+                description: 'Value: Bearer {jwt}'
+                name: Authorization
+                in: header
+        security:
+            - Bearer: []
+
+    models:
+        use_jms: false
+    areas:
+        default:
+            path_patterns:
+                - ^/api(?!/doc/$)
+            # host_patterns:
+
