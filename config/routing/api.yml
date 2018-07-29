@@ -1,0 +1,8 @@
+
+# prefix: /api
+
+app_api_public_index:
+    path:     ''
+    defaults: { _controller: App\Controller\Api\PublicArea\DefaultController:indexAction }
+    methods:
+        - 'GET'

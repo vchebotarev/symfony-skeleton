@@ -21,6 +21,12 @@ app_admin:
     resource: 'routing/admin.yml'
 
 
+# API
+app_api:
+    prefix:   /api
+    resource: 'routing/api.yml'
+
+
 # FOSJsRoutingBundle
 fos_js_routing:
     resource: '@FOSJsRoutingBundle/Resources/config/routing/routing.xml'
