@@ -1,5 +1,6 @@
 {
     "name":         "chebur/symfony-skeleton",
+    "description":  "Chebur Symfony Skeleton Application",
     "license":      "proprietary",
     "type":         "project",
     "autoload": {
