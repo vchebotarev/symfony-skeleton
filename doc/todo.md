@@ -123,3 +123,8 @@ user review reply
 Маска ввода
 https://github.com/nosir/cleave.js
 https://github.com/RobinHerbots/Inputmask
+
+Enum
+https://github.com/myclabs/php-enum
+https://github.com/acelaya/doctrine-enum-type
+https://github.com/Ex3v/MyCLabsEnumParamConverter
