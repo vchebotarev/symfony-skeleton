@@ -128,3 +128,6 @@ Enum
 https://github.com/myclabs/php-enum
 https://github.com/acelaya/doctrine-enum-type
 https://github.com/Ex3v/MyCLabsEnumParamConverter
+
+Заменить protected на private
+и использовать впреть по умолчанию private
