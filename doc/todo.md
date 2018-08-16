@@ -131,3 +131,6 @@ https://github.com/Ex3v/MyCLabsEnumParamConverter
 
 Заменить protected на private
 и использовать впреть по умолчанию private
+
+сервисы сделать private
+проставить public, только там, где требуется
