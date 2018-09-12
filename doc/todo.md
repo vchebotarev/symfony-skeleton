@@ -144,3 +144,5 @@ https://github.com/Ex3v/MyCLabsEnumParamConverter
 валидатор длины строки по массиву вариантов длин
 
 функция array_map_key
+
+api через fos rest bundle
