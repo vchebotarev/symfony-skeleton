@@ -97,7 +97,7 @@ doctrine:
         charset: UTF8
         wrapper_class: App\Doctrine\DBAL\ReopeningConnectionWrapper
         types:
-            json_array: App\Doctrine\DBAL\Types\JsonArrayType
+            json:       App\Doctrine\DBAL\Types\JsonType
             datetimetz: App\Doctrine\DBAL\Types\DateTimeTzType
 
     orm:

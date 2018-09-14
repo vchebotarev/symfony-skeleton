@@ -76,7 +76,7 @@ class User extends AbstractUser implements GenderedInterface, \JsonSerializable
 
     /**
      * @var array
-     * @ORM\Column(name="roles", type="json_array")
+     * @ORM\Column(name="roles", type="json")
      */
     protected $roles = [];
 

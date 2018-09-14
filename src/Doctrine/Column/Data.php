@@ -8,7 +8,7 @@ trait Data
 {
     /**
      * @var array
-     * @ORM\Column(name="data", type="json_array")
+     * @ORM\Column(name="data", type="json")
      */
     protected $data = [];
 
