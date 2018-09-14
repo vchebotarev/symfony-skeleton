@@ -2,6 +2,7 @@
 
 namespace App\Doctrine\Column;
 
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -10,25 +11,12 @@ use Doctrine\ORM\Mapping as ORM;
 trait DateCreated
 {
     /**
-     * @var \DateTime
-     * @ORM\Column(name="date_created", type="datetimetz")
+     * @var DateTime
+     * @ORM\Column(name="date_created", type="datetimetz", options={"default": "CURRENT_TIMESTAMP"})
      */
     protected $dateCreated;
 
-    /**
-     * @param \DateTime $dateCreated
-     * @return $this
-     */
-    public function setDateCreated(\DateTime $dateCreated)
-    {
-        $this->dateCreated = $dateCreated;
-        return $this;
-    }
-
-    /**
-     * @return \DateTime
-     */
-    public function getDateCreated()
+    public function getDateCreated() : DateTime
     {
         return $this->dateCreated;
     }
@@ -38,9 +26,7 @@ trait DateCreated
      */
     public function onPrePersistDateCreated()
     {
-        if (!$this->getDateCreated()) {
-            $this->setDateCreated(new \DateTime('now'));
-        }
+        $this->dateCreated = new DateTime('now');
     }
 
 }

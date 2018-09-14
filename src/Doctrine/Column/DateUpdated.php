@@ -2,6 +2,7 @@
 
 namespace App\Doctrine\Column;
 
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -10,25 +11,12 @@ use Doctrine\ORM\Mapping as ORM;
 trait DateUpdated
 {
     /**
-     * @var \DateTime
-     * @ORM\Column(name="date_updated", type="datetimetz")
+     * @var DateTime
+     * @ORM\Column(name="date_updated", type="datetimetz", options={"default": "CURRENT_TIMESTAMP"})
      */
     protected $dateUpdated;
 
-    /**
-     * @param \DateTime $dateUpdated
-     * @return $this
-     */
-    public function setDateUpdated(\DateTime $dateUpdated)
-    {
-        $this->dateUpdated = $dateUpdated;
-        return $this;
-    }
-
-    /**
-     * @return \DateTime
-     */
-    public function getDateUpdated()
+    public function getDateUpdated() : DateTime
     {
         return $this->dateUpdated;
     }
@@ -39,7 +27,7 @@ trait DateUpdated
      */
     public function onPrePersistPreUpdateDateUpdated()
     {
-        $this->setDateUpdated(new \DateTime('now'));
+        $this->dateUpdated = new DateTime('now');
     }
 
 }
