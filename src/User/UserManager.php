@@ -33,13 +33,14 @@ class UserManager extends AbstractUserManager
         $this->emailHelper   = $emailHelper;
     }
 
-    /**
-     * @return User
-     */
-    public function getCurrentUser()
+    public function getCurrentUser() : ?User
     {
-        if ($this->tokenStorage->getToken() && $this->tokenStorage->getToken()->getUser() instanceof User) {
-            return $this->tokenStorage->getToken()->getUser();
+        $token = $this->tokenStorage->getToken();
+        if ($token) {
+            $user = $token->getUser();
+            if ($user instanceof User) {
+                return $user;
+            }
         }
         return null;
     }

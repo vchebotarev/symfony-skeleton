@@ -2,6 +2,7 @@
 
 namespace App\Auth\Log;
 
+use App\Entity\User;
 use App\UserAgent\UserAgentManager;
 use App\Visitor\VisitorManager;
 use App\Entity\UserAuthLog;
@@ -68,7 +69,9 @@ class AuthLogEventSubscriber implements EventSubscriberInterface
     {
         $userAuthLog = new UserAuthLog();
         $userAuthLog->setType($this->getAuthTypeByToken($event->getAuthenticationToken()));
-        $userAuthLog->setUser($event->getAuthenticationToken()->getUser());
+        /** @var User $user */
+        $user = $event->getAuthenticationToken()->getUser();
+        $userAuthLog->setUser($user);
         $userAuthLog->setVisitor($this->visitorManager->getCurrentVisitor());
         $userAuthLog->setUserAgent($this->userAgentManager->getCurrentUserAgent());
         $userAuthLog->setIp($this->requestStack->getCurrentRequest()->getClientIp());

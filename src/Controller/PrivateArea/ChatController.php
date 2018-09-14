@@ -94,7 +94,7 @@ class ChatController extends AbstractController
         if (!$request->isXmlHttpRequest()) {
             throw $this->createNotFoundException();
         }
-        /** @var Chat */
+        /** @var Chat $chat */
         $chat = $this->findById($id, Chat::class, ChatVoter::DELETE);
 
         $this->get('app.chat.manager')->deleteChat($chat);

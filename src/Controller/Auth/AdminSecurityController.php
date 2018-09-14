@@ -3,7 +3,6 @@
 namespace App\Controller\Auth;
 
 use App\Symfony\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 class AdminSecurityController extends AbstractController

@@ -90,6 +90,7 @@ class LoginManager implements LoginManagerInterface
     protected function loginUserWithToken(TokenInterface $token)
     {
         try {
+            /** @var User $user */
             $user = $token->getUser();
 
             $this->userChecker->checkPreAuth($user);
