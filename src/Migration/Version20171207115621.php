@@ -2,13 +2,13 @@
 
 namespace App\Migration;
 
-use Doctrine\DBAL\Migrations\AbstractMigration;
 use Doctrine\DBAL\Schema\Schema;
+use Doctrine\Migrations\AbstractMigration;
 
 class Version20171207115621 extends AbstractMigration
 {
     /**
-     * @inheritdoc
+     * @inheritDoc
      */
     public function up(Schema $schema)
     {
@@ -32,7 +32,7 @@ class Version20171207115621 extends AbstractMigration
     }
 
     /**
-     * @inheritdoc
+     * @inheritDoc
      */
     public function down(Schema $schema)
     {

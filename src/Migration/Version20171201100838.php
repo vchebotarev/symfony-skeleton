@@ -2,14 +2,14 @@
 
 namespace App\Migration;
 
-use Doctrine\DBAL\Migrations\AbstractMigration;
 use Doctrine\DBAL\Schema\Schema;
+use Doctrine\Migrations\AbstractMigration;
 
-/**
- * Auto-generated Migration: Please modify to your needs!
- */
 class Version20171201100838 extends AbstractMigration
 {
+    /**
+     * @inheritDoc
+     */
     public function up(Schema $schema)
     {
         // this up() migration is auto-generated, please modify it to your needs
@@ -21,6 +21,9 @@ class Version20171201100838 extends AbstractMigration
         $this->addSql('ALTER TABLE user_token CHANGE date_created date_created TIMESTAMP NOT NULL COMMENT \'(DC2Type:datetimetz)\'');
     }
 
+    /**
+     * @inheritDoc
+     */
     public function down(Schema $schema)
     {
         // this down() migration is auto-generated, please modify it to your needs
@@ -31,4 +34,5 @@ class Version20171201100838 extends AbstractMigration
         $this->addSql('ALTER TABLE user_auth_log CHANGE date_created date_created DATETIME NOT NULL');
         $this->addSql('ALTER TABLE user_token CHANGE date_created date_created DATETIME NOT NULL');
     }
+
 }

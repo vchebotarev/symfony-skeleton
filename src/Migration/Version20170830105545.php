@@ -1,17 +1,14 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace App\Migration;
 
-use Doctrine\DBAL\Migrations\AbstractMigration;
 use Doctrine\DBAL\Schema\Schema;
+use Doctrine\Migrations\AbstractMigration;
 
-/**
- * Auto-generated Migration: Please modify to your needs!
- */
 class Version20170830105545 extends AbstractMigration
 {
     /**
-     * @param Schema $schema
+     * @inheritDoc
      */
     public function up(Schema $schema)
     {
@@ -28,7 +25,7 @@ class Version20170830105545 extends AbstractMigration
     }
 
     /**
-     * @param Schema $schema
+     * @inheritDoc
      */
     public function down(Schema $schema)
     {
@@ -37,4 +34,5 @@ class Version20170830105545 extends AbstractMigration
 
         $this->addSql('DROP TABLE visitor');
     }
+
 }
