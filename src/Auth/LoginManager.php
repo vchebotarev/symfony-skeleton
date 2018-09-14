@@ -77,7 +77,7 @@ class LoginManager implements LoginManagerInterface
 
     /**
      * Из-за того что в FOS\UserBundle\Security\LoginManager все private и final - копипастим, кроме remember me (запоминать после такого не надо точно)
-     * @inheritdoc
+     * @inheritDoc
      */
     public function logInUser($firewallName, UserInterface $user, Response $response = null)
     {

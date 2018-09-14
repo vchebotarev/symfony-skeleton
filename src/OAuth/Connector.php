@@ -33,7 +33,7 @@ class Connector implements AccountConnectorInterface
     }
 
     /**
-     * @inheritdoc
+     * @inheritDoc
      */
     public function connect(UserInterface $user, UserResponseInterface $response)
     {

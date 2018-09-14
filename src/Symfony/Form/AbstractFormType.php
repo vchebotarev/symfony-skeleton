@@ -11,7 +11,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 abstract class AbstractFormType extends AbstractType
 {
     /**
-     * @inheritdoc
+     * @inheritDoc
      */
     public function getBlockPrefix()
     {

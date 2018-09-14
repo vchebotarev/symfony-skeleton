@@ -143,7 +143,7 @@ class User extends AbstractUser implements GenderedInterface, \JsonSerializable
     }
 
     /**
-     * @inheritdoc
+     * @inheritDoc
      */
     public function setEnabled($boolean)
     {
@@ -169,7 +169,7 @@ class User extends AbstractUser implements GenderedInterface, \JsonSerializable
     }
 
     /**
-     * @inheritdoc
+     * @inheritDoc
      */
     public function isAccountNonLocked() : bool
     {
@@ -270,7 +270,7 @@ class User extends AbstractUser implements GenderedInterface, \JsonSerializable
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritDoc
      */
     public function setSuperAdmin($isSuperAdmin)
     {
@@ -278,7 +278,7 @@ class User extends AbstractUser implements GenderedInterface, \JsonSerializable
     }
 
     /**
-     * @inheritdoc
+     * @inheritDoc
      */
     public function getRoles() : array
     {
@@ -294,7 +294,7 @@ class User extends AbstractUser implements GenderedInterface, \JsonSerializable
     }
 
     /**
-     * @inheritdoc
+     * @inheritDoc
      */
     public function setRoles(array $roles)
     {
@@ -306,7 +306,7 @@ class User extends AbstractUser implements GenderedInterface, \JsonSerializable
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritDoc
      */
     public function hasRole($role) : bool
     {
@@ -314,7 +314,7 @@ class User extends AbstractUser implements GenderedInterface, \JsonSerializable
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritDoc
      */
     public function addRole($role)
     {
@@ -335,7 +335,7 @@ class User extends AbstractUser implements GenderedInterface, \JsonSerializable
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritDoc
      */
     public function removeRole($role)
     {
@@ -374,7 +374,7 @@ class User extends AbstractUser implements GenderedInterface, \JsonSerializable
     }
 
     /**
-     * @inheritdoc
+     * @inheritDoc
      */
     public function serialize() : string
     {
@@ -389,7 +389,7 @@ class User extends AbstractUser implements GenderedInterface, \JsonSerializable
     }
 
     /**
-     * @inheritdoc
+     * @inheritDoc
      */
     public function unserialize($serialized)
     {

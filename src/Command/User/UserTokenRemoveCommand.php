@@ -19,7 +19,7 @@ class UserTokenRemoveCommand extends AbstractContainerAwareCommand
     }
 
     /**
-     * @inheritdoc
+     * @inheritDoc
      */
     public function execute(InputInterface $input, OutputInterface $output)
     {

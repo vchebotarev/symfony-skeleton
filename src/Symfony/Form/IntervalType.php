@@ -12,7 +12,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 class IntervalType extends RepeatedType
 {
     /**
-     * {@inheritdoc}
+     * @inheritDoc
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -66,7 +66,7 @@ class IntervalType extends RepeatedType
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritDoc
      */
     public function configureOptions(OptionsResolver $resolver)
     {

@@ -44,7 +44,7 @@ class UserReviewSearchFormType extends AbstractFormType
     }
 
     /**
-     * @inheritdoc
+     * @inheritDoc
      */
     public function configureOptions(OptionsResolver $resolver)
     {

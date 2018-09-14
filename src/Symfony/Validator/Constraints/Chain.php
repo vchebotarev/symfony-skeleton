@@ -10,7 +10,7 @@ class Chain extends Combination
     public $breakOnFailure = true;
 
     /**
-     * @inheritdoc
+     * @inheritDoc
      */
     protected function getConstraints()
     {
@@ -18,7 +18,7 @@ class Chain extends Combination
     }
 
     /**
-     * @inheritdoc
+     * @inheritDoc
      */
     public function getRequiredOptions()
     {

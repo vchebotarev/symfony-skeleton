@@ -28,7 +28,7 @@ class UserCreateCommand extends AbstractContainerAwareCommand
     }
 
     /**
-     * @inheritdoc
+     * @inheritDoc
      */
     public function execute(InputInterface $input, OutputInterface $output)
     {
@@ -83,7 +83,7 @@ class UserCreateCommand extends AbstractContainerAwareCommand
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritDoc
      */
     protected function interact(InputInterface $input, OutputInterface $output)
     {

@@ -10,7 +10,7 @@ class ExceptionController extends BaseExceptionController
     /**
      * Можно было бы просто подложить вьюшки в app/Resources/Twig/Exception , но мне так нагляднее
      * @see http://symfony.com/doc/current/controller/error_pages.html
-     * @inheritdoc
+     * @inheritDoc
      */
     protected function findTemplate(Request $request, $format, $code, $showException)
     {

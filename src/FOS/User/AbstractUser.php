@@ -14,7 +14,7 @@ abstract class AbstractUser implements FOSUserInterface//, SonataUserInterface
 
     /**
      * @deprecated мы используем bcrybt
-     * @inheritdoc
+     * @inheritDoc
      */
     public function getSalt()
     {
@@ -23,7 +23,7 @@ abstract class AbstractUser implements FOSUserInterface//, SonataUserInterface
 
     /**
      * @deprecated мы используем bcrybt
-     * @inheritdoc
+     * @inheritDoc
      */
     public function setSalt($salt)
     {
@@ -32,7 +32,7 @@ abstract class AbstractUser implements FOSUserInterface//, SonataUserInterface
 
     /**
      * @deprecated Регистрации через модель не будет
-     * @inheritdoc
+     * @inheritDoc
      */
     public function getPlainPassword()
     {
@@ -41,7 +41,7 @@ abstract class AbstractUser implements FOSUserInterface//, SonataUserInterface
 
     /**
      * @deprecated Регистрации через модель не будет
-     * @inheritdoc
+     * @inheritDoc
      */
     public function setPlainPassword($password)
     {
@@ -50,7 +50,7 @@ abstract class AbstractUser implements FOSUserInterface//, SonataUserInterface
 
     /**
      * @deprecated Регистрации через модель не будет
-     * @inheritdoc
+     * @inheritDoc
      */
     public function eraseCredentials()
     {
@@ -94,7 +94,7 @@ abstract class AbstractUser implements FOSUserInterface//, SonataUserInterface
 
     /**
      * @deprecated Просрочки у нас пока не будет
-     * @inheritdoc
+     * @inheritDoc
      */
     public function isAccountNonExpired()
     {
@@ -103,7 +103,7 @@ abstract class AbstractUser implements FOSUserInterface//, SonataUserInterface
 
     /**
      * @deprecated Просрочки у нас пока не будет
-     * @inheritdoc
+     * @inheritDoc
      */
     public function isCredentialsNonExpired()
     {

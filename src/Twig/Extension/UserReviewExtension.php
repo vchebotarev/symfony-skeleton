@@ -9,7 +9,7 @@ use Twig\TwigFunction;
 class UserReviewExtension extends AbstractExtension
 {
     /**
-     * @inheritdoc
+     * @inheritDoc
      */
     public function getFunctions()
     {

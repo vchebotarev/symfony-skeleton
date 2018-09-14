@@ -13,7 +13,7 @@ class WebProcessor extends BaseWebProcessor
     protected $requestData = array();
 
     /**
-     * @inheritdoc
+     * @inheritDoc
      */
     public function __construct(array $extraFields = null)
     {

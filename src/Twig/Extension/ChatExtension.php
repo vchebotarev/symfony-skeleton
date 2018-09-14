@@ -30,7 +30,7 @@ class ChatExtension extends AbstractExtension
     }
 
     /**
-     * @inheritdoc
+     * @inheritDoc
      */
     public function getFunctions()
     {

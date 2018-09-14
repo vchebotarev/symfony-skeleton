@@ -14,7 +14,7 @@ use Symfony\Component\Validator\Context\ExecutionContextInterface;
 class LoginAdminFormType extends LoginMainFormType
 {
     /**
-     * @inheritdoc
+     * @inheritDoc
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {

@@ -20,7 +20,7 @@ class UserRoleRemoveCommand extends AbstractContainerAwareCommand
     }
 
     /**
-     * @inheritdoc
+     * @inheritDoc
      */
     public function execute(InputInterface $input, OutputInterface $output)
     {
@@ -41,7 +41,7 @@ class UserRoleRemoveCommand extends AbstractContainerAwareCommand
     }
 
     /**
-     * @inheritdoc
+     * @inheritDoc
      */
     public function interact(InputInterface $input, OutputInterface $output)
     {

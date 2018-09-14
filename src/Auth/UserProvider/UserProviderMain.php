@@ -7,7 +7,7 @@ use FOS\UserBundle\Security\UserProvider as FOSUserProvider;
 class UserProviderMain extends FOSUserProvider
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     protected function findUser($username)
     {

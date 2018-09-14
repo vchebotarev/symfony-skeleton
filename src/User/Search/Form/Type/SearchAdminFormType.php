@@ -16,7 +16,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 class SearchAdminFormType extends AbstractFormType
 {
     /**
-     * @inheritdoc
+     * @inheritDoc
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -62,7 +62,7 @@ class SearchAdminFormType extends AbstractFormType
     }
 
     /**
-     * @inheritdoc
+     * @inheritDoc
      */
     public function configureOptions(OptionsResolver $resolver)
     {

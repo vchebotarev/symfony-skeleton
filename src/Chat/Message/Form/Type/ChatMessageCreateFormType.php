@@ -40,7 +40,7 @@ class ChatMessageCreateFormType extends AbstractFormType
     }
 
     /**
-     * @inheritdoc
+     * @inheritDoc
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -71,7 +71,7 @@ class ChatMessageCreateFormType extends AbstractFormType
     }
 
     /**
-     * @inheritdoc
+     * @inheritDoc
      */
     public function configureOptions(OptionsResolver $resolver)
     {

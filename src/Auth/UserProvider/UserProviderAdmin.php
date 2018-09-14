@@ -7,7 +7,7 @@ use App\Entity\User;
 class UserProviderAdmin extends UserProviderMain
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     protected function findUser($username)
     {

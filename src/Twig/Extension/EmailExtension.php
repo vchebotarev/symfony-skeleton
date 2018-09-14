@@ -31,7 +31,7 @@ class EmailExtension extends AbstractExtension
     }
 
     /**
-     * @inheritdoc
+     * @inheritDoc
      */
     public function getFunctions()
     {
@@ -41,7 +41,7 @@ class EmailExtension extends AbstractExtension
     }
 
     /**
-     * @inheritdoc
+     * @inheritDoc
      */
     public function getTests()
     {

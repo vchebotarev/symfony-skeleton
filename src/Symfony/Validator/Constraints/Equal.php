@@ -22,7 +22,7 @@ class Equal extends Constraint
     public $notEqualMode = false;
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function getDefaultOption()
     {
@@ -30,7 +30,7 @@ class Equal extends Constraint
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function getRequiredOptions()
     {

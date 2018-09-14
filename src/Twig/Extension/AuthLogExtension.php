@@ -22,7 +22,7 @@ class AuthLogExtension extends AbstractExtension
     }
 
     /**
-     * @inheritdoc
+     * @inheritDoc
      */
     public function getFunctions()
     {

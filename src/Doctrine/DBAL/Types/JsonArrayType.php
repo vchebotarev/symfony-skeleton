@@ -8,7 +8,7 @@ use Doctrine\DBAL\Types\JsonArrayType as BaseJsonArrayType;
 class JsonArrayType extends BaseJsonArrayType
 {
     /**
-     * {@inheritdoc}
+     * @inheritDoc
      */
     public function convertToDatabaseValue($value, AbstractPlatform $platform)
     {

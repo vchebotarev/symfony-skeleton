@@ -10,7 +10,7 @@ use Doctrine\DBAL\Events;
 class MysqlOnlyFullGroupByDisable implements EventSubscriber
 {
     /**
-     * {@inheritdoc}
+     * @inheritDoc
      */
     public function getSubscribedEvents()
     {

@@ -11,7 +11,7 @@ use Doctrine\DBAL\DBALException;
 class ReopeningConnectionWrapper extends Connection
 {
     /**
-     * @inheritdoc
+     * @inheritDoc
      */
     public function insert($tableName, array $data, array $types = array())
     {

@@ -12,7 +12,7 @@ class AbstractUserManager extends UserManager
 {
     /**
      * @deprecated слишком жирный запрос
-     * @inheritdoc
+     * @inheritDoc
      */
     public function findUsers()
     {

@@ -18,7 +18,7 @@ abstract class Combination extends Composite
     public $breakOnFailure = false;
 
     /**
-     * @inheritdoc
+     * @inheritDoc
      */
     public function __construct($options = null)
     {
@@ -48,7 +48,7 @@ abstract class Combination extends Composite
     }
 
     /**
-     * @inheritdoc
+     * @inheritDoc
      */
     public function getCompositeOption()
     {
@@ -56,7 +56,7 @@ abstract class Combination extends Composite
     }
 
     /**
-     * @inheritdoc
+     * @inheritDoc
      */
     public function validatedBy()
     {

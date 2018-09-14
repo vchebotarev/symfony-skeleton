@@ -39,7 +39,7 @@ class RegistrationFormType extends AbstractFormType
     }
 
     /**
-     * @inheritdoc
+     * @inheritDoc
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {

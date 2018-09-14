@@ -25,7 +25,7 @@ class UserSearchAdmin extends AbstractItemsSource
     }
 
     /**
-     * @inheritdoc
+     * @inheritDoc
      */
     protected function getItems($options = [], $sort = '', $sortOrder = '', $limit = 0, int $offset = 0) : iterable
     {
@@ -124,7 +124,7 @@ class UserSearchAdmin extends AbstractItemsSource
     }
 
     /**
-     * @inheritdoc
+     * @inheritDoc
      */
     protected function getTotalCount($options = [])
     {

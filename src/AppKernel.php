@@ -8,7 +8,7 @@ use Symfony\Component\Config\Loader\LoaderInterface;
 class AppKernel extends Kernel
 {
     /**
-     * @inheritdoc
+     * @inheritDoc
      */
     public function registerBundles()
     {
@@ -60,7 +60,7 @@ class AppKernel extends Kernel
     }
 
     /**
-     * @inheritdoc
+     * @inheritDoc
      */
     public function getRootDir()
     {
@@ -68,7 +68,7 @@ class AppKernel extends Kernel
     }
 
     /**
-     * @inheritdoc
+     * @inheritDoc
      */
     public function getCacheDir()
     {
@@ -76,7 +76,7 @@ class AppKernel extends Kernel
     }
 
     /**
-     * @inheritdoc
+     * @inheritDoc
      */
     public function getLogDir()
     {
@@ -84,7 +84,7 @@ class AppKernel extends Kernel
     }
 
     /**
-     * @inheritdoc
+     * @inheritDoc
      */
     public function registerContainerConfiguration(LoaderInterface $loader)
     {

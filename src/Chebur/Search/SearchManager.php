@@ -8,7 +8,7 @@ use Chebur\SearchBundle\Search\Manager;
 class SearchManager extends Manager
 {
     /**
-     * @inheritdoc
+     * @inheritDoc
      */
     public function createBuilderAdmin() : BuilderInterface
     {
