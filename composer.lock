@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "505504c13559471752b5b496fddf0fc5",
+    "content-hash": "efac78c9e76d9c98b07fd410017f5adc",
     "packages": [
         {
             "name": "alexpts/symfony-asset-strategy-last-modify",
@@ -361,6 +361,44 @@
                 "user agent"
             ],
             "time": "2018-01-07T18:18:31+00:00"
+        },
+        {
+            "name": "chebur/array_map_key",
+            "version": "0.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/vchebotarev/array_map_key.git",
+                "reference": "caa14e43293e60a1a048787d94c32ba2a2702ada"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/vchebotarev/array_map_key/zipball/caa14e43293e60a1a048787d94c32ba2a2702ada",
+                "reference": "caa14e43293e60a1a048787d94c32ba2a2702ada",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vladimir Chebotarev",
+                    "email": "v.yu.chebotarev@mail.ru",
+                    "homepage": "http://github.com/vchebotarev"
+                }
+            ],
+            "description": "Array keys mapping",
+            "homepage": "https://github.com/vchebotarev",
+            "time": "2018-09-16T11:05:08+00:00"
         },
         {
             "name": "chebur/login-form-bundle",
