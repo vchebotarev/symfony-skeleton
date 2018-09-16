@@ -12,18 +12,11 @@ trait Hash
      */
     protected $hash = '';
 
-    /**
-     * @return string
-     */
-    public function getHash(): string
+    public function getHash() : string
     {
         return $this->hash;
     }
 
-    /**
-     * @param string $hash
-     * @return $this
-     */
     public function setHash(string $hash)
     {
         $this->hash = $hash;

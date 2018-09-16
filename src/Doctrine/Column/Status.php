@@ -12,18 +12,11 @@ trait Status
      */
     protected $status = 0;
 
-    /**
-     * @return int
-     */
-    public function getStatus(): int
+    public function getStatus() : int
     {
         return $this->status;
     }
 
-    /**
-     * @param int $status
-     * @return $this
-     */
     public function setStatus(int $status)
     {
         $this->status = $status;

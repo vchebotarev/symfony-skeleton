@@ -17,18 +17,11 @@ trait UserAgent
      */
     protected $userAgent;
 
-    /**
-     * @return UserAgentEntity
-     */
-    public function getUserAgent()
+    public function getUserAgent() : UserAgentEntity
     {
         return $this->userAgent;
     }
 
-    /**
-     * @param UserAgentEntity $userAgent
-     * @return $this
-     */
     public function setUserAgent(UserAgentEntity $userAgent)
     {
         $this->userAgent = $userAgent;

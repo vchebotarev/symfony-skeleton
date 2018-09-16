@@ -12,18 +12,11 @@ trait SortIndex
      */
     protected $sortIndex = 0;
 
-    /**
-     * @return int
-     */
     public function getSortIndex() : int
     {
         return $this->sortIndex;
     }
 
-    /**
-     * @param int $sortIndex
-     * @return $this
-     */
     public function setSortIndex(int $sortIndex)
     {
         $this->sortIndex = $sortIndex;

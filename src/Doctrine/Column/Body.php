@@ -12,18 +12,11 @@ trait Body
      */
     protected $body = '';
 
-    /**
-     * @return string
-     */
     public function getBody() : string
     {
         return $this->body;
     }
 
-    /**
-     * @param string $body
-     * @return $this
-     */
     public function setBody(string $body)
     {
         $this->body = $body;

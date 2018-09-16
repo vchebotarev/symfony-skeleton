@@ -24,54 +24,33 @@ trait FIO
      */
     protected $fioO = '';
 
-    /**
-     * @return string
-     */
-    public function getFioF(): string
+    public function getFioF() : string
     {
         return $this->fioF;
     }
 
-    /**
-     * @param string $fioF
-     * @return $this
-     */
     public function setFioF(string $fioF)
     {
         $this->fioF = $fioF;
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getFioI(): string
+    public function getFioI() : string
     {
         return $this->fioI;
     }
 
-    /**
-     * @param string $fioI
-     * @return $this
-     */
     public function setFioI(string $fioI)
     {
         $this->fioI = $fioI;
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getFioO(): string
+    public function getFioO() : string
     {
         return $this->fioO;
     }
 
-    /**
-     * @param string $fioO
-     * @return $this
-     */
     public function setFioO(string $fioO)
     {
         $this->fioO = $fioO;

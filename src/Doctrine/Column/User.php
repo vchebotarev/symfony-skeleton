@@ -17,18 +17,11 @@ trait User
      */
     protected $user;
 
-    /**
-     * @return UserEntity
-     */
-    public function getUser()
+    public function getUser() : UserEntity
     {
         return $this->user;
     }
 
-    /**
-     * @param UserEntity $user
-     * @return $this
-     */
     public function setUser(UserEntity $user)
     {
         $this->user = $user;

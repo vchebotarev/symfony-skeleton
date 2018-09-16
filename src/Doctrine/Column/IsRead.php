@@ -12,18 +12,11 @@ trait IsRead
      */
     protected $isRead = false;
 
-    /**
-     * @return bool
-     */
     public function isRead() : bool
     {
         return $this->isRead;
     }
 
-    /**
-     * @param bool $isRead
-     * @return $this
-     */
     public function setIsRead(bool $isRead)
     {
         $this->isRead = $isRead;

@@ -17,18 +17,11 @@ trait Visitor
      */
     protected $visitor;
 
-    /**
-     * @return VisitorEntity
-     */
-    public function getVisitor()
+    public function getVisitor() : VisitorEntity
     {
         return $this->visitor;
     }
 
-    /**
-     * @param VisitorEntity $visitor
-     * @return $this
-     */
     public function setVisitor(VisitorEntity $visitor)
     {
         $this->visitor = $visitor;

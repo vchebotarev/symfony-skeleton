@@ -12,18 +12,11 @@ trait Ip
      */
     protected $ip = 0;
 
-    /**
-     * @return string
-     */
-    public function getIp(): string
+    public function getIp() : string
     {
         return long2ip($this->ip);
     }
 
-    /**
-     * @param string $ip
-     * @return $this
-     */
     public function setIp(string $ip)
     {
         $this->ip = ip2long($ip);

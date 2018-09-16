@@ -12,18 +12,11 @@ trait Type
      */
     protected $type = 0;
 
-    /**
-     * @return int
-     */
-    public function getType(): int
+    public function getType() : int
     {
         return $this->type;
     }
 
-    /**
-     * @param int $type
-     * @return $this
-     */
     public function setType(int $type)
     {
         $this->type = $type;
