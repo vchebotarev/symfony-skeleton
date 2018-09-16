@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3e8c12cd43d5e6972faf044e36e211b3",
+    "content-hash": "505504c13559471752b5b496fddf0fc5",
     "packages": [
         {
             "name": "alexpts/symfony-asset-strategy-last-modify",
@@ -6282,16 +6282,16 @@
         },
         {
             "name": "snc/redis-bundle",
-            "version": "2.1.6",
+            "version": "2.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/snc/SncRedisBundle.git",
-                "reference": "fd24b115b35d54ec2f0f356e36e793933ee57bb8"
+                "reference": "3f3c233ebbfba43d3abd2403be0bc34c11e6dc06"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/snc/SncRedisBundle/zipball/fd24b115b35d54ec2f0f356e36e793933ee57bb8",
-                "reference": "fd24b115b35d54ec2f0f356e36e793933ee57bb8",
+                "url": "https://api.github.com/repos/snc/SncRedisBundle/zipball/3f3c233ebbfba43d3abd2403be0bc34c11e6dc06",
+                "reference": "3f3c233ebbfba43d3abd2403be0bc34c11e6dc06",
                 "shasum": ""
             },
             "require": {
@@ -6309,8 +6309,7 @@
             "suggest": {
                 "monolog/monolog": "If you want to use the monolog redis handler.",
                 "predis/predis": "If you want to use predis.",
-                "symfony/console": "If you want to use commands to interact with the redis database",
-                "symfony/proxy-manager-bridge": "If you want to lazy-load some services"
+                "symfony/console": "If you want to use commands to interact with the redis database"
             },
             "type": "symfony-bundle",
             "extra": {
@@ -6344,7 +6343,7 @@
                 "redis",
                 "symfony"
             ],
-            "time": "2018-07-31T08:05:28+00:00"
+            "time": "2018-06-25T15:31:46+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
