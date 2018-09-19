@@ -146,3 +146,5 @@ https://github.com/Ex3v/MyCLabsEnumParamConverter
 функция array_map_key
 
 api через fos rest bundle
+
+изучить и заюзать \Symfony\Component\Console\Command\LockableTrait
