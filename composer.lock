@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "efac78c9e76d9c98b07fd410017f5adc",
+    "content-hash": "4171de167882409fdc973342ca0d540e",
     "packages": [
         {
             "name": "alexpts/symfony-asset-strategy-last-modify",
@@ -7125,12 +7125,12 @@
             "version": "2.1.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/SyslogicNL/DoctrineJsonFunctions.git",
+                "url": "https://github.com/ScientaNL/DoctrineJsonFunctions.git",
                 "reference": "3c9973d6a43ca762366bc8c0c490052fe3cf7ff6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SyslogicNL/DoctrineJsonFunctions/zipball/3c9973d6a43ca762366bc8c0c490052fe3cf7ff6",
+                "url": "https://api.github.com/repos/ScientaNL/DoctrineJsonFunctions/zipball/3c9973d6a43ca762366bc8c0c490052fe3cf7ff6",
                 "reference": "3c9973d6a43ca762366bc8c0c490052fe3cf7ff6",
                 "shasum": ""
             },
@@ -7521,7 +7521,7 @@
     "platform": {
         "php": "^7.1.3",
         "ext-pdo": "*",
-        "ext-redis": "^3.1",
+        "ext-redis": "^4.1",
         "ext-json": "^1.5"
     },
     "platform-dev": []
