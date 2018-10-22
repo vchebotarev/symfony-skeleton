@@ -150,3 +150,5 @@ api через fos rest bundle
 изучить и заюзать \Symfony\Component\Console\Command\LockableTrait
 
 https://github.com/ekino/EkinoNewRelicBundle
+
+сделать абстрактный класс команды демона со слипом и с лимитом по времени и памяти (подстмотреть в реббит бандле) 
