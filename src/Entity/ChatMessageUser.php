@@ -24,20 +24,13 @@ class ChatMessageUser
      * @ORM\ManyToOne(targetEntity="App\Entity\ChatMessage", inversedBy="users")
      * @ORM\JoinColumn(name="message_id", referencedColumnName="id", nullable=false, onDelete="CASCADE")
      */
-    protected $message;
+    private $message;
 
-    /**
-     * @return ChatMessage
-     */
-    public function getMessage()
+    public function getMessage() : ChatMessage
     {
         return $this->message;
     }
 
-    /**
-     * @param ChatMessage $message
-     * @return $this
-     */
     public function setMessage(ChatMessage $message)
     {
         $this->message = $message;

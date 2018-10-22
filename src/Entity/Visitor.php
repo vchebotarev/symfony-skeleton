@@ -16,12 +16,6 @@ class Visitor
 
     use Column\Hash;
 
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return $this->getHash();
-    }
+    //todo dateCreated
 
 }

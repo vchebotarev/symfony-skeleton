@@ -25,7 +25,7 @@ class UserReview
      * @ORM\ManyToOne(targetEntity="App\Entity\User")
      * @ORM\JoinColumn(name="user_created_id", referencedColumnName="id", nullable=false, onDelete="CASCADE")
      */
-    protected $userCreated;
+    private $userCreated;
 
     use Column\Type;
 
@@ -33,18 +33,11 @@ class UserReview
 
     use Column\DateCreated;
 
-    /**
-     * @return User
-     */
-    public function getUserCreated()
+    public function getUserCreated() : User
     {
         return $this->userCreated;
     }
 
-    /**
-     * @param User $user
-     * @return $this
-     */
     public function setUserCreated(User $user)
     {
         $this->userCreated = $user;

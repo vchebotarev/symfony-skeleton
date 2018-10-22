@@ -12,11 +12,11 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class UserAuthLog
 {
-    const TYPE_UNKNOWN           = 0;
-    const TYPE_USERNAME_PASSWORD = 1;
-    const TYPE_REMEMBER_ME       = 2;
-    const TYPE_OAUTH             = 3;
-    const TYPE_LINK              = 4;
+    public const TYPE_UNKNOWN           = 0;
+    public const TYPE_USERNAME_PASSWORD = 1;
+    public const TYPE_REMEMBER_ME       = 2;
+    public const TYPE_OAUTH             = 3;
+    public const TYPE_LINK              = 4;
 
     use Column\Id;
 

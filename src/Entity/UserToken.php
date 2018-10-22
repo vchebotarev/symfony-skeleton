@@ -13,9 +13,9 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class UserToken
 {
-    const TYPE_REGISTRATION   = 1;
-    const TYPE_RESET_PASSWORD = 2;
-    const TYPE_CHANGE_EMAIL   = 3;
+    public const TYPE_REGISTRATION   = 1;
+    public const TYPE_RESET_PASSWORD = 2;
+    public const TYPE_CHANGE_EMAIL   = 3;
 
     use Column\Id;
 
@@ -28,13 +28,5 @@ class UserToken
     use Column\Data;
 
     use Column\DateCreated;
-
-    /**
-     * @return string
-     */
-    public function __toString() : string
-    {
-        return $this->getHash();
-    }
 
 }

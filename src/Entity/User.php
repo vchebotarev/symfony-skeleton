@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Doctrine\Column;
 use App\FOS\User\AbstractUser;
 use App\User\GenderedInterface;
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -22,25 +23,25 @@ class User extends AbstractUser implements GenderedInterface, \JsonSerializable
      * @var string
      * @ORM\Column(name="username", type="string", unique=true, options={"default": ""})
      */
-    protected $username = '';
+    private $username = '';
 
     /**
      * @var string
      * @ORM\Column(name="email", type="string", unique=true, options={"default": ""})
      */
-    protected $email = '';
+    private $email = '';
 
     /**
      * @var bool
      * @ORM\Column(name="is_enabled", type="boolean", options={"default": false})
      */
-    protected $isEnabled = false;
+    private $isEnabled = false;
 
     /**
      * @var bool
      * @ORM\Column(name="is_locked", type="boolean", options={"default": false})
      */
-    protected $isLocked = false;
+    private $isLocked = false;
 
     use Column\FIO;
 
@@ -48,37 +49,37 @@ class User extends AbstractUser implements GenderedInterface, \JsonSerializable
      * @var int
      * @ORM\Column(name="gender", type="smallint", options={"default": 0})
      */
-    protected $gender = GenderedInterface::GENDER_UNKNOWN;
+    private $gender = GenderedInterface::GENDER_UNKNOWN;
 
     /**
-     * @var \DateTime
+     * @var DateTime|null
      * @ORM\Column(name="date_birthday", type="date", nullable=true)
      */
-    protected $dateBirthday;
+    private $dateBirthday;
 
     /**
      * @var string
      * @ORM\Column(name="password", type="string", options={"default": ""})
      */
-    protected $password = '';
+    private $password = '';
 
     /**
      * @var bool
      * @ORM\Column(name="is_admin", type="boolean", options={"default": false})
      */
-    protected $isAdmin = false;
+    private $isAdmin = false;
 
     /**
      * @var bool
      * @ORM\Column(name="is_super_admin", type="boolean", options={"default": false})
      */
-    protected $isSuperAdmin = false;
+    private $isSuperAdmin = false;
 
     /**
      * @var array
      * @ORM\Column(name="roles", type="json")
      */
-    protected $roles = [];
+    private $roles = [];
 
     use Column\DateCreated;
 
@@ -86,19 +87,18 @@ class User extends AbstractUser implements GenderedInterface, \JsonSerializable
      * @var string
      * @ORM\Column(name="timezone", type="string", options={"default": ""})
      */
-    protected $timezone = '';
+    private $timezone = '';
 
     /**
-     * @return string
+     * @inheritDoc
      */
-    public function getUsername(): string
+    public function getUsername()
     {
         return $this->username;
     }
 
     /**
-     * @param string $username
-     * @return $this
+     * @inheritDoc
      */
     public function setUsername($username)
     {
@@ -107,16 +107,15 @@ class User extends AbstractUser implements GenderedInterface, \JsonSerializable
     }
 
     /**
-     * @return string
+     * @inheritDoc
      */
-    public function getEmail(): string
+    public function getEmail()
     {
         return $this->email;
     }
 
     /**
-     * @param string $email
-     * @return $this
+     * @inheritDoc
      */
     public function setEmail($email)
     {
@@ -125,17 +124,13 @@ class User extends AbstractUser implements GenderedInterface, \JsonSerializable
     }
 
     /**
-     * @return bool
+     * @inheritDoc
      */
-    public function isEnabled(): bool
+    public function isEnabled()
     {
         return $this->isEnabled;
     }
 
-    /**
-     * @param bool $isEnabled
-     * @return $this
-     */
     public function setIsEnabled(bool $isEnabled)
     {
         $this->isEnabled = $isEnabled;
@@ -150,18 +145,11 @@ class User extends AbstractUser implements GenderedInterface, \JsonSerializable
         return $this->setIsEnabled($boolean);
     }
 
-    /**
-     * @return bool
-     */
-    public function isLocked(): bool
+    public function isLocked() : bool
     {
         return $this->isLocked;
     }
 
-    /**
-     * @param bool $isLocked
-     * @return $this
-     */
     public function setIsLocked(bool $isLocked)
     {
         $this->isLocked = $isLocked;
@@ -171,58 +159,46 @@ class User extends AbstractUser implements GenderedInterface, \JsonSerializable
     /**
      * @inheritDoc
      */
-    public function isAccountNonLocked() : bool
+    public function isAccountNonLocked()
     {
         return $this->isLocked() == false;
     }
 
     /**
-     * @return int
+     * @inheritDoc
      */
-    public function getGender(): int
+    public function getGender() : int
     {
         return $this->gender;
     }
 
-    /**
-     * @param int $gender
-     * @return $this
-     */
     public function setGender(int $gender)
     {
         $this->gender = $gender;
         return $this;
     }
 
-    /**
-     * @param \DateTime $dateBirthday
-     * @return $this
-     */
-    public function setDateBirthday(\DateTime $dateBirthday)
+    public function setDateBirthday(?DateTime $dateBirthday)
     {
         $this->dateBirthday = $dateBirthday;
         return $this;
     }
 
-    /**
-     * @return \DateTime
-     */
-    public function getDateBirthday()
+    public function getDateBirthday() : ?DateTime
     {
         return $this->dateBirthday;
     }
 
     /**
-     * @return string
+     * @inheritdoc
      */
-    public function getPassword(): string
+    public function getPassword()
     {
         return $this->password;
     }
 
     /**
-     * @param string $password
-     * @return $this
+     * @inheritDoc
      */
     public function setPassword($password)
     {
@@ -230,18 +206,11 @@ class User extends AbstractUser implements GenderedInterface, \JsonSerializable
         return $this;
     }
 
-    /**
-     * @return bool
-     */
     public function isAdmin() : bool
     {
         return $this->isAdmin;
     }
 
-    /**
-     * @param bool $isAdmin
-     * @return $this
-     */
     public function setIsAdmin(bool $isAdmin)
     {
         $this->isAdmin = $isAdmin;
@@ -252,17 +221,13 @@ class User extends AbstractUser implements GenderedInterface, \JsonSerializable
     }
 
     /**
-     * @return bool
+     * @inheritDoc
      */
-    public function isSuperAdmin() : bool
+    public function isSuperAdmin()
     {
         return $this->isSuperAdmin;
     }
 
-    /**
-     * @param bool $isSuperAdmin
-     * @return $this
-     */
     public function setIsSuperAdmin(bool $isSuperAdmin)
     {
         $this->isSuperAdmin = $isSuperAdmin;
@@ -280,7 +245,7 @@ class User extends AbstractUser implements GenderedInterface, \JsonSerializable
     /**
      * @inheritDoc
      */
-    public function getRoles() : array
+    public function getRoles()
     {
         $roles = $this->roles;
         $roles[] = static::ROLE_DEFAULT;
@@ -308,7 +273,7 @@ class User extends AbstractUser implements GenderedInterface, \JsonSerializable
     /**
      * @inheritDoc
      */
-    public function hasRole($role) : bool
+    public function hasRole($role)
     {
         return in_array(strtoupper($role), $this->getRoles(), true);
     }
@@ -355,18 +320,11 @@ class User extends AbstractUser implements GenderedInterface, \JsonSerializable
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getTimezone() : string
     {
         return $this->timezone;
     }
 
-    /**
-     * @param string $timezone
-     * @return $this
-     */
     public function setTimezone(string $timezone)
     {
         $this->timezone = $timezone;
@@ -376,7 +334,7 @@ class User extends AbstractUser implements GenderedInterface, \JsonSerializable
     /**
      * @inheritDoc
      */
-    public function serialize() : string
+    public function serialize()
     {
         return serialize(array(
             $this->id,
@@ -405,17 +363,9 @@ class User extends AbstractUser implements GenderedInterface, \JsonSerializable
     }
 
     /**
-     * @return string
+     * @inheritDoc
      */
-    public function __toString()
-    {
-        return $this->username;
-    }
-
-    /**
-     * @return array
-     */
-    public function jsonSerialize() : array
+    public function jsonSerialize()
     {
         return [
             'id'       => $this->getId(),

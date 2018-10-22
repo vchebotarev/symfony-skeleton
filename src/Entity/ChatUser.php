@@ -20,20 +20,13 @@ class ChatUser
      * @ORM\ManyToOne(targetEntity="App\Entity\Chat", inversedBy="users")
      * @ORM\JoinColumn(name="chat_id", referencedColumnName="id", nullable=false, onDelete="CASCADE")
      */
-    protected $chat;
+    private $chat;
 
-    /**
-     * @return Chat
-     */
-    public function getChat()
+    public function getChat() : Chat
     {
         return $this->chat;
     }
 
-    /**
-     * @param Chat $chat
-     * @return $this
-     */
     public function setChat(Chat $chat)
     {
         $this->chat = $chat;

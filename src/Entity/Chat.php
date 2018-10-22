@@ -21,13 +21,13 @@ class Chat
      * @var ChatMessage[]|ArrayCollection
      * @ORM\OneToMany(targetEntity="App\Entity\ChatMessage", mappedBy="chat")
      */
-    protected $messages;
+    private $messages;
 
     /**
      * @var ChatUser[]|ArrayCollection
      * @ORM\OneToMany(targetEntity="App\Entity\ChatUser", mappedBy="chat")
      */
-    protected $users;
+    private $users;
 
     public function __construct()
     {

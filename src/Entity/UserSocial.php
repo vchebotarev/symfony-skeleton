@@ -21,22 +21,15 @@ class UserSocial
      * @var string
      * @ORM\Column(name="social_id", type="string", nullable=false, options={"default": ""})
      */
-    protected $socialId = '';
+    private $socialId = '';
 
     use Column\Data;
 
-    /**
-     * @return string
-     */
     public function getSocialId() : string
     {
         return $this->socialId;
     }
 
-    /**
-     * @param string $socialId
-     * @return $this
-     */
     public function setSocialId(string $socialId)
     {
         $this->socialId = $socialId;

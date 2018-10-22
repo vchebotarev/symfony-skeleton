@@ -26,31 +26,24 @@ class ChatMessage
      * @ORM\ManyToOne(targetEntity="App\Entity\Chat", inversedBy="messages")
      * @ORM\JoinColumn(name="chat_id", referencedColumnName="id", nullable=false, onDelete="CASCADE")
      */
-    protected $chat;
+    private $chat;
 
     /**
      * @var ChatMessageUser[]|ArrayCollection
      * @ORM\OneToMany(targetEntity="App\Entity\ChatMessageUser", mappedBy="message")
      */
-    protected $users;
+    private $users;
 
     public function __construct()
     {
         $this->users = new ArrayCollection();
     }
 
-    /**
-     * @return Chat
-     */
-    public function getChat()
+    public function getChat() : Chat
     {
         return $this->chat;
     }
 
-    /**
-     * @param Chat $chat
-     * @return $this
-     */
     public function setChat(Chat $chat)
     {
         $this->chat = $chat;
