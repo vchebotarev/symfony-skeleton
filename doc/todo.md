@@ -148,3 +148,5 @@ https://github.com/Ex3v/MyCLabsEnumParamConverter
 api через fos rest bundle
 
 изучить и заюзать \Symfony\Component\Console\Command\LockableTrait
+
+https://github.com/ekino/EkinoNewRelicBundle
