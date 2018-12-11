@@ -49,3 +49,5 @@ https://habrahabr.ru/post/345802/ + комменты
 webpack
 
 Doctrine second level cache
+
+try liip/imagine-bundle
