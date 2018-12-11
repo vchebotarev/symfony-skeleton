@@ -108,15 +108,11 @@
     "prefer-stable":     true,
     "minimum-stability": "dev",
     "extra": {
-        "symfony-app-dir":        "app",
-        "symfony-bin-dir":        "bin",
-        "symfony-var-dir":        "var",
-        "symfony-web-dir":        "public",
-        "symfony-tests-dir":      "tests",
-        "symfony-assets-install": "relative",
+        "symfony-bin-dir":      "bin",
+        "symfony-web-dir":      "public",
         "incenteev-parameters": {
             "file": "config/parameters.yml"
         },
-        "branch-alias":           null
+        "branch-alias":         null
     }
 }

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "53497b9f5fe42dc6ae3735160d6bd397",
+    "content-hash": "442d009d9aae2b1bd8348cab87765047",
     "packages": [
         {
             "name": "alexpts/symfony-asset-strategy-last-modify",
