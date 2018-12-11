@@ -51,3 +51,5 @@ webpack
 Doctrine second level cache
 
 try liip/imagine-bundle
+
+try friendsofsymfony/ckeditor-bundle
