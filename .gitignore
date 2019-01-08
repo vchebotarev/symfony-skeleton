@@ -26,3 +26,6 @@
 
 # PhpStorm - SCSS
 /public/build/app.css.map
+
+# Docker
+/.docker/mariadb/data/

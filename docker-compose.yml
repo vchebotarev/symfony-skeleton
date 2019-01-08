@@ -1,0 +1,38 @@
+
+version: '3'
+
+services:
+
+#todo nginx
+
+    php:
+        build:
+            context: ./.docker/php
+        environment:
+            - APACHE_RUN_USER=www-data
+        volumes:
+            - .:${APP_PATH_CONTAINER}
+        ports:
+          - 8080:80
+        working_dir: ${APP_PATH_CONTAINER}
+
+    db:
+        image: mariadb
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+        volumes:
+            - ./.docker/mariadb/data:/var/lib/mysql
+
+    adminer:
+        image: adminer
+        restart: always
+        ports:
+            - 6080:8080
+
+    composer:
+        image: composer
+        volumes:
+            - .:${APP_PATH_CONTAINER}
+        working_dir: ${APP_PATH_CONTAINER}
+        command: composer install
