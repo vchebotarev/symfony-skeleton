@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f583d0c63b28d9ce0633a171d64bea20",
+    "content-hash": "47d5b20940ce09808fbff36d3fdc7085",
     "packages": [
         {
             "name": "alexpts/symfony-asset-strategy-last-modify",
@@ -4172,61 +4172,6 @@
             "description": "Provides mb_ucwords(), mb_ucfirst(), mb_strrev(), mb_str_pad(), mb_count_chars(), mb_str_split()",
             "homepage": "https://github.com/martinlindhe/php-mb-helpers",
             "time": "2015-11-01T14:06:04+00:00"
-        },
-        {
-            "name": "matthiasnoback/symfony-console-form",
-            "version": "v2.5.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/matthiasnoback/symfony-console-form.git",
-                "reference": "4fe0e6dbb0d6b68705875d669e1963c8f820e624"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/matthiasnoback/symfony-console-form/zipball/4fe0e6dbb0d6b68705875d669e1963c8f820e624",
-                "reference": "4fe0e6dbb0d6b68705875d669e1963c8f820e624",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.0",
-                "symfony/console": "~3.0|~4.0",
-                "symfony/form": "~3.0|~4.0"
-            },
-            "require-dev": {
-                "beberlei/assert": "~2.1",
-                "behat/behat": "~3.0",
-                "friendsofphp/php-cs-fixer": "^1.10|^2.2",
-                "symfony/finder": "~3.0|~4.0",
-                "symfony/framework-bundle": "~3.0|~4.0",
-                "symfony/security": "~3.0|~4.0",
-                "symfony/validator": "~3.0|~4.0",
-                "symfony/yaml": "~3.0|~4.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Matthias\\SymfonyConsoleForm\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Matthias Noback",
-                    "email": "matthiasnoback@gmail.com",
-                    "homepage": "http://php-and-symfony.matthiasnoback.nl"
-                }
-            ],
-            "description": "Use Symfony forms for Console command input",
-            "homepage": "http://github.com/matthiasnoback/symfony-console-form",
-            "keywords": [
-                "console",
-                "form",
-                "symfony"
-            ],
-            "time": "2018-02-01T13:52:00+00:00"
         },
         {
             "name": "mobiledetect/mobiledetectlib",

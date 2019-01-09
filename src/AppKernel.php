@@ -27,7 +27,6 @@ class AppKernel extends Kernel
             new \FOS\JsRoutingBundle\FOSJsRoutingBundle(),
             new \Gregwar\CaptchaBundle\GregwarCaptchaBundle(),
             new \Snc\RedisBundle\SncRedisBundle(),
-            new \Matthias\SymfonyConsoleForm\Bundle\SymfonyConsoleFormBundle(),
             new \Chebur\LoginFormBundle\CheburLoginFormBundle(),
             new \Chebur\SearchBundle\CheburSearchBundle(),
             new \SmartCore\Bundle\AcceleratorCacheBundle\AcceleratorCacheBundle(),
