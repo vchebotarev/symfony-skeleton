@@ -156,3 +156,5 @@ https://github.com/ekino/EkinoNewRelicBundle
 настроить кеширование через реддис + туда просунуть доктрину
 
 php-amqplib/rabbitmq-bundle
+
+matthiasnoback/symfony-console-form
