@@ -61,7 +61,6 @@
         "martinlindhe/php-mb-helpers":                "^0.1.6",
         "matthiasnoback/symfony-console-form":        "^2.3",
         "mobiledetect/mobiledetectlib":               "^2.8",
-        "php-amqplib/rabbitmq-bundle":                "^1.13",
         "php-http/httplug-bundle":                    "^1.8",
         "php-http/curl-client":                       "^1.7",
         "php-http/guzzle6-adapter":                   "^1.1",
