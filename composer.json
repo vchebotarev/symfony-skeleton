@@ -41,7 +41,7 @@
         "chebur/search-bundle":                       "^0.0.1",
         "chebur/sphinx-bundle":                       "^0.0.5",
         "chebur/twig-php-functions-bundle":           "^0.0.2",
-        "doctrine/doctrine-migrations-bundle":        "^1.2",
+        "doctrine/doctrine-migrations-bundle":        "^2.0",
         "emanueleminotto/twig-cache-bundle":          "^1.0",
         "excelwebzone/recaptcha-bundle":              "^1.4",
         "friendsofsymfony/ckeditor-bundle":           "^2.0",
