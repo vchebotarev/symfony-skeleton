@@ -34,7 +34,7 @@
         "twig/twig":                            "^2.0",
 
         "alexpts/symfony-asset-strategy-last-modify": "^2.0",
-        "beberlei/DoctrineExtensions":                "^1.0",
+        "beberlei/doctrineextensions":                "^1.0",
         "browscap/browscap-php":                      "^4.0",
         "chebur/array_map_key":                       "^0.0.1",
         "chebur/login-form-bundle":                   "^0.0.12",
