@@ -1,0 +1,13 @@
+services:
+    csa_guzzle.client.hwi_oauth.psr7:
+        class: Http\Adapter\Guzzle6\Client
+        arguments:
+            - '@csa_guzzle.client.hwi_oauth'
+
+    eight_points_guzzle.client.hwi_oauth.psr7:
+        class: Http\Adapter\Guzzle6\Client
+        arguments:
+            - '@eight_points_guzzle.client.hwi_oauth'
+
+    app.guzzle.message_factory:
+        class: Http\Message\MessageFactory\GuzzleMessageFactory

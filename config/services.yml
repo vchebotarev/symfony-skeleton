@@ -2,6 +2,7 @@
 imports:
     - { resource: services/chebur.yml }
     - { resource: services/doctrine.yml }
+    - { resource: services/guzzle.yml }
     - { resource: services/monolog.yml }
     - { resource: services/symfony.yml }
     - { resource: services/swiftmailer.yml }

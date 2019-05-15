@@ -30,9 +30,10 @@ class AppKernel extends Kernel
             new \Chebur\LoginFormBundle\CheburLoginFormBundle(),
             new \Chebur\SearchBundle\CheburSearchBundle(),
             new \SmartCore\Bundle\AcceleratorCacheBundle\AcceleratorCacheBundle(),
-            new \Http\HttplugBundle\HttplugBundle(),
             new \EmanueleMinotto\TwigCacheBundle\TwigCacheBundle(),
             new \HWI\Bundle\OAuthBundle\HWIOAuthBundle(),
+            new \Csa\Bundle\GuzzleBundle\CsaGuzzleBundle(),
+            new \EightPoints\Bundle\GuzzleBundle\EightPointsGuzzleBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
