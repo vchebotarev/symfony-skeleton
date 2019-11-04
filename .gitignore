@@ -26,3 +26,6 @@
 
 # PhpStorm - SCSS
 /public/build/app.css.map
+
+# Apache
+/public/.htaccess
