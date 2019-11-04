@@ -224,7 +224,7 @@ services:
 
 # User
     app.user.manager:
-        lazy:  true
+        public: true
         class: App\User\UserManager
         arguments:
             - '@doctrine.orm.entity_manager'

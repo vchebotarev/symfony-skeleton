@@ -7,6 +7,7 @@ use Doctrine\ORM\EntityManager;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller as BaseController;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 abstract class AbstractController extends BaseController
 {
@@ -29,7 +30,7 @@ abstract class AbstractController extends BaseController
         return $em;
     }
 
-    protected function json($data, $status = 200, $headers = array(), $context = array())
+    protected function json($data, int $status = 200, array $headers = [], array $context = []): JsonResponse
     {
         $jsonResponse = parent::json($data, $status, $headers, $context);
         $jsonResponse->setEncodingOptions(JSON_UNESCAPED_UNICODE);
