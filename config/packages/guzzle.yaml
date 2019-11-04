@@ -1,0 +1,4 @@
+
+csa_guzzle:
+    profiler: '%kernel.debug%'
+    clients:
