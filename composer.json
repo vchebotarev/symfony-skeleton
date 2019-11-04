@@ -99,8 +99,6 @@
             }
         }
     },
-    "prefer-stable":     true,
-    "minimum-stability": "dev",
     "extra": {
         "symfony-bin-dir":      "bin",
         "symfony-web-dir":      "public",
