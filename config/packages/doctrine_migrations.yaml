@@ -1,0 +1,6 @@
+
+doctrine_migrations:
+    dir_name: '%kernel.project_dir%/src/Doctrine/Migration'
+    namespace: App\Doctrine\Migration
+    table_name: migration
+    custom_template: '%kernel.project_dir%/code-templates/Doctrine/Migration.php.tpl'
