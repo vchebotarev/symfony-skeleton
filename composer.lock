@@ -1711,7 +1711,8 @@
     "platform": {
         "php": "^7.3.0",
         "ext-ctype": "*",
-        "ext-iconv": "*"
+        "ext-iconv": "*",
+        "ext-json": "*"
     },
     "platform-dev": []
 }
