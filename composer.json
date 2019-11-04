@@ -13,6 +13,7 @@
         "symfony/yaml": "4.3.*"
     },
     "require-dev": {
+        "symfony/apache-pack": "^1.0"
     },
     "config": {
         "preferred-install": {

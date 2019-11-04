@@ -6,6 +6,9 @@
 /vendor/
 /composer.phar
 
+# Apache
+/public/.htaccess
+
 ###> symfony/framework-bundle ###
 /.env.local
 /.env.local.php
