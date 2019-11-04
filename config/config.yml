@@ -1,17 +1,11 @@
 imports:
-    - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: services.yml }
 
-# Put parameters here that don't need to change on each machine where the app is deployed
-# https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
-parameters:
-    locale: ru
-
 framework:
     #esi: ~
-    translator: { fallbacks: ['%locale%'] }
-    secret: '%secret%'
+    translator: { fallbacks: ['%env(APP_LOCALE)%'] }
+    secret: '%env(APP_SECRET)%'
     router:
         resource: '%kernel.project_dir%/config/routing.yml'
         strict_requirements: ~
@@ -21,7 +15,7 @@ framework:
     #serializer: { enable_annotations: true }
     templating:
         engines: ['twig']
-    default_locale: '%locale%'
+    default_locale: '%env(APP_LOCALE)%'
     trusted_hosts: ~
     session:
         handler_id: snc_redis.session.handler
@@ -89,11 +83,11 @@ twig_cache:
 doctrine:
     dbal:
         driver: pdo_mysql
-        host: '%database_host%'
-        port: '%database_port%'
-        dbname: '%database_name%'
-        user: '%database_user%'
-        password: '%database_password%'
+        host: '%env(DATABASE_HOST)%'
+        port: '%env(DATABASE_PORT)%'
+        dbname: '%env(DATABASE_NAME)%'
+        user: '%env(DATABASE_USER)%'
+        password: '%env(DATABASE_PASSWORD)%'
         charset: UTF8
         wrapper_class: App\Doctrine\DBAL\ReopeningConnectionWrapper
         types:
@@ -163,7 +157,7 @@ doctrine_cache:
 
 # Чистка APC cache
 accelerator_cache:
-    host: '%host.main%'
+    host: '%env(HOST_MAIN)%'
     web_dir: '%kernel.project_dir%/public'
 
 # Doctrine Migrations
@@ -185,8 +179,8 @@ gregwar_captcha:
 
 # Recaptcha
 ewz_recaptcha:
-    public_key:  '%recaptcha.public_key%'
-    private_key: '%recaptcha.private_key%'
+    public_key:  '%env(RECAPTCHA_KEY_PUBLIC)%'
+    private_key: '%env(RECAPTCHA_KEY_PRIVATE)%'
     locale_key:  '%kernel.default_locale%'
     enabled:     '%kernel.not_debug%'
     ajax:        false
@@ -197,17 +191,17 @@ snc_redis:
         default:
             type:    phpredis
             alias:   default
-            dsn:     '%redis.dsn%'
+            dsn:     '%env(REDIS_DSN)%'
             logging: '%kernel.debug%'
         system:
             type:    phpredis
             alias:   system
-            dsn:     "%redis.dsn%/1"
+            dsn:     "%env(REDIS_DSN)%/1"
             logging: "%kernel.debug%"
         session:
             type:    phpredis
             alias:   session
-            dsn:     "%redis.dsn%/2"
+            dsn:     "%env(REDIS_DSN)%/2"
             logging: "%kernel.debug%"
     session:
         client: session
@@ -217,18 +211,19 @@ swiftmailer:
     default_mailer: default
     mailers:
         default:
-            transport: '%swiftmailer.default.transport%'
-            host:      '%swiftmailer.default.host%'
-            username:  '%swiftmailer.default.user%'
-            password:  '%swiftmailer.default.password%'
+            transport: 'mail'
+#            host:      '%env(SWIFTMAILER_DEFAULT_HOST)%'
+#            username:  '%env(SWIFTMAILER_DEFAULT_USER)%'
+#            password:  '%env(SWIFTMAILER_DEFAULT_PASSWORD)%'
 #           spool: #не забываем  вызывать swiftmailer:spool:send #пока отключаем spool чтобы сразу происходила отправка
 #               type: memory #это не работает в винде
 #               type: file
         monolog:
-            transport: '%swiftmailer.monolog.transport%'
-            host:      '%swiftmailer.monolog.host%'
-            username:  '%swiftmailer.monolog.user%'
-            password:  '%swiftmailer.monolog.password%'
+            transport: 'mail'
+#            transport: '%env(SWIFTMAILER_MONOLOG_TRANSPORT)%'
+#            host:      '%env(SWIFTMAILER_MONOLOG_HOST)%'
+#            username:  '%env(SWIFTMAILER_MONOLOG_USER)%'
+#            password:  '%env(SWIFTMAILER_MONOLOG_PASSWORD)%'
 
 # FOS JsRouting Bundle #todo
 #fos_js_routing:
@@ -261,8 +256,8 @@ hwi_oauth:
     resource_owners:
         vkontakte: # App\OAuth\ResourceOwnerHelper::VKONTAKTE_NAME
             type:          vkontakte
-            client_id:     '%oauth.vkontakte.client_id%'
-            client_secret: '%oauth.vkontakte.client_secret%'
+            client_id:     '%env(OAUTH_VKONTAKTE_CLIENT_ID)%'
+            client_secret: '%env(OAUTH_VKONTAKTE_CLIENT_SECRET)%'
             scope:         'email'
 
 csa_guzzle: # https://github.com/csarrazi/CsaGuzzleBundle

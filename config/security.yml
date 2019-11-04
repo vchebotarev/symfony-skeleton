@@ -89,7 +89,7 @@ security:
                 #csrf_token_id:                  authenticate
                 #csrf_token_generator:           my.csrf_token_generator.id
             remember_me:
-                secret:                '%secret%'     # ключ шифрования куки
+                secret:                '%env(APP_SECRET)%'     # ключ шифрования куки
                 name:                  'REMEMBERME'   # имя куки
                 lifetime:              31536000       # время жизни куки в секундах
                 path:                  /              # path "дейсвия" куки

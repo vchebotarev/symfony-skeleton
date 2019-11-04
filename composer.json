@@ -25,7 +25,6 @@
         "symfony/symfony":                      "3.4.*",
         "doctrine/doctrine-bundle":             "^1.11",
         "doctrine/orm":                         "^2.6",
-        "incenteev/composer-parameter-handler": "^2.1",
         "sensio/framework-extra-bundle":        "^5.0.0",
         "symfony/monolog-bundle":               "^3.4",
         "symfony/polyfill-apcu":                "^1.12",
@@ -80,7 +79,6 @@
     },
     "scripts": {
         "symfony-scripts": [
-            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
             "App\\Composer\\ScriptHandler::clearCache",
             "App\\Composer\\ScriptHandler::installAssets"
         ],
@@ -104,9 +102,6 @@
     "extra": {
         "symfony-bin-dir":      "bin",
         "symfony-web-dir":      "public",
-        "incenteev-parameters": {
-            "file": "config/parameters.yml"
-        },
         "branch-alias":         null
     }
 }

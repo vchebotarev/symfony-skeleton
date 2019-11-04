@@ -1,7 +1,6 @@
 
 # Symfony 3
 /.web-server-pid
-/config/parameters.yml
 /build/
 /phpunit.xml
 /bin/symfony_requirements
@@ -10,7 +9,8 @@
 !var/logs/.gitkeep
 !var/sessions/.gitkeep
 /public/bundles/
-.env
+/.env.local
+/.env.*.local
 
 # Composer
 /composer.phar
