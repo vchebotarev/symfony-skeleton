@@ -4,8 +4,99 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8491a213de140b4e6de84c0a150a4f8b",
+    "content-hash": "f7cf60892736645d3941d5e2759502fb",
     "packages": [
+        {
+            "name": "chebur/daemon-command",
+            "version": "0.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/vchebotarev/daemon-command.git",
+                "reference": "7bb4cd84dc1685ad6b9d90fd65014161fd3ba7e7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/vchebotarev/daemon-command/zipball/7bb4cd84dc1685ad6b9d90fd65014161fd3ba7e7",
+                "reference": "7bb4cd84dc1685ad6b9d90fd65014161fd3ba7e7",
+                "shasum": ""
+            },
+            "require": {
+                "chebur/memory-limit-bytes": "^0.0.1",
+                "php": "^7.1",
+                "symfony/console": "^3.4 || ^4.0"
+            },
+            "suggest": {
+                "ext-pcntl": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Chebur\\DaemonCommand\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vladimir Chebotarev",
+                    "email": "v.yu.chebotarev@mail.ru",
+                    "homepage": "http://github.com/vchebotarev"
+                }
+            ],
+            "description": "Daemon (endless) symfony command",
+            "homepage": "https://github.com/vchebotarev",
+            "keywords": [
+                "Symfony2",
+                "command",
+                "daemon",
+                "endless",
+                "loop",
+                "symfony",
+                "symfony3",
+                "symfony4"
+            ],
+            "time": "2019-10-09T11:52:32+00:00"
+        },
+        {
+            "name": "chebur/memory-limit-bytes",
+            "version": "0.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/vchebotarev/memory-limit-bytes.git",
+                "reference": "951d094e9e6d0e46b967d6b2b27e6ce89906b813"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/vchebotarev/memory-limit-bytes/zipball/951d094e9e6d0e46b967d6b2b27e6ce89906b813",
+                "reference": "951d094e9e6d0e46b967d6b2b27e6ce89906b813",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vladimir Chebotarev",
+                    "email": "v.yu.chebotarev@mail.ru",
+                    "homepage": "http://github.com/vchebotarev"
+                }
+            ],
+            "description": "Returns memory_limit option in bytes",
+            "homepage": "https://github.com/vchebotarev",
+            "time": "2019-09-30T12:58:12+00:00"
+        },
         {
             "name": "monolog/monolog",
             "version": "1.25.1",

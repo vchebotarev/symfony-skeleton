@@ -1,4 +1,10 @@
 {
+    "chebur/daemon-command": {
+        "version": "0.0.3"
+    },
+    "chebur/memory-limit-bytes": {
+        "version": "0.0.1"
+    },
     "easycorp/easy-log-handler": {
         "version": "1.0",
         "recipe": {
