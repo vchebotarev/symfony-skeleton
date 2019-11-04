@@ -6,9 +6,6 @@ use Monolog\Formatter\HtmlFormatter as BaseHtmlFormatter;
 
 class HtmlFormatter extends BaseHtmlFormatter
 {
-    /**
-     * @inheritDoc
-     */
     public function format(array $record)
     {
         $output = parent::format($record);

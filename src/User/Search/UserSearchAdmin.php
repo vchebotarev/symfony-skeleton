@@ -24,9 +24,6 @@ class UserSearchAdmin extends AbstractItemsSource
         $this->em = $entityManager;
     }
 
-    /**
-     * @inheritDoc
-     */
     protected function getItems($options = [], $sort = '', $sortOrder = '', $limit = 0, int $offset = 0) : iterable
     {
         $qb = $this->createAndModifyQb($options);
@@ -123,9 +120,6 @@ class UserSearchAdmin extends AbstractItemsSource
         return $qb;
     }
 
-    /**
-     * @inheritDoc
-     */
     protected function getTotalCount($options = [])
     {
         $qb = $this->createAndModifyQb($options);

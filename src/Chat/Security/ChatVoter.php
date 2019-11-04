@@ -15,9 +15,6 @@ class ChatVoter extends Voter
     const DELETE = 'chat.delete';
     const READ   = 'chat.message.read';
 
-    /**
-     * @inheritDoc
-     */
     protected function supports($attribute, $subject)
     {
         if ($subject instanceof Chat && $attribute == self::VIEW) {
@@ -42,9 +39,6 @@ class ChatVoter extends Voter
         return false;
     }
 
-    /**
-     * @inheritDoc
-     */
     protected function voteOnAttribute($attribute, $subject, TokenInterface $token)
     {
         /** @var User|null $currentUser */

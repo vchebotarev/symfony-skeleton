@@ -52,9 +52,6 @@ class AuthLogEventSubscriber implements EventSubscriberInterface
         $this->userAgentManager = $userAgentManager;
     }
 
-    /**
-     * @inheritDoc
-     */
     public static function getSubscribedEvents()
     {
         return [

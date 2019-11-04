@@ -7,9 +7,6 @@ use Symfony\Component\Config\Loader\LoaderInterface;
 
 class AppKernel extends Kernel
 {
-    /**
-     * @inheritDoc
-     */
     public function registerBundles()
     {
         $bundles = [
@@ -43,9 +40,6 @@ class AppKernel extends Kernel
         return $bundles;
     }
 
-    /**
-     * @inheritDoc
-     */
     protected function getKernelParameters()
     {
         return array_merge(
@@ -57,33 +51,21 @@ class AppKernel extends Kernel
         );
     }
 
-    /**
-     * @inheritDoc
-     */
     public function getRootDir()
     {
         return __DIR__;
     }
 
-    /**
-     * @inheritDoc
-     */
     public function getCacheDir()
     {
         return dirname(__DIR__).'/var/cache/'.$this->getEnvironment();
     }
 
-    /**
-     * @inheritDoc
-     */
     public function getLogDir()
     {
         return dirname(__DIR__).'/var/logs';
     }
 
-    /**
-     * @inheritDoc
-     */
     public function registerContainerConfiguration(LoaderInterface $loader)
     {
         $loader->load($this->getProjectDir().'/config/config_'.$this->getEnvironment().'.yml');

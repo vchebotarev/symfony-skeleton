@@ -38,9 +38,6 @@ class RegistrationFormType extends AbstractFormType
         $this->userManipulator = $userManipulator;
     }
 
-    /**
-     * @inheritDoc
-     */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $formType = $this;

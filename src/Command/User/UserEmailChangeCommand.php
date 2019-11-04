@@ -23,9 +23,6 @@ class UserEmailChangeCommand extends AbstractContainerAwareCommand
         $this->addArgument('email', InputArgument::REQUIRED, 'New email');
     }
 
-    /**
-     * @inheritDoc
-     */
     public function execute(InputInterface $input, OutputInterface $output)
     {
         $userData = $input->getArgument('user');
@@ -61,9 +58,6 @@ class UserEmailChangeCommand extends AbstractContainerAwareCommand
         $output->writeln('<info>Email was successfully changed</info>');
     }
 
-    /**
-     * @inheritDoc
-     */
     public function interact(InputInterface $input, OutputInterface $output)
     {
         $questions = [];

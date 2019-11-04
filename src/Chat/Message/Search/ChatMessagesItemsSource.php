@@ -39,9 +39,6 @@ class ChatMessagesItemsSource extends AbstractItemsSource
         $this->chatMessageTransformer = $messageTransformer;
     }
 
-    /**
-     * @inheritDoc
-     */
     protected function getItems($options = [], $sort = '', $sortOrder = '', $limit = 0, int $offset = 0) : iterable
     {
         $results = $this->getQb($options)
@@ -87,9 +84,6 @@ class ChatMessagesItemsSource extends AbstractItemsSource
 
     }
 
-    /**
-     * @inheritDoc
-     */
     protected function getTotalCount($options = [])
     {
         $qb = $this->getQb($options);

@@ -89,43 +89,28 @@ class User extends AbstractUser implements GenderedInterface, \JsonSerializable
      */
     private $timezone = '';
 
-    /**
-     * @inheritDoc
-     */
     public function getUsername()
     {
         return $this->username;
     }
 
-    /**
-     * @inheritDoc
-     */
     public function setUsername($username)
     {
         $this->username = $username;
         return $this;
     }
 
-    /**
-     * @inheritDoc
-     */
     public function getEmail()
     {
         return $this->email;
     }
 
-    /**
-     * @inheritDoc
-     */
     public function setEmail($email)
     {
         $this->email = $email;
         return $this;
     }
 
-    /**
-     * @inheritDoc
-     */
     public function isEnabled()
     {
         return $this->isEnabled;
@@ -137,9 +122,6 @@ class User extends AbstractUser implements GenderedInterface, \JsonSerializable
         return $this;
     }
 
-    /**
-     * @inheritDoc
-     */
     public function setEnabled($boolean)
     {
         return $this->setIsEnabled($boolean);
@@ -156,17 +138,11 @@ class User extends AbstractUser implements GenderedInterface, \JsonSerializable
         return $this;
     }
 
-    /**
-     * @inheritDoc
-     */
     public function isAccountNonLocked()
     {
         return $this->isLocked() == false;
     }
 
-    /**
-     * @inheritDoc
-     */
     public function getGender() : int
     {
         return $this->gender;
@@ -189,17 +165,11 @@ class User extends AbstractUser implements GenderedInterface, \JsonSerializable
         return $this->dateBirthday;
     }
 
-    /**
-     * @inheritdoc
-     */
     public function getPassword()
     {
         return $this->password;
     }
 
-    /**
-     * @inheritDoc
-     */
     public function setPassword($password)
     {
         $this->password = $password;
@@ -220,9 +190,6 @@ class User extends AbstractUser implements GenderedInterface, \JsonSerializable
         return $this;
     }
 
-    /**
-     * @inheritDoc
-     */
     public function isSuperAdmin()
     {
         return $this->isSuperAdmin;
@@ -234,17 +201,11 @@ class User extends AbstractUser implements GenderedInterface, \JsonSerializable
         return $this;
     }
 
-    /**
-     * @inheritDoc
-     */
     public function setSuperAdmin($isSuperAdmin)
     {
         return $this->setIsSuperAdmin((bool)$isSuperAdmin);
     }
 
-    /**
-     * @inheritDoc
-     */
     public function getRoles()
     {
         $roles = $this->roles;
@@ -258,9 +219,6 @@ class User extends AbstractUser implements GenderedInterface, \JsonSerializable
         return $roles;
     }
 
-    /**
-     * @inheritDoc
-     */
     public function setRoles(array $roles)
     {
         $this->roles = array();
@@ -270,17 +228,11 @@ class User extends AbstractUser implements GenderedInterface, \JsonSerializable
         return $this;
     }
 
-    /**
-     * @inheritDoc
-     */
     public function hasRole($role)
     {
         return in_array(strtoupper($role), $this->getRoles(), true);
     }
 
-    /**
-     * @inheritDoc
-     */
     public function addRole($role)
     {
         $role = strtoupper($role);
@@ -299,9 +251,6 @@ class User extends AbstractUser implements GenderedInterface, \JsonSerializable
         return $this;
     }
 
-    /**
-     * @inheritDoc
-     */
     public function removeRole($role)
     {
         if ($role === static::ROLE_DEFAULT) {
@@ -331,9 +280,6 @@ class User extends AbstractUser implements GenderedInterface, \JsonSerializable
         return $this;
     }
 
-    /**
-     * @inheritDoc
-     */
     public function serialize()
     {
         return serialize(array(
@@ -346,9 +292,6 @@ class User extends AbstractUser implements GenderedInterface, \JsonSerializable
         ));
     }
 
-    /**
-     * @inheritDoc
-     */
     public function unserialize($serialized)
     {
         $data = unserialize($serialized);
@@ -362,9 +305,6 @@ class User extends AbstractUser implements GenderedInterface, \JsonSerializable
         ) = $data;
     }
 
-    /**
-     * @inheritDoc
-     */
     public function jsonSerialize()
     {
         return [

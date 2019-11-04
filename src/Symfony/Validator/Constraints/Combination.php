@@ -17,9 +17,6 @@ abstract class Combination extends Composite
      */
     public $breakOnFailure = false;
 
-    /**
-     * @inheritDoc
-     */
     public function __construct($options = null)
     {
         parent::__construct($options);
@@ -39,25 +36,16 @@ abstract class Combination extends Composite
      */
     abstract protected function getConstraints();
 
-    /**
-     * @inheritDoc
-     */
     public function getDefaultOption()
     {
         return 'constraints';
     }
 
-    /**
-     * @inheritDoc
-     */
     public function getCompositeOption()
     {
         return 'constraints';
     }
 
-    /**
-     * @inheritDoc
-     */
     public function validatedBy()
     {
         return CombinationValidator::class;

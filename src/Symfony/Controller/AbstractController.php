@@ -29,9 +29,6 @@ abstract class AbstractController extends BaseController
         return $em;
     }
 
-    /**
-     * @inheritDoc
-     */
     protected function json($data, $status = 200, $headers = array(), $context = array())
     {
         $jsonResponse = parent::json($data, $status, $headers, $context);

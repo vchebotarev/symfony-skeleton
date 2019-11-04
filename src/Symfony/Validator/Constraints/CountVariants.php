@@ -16,17 +16,11 @@ class CountVariants extends Constraint
      */
     public $variants = [];
 
-    /**
-     * @inheritDoc
-     */
     public function getRequiredOptions()
     {
         return ['variants'];
     }
 
-    /**
-     * @inheritDoc
-     */
     public function getDefaultOption()
     {
         return 'variants';

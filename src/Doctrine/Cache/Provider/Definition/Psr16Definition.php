@@ -9,9 +9,6 @@ use Symfony\Component\DependencyInjection\Reference;
 
 class Psr16Definition extends CacheDefinition
 {
-    /**
-     * @inheritDoc
-     */
     public function configure($name, array $config, Definition $service, ContainerBuilder $container)
     {
         $service->addArgument(new Reference($config['custom_provider']['options']['cache']));

@@ -9,17 +9,11 @@ class Chain extends Combination
      */
     public $breakOnFailure = true;
 
-    /**
-     * @inheritDoc
-     */
     protected function getConstraints()
     {
         return $this->constraints;
     }
 
-    /**
-     * @inheritDoc
-     */
     public function getRequiredOptions()
     {
         return ['constraints'];

@@ -49,9 +49,6 @@ class ResetRequestFormType extends AbstractFormType
         $this->mailer           = $mailer;
     }
 
-    /**
-     * @inheritDoc
-     */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $formType = $this;

@@ -23,9 +23,6 @@ class EntityExistsValidator extends ConstraintValidator
         $this->managerRegistry = $managerRegistry;
     }
 
-    /**
-     * @inheritDoc
-     */
     public function validate($value, Constraint $constraint)
     {
         if (!$constraint instanceof EntityExists) {

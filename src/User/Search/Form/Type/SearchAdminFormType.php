@@ -15,9 +15,6 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class SearchAdminFormType extends AbstractFormType
 {
-    /**
-     * @inheritDoc
-     */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->setMethod(Request::METHOD_GET)->setAction('');
@@ -61,9 +58,6 @@ class SearchAdminFormType extends AbstractFormType
 
     }
 
-    /**
-     * @inheritDoc
-     */
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefault('csrf_protection', false);

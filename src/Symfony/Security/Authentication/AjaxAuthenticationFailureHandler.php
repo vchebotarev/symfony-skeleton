@@ -18,9 +18,6 @@ class AjaxAuthenticationFailureHandler extends DefaultAuthenticationFailureHandl
      */
     protected $translator;
 
-    /**
-     * @inheritDoc
-     */
     public function __construct(HttpKernelInterface $httpKernel, HttpUtils $httpUtils, array $options = [], LoggerInterface $logger = null, TranslatorInterface $translator)
     {
         parent::__construct($httpKernel, $httpUtils, $options, $logger);
@@ -28,9 +25,6 @@ class AjaxAuthenticationFailureHandler extends DefaultAuthenticationFailureHandl
         $this->translator = $translator;
     }
 
-    /**
-     * @inheritDoc
-     */
     public function onAuthenticationFailure(Request $request, AuthenticationException $exception)
     {
         $parentReturn = parent::onAuthenticationFailure($request, $exception);

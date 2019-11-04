@@ -16,9 +16,6 @@ class UserAuthLogRemoveCommand extends AbstractContainerAwareCommand
         $this->setDescription('Delete old user auth logs');
     }
 
-    /**
-     * @inheritDoc
-     */
     public function execute(InputInterface $input, OutputInterface $output)
     {
         $timeStart = microtime(true);

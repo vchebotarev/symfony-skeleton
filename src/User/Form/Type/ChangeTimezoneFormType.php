@@ -33,9 +33,6 @@ class ChangeTimezoneFormType extends AbstractFormType
         $this->timezoneManager = $timezoneManager;
     }
 
-    /**
-     * @inheritDoc
-     */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $formType = $this;

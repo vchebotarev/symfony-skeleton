@@ -64,9 +64,6 @@ class EditUserFormType extends AbstractFormType
         });
     }
 
-    /**
-     * @inheritDoc
-     */
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setRequired('user');

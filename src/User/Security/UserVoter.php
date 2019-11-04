@@ -43,9 +43,6 @@ class UserVoter extends Voter
         $this->userTokenManager = $userTokenManager;
     }
 
-    /**
-     * @inheritDoc
-     */
     protected function supports($attribute, $user)
     {
         if ($attribute == self::CHANGE_EMAIL) {
@@ -85,9 +82,6 @@ class UserVoter extends Voter
         return false;
     }
 
-    /**
-     * @inheritDoc
-     */
     protected function voteOnAttribute($attribute, $user, TokenInterface $token)
     {
         /** @var User $user */

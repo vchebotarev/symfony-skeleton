@@ -22,9 +22,6 @@ class VisitorSubscriber implements EventSubscriberInterface
         $this->visitorManager = $visitorManager;
     }
 
-    /**
-     * @inheritDoc
-     */
     public static function getSubscribedEvents()
     {
         return array(

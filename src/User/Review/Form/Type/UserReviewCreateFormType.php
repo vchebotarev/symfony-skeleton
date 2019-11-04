@@ -32,9 +32,6 @@ class UserReviewCreateFormType extends AbstractFormType
         $this->userReviewManager = $userReviewManager;
     }
 
-    /**
-     * @inheritDoc
-     */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $formType = $this;
@@ -81,9 +78,6 @@ class UserReviewCreateFormType extends AbstractFormType
         $this->userReviewManager->create($user, $data['type'], $data['body']);
     }
 
-    /**
-     * @inheritDoc
-     */
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setRequired('user');

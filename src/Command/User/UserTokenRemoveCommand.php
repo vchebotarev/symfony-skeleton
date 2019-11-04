@@ -18,9 +18,6 @@ class UserTokenRemoveCommand extends AbstractContainerAwareCommand
         //todo remove by user argument
     }
 
-    /**
-     * @inheritDoc
-     */
     public function execute(InputInterface $input, OutputInterface $output)
     {
         $timeStart = microtime(true);

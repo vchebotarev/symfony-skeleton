@@ -8,9 +8,6 @@ use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 
 class CombinationValidator extends ConstraintValidator
 {
-    /**
-     * @inheritDoc
-     */
     public function validate($value, Constraint $constraint)
     {
         if (!$constraint instanceof Combination) {

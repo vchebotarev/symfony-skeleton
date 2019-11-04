@@ -11,9 +11,6 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class IntervalType extends RepeatedType
 {
-    /**
-     * @inheritDoc
-     */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $formType = $this;
@@ -65,9 +62,6 @@ class IntervalType extends RepeatedType
         $event->setData($data);
     }
 
-    /**
-     * @inheritDoc
-     */
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
@@ -85,9 +79,6 @@ class IntervalType extends RepeatedType
         $resolver->setAllowedTypes('to_options', 'array');
     }
 
-    /**
-     * @inheritDoc
-     */
     public function getBlockPrefix()
     {
         return 'interval';

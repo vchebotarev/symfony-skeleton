@@ -7,9 +7,6 @@ use Twig\TwigFunction;
 
 class FormExtension extends AbstractExtension
 {
-    /**
-     * @inheritDoc
-     */
     public function getFunctions()
     {
         return [

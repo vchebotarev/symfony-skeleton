@@ -14,9 +14,6 @@ use Doctrine\DBAL\Types\DateTimeTzType as BaseDateTimeTzType;
  */
 class DateTimeTzType extends BaseDateTimeTzType
 {
-    /**
-     * @inheritDoc
-     */
     public function getSQLDeclaration(array $fieldDeclaration, AbstractPlatform $platform)
     {
         if ($platform instanceof MySqlPlatform) {

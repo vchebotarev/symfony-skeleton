@@ -24,9 +24,6 @@ class UserReviewItemsSource extends AbstractItemsSource
         $this->em = $em;
     }
 
-    /**
-     * @inheritDoc
-     */
     protected function getItems($options = [], $sort = '', $sortOrder = '', $limit = 0, int $offset = 0) : iterable
     {
         $qb = $this->getQb($options);
@@ -89,9 +86,6 @@ class UserReviewItemsSource extends AbstractItemsSource
         return $qb;
     }
 
-    /**
-     * @inheritDoc
-     */
     protected function getTotalCount($options = [])
     {
         $qb = $this->getQb($options);

@@ -10,9 +10,6 @@ use Doctrine\DBAL\DBALException;
  */
 class ReopeningConnectionWrapper extends Connection
 {
-    /**
-     * @inheritDoc
-     */
     public function insert($tableName, array $data, array $types = array())
     {
         try {

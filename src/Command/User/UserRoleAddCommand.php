@@ -19,9 +19,6 @@ class UserRoleAddCommand extends AbstractContainerAwareCommand
         $this->addArgument('role', InputArgument::REQUIRED, 'Role');
     }
 
-    /**
-     * @inheritDoc
-     */
     public function execute(InputInterface $input, OutputInterface $output)
     {
         $userData = $input->getArgument('user');
@@ -40,9 +37,6 @@ class UserRoleAddCommand extends AbstractContainerAwareCommand
         $output->writeln('<info>Role was successfully added to user</info>');
     }
 
-    /**
-     * @inheritDoc
-     */
     public function interact(InputInterface $input, OutputInterface $output)
     {
         $questions = [];

@@ -9,9 +9,6 @@ use Symfony\Component\Security\Http\Authentication\DefaultAuthenticationSuccessH
 
 class AjaxAuthenticationSuccessHandler extends DefaultAuthenticationSuccessHandler
 {
-    /**
-     * @inheritDoc
-     */
     public function onAuthenticationSuccess(Request $request, TokenInterface $token)
     {
         if ($request->isXmlHttpRequest()) {

@@ -8,9 +8,6 @@ use Twig\TwigFunction;
 
 class UserReviewExtension extends AbstractExtension
 {
-    /**
-     * @inheritDoc
-     */
     public function getFunctions()
     {
         return [

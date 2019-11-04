@@ -26,17 +26,11 @@ class LengthVariants extends Constraint
      */
     public $charset = 'UTF-8';
 
-    /**
-     * @inheritDoc
-     */
     public function getRequiredOptions()
     {
         return ['variants'];
     }
 
-    /**
-     * @inheritDoc
-     */
     public function getDefaultOption()
     {
         return 'variants';

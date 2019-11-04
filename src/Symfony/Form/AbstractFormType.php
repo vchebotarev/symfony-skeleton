@@ -9,9 +9,6 @@ use Symfony\Component\Form\AbstractType;
  */
 abstract class AbstractFormType extends AbstractType
 {
-    /**
-     * @inheritDoc
-     */
     public function getBlockPrefix()
     {
         return '';

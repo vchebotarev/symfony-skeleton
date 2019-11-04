@@ -57,7 +57,6 @@ class MailTransport implements Swift_Transport
 
     /**
      * Not used.
-     * @inheritDoc
      */
     public function ping()
     {
@@ -66,7 +65,6 @@ class MailTransport implements Swift_Transport
 
     /**
      * Not used.
-     * @inheritDoc
      */
     public function isStarted()
     {
@@ -75,7 +73,6 @@ class MailTransport implements Swift_Transport
 
     /**
      * Not used.
-     * @inheritDoc
      */
     public function start()
     {
@@ -83,7 +80,6 @@ class MailTransport implements Swift_Transport
 
     /**
      * Not used.
-     * @inheritDoc
      */
     public function stop()
     {

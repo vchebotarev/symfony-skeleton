@@ -39,9 +39,6 @@ class MailerTokened implements MailerInterface
         $this->userTokenManager = $userTokenManager;
     }
 
-    /**
-     * @inheritDoc
-     */
     public function sendConfirmationEmailMessage(UserInterface $user)
     {
         /** @var User $user*/
@@ -58,9 +55,6 @@ class MailerTokened implements MailerInterface
         $this->mailer->sendTemplated($to, $subject, $template, $params);
     }
 
-    /**
-     * @inheritDoc
-     */
     public function sendResettingEmailMessage(UserInterface $user)
     {
         /** @var User $user */

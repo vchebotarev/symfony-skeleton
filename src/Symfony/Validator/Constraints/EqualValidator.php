@@ -8,9 +8,6 @@ use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 
 class EqualValidator extends ConstraintValidator
 {
-    /**
-     * @inheritDoc
-     */
     public function validate($value, Constraint $constraint)
     {
         if (!$constraint instanceof Equal) {

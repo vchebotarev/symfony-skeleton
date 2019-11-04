@@ -10,9 +10,6 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class HintHelpExtension extends AbstractTypeExtension
 {
-    /**
-     * @inheritDoc
-     */
     public function buildView(FormView $view, FormInterface $form, array $options)
     {
         $view->vars['help']         = $options['help'];
@@ -21,9 +18,6 @@ class HintHelpExtension extends AbstractTypeExtension
         $view->vars['hint_append']  = $options['hint_append'];
     }
 
-    /**
-     * @inheritDoc
-     */
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefault('help', null);
@@ -34,9 +28,6 @@ class HintHelpExtension extends AbstractTypeExtension
         //todo help_attr, hint_attr
     }
 
-    /**
-     * @inheritDoc
-     */
     public function getExtendedType()
     {
         return FormType::class;

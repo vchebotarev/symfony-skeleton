@@ -8,9 +8,6 @@ use Doctrine\DBAL\Types\JsonType as BaseJsonType;
 
 class JsonType extends BaseJsonType
 {
-    /**
-     * @inheritDoc
-     */
     public function convertToDatabaseValue($value, AbstractPlatform $platform)
     {
         if (null === $value) {

@@ -23,9 +23,6 @@ class UserUsernameChangeCommand extends AbstractContainerAwareCommand
         $this->addArgument('username', InputArgument::REQUIRED, 'User username');
     }
 
-    /**
-     * @inheritDoc
-     */
     public function execute(InputInterface $input, OutputInterface $output)
     {
         $userData = $input->getArgument('user');
@@ -61,9 +58,6 @@ class UserUsernameChangeCommand extends AbstractContainerAwareCommand
         $output->writeln('<info>Username was successfully changed</info>');
     }
 
-    /**
-     * @inheritDoc
-     */
     public function interact(InputInterface $input, OutputInterface $output)
     {
         $questions = [];

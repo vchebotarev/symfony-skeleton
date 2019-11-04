@@ -14,7 +14,6 @@ abstract class AbstractUser implements FOSUserInterface//, SonataUserInterface
 
     /**
      * @deprecated мы используем bcrybt
-     * @inheritDoc
      */
     public function getSalt()
     {
@@ -23,7 +22,6 @@ abstract class AbstractUser implements FOSUserInterface//, SonataUserInterface
 
     /**
      * @deprecated мы используем bcrybt
-     * @inheritDoc
      */
     public function setSalt($salt)
     {
@@ -32,7 +30,6 @@ abstract class AbstractUser implements FOSUserInterface//, SonataUserInterface
 
     /**
      * @deprecated Регистрации через модель не будет
-     * @inheritDoc
      */
     public function getPlainPassword()
     {
@@ -41,7 +38,6 @@ abstract class AbstractUser implements FOSUserInterface//, SonataUserInterface
 
     /**
      * @deprecated Регистрации через модель не будет
-     * @inheritDoc
      */
     public function setPlainPassword($password)
     {
@@ -50,7 +46,6 @@ abstract class AbstractUser implements FOSUserInterface//, SonataUserInterface
 
     /**
      * @deprecated Регистрации через модель не будет
-     * @inheritDoc
      */
     public function eraseCredentials()
     {
@@ -58,7 +53,6 @@ abstract class AbstractUser implements FOSUserInterface//, SonataUserInterface
 
     /**
      * @deprecated у нас не регистрозависимая бд
-     * @inheritDoc
      */
     public function getUsernameCanonical()
     {
@@ -67,7 +61,6 @@ abstract class AbstractUser implements FOSUserInterface//, SonataUserInterface
 
     /**
      * @deprecated у нас не регистрозависимая бд
-     * @inheritDoc
      */
     public function setUsernameCanonical($usernameCanonical)
     {
@@ -76,7 +69,6 @@ abstract class AbstractUser implements FOSUserInterface//, SonataUserInterface
 
     /**
      * @deprecated у нас не регистрозависимая бд
-     * @inheritDoc
      */
     public function getEmailCanonical()
     {
@@ -85,7 +77,6 @@ abstract class AbstractUser implements FOSUserInterface//, SonataUserInterface
 
     /**
      * @deprecated у нас не регистрозависимая бд
-     * @inheritDoc
      */
     public function setEmailCanonical($emailCanonical)
     {
@@ -94,7 +85,6 @@ abstract class AbstractUser implements FOSUserInterface//, SonataUserInterface
 
     /**
      * @deprecated Просрочки у нас пока не будет
-     * @inheritDoc
      */
     public function isAccountNonExpired()
     {
@@ -103,7 +93,6 @@ abstract class AbstractUser implements FOSUserInterface//, SonataUserInterface
 
     /**
      * @deprecated Просрочки у нас пока не будет
-     * @inheritDoc
      */
     public function isCredentialsNonExpired()
     {
@@ -112,7 +101,6 @@ abstract class AbstractUser implements FOSUserInterface//, SonataUserInterface
 
     /**
      * @deprecated двухэтапной авторизации не будет
-     * @inheritDoc
      */
     public function getTwoStepVerificationCode()
     {
@@ -121,7 +109,6 @@ abstract class AbstractUser implements FOSUserInterface//, SonataUserInterface
 
     /**
      * @deprecated двухэтапной авторизации не будет
-     * @inheritDoc
      */
     public function setTwoStepVerificationCode($code)
     {
@@ -130,7 +117,6 @@ abstract class AbstractUser implements FOSUserInterface//, SonataUserInterface
 
     /**
      * @deprecated у нас отдельный лог
-     * @inheritDoc
      */
     public function setLastLogin(\DateTime $time = null)
     {
@@ -139,7 +125,6 @@ abstract class AbstractUser implements FOSUserInterface//, SonataUserInterface
 
     /**
      * @deprecated токены будут в отдельной таблице
-     * @inheritDoc
      */
     public function getConfirmationToken()
     {
@@ -148,7 +133,6 @@ abstract class AbstractUser implements FOSUserInterface//, SonataUserInterface
 
     /**
      * @deprecated токены будут в отдельной таблице
-     * @inheritDoc
      */
     public function setConfirmationToken($confirmationToken)
     {
@@ -157,7 +141,6 @@ abstract class AbstractUser implements FOSUserInterface//, SonataUserInterface
 
     /**
      * @deprecated токены будут в отдельной таблице
-     * @inheritDoc
      */
     public function setPasswordRequestedAt(\DateTime $date = null)
     {
@@ -166,7 +149,6 @@ abstract class AbstractUser implements FOSUserInterface//, SonataUserInterface
 
     /**
      * @deprecated токены будут в отдельной таблице
-     * @inheritDoc
      */
     public function isPasswordRequestNonExpired($ttl)
     {

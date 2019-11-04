@@ -8,9 +8,6 @@ use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 
 class PhoneSimpleValidator extends ConstraintValidator
 {
-    /**
-     * @inheritDoc
-     */
     public function validate($value, Constraint $constraint)
     {
         if (!$constraint instanceof PhoneSimple) {

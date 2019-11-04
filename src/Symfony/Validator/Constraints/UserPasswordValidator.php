@@ -32,9 +32,6 @@ class UserPasswordValidator extends  ConstraintValidator
         $this->encoderFactory = $encoderFactory;
     }
 
-    /**
-     * @inheritDoc
-     */
     public function validate($password, Constraint $constraint)
     {
         if (!$constraint instanceof UserPassword) {

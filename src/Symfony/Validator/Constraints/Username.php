@@ -7,9 +7,6 @@ use Symfony\Component\Validator\Constraints\Regex;
 
 class Username extends Combination
 {
-    /**
-     * @inheritDoc
-     */
     protected function getConstraints()
     {
         $constraints = [

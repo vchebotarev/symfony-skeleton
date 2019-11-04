@@ -40,9 +40,6 @@ class ResetFormType extends AbstractFormType
         $this->loginManager     = $loginManager;
     }
 
-    /**
-     * @inheritDoc
-     */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $formType = $this;
@@ -80,9 +77,6 @@ class ResetFormType extends AbstractFormType
         });
     }
 
-    /**
-     * @inheritDoc
-     */
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setRequired('user');

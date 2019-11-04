@@ -15,9 +15,6 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class UserReviewSearchFormType extends AbstractFormType
 {
-    /**
-     * @inheritDoc
-     */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->setAction('')->setMethod(Request::METHOD_GET);
@@ -43,9 +40,6 @@ class UserReviewSearchFormType extends AbstractFormType
         ]);
     }
 
-    /**
-     * @inheritDoc
-     */
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefault('csrf_protection', false);

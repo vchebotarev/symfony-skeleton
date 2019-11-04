@@ -39,9 +39,6 @@ class ChatMessageCreateFormType extends AbstractFormType
         $this->formHelper  = $formHelper;
     }
 
-    /**
-     * @inheritDoc
-     */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $formType = $this;
@@ -70,9 +67,6 @@ class ChatMessageCreateFormType extends AbstractFormType
         });
     }
 
-    /**
-     * @inheritDoc
-     */
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefined('user');

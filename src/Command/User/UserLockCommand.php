@@ -17,9 +17,6 @@ class UserLockCommand extends AbstractContainerAwareCommand
         $this->addArgument('user', InputArgument::REQUIRED, 'User id or username or email');
     }
 
-    /**
-     * @inheritDoc
-     */
     public function execute(InputInterface $input, OutputInterface $output)
     {
         $userData = $input->getArgument('user');
@@ -35,9 +32,6 @@ class UserLockCommand extends AbstractContainerAwareCommand
         $output->writeln('<info>User was successfully locked</info>');
     }
 
-    /**
-     * @inheritDoc
-     */
     public function interact(InputInterface $input, OutputInterface $output)
     {
         if (!$input->getArgument('user')) {

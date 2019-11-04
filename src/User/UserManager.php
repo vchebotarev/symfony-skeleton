@@ -126,9 +126,6 @@ class UserManager extends AbstractUserManager
         return $user;
     }
 
-    /**
-     * @inheritDoc
-     */
     public function findUserByConfirmationToken($token)
     {
         $userToken = $this->objectManager->getRepository(UserToken::class)->findOneBy(array(

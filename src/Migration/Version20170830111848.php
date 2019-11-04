@@ -7,9 +7,6 @@ use Doctrine\Migrations\AbstractMigration;
 
 class Version20170830111848 extends AbstractMigration
 {
-    /**
-     * @inheritDoc
-     */
     public function up(Schema $schema)
     {
         // this up() migration is auto-generated, please modify it to your needs
@@ -35,9 +32,6 @@ class Version20170830111848 extends AbstractMigration
         $this->addSql('ALTER TABLE user_auth_log ADD CONSTRAINT FK_FD5FB9B8D499950B FOREIGN KEY (user_agent_id) REFERENCES user_agent (id) ON DELETE CASCADE');
     }
 
-    /**
-     * @inheritDoc
-     */
     public function down(Schema $schema)
     {
         // this down() migration is auto-generated, please modify it to your needs

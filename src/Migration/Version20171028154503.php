@@ -7,9 +7,6 @@ use Doctrine\Migrations\AbstractMigration;
 
 class Version20171028154503 extends AbstractMigration
 {
-    /**
-     * @inheritDoc
-     */
     public function up(Schema $schema)
     {
         // this up() migration is auto-generated, please modify it to your needs
@@ -18,9 +15,6 @@ class Version20171028154503 extends AbstractMigration
         $this->addSql('ALTER TABLE user ADD is_super_admin TINYINT(1) DEFAULT \'0\' NOT NULL AFTER password, ADD is_admin TINYINT(1) DEFAULT \'0\' NOT NULL AFTER password');
     }
 
-    /**
-     * @inheritDoc
-     */
     public function down(Schema $schema)
     {
         // this down() migration is auto-generated, please modify it to your needs

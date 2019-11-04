@@ -6,9 +6,6 @@ use Symfony\Component\Validator\Constraints\Length;
 
 class Password extends Combination
 {
-    /**
-     * @inheritDoc
-     */
     protected function getConstraints()
     {
         $constraints = [

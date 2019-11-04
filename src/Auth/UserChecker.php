@@ -7,17 +7,11 @@ use Symfony\Component\Security\Core\User\UserInterface;
 
 class UserChecker extends BaseUserChecker
 {
-    /**
-     * @inheritDoc
-     */
     public function checkPreAuth(UserInterface $user)
     {
         return;
     }
 
-    /**
-     * @inheritDoc
-     */
     public function checkPostAuth(UserInterface $user)
     {
         //Необходимо, чтобы выводило пользователю о "проблемах" с аккаунтом, только после того как он ввел правильный пароль, а не каждому встречному

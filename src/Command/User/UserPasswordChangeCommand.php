@@ -22,9 +22,6 @@ class UserPasswordChangeCommand extends AbstractContainerAwareCommand
         $this->addArgument('password', InputArgument::REQUIRED, 'New password');
     }
 
-    /**
-     * @inheritDoc
-     */
     public function execute(InputInterface $input, OutputInterface $output)
     {
         $userData = $input->getArgument('user');
@@ -54,9 +51,6 @@ class UserPasswordChangeCommand extends AbstractContainerAwareCommand
         $output->writeln('<info>Password was successfully changed</info>');
     }
 
-    /**
-     * @inheritDoc
-     */
     public function interact(InputInterface $input, OutputInterface $output)
     {
         $questions = [];

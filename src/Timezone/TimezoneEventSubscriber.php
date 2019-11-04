@@ -32,9 +32,6 @@ class TimezoneEventSubscriber implements EventSubscriberInterface
         //todo use session
     }
 
-    /**
-     * @inheritDoc
-     */
     public static function getSubscribedEvents()
     {
         return [

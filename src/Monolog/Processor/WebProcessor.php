@@ -12,9 +12,6 @@ class WebProcessor extends BaseWebProcessor
      */
     protected $requestData = array();
 
-    /**
-     * @inheritDoc
-     */
     public function __construct(array $extraFields = null)
     {
         $this->addExtraField('user_agent', 'HTTP_USER_AGENT');

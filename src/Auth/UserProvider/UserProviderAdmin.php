@@ -6,9 +6,6 @@ use App\Entity\User;
 
 class UserProviderAdmin extends UserProviderMain
 {
-    /**
-     * @inheritDoc
-     */
     protected function findUser($username)
     {
         $user = $this->userManager->findUserByUsernameOrEmail($username);;

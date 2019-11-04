@@ -12,7 +12,6 @@ class AbstractUserManager extends UserManager
 {
     /**
      * @deprecated слишком жирный запрос
-     * @inheritDoc
      */
     public function findUsers()
     {
@@ -21,7 +20,6 @@ class AbstractUserManager extends UserManager
 
     /**
      * @deprecated регистрации через модель не будет
-     * @inheritDoc
      */
     public function updateCanonicalFields(UserInterface $user)
     {
@@ -30,7 +28,6 @@ class AbstractUserManager extends UserManager
 
     /**
      * @deprecated регистрации через модель не будет
-     * @inheritDoc
      */
     public function updatePassword(UserInterface $user)
     {

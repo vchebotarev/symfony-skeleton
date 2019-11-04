@@ -7,9 +7,6 @@ use Doctrine\Migrations\AbstractMigration;
 
 class Version20171110151520 extends AbstractMigration
 {
-    /**
-     * @inheritDoc
-     */
     public function up(Schema $schema)
     {
         // this up() migration is auto-generated, please modify it to your needs
@@ -18,9 +15,6 @@ class Version20171110151520 extends AbstractMigration
         $this->addSql('ALTER TABLE user ADD timezone VARCHAR(255) DEFAULT \'\' NOT NULL');
     }
 
-    /**
-     * @inheritDoc
-     */
     public function down(Schema $schema)
     {
         // this down() migration is auto-generated, please modify it to your needs

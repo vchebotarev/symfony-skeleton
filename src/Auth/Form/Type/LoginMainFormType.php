@@ -53,9 +53,6 @@ class LoginMainFormType extends AbstractFormType
         $this->validator   = $validator;
     }
 
-    /**
-     * @inheritDoc
-     */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $formType = $this;

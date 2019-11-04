@@ -21,9 +21,6 @@ class AuthLogExtension extends AbstractExtension
         $this->authLogHelper = $authLogHelper;
     }
 
-    /**
-     * @inheritDoc
-     */
     public function getFunctions()
     {
         return [

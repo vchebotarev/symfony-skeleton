@@ -27,9 +27,6 @@ class UserCreateCommand extends AbstractContainerAwareCommand
         $this->addArgument('password', InputArgument::REQUIRED, 'Password');
     }
 
-    /**
-     * @inheritDoc
-     */
     public function execute(InputInterface $input, OutputInterface $output)
     {
         $username = $input->getArgument('username');
@@ -82,9 +79,6 @@ class UserCreateCommand extends AbstractContainerAwareCommand
         $output->writeln('<info>User was successfully created with id: '. $user->getId().'</info>');
     }
 
-    /**
-     * @inheritDoc
-     */
     protected function interact(InputInterface $input, OutputInterface $output)
     {
         $questions = array();

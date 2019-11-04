@@ -9,17 +9,11 @@ use Symfony\Component\Form\FormView;
 
 class NovalidateFormTypeExtension extends AbstractTypeExtension
 {
-    /**
-     * @inheritDoc
-     */
     public function getExtendedType()
     {
         return FormType::class;
     }
 
-    /**
-     * @inheritDoc
-     */
     public function buildView(FormView $view, FormInterface $form, array $options)
     {
         if ($form->isRoot()) { //только для корневой формы, т.е. <form>

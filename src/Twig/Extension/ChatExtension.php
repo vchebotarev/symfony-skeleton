@@ -29,9 +29,6 @@ class ChatExtension extends AbstractExtension
         $this->userManager = $userManager;
     }
 
-    /**
-     * @inheritDoc
-     */
     public function getFunctions()
     {
         return [

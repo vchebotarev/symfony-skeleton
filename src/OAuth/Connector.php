@@ -32,9 +32,6 @@ class Connector implements AccountConnectorInterface
         $this->resourceOwnerHelper = $resourceOwnerHelper;
     }
 
-    /**
-     * @inheritDoc
-     */
     public function connect(UserInterface $user, UserResponseInterface $response)
     {
         /** @var User $user */

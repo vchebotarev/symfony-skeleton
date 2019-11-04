@@ -9,9 +9,6 @@ use Doctrine\DBAL\Events;
 
 class MysqlOnlyFullGroupByDisable implements EventSubscriber
 {
-    /**
-     * @inheritDoc
-     */
     public function getSubscribedEvents()
     {
         return [Events::postConnect];

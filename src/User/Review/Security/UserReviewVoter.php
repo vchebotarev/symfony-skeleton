@@ -34,9 +34,6 @@ class UserReviewVoter extends Voter
         $this->em              = $em;
     }
 
-    /**
-     * @inheritDoc
-     */
     protected function supports($attribute, $subject)
     {
         if ($attribute == self::CREATE && $subject instanceof User) {
@@ -48,9 +45,6 @@ class UserReviewVoter extends Voter
         return false;
     }
 
-    /**
-     * @inheritDoc
-     */
     protected function voteOnAttribute($attribute, $subject, TokenInterface $token)
     {
         /** @var User $currentUser */

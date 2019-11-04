@@ -30,9 +30,6 @@ class EmailExtension extends AbstractExtension
         $this->emailCheckUrlDetector = $emailDomainDetector;
     }
 
-    /**
-     * @inheritDoc
-     */
     public function getFunctions()
     {
         return [
@@ -40,9 +37,6 @@ class EmailExtension extends AbstractExtension
         ];
     }
 
-    /**
-     * @inheritDoc
-     */
     public function getTests()
     {
         return [

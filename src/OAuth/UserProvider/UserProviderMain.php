@@ -32,9 +32,6 @@ class UserProviderMain implements OAuthAwareUserProviderInterface
         $this->resourceOwnerHelper = $resourceOwnerHelper;
     }
 
-    /**
-     * @inheritDoc
-     */
     public function loadUserByOAuthUserResponse(UserResponseInterface $response)
     {
         /** @var ResourceOwnerInterface $resourceOwner */

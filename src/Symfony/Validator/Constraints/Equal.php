@@ -21,17 +21,11 @@ class Equal extends Constraint
      */
     public $notEqualMode = false;
 
-    /**
-     * @inheritDoc
-     */
     public function getDefaultOption()
     {
         return 'field';
     }
 
-    /**
-     * @inheritDoc
-     */
     public function getRequiredOptions()
     {
         return ['field'];
