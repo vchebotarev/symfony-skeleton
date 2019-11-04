@@ -251,7 +251,6 @@ chebur_search:
 hwi_oauth:
     http:
         client: csa_guzzle.client.hwi_oauth.psr7
-#        client: eight_points_guzzle.client.hwi_oauth.psr7
         message_factory: app.guzzle.message_factory
     firewall_names:        [main]
     use_referer:           true #todo один большой из-за полной неразберихи в урлах и редиректах
@@ -268,9 +267,5 @@ hwi_oauth:
 
 csa_guzzle: # https://github.com/csarrazi/CsaGuzzleBundle
     profiler: '%kernel.debug%'
-    clients:
-        hwi_oauth:
-#todo choose one
-eight_points_guzzle: # https://github.com/8p/EightPointsGuzzleBundle
     clients:
         hwi_oauth:

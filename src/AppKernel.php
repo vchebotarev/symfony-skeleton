@@ -33,7 +33,6 @@ class AppKernel extends Kernel
             new \EmanueleMinotto\TwigCacheBundle\TwigCacheBundle(),
             new \HWI\Bundle\OAuthBundle\HWIOAuthBundle(),
             new \Csa\Bundle\GuzzleBundle\CsaGuzzleBundle(),
-            new \EightPoints\Bundle\GuzzleBundle\EightPointsGuzzleBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
