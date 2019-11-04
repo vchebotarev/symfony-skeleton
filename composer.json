@@ -19,7 +19,6 @@
     "require": {
         "php": "^7.2",
 
-        "ext-pdo":   "*",
         "ext-redis": "^4.1",
         "ext-json":  "^1.5",
 
