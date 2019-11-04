@@ -1,4 +1,7 @@
 
+# PhpStorm
+/.idea/
+
 # Composer
 /vendor/
 /composer.phar
