@@ -15,7 +15,9 @@
         "symfony/yaml": "4.3.*"
     },
     "require-dev": {
-        "symfony/apache-pack": "^1.0"
+        "symfony/apache-pack": "^1.0",
+        "symfony/debug-pack": "^1.0",
+        "symfony/profiler-pack": "^1.0"
     },
     "config": {
         "preferred-install": {
