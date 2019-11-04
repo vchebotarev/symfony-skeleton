@@ -6,6 +6,7 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "ext-json": "*",
+        "beberlei/doctrineextensions": "^1.2",
         "chebur/daemon-command": "^0.0.3",
         "symfony/console": "4.3.*",
         "symfony/dotenv": "4.3.*",
