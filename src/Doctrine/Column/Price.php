@@ -29,5 +29,4 @@ trait Price
         $this->price = $price;
         return $this;
     }
-
 }

@@ -83,5 +83,4 @@ class IntervalType extends RepeatedType
     {
         return 'interval';
     }
-
 }

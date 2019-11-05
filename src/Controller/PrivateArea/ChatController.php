@@ -120,5 +120,4 @@ class ChatController extends AbstractController
             'count' => $count,
         ]);
     }
-
 }

@@ -72,5 +72,4 @@ class ChangeTimezoneFormType extends AbstractFormType
 
         $this->userManager->updateUser($user);
     }
-
 }

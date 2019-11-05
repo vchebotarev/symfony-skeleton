@@ -35,5 +35,4 @@ class LengthVariants extends Constraint
     {
         return 'variants';
     }
-
 }

@@ -32,5 +32,4 @@ class UserProcessor
         $record['user'] = $user ? $user : 'anonymous';
         return $record;
     }
-
 }

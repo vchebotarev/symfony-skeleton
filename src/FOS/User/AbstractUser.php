@@ -154,5 +154,4 @@ abstract class AbstractUser implements FOSUserInterface//, SonataUserInterface
     {
         return true;
     }
-
 }

@@ -30,5 +30,4 @@ class Equal extends Constraint
     {
         return ['field'];
     }
-
 }

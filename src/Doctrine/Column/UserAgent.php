@@ -27,5 +27,4 @@ trait UserAgent
         $this->userAgent = $userAgent;
         return $this;
     }
-
 }

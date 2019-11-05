@@ -100,5 +100,4 @@ class ResetFormType extends AbstractFormType
 
         $this->loginManager->loginUserByLink($user, 'main');
     }
-
 }

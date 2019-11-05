@@ -21,5 +21,4 @@ class UserAuthLogRepository extends EntityRepository
             'dateCreated' => Criteria::DESC,
         ]);
     }
-
 }

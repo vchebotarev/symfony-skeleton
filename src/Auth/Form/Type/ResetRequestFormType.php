@@ -111,5 +111,4 @@ class ResetRequestFormType extends AbstractFormType
             ;
         }
     }
-
 }

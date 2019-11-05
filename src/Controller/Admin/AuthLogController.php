@@ -24,5 +24,4 @@ class AuthLogController extends AbstractController
             'logs' => $logs,
         ]);
     }
-
 }

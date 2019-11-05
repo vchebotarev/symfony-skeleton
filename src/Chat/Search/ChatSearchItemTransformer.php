@@ -171,5 +171,4 @@ class ChatSearchItemTransformer
             $this->results[$map[$mes->getId()]]->setLastMessage($mes);
         }
     }
-
 }

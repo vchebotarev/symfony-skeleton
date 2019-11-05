@@ -304,5 +304,4 @@ class UserController extends AbstractController
             'id' => $id,
         ]);
     }
-
 }

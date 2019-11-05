@@ -40,5 +40,4 @@ class EmailController extends AbstractController
 
         return $this->render('PublicArea/Email/change_email_confirm_success.html.twig');
     }
-
 }

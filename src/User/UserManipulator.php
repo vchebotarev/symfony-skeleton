@@ -167,5 +167,4 @@ class UserManipulator
         $user->removeRole(User::ROLE_ADMIN);
         $this->userManager->updateUser($user);
     }
-
 }

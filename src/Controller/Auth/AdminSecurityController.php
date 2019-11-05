@@ -32,5 +32,4 @@ class AdminSecurityController extends AbstractController
     {
         throw new \RuntimeException();
     }
-
 }

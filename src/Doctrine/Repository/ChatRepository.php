@@ -28,5 +28,4 @@ class ChatRepository extends EntityRepository
 
         return $qb->getQuery()->getOneOrNullResult();
     }
-
 }

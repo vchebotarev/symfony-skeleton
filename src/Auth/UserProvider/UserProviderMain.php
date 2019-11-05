@@ -10,5 +10,4 @@ class UserProviderMain extends FOSUserProvider
     {
         return $this->userManager->findUserByUsernameOrEmail($username);
     }
-
 }

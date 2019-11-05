@@ -22,5 +22,4 @@ trait SortIndex
         $this->sortIndex = $sortIndex;
         return $this;
     }
-
 }

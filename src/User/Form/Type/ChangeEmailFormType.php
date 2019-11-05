@@ -111,5 +111,4 @@ class ChangeEmailFormType extends AbstractFormType
         $newEmail = $form->getData()['email'];
         $this->mailer->sendEmailChangeConfirmation($user, $newEmail);
     }
-
 }

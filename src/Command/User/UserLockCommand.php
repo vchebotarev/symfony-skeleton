@@ -46,5 +46,4 @@ class UserLockCommand extends AbstractContainerAwareCommand
             $input->setArgument('user', $answer);
         }
     }
-
 }

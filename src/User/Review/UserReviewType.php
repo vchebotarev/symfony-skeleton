@@ -31,5 +31,4 @@ class UserReviewType
     {
         return self::$types;
     }
-
 }

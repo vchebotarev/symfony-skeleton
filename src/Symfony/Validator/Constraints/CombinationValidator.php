@@ -27,5 +27,4 @@ class CombinationValidator extends ConstraintValidator
             }
         }
     }
-
 }

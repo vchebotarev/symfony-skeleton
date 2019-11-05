@@ -140,5 +140,4 @@ class LoginManager implements LoginManagerInterface
 
         $this->loginUserWithToken($token);
     }
-
 }

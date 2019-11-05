@@ -43,5 +43,4 @@ class PhoneSimpleValidator extends ConstraintValidator
                 ->addViolation();
         }
     }
-
 }

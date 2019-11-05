@@ -108,5 +108,4 @@ class ChatMessageCreateFormType extends AbstractFormType
 
         $this->formHelper->setDataForce($form, $message);
     }
-
 }

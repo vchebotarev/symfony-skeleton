@@ -67,5 +67,4 @@ class ChatCounter
 
         return (int)$qb->getQuery()->getOneOrNullResult(AbstractQuery::HYDRATE_SINGLE_SCALAR);
     }
-
 }

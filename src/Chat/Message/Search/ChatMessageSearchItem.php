@@ -135,5 +135,4 @@ class ChatMessageSearchItem
         $this->isRead = $isRead;
         return $this;
     }
-
 }

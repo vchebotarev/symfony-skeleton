@@ -60,5 +60,4 @@ class OAuthExtension extends AbstractExtension
     {
         return $this->resourceOwnerHelper->getIconClass($resourceOwner);
     }
-
 }

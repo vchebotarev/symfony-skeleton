@@ -43,5 +43,4 @@ class UserReview
         $this->userCreated = $user;
         return $this;
     }
-
 }

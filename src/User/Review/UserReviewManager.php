@@ -57,5 +57,4 @@ class UserReviewManager
         $this->em->remove($userReview);
         $this->em->flush($userReview);
     }
-
 }

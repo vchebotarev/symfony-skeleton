@@ -28,5 +28,4 @@ trait DateCreated
     {
         $this->dateCreated = new DateTime('now');
     }
-
 }

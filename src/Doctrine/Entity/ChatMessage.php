@@ -57,5 +57,4 @@ class ChatMessage
     {
         return $this->users;
     }
-
 }

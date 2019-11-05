@@ -109,5 +109,4 @@ class ChangeUsernameFormType extends AbstractFormType
         $username = $form->getData()['username'];
         $this->userManipulator->changeUsername($user, $username);
     }
-
 }

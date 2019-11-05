@@ -93,5 +93,4 @@ class UserReviewItemsSource extends AbstractItemsSource
 
         return $qb->getQuery()->getSingleScalarResult();
     }
-
 }

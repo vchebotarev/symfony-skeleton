@@ -50,5 +50,4 @@ class UserProviderMain implements OAuthAwareUserProviderInterface
 
         return $userSocial->getUser();
     }
-
 }

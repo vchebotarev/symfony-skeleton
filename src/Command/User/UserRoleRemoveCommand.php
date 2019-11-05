@@ -68,5 +68,4 @@ class UserRoleRemoveCommand extends AbstractContainerAwareCommand
             $input->setArgument($name, $answer);
         }
     }
-
 }

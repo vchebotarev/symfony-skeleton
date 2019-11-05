@@ -50,5 +50,4 @@ abstract class Combination extends Composite
     {
         return CombinationValidator::class;
     }
-
 }

@@ -22,5 +22,4 @@ trait Ip
         $this->ip = ip2long($ip);
         return $this;
     }
-
 }

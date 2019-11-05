@@ -14,5 +14,4 @@ class UserProviderAdmin extends UserProviderMain
         }
         return null;
     }
-
 }

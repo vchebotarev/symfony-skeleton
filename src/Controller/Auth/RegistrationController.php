@@ -69,5 +69,4 @@ class RegistrationController extends AbstractController
     {
         return $this->render('');
     }
-
 }

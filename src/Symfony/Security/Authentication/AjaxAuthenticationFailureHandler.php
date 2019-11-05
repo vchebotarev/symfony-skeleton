@@ -37,5 +37,4 @@ class AjaxAuthenticationFailureHandler extends DefaultAuthenticationFailureHandl
         }
         return $parentReturn;
     }
-
 }

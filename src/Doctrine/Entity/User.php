@@ -314,5 +314,4 @@ class User extends AbstractUser implements GenderedInterface, \JsonSerializable
             'roles'    => $this->getRoles(),
         ];
     }
-
 }

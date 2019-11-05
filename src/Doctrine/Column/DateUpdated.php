@@ -29,5 +29,4 @@ trait DateUpdated
     {
         $this->dateUpdated = new DateTime('now');
     }
-
 }

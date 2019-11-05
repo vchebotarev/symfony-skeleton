@@ -22,5 +22,4 @@ trait Type
         $this->type = $type;
         return $this;
     }
-
 }

@@ -74,5 +74,4 @@ class Version20171030190900 extends AbstractMigration
         $this->addSql('DROP TABLE chat_message_user');
         $this->addSql('DROP TABLE chat_user');
     }
-
 }

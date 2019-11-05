@@ -22,5 +22,4 @@ class Version20171028154503 extends AbstractMigration
 
         $this->addSql('ALTER TABLE user DROP is_admin, DROP is_super_admin');
     }
-
 }

@@ -51,5 +51,4 @@ class UserReviewController extends AbstractController
             'success' => 1,
         ]);
     }
-
 }

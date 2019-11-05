@@ -93,5 +93,4 @@ class EditUserFormType extends AbstractFormType
 
         $this->userManager->updateUser($user);
     }
-
 }

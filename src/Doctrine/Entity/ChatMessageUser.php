@@ -36,5 +36,4 @@ class ChatMessageUser
         $this->message = $message;
         return $this;
     }
-
 }

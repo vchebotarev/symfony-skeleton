@@ -155,5 +155,4 @@ class UserVoter extends Voter
 
         throw new \RuntimeException();
     }
-
 }

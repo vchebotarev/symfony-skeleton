@@ -64,5 +64,4 @@ class UserPasswordValidator extends  ConstraintValidator
 
         $this->context->addViolation($constraint->message);
     }
-
 }

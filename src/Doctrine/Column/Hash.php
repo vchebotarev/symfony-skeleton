@@ -22,5 +22,4 @@ trait Hash
         $this->hash = $hash;
         return $this;
     }
-
 }

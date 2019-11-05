@@ -21,5 +21,4 @@ class DateTimeTzType extends BaseDateTimeTzType
         }
         return parent::getSQLDeclaration($fieldDeclaration, $platform);
     }
-
 }

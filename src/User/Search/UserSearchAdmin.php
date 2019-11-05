@@ -127,5 +127,4 @@ class UserSearchAdmin extends AbstractItemsSource
 
         return $qb->getQuery()->getSingleScalarResult();
     }
-
 }

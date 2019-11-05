@@ -22,5 +22,4 @@ trait Body
         $this->body = $body;
         return $this;
     }
-
 }

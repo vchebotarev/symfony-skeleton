@@ -62,5 +62,4 @@ class TimezoneEventSubscriber implements EventSubscriberInterface
         //db
         $this->em->getConnection()->executeQuery('SET @@session.time_zone = "'.(new \DateTime('now', $timezone))->format('P').'"');
     }
-
 }

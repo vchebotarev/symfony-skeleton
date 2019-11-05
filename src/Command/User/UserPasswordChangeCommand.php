@@ -82,5 +82,4 @@ class UserPasswordChangeCommand extends AbstractContainerAwareCommand
             $input->setArgument($name, $answer);
         }
     }
-
 }

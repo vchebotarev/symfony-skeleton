@@ -29,5 +29,4 @@ class Version20170830110926 extends AbstractMigration
 
         $this->addSql('DROP TABLE user_agent');
     }
-
 }

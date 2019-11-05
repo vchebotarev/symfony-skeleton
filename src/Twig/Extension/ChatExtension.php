@@ -52,5 +52,4 @@ class ChatExtension extends AbstractExtension
     {
         return $this->chatCounter->countUnreadMessages($this->userManager->getCurrentUser());
     }
-
 }

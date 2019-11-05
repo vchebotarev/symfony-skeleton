@@ -25,5 +25,4 @@ class NovalidateFormTypeExtension extends AbstractTypeExtension
             ]);
         }
     }
-
 }

@@ -32,5 +32,4 @@ class HintHelpExtension extends AbstractTypeExtension
     {
         return FormType::class;
     }
-
 }

@@ -134,5 +134,4 @@ class RegistrationFormType extends AbstractFormType
 
         $this->userManipulator->create($data['username'], $data['email'], $data['password']);
     }
-
 }

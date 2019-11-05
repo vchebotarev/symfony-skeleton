@@ -24,5 +24,4 @@ class SearchManager extends Manager
 
         return $builder;
     }
-
 }

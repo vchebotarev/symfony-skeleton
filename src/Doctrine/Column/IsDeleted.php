@@ -22,5 +22,4 @@ trait IsDeleted
         $this->isDeleted = $isDeleted;
         return $this;
     }
-
 }

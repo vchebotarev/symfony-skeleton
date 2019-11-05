@@ -22,5 +22,4 @@ trait Status
         $this->status = $status;
         return $this;
     }
-
 }

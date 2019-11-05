@@ -220,5 +220,4 @@ class ChatMessageController extends AbstractController
             'count' => $count,
         ]);
     }
-
 }

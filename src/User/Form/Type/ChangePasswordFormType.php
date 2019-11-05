@@ -106,5 +106,4 @@ class ChangePasswordFormType extends AbstractFormType
         $password = $form->getData()['password_new'];
         $this->userManipulator->changePassword($user, $password);
     }
-
 }

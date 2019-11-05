@@ -10,6 +10,4 @@ class TokenGenerator extends FOSTokenGenerator
     {
         return md5(parent::generateToken());
     }
-
 }
-

@@ -27,5 +27,4 @@ trait Visitor
         $this->visitor = $visitor;
         return $this;
     }
-
 }

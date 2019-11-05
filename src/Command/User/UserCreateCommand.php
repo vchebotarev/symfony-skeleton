@@ -125,5 +125,4 @@ class UserCreateCommand extends AbstractContainerAwareCommand
             $input->setArgument($name, $answer);
         }
     }
-
 }

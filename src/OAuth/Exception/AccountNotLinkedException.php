@@ -10,5 +10,4 @@ class AccountNotLinkedException extends BaseAccountNotLinkedException
     {
         return 'OAuth account not linked.';
     }
-
 }

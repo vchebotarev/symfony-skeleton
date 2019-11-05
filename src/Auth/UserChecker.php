@@ -18,5 +18,4 @@ class UserChecker extends BaseUserChecker
         parent::checkPreAuth($user);
         parent::checkPostAuth($user);
     }
-
 }

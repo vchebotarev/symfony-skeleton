@@ -48,5 +48,4 @@ class LoginAdminFormType extends LoginMainFormType
             ],
         ]);
     }
-
 }

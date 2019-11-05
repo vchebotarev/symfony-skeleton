@@ -119,5 +119,4 @@ class ChatVoter extends Voter
 
         throw new \RuntimeException();
     }
-
 }

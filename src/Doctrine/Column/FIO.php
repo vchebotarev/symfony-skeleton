@@ -56,5 +56,4 @@ trait FIO
         $this->fioO = $fioO;
         return $this;
     }
-
 }

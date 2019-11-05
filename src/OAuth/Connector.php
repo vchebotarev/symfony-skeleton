@@ -90,5 +90,4 @@ class Connector implements AccountConnectorInterface
         $this->em->remove($userSocial);
         $this->em->flush();
     }
-
 }

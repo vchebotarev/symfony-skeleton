@@ -40,5 +40,4 @@ class PasswordHelper
     {
         return $this->passwordEncoderFactory->getEncoder($user)->isPasswordValid($encodedPassword, $rawPassword, '');
     }
-
 }

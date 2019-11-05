@@ -26,5 +26,4 @@ class HtmlFormatter extends BaseHtmlFormatter
 
         return $output;
     }
-
 }

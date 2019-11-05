@@ -134,5 +134,4 @@ class ChatSearchItem
         $this->users = $users;
         return $this;
     }
-
 }

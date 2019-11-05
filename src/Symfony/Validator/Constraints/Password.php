@@ -19,5 +19,4 @@ class Password extends Combination
         ];
         return $constraints;
     }
-
 }

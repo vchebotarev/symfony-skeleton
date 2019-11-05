@@ -68,5 +68,4 @@ class UserRoleAddCommand extends AbstractContainerAwareCommand
             $input->setArgument($name, $answer);
         }
     }
-
 }

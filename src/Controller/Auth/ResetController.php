@@ -65,5 +65,4 @@ class ResetController extends AbstractController
             'form' => $formReset->createView(),
         ]);
     }
-
 }

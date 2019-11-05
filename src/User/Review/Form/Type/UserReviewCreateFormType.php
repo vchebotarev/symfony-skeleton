@@ -83,5 +83,4 @@ class UserReviewCreateFormType extends AbstractFormType
         $resolver->setRequired('user');
         $resolver->setAllowedTypes('user', User::class);
     }
-
 }

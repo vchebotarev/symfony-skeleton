@@ -91,5 +91,4 @@ class MailerTokened implements MailerInterface
 
         $this->mailer->sendTemplated($to, $subject, $template, $params);
     }
-
 }

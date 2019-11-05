@@ -27,5 +27,4 @@ trait User
         $this->user = $user;
         return $this;
     }
-
 }

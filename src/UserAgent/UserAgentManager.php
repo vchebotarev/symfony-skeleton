@@ -69,5 +69,4 @@ class UserAgentManager
     {
         return md5($userAgentString);
     }
-
 }

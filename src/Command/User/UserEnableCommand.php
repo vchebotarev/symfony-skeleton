@@ -47,5 +47,4 @@ class UserEnableCommand extends AbstractContainerAwareCommand
             $input->setArgument('user', $answer);
         }
     }
-
 }

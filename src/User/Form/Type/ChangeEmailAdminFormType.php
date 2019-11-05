@@ -104,5 +104,4 @@ class ChangeEmailAdminFormType extends AbstractFormType
 
         $this->userManipulator->changeEmail($user, $data['email']);
     }
-
 }

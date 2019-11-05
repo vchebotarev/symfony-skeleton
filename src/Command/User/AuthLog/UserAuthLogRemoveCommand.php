@@ -35,5 +35,4 @@ class UserAuthLogRemoveCommand extends AbstractContainerAwareCommand
         $output->writeln('<info>Rows removed from `user_auth_log`: ' . $rowCount . '</info>');
         $output->writeln('<info>Execution time: '.round(microtime(true) - $timeStart, 3).'s</info>');
     }
-
 }

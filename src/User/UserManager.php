@@ -136,5 +136,4 @@ class UserManager extends AbstractUserManager
         }
         return $userToken->getUser();
     }
-
 }

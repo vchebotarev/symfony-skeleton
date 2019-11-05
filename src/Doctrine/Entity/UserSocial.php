@@ -35,5 +35,4 @@ class UserSocial
         $this->socialId = $socialId;
         return $this;
     }
-
 }

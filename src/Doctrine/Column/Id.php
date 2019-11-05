@@ -18,5 +18,4 @@ trait Id
     {
         return $this->id;
     }
-
 }

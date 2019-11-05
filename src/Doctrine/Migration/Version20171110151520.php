@@ -22,5 +22,4 @@ class Version20171110151520 extends AbstractMigration
 
         $this->addSql('ALTER TABLE user DROP timezone');
     }
-
 }

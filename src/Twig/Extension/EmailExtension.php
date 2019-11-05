@@ -61,5 +61,4 @@ class EmailExtension extends AbstractExtension
     {
         return $this->emailHelper->isEmail($string);
     }
-
 }

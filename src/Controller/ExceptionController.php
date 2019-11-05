@@ -25,5 +25,4 @@ class ExceptionController extends BaseExceptionController
         }
         return parent::findTemplate($request, $format, $code, $showException);
     }
-
 }

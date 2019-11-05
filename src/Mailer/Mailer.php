@@ -90,5 +90,4 @@ class Mailer
 
         return $this->swiftMailer->send($message, $failedRecipients);
     }
-
 }

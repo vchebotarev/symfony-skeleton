@@ -39,5 +39,4 @@ class Version20170830111848 extends AbstractMigration
 
         $this->addSql('DROP TABLE user_auth_log');
     }
-
 }

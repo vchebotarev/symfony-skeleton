@@ -18,5 +18,4 @@ class Chain extends Combination
     {
         return ['constraints'];
     }
-
 }

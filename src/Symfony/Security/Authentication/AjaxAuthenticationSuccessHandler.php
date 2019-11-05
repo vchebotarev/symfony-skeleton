@@ -19,5 +19,4 @@ class AjaxAuthenticationSuccessHandler extends DefaultAuthenticationSuccessHandl
         }
         return parent::onAuthenticationSuccess($request, $token);
     }
-
 }

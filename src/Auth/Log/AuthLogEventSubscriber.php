@@ -96,5 +96,4 @@ class AuthLogEventSubscriber implements EventSubscriberInterface
         }
         return $type;
     }
-
 }

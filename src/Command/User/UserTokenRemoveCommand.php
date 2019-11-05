@@ -36,5 +36,4 @@ class UserTokenRemoveCommand extends AbstractContainerAwareCommand
         $output->writeln('<info>Rows deleted: '.$cc.'</info>');
         $output->writeln('<info>Execution time: '.round(microtime(true) - $timeStart, 3).'s</info>');
     }
-
 }

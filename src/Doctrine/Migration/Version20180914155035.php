@@ -24,5 +24,4 @@ class Version20180914155035 extends AbstractMigration
         $this->addSql('ALTER TABLE user_social CHANGE data data JSON NOT NULL COMMENT \'(DC2Type:json_array)\'');
         $this->addSql('ALTER TABLE user_token CHANGE data data JSON NOT NULL COMMENT \'(DC2Type:json_array)\'');
     }
-
 }

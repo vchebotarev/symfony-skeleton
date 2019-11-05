@@ -112,5 +112,4 @@ class LoginMainFormType extends AbstractFormType
         }
         $this->validator->inContext($context)->validate($value, $constraints);
     }
-
 }

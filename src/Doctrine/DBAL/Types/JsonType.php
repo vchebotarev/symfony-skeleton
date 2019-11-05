@@ -22,5 +22,4 @@ class JsonType extends BaseJsonType
 
         return $encoded;
     }
-
 }

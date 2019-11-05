@@ -34,5 +34,4 @@ class Version20170830091817 extends AbstractMigration
 
         $this->addSql('DROP TABLE user_token');
     }
-
 }

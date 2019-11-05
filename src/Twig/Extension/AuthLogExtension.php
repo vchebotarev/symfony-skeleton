@@ -36,5 +36,4 @@ class AuthLogExtension extends AbstractExtension
     {
         return $this->authLogHelper->getTypeName($type);
     }
-
 }

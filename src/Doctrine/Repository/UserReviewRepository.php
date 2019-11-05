@@ -39,5 +39,4 @@ class UserReviewRepository extends EntityRepository
         ]);
         return $count > 0;
     }
-
 }

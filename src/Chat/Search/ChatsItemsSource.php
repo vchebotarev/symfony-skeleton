@@ -88,5 +88,4 @@ class ChatsItemsSource extends AbstractItemsSource
 
         return (int)$qb->getQuery()->getSingleScalarResult();
     }
-
 }

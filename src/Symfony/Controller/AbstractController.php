@@ -65,5 +65,4 @@ abstract class AbstractController extends BaseController
         }
         return $obj;
     }
-
 }

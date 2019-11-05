@@ -21,5 +21,4 @@ class ReopeningConnectionWrapper extends Connection
             throw new DBALException($e->getMessage());
         }
     }
-
 }

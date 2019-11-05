@@ -38,5 +38,4 @@ abstract class AbstractContainerAwareCommand extends ContainerAwareCommand
     {
         return $this->getContainer()->getParameter($name);
     }
-
 }

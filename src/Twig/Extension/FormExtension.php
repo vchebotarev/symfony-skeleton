@@ -14,5 +14,4 @@ class FormExtension extends AbstractExtension
             new TwigFunction('form_help', null, ['node_class' => 'Symfony\Bridge\Twig\Node\SearchAndRenderBlockNode', 'is_safe' => ['html']]),
         ];
     }
-
 }

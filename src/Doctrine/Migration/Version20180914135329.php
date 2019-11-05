@@ -28,5 +28,4 @@ class Version20180914135329 extends AbstractMigration
         $this->addSql('ALTER TABLE user_review CHANGE date_created date_created TIMESTAMP NOT NULL COMMENT \'(DC2Type:datetimetz)\'');
         $this->addSql('ALTER TABLE user_token CHANGE date_created date_created TIMESTAMP NOT NULL COMMENT \'(DC2Type:datetimetz)\'');
     }
-
 }

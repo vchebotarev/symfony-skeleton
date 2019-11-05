@@ -24,5 +24,4 @@ class Md5Validator extends ConstraintValidator
                 ->addViolation();
         }
     }
-
 }

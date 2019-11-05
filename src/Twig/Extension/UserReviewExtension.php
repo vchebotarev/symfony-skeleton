@@ -23,5 +23,4 @@ class UserReviewExtension extends AbstractExtension
     {
         return UserReviewType::getName($type);
     }
-
 }

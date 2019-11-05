@@ -116,5 +116,4 @@ class CreateUserFormType extends AbstractFormType
 
         $this->userManipulator->create($username, $email, $password);
     }
-
 }

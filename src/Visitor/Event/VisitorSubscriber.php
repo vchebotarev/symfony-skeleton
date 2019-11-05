@@ -36,5 +36,4 @@ class VisitorSubscriber implements EventSubscriberInterface
     {
         $this->visitorManager->saveVisitor($event->getResponse());
     }
-
 }

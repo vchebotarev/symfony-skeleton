@@ -25,5 +25,4 @@ class CountVariants extends Constraint
     {
         return 'variants';
     }
-
 }

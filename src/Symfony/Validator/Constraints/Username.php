@@ -43,5 +43,4 @@ class Username extends Combination
         ];
         return $constraints;
     }
-
 }

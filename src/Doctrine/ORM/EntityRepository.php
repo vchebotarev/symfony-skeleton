@@ -74,5 +74,4 @@ class EntityRepository extends BaseEntityRepository
         }
         return $qb->getQuery()->getSingleScalarResult();
     }
-
 }

@@ -28,5 +28,4 @@ class AuthLogHelper
         }
         return $this->typeNames[UserAuthLog::TYPE_UNKNOWN];
     }
-
 }

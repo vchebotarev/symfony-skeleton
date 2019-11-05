@@ -89,5 +89,4 @@ class UserUsernameChangeCommand extends AbstractContainerAwareCommand
             $input->setArgument($name, $answer);
         }
     }
-
 }

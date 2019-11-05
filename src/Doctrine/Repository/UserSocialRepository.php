@@ -25,5 +25,4 @@ class UserSocialRepository extends EntityRepository
         }
         return $arr;
     }
-
 }

@@ -50,5 +50,4 @@ class Chat
     {
         return $this->users;
     }
-
 }

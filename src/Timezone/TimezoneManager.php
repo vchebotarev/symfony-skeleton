@@ -70,5 +70,4 @@ class TimezoneManager
     {
         return $this->defaultTimezone;
     }
-
 }

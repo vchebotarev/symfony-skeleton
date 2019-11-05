@@ -46,5 +46,4 @@ class LengthVariantsValidator extends ConstraintValidator
                 ->addViolation();
         }
     }
-
 }

@@ -33,5 +33,4 @@ class AbstractUserManager extends UserManager
     {
         return;
     }
-
 }

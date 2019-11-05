@@ -32,5 +32,4 @@ class ChatUser
         $this->chat = $chat;
         return $this;
     }
-
 }

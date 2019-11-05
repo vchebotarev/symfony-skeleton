@@ -33,5 +33,4 @@ class CountVariantsValidator extends ConstraintValidator
                 ->addViolation();
         }
     }
-
 }

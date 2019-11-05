@@ -22,5 +22,4 @@ trait IsRead
         $this->isRead = $isRead;
         return $this;
     }
-
 }

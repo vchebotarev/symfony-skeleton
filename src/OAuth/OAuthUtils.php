@@ -35,5 +35,4 @@ class OAuthUtils extends BaseOAuthUtils
         }
         return null;
     }
-
 }

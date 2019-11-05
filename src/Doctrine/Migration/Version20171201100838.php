@@ -28,5 +28,4 @@ class Version20171201100838 extends AbstractMigration
         $this->addSql('ALTER TABLE user_auth_log CHANGE date_created date_created DATETIME NOT NULL');
         $this->addSql('ALTER TABLE user_token CHANGE date_created date_created DATETIME NOT NULL');
     }
-
 }

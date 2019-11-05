@@ -34,5 +34,4 @@ class Version20171207115621 extends AbstractMigration
 
         $this->addSql('DROP TABLE user_review');
     }
-
 }

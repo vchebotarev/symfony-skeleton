@@ -51,5 +51,4 @@ class WebProcessor extends BaseWebProcessor
             ];
         }
     }
-
 }

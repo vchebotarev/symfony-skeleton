@@ -13,5 +13,4 @@ abstract class AbstractFormType extends AbstractType
     {
         return '';
     }
-
 }

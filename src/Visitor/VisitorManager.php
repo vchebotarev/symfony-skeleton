@@ -110,5 +110,4 @@ class VisitorManager
 
         $this->request->getSession()->set(self::COOKIE_KEY, $this->currentVisitor->getId()); // в сессии id
     }
-
 }

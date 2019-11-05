@@ -27,5 +27,4 @@ trait Data
         $this->data = $data;
         return $this;
     }
-
 }

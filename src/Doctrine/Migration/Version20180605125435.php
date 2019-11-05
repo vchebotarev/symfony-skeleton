@@ -21,5 +21,4 @@ class Version20180605125435 extends AbstractMigration
 
         $this->addSql('DROP TABLE user_social');
     }
-
 }

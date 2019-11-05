@@ -31,5 +31,4 @@ class EqualValidator extends ConstraintValidator
                 ->addViolation();
         }
     }
-
 }

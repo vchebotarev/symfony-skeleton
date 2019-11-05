@@ -44,7 +44,5 @@ class TimezoneValidator extends ConstraintValidator
                     ->addViolation();
             }
         }
-
     }
-
 }

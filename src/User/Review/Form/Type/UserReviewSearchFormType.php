@@ -44,5 +44,4 @@ class UserReviewSearchFormType extends AbstractFormType
     {
         $resolver->setDefault('csrf_protection', false);
     }
-
 }

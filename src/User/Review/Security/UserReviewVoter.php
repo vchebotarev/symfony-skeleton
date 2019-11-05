@@ -80,5 +80,4 @@ class UserReviewVoter extends Voter
 
         throw new \RuntimeException();
     }
-
 }

@@ -54,5 +54,4 @@ class EntityExists extends Constraint
     {
         return ['entityClass',];
     }
-
 }
