@@ -1,11 +1,11 @@
 
 imports:
-    - { resource: services/chebur.yml }
-    - { resource: services/doctrine.yml }
-    - { resource: services/guzzle.yml }
-    - { resource: services/monolog.yml }
-    - { resource: services/symfony.yml }
-    - { resource: services/swiftmailer.yml }
+    - { resource: services/chebur.yaml }
+    - { resource: services/doctrine.yaml }
+    - { resource: services/guzzle.yaml }
+    - { resource: services/monolog.yaml }
+    - { resource: services/symfony.yaml }
+    - { resource: services/swiftmailer.yaml }
 
 parameters:
     # Twig cache bundle
