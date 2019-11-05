@@ -1,4 +1,4 @@
-Symfony 3 skeleton application
+Symfony 4 skeleton application
 ===
 
 
