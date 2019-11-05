@@ -15,4 +15,4 @@ _test:
     defaults:  { _controller: App\Controller\TestController:testAction }
 
 _main:
-    resource: 'routing.yaml'
+    resource: 'routes.yaml'
