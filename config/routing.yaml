@@ -1,24 +1,24 @@
 
 # Общедоступные пути
 app_public:
-    resource: 'routing/public.yml'
+    resource: 'routes/public.yaml'
 
 
 # Все что связано с авторизацией, регистрацией, сбросом пароля
 app_auth:
-    resource: 'routing/auth.yml'
+    resource: 'routes/auth.yaml'
 
 
 # Только для авторизованных пользователей
 app_private:
     prefix:   /private
-    resource: 'routing/private.yml'
+    resource: 'routes/private.yaml'
 
 
 # Админка
 app_admin:
     prefix:   /admin
-    resource: 'routing/admin.yml'
+    resource: 'routes/admin.yaml'
 
 
 # FOSJsRoutingBundle
@@ -31,4 +31,4 @@ gregwar_captcha_routing:
 
 # HWIOAuthBundle
 hwi_oauth_routing:
-    resource: 'routing/oauth.yml'
+    resource: 'routes/oauth.yaml'

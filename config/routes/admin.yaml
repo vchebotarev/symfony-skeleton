@@ -8,19 +8,19 @@ app_admin_default_index:
 # Profile
 app_admin_profile:
     prefix:   /profile
-    resource: 'admin/profile.yml'
+    resource: 'admin/profile.yaml'
 
 # Users
 app_admin_user:
     prefix:   /user
-    resource: 'admin/user.yml'
+    resource: 'admin/user.yaml'
 
 # User review
 app_admin_user_review:
     prefix:   /user/review
-    resource: 'admin/user_review.yml'
+    resource: 'admin/user_review.yaml'
 
 # Auth log
 app_admin_auth_log:
     prefix:   /auth-log
-    resource: 'admin/auth_log.yml'
+    resource: 'admin/auth_log.yaml'

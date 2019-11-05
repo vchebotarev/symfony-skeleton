@@ -8,24 +8,24 @@ app_private_default_index:
 # Profile
 app_private_profile:
     prefix:   /profile
-    resource: 'private/profile.yml'
+    resource: 'private/profile.yaml'
 
 # User
 app_private_user:
     prefix:   /user
-    resource: 'private/user.yml'
+    resource: 'private/user.yaml'
 
 # User review
 app_private_user_review:
     prefix:   /user/review
-    resource: 'private/user_review.yml'
+    resource: 'private/user_review.yaml'
 
 # Chats
 app_private_chat:
     prefix:   /chat
-    resource: 'private/chat.yml'
+    resource: 'private/chat.yaml'
 
 # Chat messages
 app_private_chat_message:
     prefix:   /chat/message
-    resource: 'private/chat_message.yml'
+    resource: 'private/chat_message.yaml'
