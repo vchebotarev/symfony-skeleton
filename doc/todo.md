@@ -50,6 +50,12 @@ webpack
 
 Doctrine second level cache
 
-try liip/imagine-bundle
-
-try friendsofsymfony/ckeditor-bundle
+try
+- knplabs/knp-menu-bundle
+- knplabs/knp-paginator-bundle
+- knplabs/knp-snappy-bundle
+- knplabs/knp-time-bundle
+- liip/imagine-bundle
+- friendsofsymfony/ckeditor-bundle
+- chebur/sphinx-bundle
+- smart-core/accelerator-cache-bundle

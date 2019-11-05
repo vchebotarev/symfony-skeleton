@@ -16,7 +16,6 @@ return [
     Snc\RedisBundle\SncRedisBundle::class => ['all' => true],
     Chebur\LoginFormBundle\CheburLoginFormBundle::class => ['all' => true],
     Chebur\SearchBundle\CheburSearchBundle::class => ['all' => true],
-    SmartCore\Bundle\AcceleratorCacheBundle\AcceleratorCacheBundle::class => ['all' => true],
     EmanueleMinotto\TwigCacheBundle\TwigCacheBundle::class => ['all' => true],
     HWI\Bundle\OAuthBundle\HWIOAuthBundle::class => ['all' => true],
     Csa\Bundle\GuzzleBundle\CsaGuzzleBundle::class => ['all' => true],

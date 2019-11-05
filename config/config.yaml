@@ -4,7 +4,11 @@ imports:
 
 framework:
     #esi: ~
-    translator: { fallbacks: ['%env(APP_LOCALE)%'] }
+    default_locale: '%env(APP_LOCALE)%'
+    translator:
+        default_path: '%kernel.project_dir%/translations'
+        fallbacks:
+            - en
     secret: '%env(APP_SECRET)%'
     router:
         resource: '%kernel.project_dir%/config/routing.yaml'
@@ -15,7 +19,6 @@ framework:
     #serializer: { enable_annotations: true }
     templating:
         engines: ['twig']
-    default_locale: '%env(APP_LOCALE)%'
     trusted_hosts: ~
     session:
         handler_id: snc_redis.session.handler
@@ -154,11 +157,6 @@ doctrine_cache:
                 type: psr6
                 options:
                     cache_pool: cache.doctrine_second_level
-
-# Чистка APC cache
-accelerator_cache:
-    host: '%env(HOST_MAIN)%'
-    web_dir: '%kernel.project_dir%/public'
 
 # Doctrine Migrations
 doctrine_migrations:
