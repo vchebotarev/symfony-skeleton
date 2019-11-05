@@ -2,34 +2,25 @@
 
 use App\AppKernel;
 use Symfony\Component\Debug\Debug;
-use Symfony\Component\Dotenv\Dotenv;
 use Symfony\Component\HttpFoundation\Request;
 
-require __DIR__.'/../vendor/autoload.php';
+require dirname(__DIR__).'/config/bootstrap.php';
 
-if (!getenv('APP_ENV')) {
-    (new Dotenv())->load(__DIR__.'/../.env');
-}
-
-$env   = getenv('APP_ENV');
-$debug = getenv('APP_DEBUG');
-
-if ($debug) {
-    if (isset($_SERVER['HTTP_CLIENT_IP'])
-        || isset($_SERVER['HTTP_X_FORWARDED_FOR'])
-        || !(in_array(@$_SERVER['REMOTE_ADDR'], ['127.0.0.1', '::1']) || PHP_SAPI === 'cli-server')
-    ) {
-        header('HTTP/1.0 403 Forbidden');
-        exit('You are not allowed to access this file.');
-    }
+if ($_SERVER['APP_DEBUG']) {
+    umask(0000);
 
     Debug::enable();
 }
 
-$kernel = new AppKernel($env, $debug);
+if ($trustedProxies = $_SERVER['TRUSTED_PROXIES'] ?? $_ENV['TRUSTED_PROXIES'] ?? false) {
+    Request::setTrustedProxies(explode(',', $trustedProxies), Request::HEADER_X_FORWARDED_ALL ^ Request::HEADER_X_FORWARDED_HOST);
+}
 
-// When using the HttpCache, you need to call the method in your front controller instead of relying on the configuration parameter
-//Request::enableHttpMethodParameterOverride();
+if ($trustedHosts = $_SERVER['TRUSTED_HOSTS'] ?? $_ENV['TRUSTED_HOSTS'] ?? false) {
+    Request::setTrustedHosts([$trustedHosts]);
+}
+
+$kernel = new AppKernel($_SERVER['APP_ENV'], (bool) $_SERVER['APP_DEBUG']);
 $request = Request::createFromGlobals();
 $response = $kernel->handle($request);
 $response->send();
