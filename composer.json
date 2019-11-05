@@ -25,7 +25,6 @@
         "chebur/login-form-bundle":                   "^0.0.13",
         "chebur/search-bundle":                       "^0.0.3",
         "chebur/sphinx-bundle":                       "^0.0.7",
-        "chebur/twig-php-functions-bundle":           "^0.0.3",
         "csa/guzzle-bundle":                          "^3.1",
         "emanueleminotto/twig-cache-bundle":          "^1.0",
         "excelwebzone/recaptcha-bundle":              "^1.5",
@@ -34,7 +33,6 @@
         "gedmo/doctrine-extensions":                  "^2.4",
         "gregwar/captcha-bundle":                     "^2.0",
         "hwi/oauth-bundle":                           "^0.6.3",
-        "jms/serializer-bundle":                      "^3.4",
         "martinlindhe/php-mb-helpers":                "^0.1.6",
         "mobiledetect/mobiledetectlib":               "^2.8",
         "php-http/guzzle6-adapter":                   "^1.1",
@@ -53,7 +51,6 @@
         "symfony/twig-pack":                          "^1.0",
         "symfony/validator":                          "^4.3",
         "symfony/yaml":                               "^4.3",
-        "twig/extensions":                            "^1.5",
 
         "npm-asset/bootstrap":      "^4.1",
         "bower-asset/font-awesome": "^5.0",
