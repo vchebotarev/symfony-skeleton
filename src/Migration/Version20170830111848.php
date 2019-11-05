@@ -7,7 +7,7 @@ use Doctrine\Migrations\AbstractMigration;
 
 class Version20170830111848 extends AbstractMigration
 {
-    public function up(Schema $schema)
+    public function up(Schema $schema): void
     {
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
@@ -32,7 +32,7 @@ class Version20170830111848 extends AbstractMigration
         $this->addSql('ALTER TABLE user_auth_log ADD CONSTRAINT FK_FD5FB9B8D499950B FOREIGN KEY (user_agent_id) REFERENCES user_agent (id) ON DELETE CASCADE');
     }
 
-    public function down(Schema $schema)
+    public function down(Schema $schema): void
     {
         // this down() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');

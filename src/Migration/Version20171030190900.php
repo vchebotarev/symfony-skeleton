@@ -7,7 +7,7 @@ use Doctrine\Migrations\AbstractMigration;
 
 class Version20171030190900 extends AbstractMigration
 {
-    public function up(Schema $schema)
+    public function up(Schema $schema): void
     {
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
@@ -61,7 +61,7 @@ class Version20171030190900 extends AbstractMigration
         $this->addSql('ALTER TABLE chat_user ADD CONSTRAINT FK_2B0F4B08A76ED395 FOREIGN KEY (user_id) REFERENCES user (id) ON DELETE CASCADE');
     }
 
-    public function down(Schema $schema)
+    public function down(Schema $schema): void
     {
         // this down() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
