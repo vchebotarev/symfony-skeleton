@@ -3,7 +3,7 @@
 namespace App\Doctrine\Cache\Provider;
 
 use Psr\Cache\CacheItemPoolInterface;
-use Symfony\Component\Cache\Simple\Psr6Cache as Psr6ToPsr16;
+use Symfony\Component\Cache\Psr16Cache as Psr6ToPsr16;
 
 class Psr6Cache extends Psr16Cache
 {
