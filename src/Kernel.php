@@ -9,35 +9,12 @@ class Kernel extends BaseKernel
 {
     public function registerBundles()
     {
-        $bundles = [
-            new \Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
-            new \Symfony\Bundle\SecurityBundle\SecurityBundle(),
-            new \Symfony\Bundle\TwigBundle\TwigBundle(),
-            new \Symfony\Bundle\MonologBundle\MonologBundle(),
-            new \Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
-            new \Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
-            new \Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-
-            new \Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
-            new \Doctrine\Bundle\DoctrineCacheBundle\DoctrineCacheBundle(),
-            new \EWZ\Bundle\RecaptchaBundle\EWZRecaptchaBundle(),
-            new \FOS\JsRoutingBundle\FOSJsRoutingBundle(),
-            new \Gregwar\CaptchaBundle\GregwarCaptchaBundle(),
-            new \Snc\RedisBundle\SncRedisBundle(),
-            new \Chebur\LoginFormBundle\CheburLoginFormBundle(),
-            new \Chebur\SearchBundle\CheburSearchBundle(),
-            new \SmartCore\Bundle\AcceleratorCacheBundle\AcceleratorCacheBundle(),
-            new \EmanueleMinotto\TwigCacheBundle\TwigCacheBundle(),
-            new \HWI\Bundle\OAuthBundle\HWIOAuthBundle(),
-            new \Csa\Bundle\GuzzleBundle\CsaGuzzleBundle(),
-        ];
-
-        if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
-            $bundles[] = new \Symfony\Bundle\DebugBundle\DebugBundle();
-            $bundles[] = new \Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
+        $contents = require $this->getProjectDir().'/config/bundles.php';
+        foreach ($contents as $class => $envs) {
+            if ($envs[$this->environment] ?? $envs['all'] ?? false) {
+                yield new $class();
+            }
         }
-
-        return $bundles;
     }
 
     protected function getKernelParameters()
