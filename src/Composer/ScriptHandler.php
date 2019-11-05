@@ -64,12 +64,12 @@ class ScriptHandler
 
     private static function getOptions(Event $event)
     {
-        $options = array(
+        $options = [
             'symfony-bin-dir' => 'bin',
             'symfony-web-dir' => 'public',
             'symfony-assets-install' => 'copy',
             'symfony-cache-warmup' => false,
-        );
+        ];
 
         $options = array_merge($options, $event->getComposer()->getPackage()->getExtra());
 
@@ -93,7 +93,7 @@ class ScriptHandler
     private static function getPhpArguments()
     {
         $ini = null;
-        $arguments = array();
+        $arguments = [];
 
         $phpFinder = new PhpExecutableFinder();
         if (method_exists($phpFinder, 'findArguments')) {

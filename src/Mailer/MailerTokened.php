@@ -44,12 +44,12 @@ class MailerTokened implements MailerInterface
         /** @var User $user*/
         $to       = $user->getEmail();
         $subject  = 'Регистрация на портале';
-        $params   = array(
+        $params   = [
             'user'  => $user,
-            'url'   => $this->router->generate('app_auth_registration_confirm', array(
+            'url'   => $this->router->generate('app_auth_registration_confirm', [
                 'token' => $this->userTokenManager->saveToken(UserToken::TYPE_REGISTRATION, $user),
-            ), UrlGeneratorInterface::ABSOLUTE_URL),
-        );
+            ], UrlGeneratorInterface::ABSOLUTE_URL),
+        ];
         $template = 'mail/registration_confirm.html.twig';
 
         $this->mailer->sendTemplated($to, $subject, $template, $params);
@@ -60,12 +60,12 @@ class MailerTokened implements MailerInterface
         /** @var User $user */
         $to       = $user->getEmail();
         $subject  = 'Восстановление пароля на портале';
-        $params   = array(
+        $params   = [
             'user'  => $user,
-            'url'   => $this->router->generate('app_auth_reset_reset', array(
+            'url'   => $this->router->generate('app_auth_reset_reset', [
                 'token' => $this->userTokenManager->saveToken(UserToken::TYPE_RESET_PASSWORD, $user),
-            ), UrlGeneratorInterface::ABSOLUTE_URL),
-        );
+            ], UrlGeneratorInterface::ABSOLUTE_URL),
+        ];
         $template = 'mail/reset_confirm.html.twig';
 
         $this->mailer->sendTemplated($to, $subject, $template, $params);
@@ -79,14 +79,14 @@ class MailerTokened implements MailerInterface
     {
         $to       = $newEmail;
         $subject  = 'Изменение e-mail на портале';
-        $params   = array(
+        $params   = [
             'user'  => $user,
-            'url'   => $this->router->generate('app_public_email_confirm', array(
-                'token' => $this->userTokenManager->saveToken(UserToken::TYPE_CHANGE_EMAIL, $user, array(
+            'url'   => $this->router->generate('app_public_email_confirm', [
+                'token' => $this->userTokenManager->saveToken(UserToken::TYPE_CHANGE_EMAIL, $user, [
                     'email' => $newEmail,
-                )),
-            ), UrlGeneratorInterface::ABSOLUTE_URL),
-        );
+                ]),
+            ], UrlGeneratorInterface::ABSOLUTE_URL),
+        ];
         $template = 'mail/change_email_confirm.html.twig';
 
         $this->mailer->sendTemplated($to, $subject, $template, $params);

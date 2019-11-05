@@ -82,9 +82,9 @@ class UserManager extends AbstractUserManager
     public function findUserById($id)
     {
         /** @var User $user */
-        $user = $this->findUserBy(array(
+        $user = $this->findUserBy([
             'id' => $id,
-        ));
+        ]);
         return $user;
     }
 
@@ -107,9 +107,9 @@ class UserManager extends AbstractUserManager
     public function findUserByUsername($username)
     {
         /** @var User $user */
-        $user = $this->findUserBy(array(
+        $user = $this->findUserBy([
             'username' => $username,
-        ));
+        ]);
         return $user;
     }
 
@@ -120,17 +120,17 @@ class UserManager extends AbstractUserManager
     public function findUserByEmail($email)
     {
         /** @var User $user */
-        $user = $this->findUserBy(array(
+        $user = $this->findUserBy([
             'email' => $email,
-        ));
+        ]);
         return $user;
     }
 
     public function findUserByConfirmationToken($token)
     {
-        $userToken = $this->objectManager->getRepository(UserToken::class)->findOneBy(array(
+        $userToken = $this->objectManager->getRepository(UserToken::class)->findOneBy([
             'hash' => $token,
-        ));
+        ]);
         if (!$userToken) {
             return null;
         }

@@ -34,11 +34,11 @@ class UserTokenManager
      */
     public function getTypes()
     {
-        return array(
+        return [
             UserToken::TYPE_REGISTRATION,
             UserToken::TYPE_RESET_PASSWORD,
             UserToken::TYPE_CHANGE_EMAIL,
-        );
+        ];
     }
 
     /**
@@ -68,7 +68,7 @@ class UserTokenManager
      * @param array $data
      * @return UserToken
      */
-    public function saveToken($type, User $user, array $data = array())
+    public function saveToken($type, User $user, array $data = [])
     {
         $userToken = new UserToken();
         $userToken->setUser($user);
@@ -98,10 +98,10 @@ class UserTokenManager
      */
     public function findTokenByHashAndType($hash, $type)
     {
-        return $this->em->getRepository(UserToken::class)->findOneBy(array(
+        return $this->em->getRepository(UserToken::class)->findOneBy([
             'hash' => $hash,
             'type' => $type,
-        ));
+        ]);
     }
 
     /**
@@ -111,10 +111,10 @@ class UserTokenManager
      */
     public function findTokenByUserAndType(User $user, $type)
     {
-        return $this->em->getRepository(UserToken::class)->findOneBy(array(
+        return $this->em->getRepository(UserToken::class)->findOneBy([
             'user' => $user,
             'type' => $type,
-        ));
+        ]);
     }
 
 }

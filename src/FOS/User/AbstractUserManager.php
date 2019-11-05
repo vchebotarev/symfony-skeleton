@@ -15,7 +15,7 @@ class AbstractUserManager extends UserManager
      */
     public function findUsers()
     {
-        return array();
+        return [];
     }
 
     /**

@@ -43,7 +43,7 @@ abstract class AbstractController extends BaseController
      * @param array      $options
      * @return FormBuilderInterface
      */
-    protected function createNamedFormBuilder($name = '', $data = null, array $options = array())
+    protected function createNamedFormBuilder($name = '', $data = null, array $options = [])
     {
         return $this->container->get('form.factory')->createNamedBuilder($name, FormType::class, $data, $options);
     }

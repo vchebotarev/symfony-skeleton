@@ -221,7 +221,7 @@ class User extends AbstractUser implements GenderedInterface, \JsonSerializable
 
     public function setRoles(array $roles)
     {
-        $this->roles = array();
+        $this->roles = [];
         foreach ($roles as $role) {
             $this->addRole($role);
         }
@@ -282,14 +282,14 @@ class User extends AbstractUser implements GenderedInterface, \JsonSerializable
 
     public function serialize()
     {
-        return serialize(array(
+        return serialize([
             $this->id,
             $this->username,
             $this->email,
             $this->password,
             $this->isEnabled,
             $this->isLocked,
-        ));
+        ]);
     }
 
     public function unserialize($serialized)

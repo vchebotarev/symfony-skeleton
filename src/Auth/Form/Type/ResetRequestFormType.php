@@ -55,25 +55,25 @@ class ResetRequestFormType extends AbstractFormType
 
         $builder->setMethod(Request::METHOD_POST)->setAction('');
 
-        $builder->add('email', TextType::class, array(
+        $builder->add('email', TextType::class, [
             'label'       => 'E-mail',
-            'constraints' => new Chain(array(
-                new NotNull(array(
+            'constraints' => new Chain([
+                new NotNull([
                     'message' => 'Введите e-mail',
-                )),
-                new Email(array(
+                ]),
+                new Email([
                     'message' => 'Введите корректный e-mail',
-                )),
-                new EntityExists(array(
+                ]),
+                new EntityExists([
                     'message'     => 'Пользователь с таким e-mail не зарегистрирован на Портале',
                     'entityClass' => User::class,
                     'field'       => 'email',
-                )),
+                ]),
                 new Callback(function ($value, ExecutionContextInterface $context) use ($formType) {
                     $formType->validateEmail($value, $context);
                 }),
-            )),
-        ));
+            ]),
+        ]);
 
         $builder->addEventListener(FormEvents::POST_SUBMIT, function(FormEvent $event) use ($formType) {
             $formType->postSubmit($event);

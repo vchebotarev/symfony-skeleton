@@ -37,9 +37,9 @@ class UserAgentManager
     {
         $uaString = $this->requestStack->getCurrentRequest()->headers->get('User-Agent');
         $uaHash   = $this->generateHash($uaString);
-        $uaEntity = $this->em->getRepository(UserAgent::class)->findOneBy(array(
+        $uaEntity = $this->em->getRepository(UserAgent::class)->findOneBy([
             'hash' => $uaHash,
-        ));
+        ]);
         if (!$uaEntity) {
             $uaEntity = new UserAgent();
             $uaEntity->setName($uaString);

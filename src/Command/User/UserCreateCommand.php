@@ -81,7 +81,7 @@ class UserCreateCommand extends AbstractContainerAwareCommand
 
     protected function interact(InputInterface $input, OutputInterface $output)
     {
-        $questions = array();
+        $questions = [];
 
         if (!$input->getArgument('username')) {
             $question = new Question('Please choose a username:');

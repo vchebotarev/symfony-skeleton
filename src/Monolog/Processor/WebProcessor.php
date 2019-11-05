@@ -10,7 +10,7 @@ class WebProcessor extends BaseWebProcessor
     /**
      * @var array
      */
-    protected $requestData = array();
+    protected $requestData = [];
 
     public function __construct(array $extraFields = null)
     {
@@ -42,13 +42,13 @@ class WebProcessor extends BaseWebProcessor
 
         if ($event->isMasterRequest()) {
             $request           = $event->getRequest();
-            $this->requestData = array(
+            $this->requestData = [
                 'attributes' => $request->attributes->all(),
                 'get'        => $request->query->all(),
                 'post'       => $request->request->all(),
                 'cookies'    => $request->cookies->all(),
                 'session'    => $request->getSession()->all(),
-            );
+            ];
         }
     }
 

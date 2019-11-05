@@ -24,9 +24,9 @@ class VisitorSubscriber implements EventSubscriberInterface
 
     public static function getSubscribedEvents()
     {
-        return array(
-            KernelEvents::RESPONSE => array('onKernelResponse'),
-        );
+        return [
+            KernelEvents::RESPONSE => ['onKernelResponse'],
+        ];
     }
 
     /**

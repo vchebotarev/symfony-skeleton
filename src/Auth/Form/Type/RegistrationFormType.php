@@ -109,12 +109,12 @@ class RegistrationFormType extends AbstractFormType
         ]);
         $builder->add('g-recaptcha-response', HiddenType::class); //или allow extra fields потому что рекапча вставляет невидимое поле с токеном
 
-        $builder->add('captcha', CaptchaType::class, array(
-            'background_color' => array(255, 255, 255,),
+        $builder->add('captcha', CaptchaType::class, [
+            'background_color' => [255, 255, 255,],
             'width'            => 135,
             'height'           => 45,
             'invalid_message'  => 'Вы ввели неверный текст с картинки',
-        ));
+        ]);
 
         $builder->addEventListener(FormEvents::POST_SUBMIT, function (FormEvent $event) use ($formType) {
             $formType->postSubmit($event);

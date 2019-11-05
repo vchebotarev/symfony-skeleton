@@ -54,9 +54,9 @@ class VisitorManager
             /** @var Visitor $visitor */
             $visitor = $this->em->getRepository(Visitor::class)->find($session->get(self::COOKIE_KEY));
         } elseif ($cookies->has(self::COOKIE_KEY)){ //в куках хранится hash
-            $visitor = $this->em->getRepository(Visitor::class)->findOneBy(array(
+            $visitor = $this->em->getRepository(Visitor::class)->findOneBy([
                 'hash' => $cookies->get(self::COOKIE_KEY),
-            ));
+            ]);
         }
 
         if (isset($visitor) && $visitor) {
