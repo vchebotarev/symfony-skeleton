@@ -2,8 +2,8 @@
 
 namespace App\User\Review;
 
-use App\Entity\User;
-use App\Entity\UserReview;
+use App\Doctrine\Entity\User;
+use App\Doctrine\Entity\UserReview;
 use App\User\UserManager;
 use Doctrine\ORM\EntityManager;
 

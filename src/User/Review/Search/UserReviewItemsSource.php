@@ -2,7 +2,7 @@
 
 namespace App\User\Review\Search;
 
-use App\Entity\UserReview;
+use App\Doctrine\Entity\UserReview;
 use App\Search\Param;
 use Chebur\SearchBundle\Search\AbstractItemsSource;
 use Doctrine\Common\Collections\Criteria;

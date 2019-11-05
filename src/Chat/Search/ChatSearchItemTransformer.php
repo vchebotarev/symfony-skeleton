@@ -3,10 +3,10 @@
 namespace App\Chat\Search;
 
 use App\Chat\Message\Search\ChatMessageSearchItemTransformer;
-use App\Entity\Chat;
-use App\Entity\ChatMessage;
-use App\Entity\ChatMessageUser;
-use App\Entity\ChatUser;
+use App\Doctrine\Entity\Chat;
+use App\Doctrine\Entity\ChatMessage;
+use App\Doctrine\Entity\ChatMessageUser;
+use App\Doctrine\Entity\ChatUser;
 use App\User\UserManager;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Query\Expr\Join;

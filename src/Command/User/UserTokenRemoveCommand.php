@@ -3,7 +3,7 @@
 namespace App\Command\User;
 
 use App\Symfony\Command\AbstractContainerAwareCommand;
-use App\Entity\UserToken;
+use App\Doctrine\Entity\UserToken;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 

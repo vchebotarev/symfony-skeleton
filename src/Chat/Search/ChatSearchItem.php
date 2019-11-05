@@ -3,8 +3,8 @@
 namespace App\Chat\Search;
 
 use App\Chat\Message\Search\ChatMessageSearchItem;
-use App\Entity\Chat;
-use App\Entity\User;
+use App\Doctrine\Entity\Chat;
+use App\Doctrine\Entity\User;
 
 class ChatSearchItem
 {

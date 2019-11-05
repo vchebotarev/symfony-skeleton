@@ -6,7 +6,7 @@ use App\Symfony\Form\AbstractFormType;
 use App\Symfony\Validator\Constraints\Chain;
 use App\Symfony\Validator\Constraints\EntityExists;
 use App\User\UserManipulator;
-use App\Entity\User;
+use App\Doctrine\Entity\User;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\FormBuilderInterface;

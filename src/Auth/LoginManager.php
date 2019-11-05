@@ -4,7 +4,7 @@ namespace App\Auth;
 
 use App\Auth\Log\UserLinkToken;
 use App\User\UserManager;
-use App\Entity\User;
+use App\Doctrine\Entity\User;
 use FOS\UserBundle\Model\UserInterface;
 use FOS\UserBundle\Security\LoginManagerInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;

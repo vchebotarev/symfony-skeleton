@@ -2,8 +2,8 @@
 
 namespace App\Controller\PrivateArea;
 
-use App\Entity\User;
-use App\Entity\UserReview;
+use App\Doctrine\Entity\User;
+use App\Doctrine\Entity\UserReview;
 use App\Symfony\Controller\AbstractController;
 use App\User\Security\UserVoter;
 use Symfony\Component\HttpFoundation\RedirectResponse;

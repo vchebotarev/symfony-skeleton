@@ -8,7 +8,7 @@ use App\User\Form\Type\ChangePasswordFormType;
 use App\User\Form\Type\ChangeTimezoneFormType;
 use App\User\Form\Type\ChangeUsernameFormType;
 use App\User\Security\UserVoter;
-use App\Entity\UserAuthLog;
+use App\Doctrine\Entity\UserAuthLog;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 

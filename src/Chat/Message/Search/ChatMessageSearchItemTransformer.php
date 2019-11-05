@@ -2,9 +2,9 @@
 
 namespace App\Chat\Message\Search;
 
-use App\Entity\ChatMessage;
-use App\Entity\ChatMessageUser;
-use App\Entity\User;
+use App\Doctrine\Entity\ChatMessage;
+use App\Doctrine\Entity\ChatMessageUser;
+use App\Doctrine\Entity\User;
 use App\User\UserManager;
 use Doctrine\ORM\EntityManager;
 

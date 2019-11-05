@@ -2,7 +2,7 @@
 
 namespace App\Chat\Search;
 
-use App\Entity\Chat;
+use App\Doctrine\Entity\Chat;
 use App\User\UserManager;
 use Chebur\SearchBundle\Search\AbstractItemsSource;
 use Doctrine\Common\Collections\Criteria;

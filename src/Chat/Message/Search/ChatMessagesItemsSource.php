@@ -2,7 +2,7 @@
 
 namespace App\Chat\Message\Search;
 
-use App\Entity\ChatMessage;
+use App\Doctrine\Entity\ChatMessage;
 use App\Search\Param;
 use App\User\UserManager;
 use Chebur\SearchBundle\Search\AbstractItemsSource;

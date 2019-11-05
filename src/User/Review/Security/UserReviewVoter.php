@@ -2,8 +2,8 @@
 
 namespace App\User\Review\Security;
 
-use App\Entity\User;
-use App\Entity\UserReview;
+use App\Doctrine\Entity\User;
+use App\Doctrine\Entity\UserReview;
 use Doctrine\ORM\EntityManager;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Core\Authorization\AccessDecisionManagerInterface;

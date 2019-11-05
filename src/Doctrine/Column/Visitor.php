@@ -3,7 +3,7 @@
 namespace App\Doctrine\Column;
 
 use Doctrine\ORM\Mapping as ORM;
-use App\Entity\Visitor as VisitorEntity;
+use App\Doctrine\Entity\Visitor as VisitorEntity;
 
 /**
  * Использовать только в том случае если вам подходит nullable=false, onDelete="CASCADE"
@@ -12,7 +12,7 @@ trait Visitor
 {
     /**
      * @var VisitorEntity
-     * @ORM\ManyToOne(targetEntity="App\Entity\Visitor")
+     * @ORM\ManyToOne(targetEntity="App\Doctrine\Entity\Visitor")
      * @ORM\JoinColumn(name="visitor_id", referencedColumnName="id", nullable=false, onDelete="CASCADE")
      */
     protected $visitor;

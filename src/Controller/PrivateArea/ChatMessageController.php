@@ -4,9 +4,9 @@ namespace App\Controller\PrivateArea;
 
 use App\Chat\Message\Form\Type\ChatMessageCreateFormType;
 use App\Chat\Security\ChatVoter;
-use App\Entity\Chat;
-use App\Entity\ChatMessage;
-use App\Entity\User;
+use App\Doctrine\Entity\Chat;
+use App\Doctrine\Entity\ChatMessage;
+use App\Doctrine\Entity\User;
 use App\Search\Param;
 use App\Symfony\Controller\AbstractController;
 use Symfony\Component\Form\FormErrorIterator;

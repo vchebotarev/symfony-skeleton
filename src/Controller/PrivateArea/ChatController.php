@@ -4,7 +4,7 @@ namespace App\Controller\PrivateArea;
 
 use App\Chat\Message\Form\Type\ChatMessageCreateFormType;
 use App\Chat\Security\ChatVoter;
-use App\Entity\Chat;
+use App\Doctrine\Entity\Chat;
 use App\Symfony\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;

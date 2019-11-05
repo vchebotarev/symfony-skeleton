@@ -2,7 +2,7 @@
 
 namespace App\Auth;
 
-use App\Entity\User;
+use App\Doctrine\Entity\User;
 use Symfony\Component\Security\Core\Encoder\EncoderFactoryInterface;
 
 class PasswordHelper

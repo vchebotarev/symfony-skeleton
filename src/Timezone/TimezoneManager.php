@@ -2,7 +2,7 @@
 
 namespace App\Timezone;
 
-use App\Entity\User;
+use App\Doctrine\Entity\User;
 
 class TimezoneManager
 {

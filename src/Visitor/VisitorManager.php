@@ -2,7 +2,7 @@
 
 namespace App\Visitor;
 
-use App\Entity\Visitor;
+use App\Doctrine\Entity\Visitor;
 use Doctrine\ORM\EntityManager;
 use Symfony\Component\HttpFoundation\Cookie;
 use Symfony\Component\HttpFoundation\Request;

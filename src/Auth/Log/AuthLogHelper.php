@@ -2,7 +2,7 @@
 
 namespace App\Auth\Log;
 
-use App\Entity\UserAuthLog;
+use App\Doctrine\Entity\UserAuthLog;
 
 class AuthLogHelper
 {

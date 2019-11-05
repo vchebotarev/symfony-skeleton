@@ -2,7 +2,7 @@
 
 namespace App\Auth\UserProvider;
 
-use App\Entity\User;
+use App\Doctrine\Entity\User;
 
 class UserProviderAdmin extends UserProviderMain
 {

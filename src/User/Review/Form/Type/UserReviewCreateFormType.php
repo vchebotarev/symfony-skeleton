@@ -2,8 +2,8 @@
 
 namespace App\User\Review\Form\Type;
 
-use App\Entity\User;
-use App\Entity\UserReview;
+use App\Doctrine\Entity\User;
+use App\Doctrine\Entity\UserReview;
 use App\Symfony\Form\AbstractFormType;
 use App\User\Review\UserReviewManager;
 use App\User\Review\UserReviewType;

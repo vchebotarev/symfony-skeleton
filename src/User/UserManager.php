@@ -4,8 +4,8 @@ namespace App\User;
 
 use App\Email\EmailHelper;
 use App\FOS\User\AbstractUserManager;
-use App\Entity\User;
-use App\Entity\UserToken;
+use App\Doctrine\Entity\User;
+use App\Doctrine\Entity\UserToken;
 use Doctrine\ORM\EntityManager;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 

@@ -2,8 +2,8 @@
 
 namespace App\Chat\Message\Search;
 
-use App\Entity\ChatMessage;
-use App\Entity\User;
+use App\Doctrine\Entity\ChatMessage;
+use App\Doctrine\Entity\User;
 
 class ChatMessageSearchItem
 {

@@ -3,7 +3,7 @@
 namespace App\User\Search;
 
 use App\Search\Param;
-use App\Entity\User;
+use App\Doctrine\Entity\User;
 use Chebur\SearchBundle\Search\AbstractItemsSource;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Query\Expr\Orx;

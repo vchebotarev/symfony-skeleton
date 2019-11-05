@@ -2,8 +2,8 @@
 
 namespace App\Controller\PrivateArea;
 
-use App\Entity\User;
-use App\Entity\UserReview;
+use App\Doctrine\Entity\User;
+use App\Doctrine\Entity\UserReview;
 use App\Symfony\Controller\AbstractController;
 use App\User\Review\Form\Type\UserReviewCreateFormType;
 use App\User\Review\Security\UserReviewVoter;

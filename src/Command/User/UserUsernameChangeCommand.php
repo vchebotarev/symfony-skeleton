@@ -6,7 +6,7 @@ use App\Symfony\Command\AbstractContainerAwareCommand;
 use App\Symfony\Validator\Constraints\Chain;
 use App\Symfony\Validator\Constraints\EntityExists;
 use App\Symfony\Validator\Constraints\Username;
-use App\Entity\User;
+use App\Doctrine\Entity\User;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;

@@ -2,8 +2,8 @@
 
 namespace App\OAuth;
 
-use App\Entity\User;
-use App\Entity\UserSocial;
+use App\Doctrine\Entity\User;
+use App\Doctrine\Entity\UserSocial;
 use Doctrine\ORM\EntityManager;
 use HWI\Bundle\OAuthBundle\Connect\AccountConnectorInterface;
 use HWI\Bundle\OAuthBundle\OAuth\ResourceOwnerInterface;

@@ -2,7 +2,7 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\UserReview;
+use App\Doctrine\Entity\UserReview;
 use App\Symfony\Controller\AbstractController;
 use App\User\Review\Form\Type\UserReviewSearchFormType;
 use App\User\Review\Security\UserReviewVoter;

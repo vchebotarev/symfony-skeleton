@@ -3,8 +3,8 @@
 namespace App\Chat\Message\Form\Type;
 
 use App\Chat\ChatManager;
-use App\Entity\Chat;
-use App\Entity\User;
+use App\Doctrine\Entity\Chat;
+use App\Doctrine\Entity\User;
 use App\Symfony\Form\AbstractFormType;
 use App\Symfony\Form\FormHelper;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;

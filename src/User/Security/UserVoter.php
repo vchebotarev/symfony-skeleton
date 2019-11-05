@@ -2,8 +2,8 @@
 
 namespace App\User\Security;
 
-use App\Entity\User;
-use App\Entity\UserToken;
+use App\Doctrine\Entity\User;
+use App\Doctrine\Entity\UserToken;
 use App\User\UserTokenManager;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Core\Authorization\AccessDecisionManagerInterface;

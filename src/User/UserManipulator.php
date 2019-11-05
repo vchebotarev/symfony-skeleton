@@ -4,8 +4,8 @@ namespace App\User;
 
 use App\Auth\PasswordHelper;
 use App\Mailer\MailerTokened;
-use App\Entity\User;
-use App\Entity\UserToken;
+use App\Doctrine\Entity\User;
+use App\Doctrine\Entity\UserToken;
 
 class UserManipulator
 {

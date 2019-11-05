@@ -2,8 +2,8 @@
 
 namespace App\Controller\PrivateArea;
 
-use App\Entity\UserAuthLog;
-use App\Entity\UserSocial;
+use App\Doctrine\Entity\UserAuthLog;
+use App\Doctrine\Entity\UserSocial;
 use App\Symfony\Controller\AbstractController;
 use App\User\Form\Type\ChangeEmailFormType;
 use App\User\Form\Type\ChangePasswordFormType;

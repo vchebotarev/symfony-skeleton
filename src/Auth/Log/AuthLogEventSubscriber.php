@@ -2,10 +2,10 @@
 
 namespace App\Auth\Log;
 
-use App\Entity\User;
+use App\Doctrine\Entity\User;
 use App\UserAgent\UserAgentManager;
 use App\Visitor\VisitorManager;
-use App\Entity\UserAuthLog;
+use App\Doctrine\Entity\UserAuthLog;
 use Doctrine\ORM\EntityManager;
 use HWI\Bundle\OAuthBundle\Security\Core\Authentication\Token\OAuthToken;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;

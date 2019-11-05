@@ -2,7 +2,7 @@
 
 namespace App\Symfony\Controller;
 
-use App\Entity\User;
+use App\Doctrine\Entity\User;
 use Doctrine\ORM\EntityManager;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller as BaseController;
 use Symfony\Component\Form\Extension\Core\Type\FormType;

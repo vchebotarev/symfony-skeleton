@@ -4,7 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Symfony\Controller\AbstractController;
 use App\User\Security\UserVoter;
-use App\Entity\UserAuthLog;
+use App\Doctrine\Entity\UserAuthLog;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 

@@ -8,7 +8,7 @@ use App\Symfony\Validator\Constraints\EntityExists;
 use App\Symfony\Validator\Constraints\Password;
 use App\Symfony\Validator\Constraints\Username;
 use App\User\UserManipulator;
-use App\Entity\User;
+use App\Doctrine\Entity\User;
 use EWZ\Bundle\RecaptchaBundle\Form\Type\EWZRecaptchaType;
 use EWZ\Bundle\RecaptchaBundle\Validator\Constraints\IsTrue as RecaptchaIsTrue;
 use Gregwar\CaptchaBundle\Type\CaptchaType;

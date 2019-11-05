@@ -2,7 +2,7 @@
 
 namespace App\Command\User\AuthLog;
 
-use App\Entity\UserAuthLog;
+use App\Doctrine\Entity\UserAuthLog;
 use App\Symfony\Command\AbstractContainerAwareCommand;
 use Doctrine\ORM\EntityManager;
 use Symfony\Component\Console\Input\InputInterface;

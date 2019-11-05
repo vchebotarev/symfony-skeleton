@@ -2,7 +2,7 @@
 
 namespace App\OAuth\UserProvider;
 
-use App\Entity\UserSocial;
+use App\Doctrine\Entity\UserSocial;
 use App\OAuth\Exception\AccountNotLinkedException;
 use App\OAuth\ResourceOwnerHelper;
 use Doctrine\ORM\EntityManager;

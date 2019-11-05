@@ -102,8 +102,8 @@ doctrine:
             App:
                 is_bundle: false
                 type:      annotation
-                dir:       '%kernel.source_dir%/Entity'
-                prefix:    'App\Entity\'
+                dir:       '%kernel.source_dir%/Doctrine/Entity'
+                prefix:    'App\Doctrine\Entity\'
                 alias:     App
         default_repository_class: App\Doctrine\ORM\EntityRepository
         dql:
@@ -162,8 +162,8 @@ accelerator_cache:
 
 # Doctrine Migrations
 doctrine_migrations:
-    dir_name:        '%kernel.source_dir%/Migration'
-    namespace:       App\Migration
+    dir_name:        '%kernel.source_dir%/Doctrine/Migration'
+    namespace:       App\Doctrine\Migration
     table_name:      migration
     custom_template: '%kernel.project_dir%/code-tempates/Doctrine/Migration.php.tpl'
 

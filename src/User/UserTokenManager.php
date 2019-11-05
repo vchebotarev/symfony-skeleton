@@ -3,8 +3,8 @@
 namespace App\User;
 
 use App\Token\TokenGenerator;
-use App\Entity\User;
-use App\Entity\UserToken;
+use App\Doctrine\Entity\User;
+use App\Doctrine\Entity\UserToken;
 use Doctrine\ORM\EntityManager;
 
 class UserTokenManager

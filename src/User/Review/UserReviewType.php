@@ -2,7 +2,7 @@
 
 namespace App\User\Review;
 
-use App\Entity\UserReview;
+use App\Doctrine\Entity\UserReview;
 
 class UserReviewType
 {
