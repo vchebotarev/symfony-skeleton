@@ -179,7 +179,7 @@ gregwar_captcha:
 ewz_recaptcha:
     public_key:  '%env(RECAPTCHA_KEY_PUBLIC)%'
     private_key: '%env(RECAPTCHA_KEY_PRIVATE)%'
-    locale_key:  '%kernel.default_locale%'
+    locale_key:  '%env(APP_LOCALE)%'
     enabled:     '%kernel.not_debug%'
     ajax:        false
 
